@@ -10,7 +10,7 @@ export default function AboutPage() {
       <section className="bg-gradient-to-br from-blue-900 to-teal-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-4">About Us</h1>
-          <p className="text-xl text-gray-200">Learn more about PT Khaed System Indonesia</p>
+          <p className="text-xl text-gray-200">Learn more about PT. Kreatif System Indonesia</p>
         </div>
       </section>
 
@@ -24,7 +24,7 @@ export default function AboutPage() {
             <div>
               <h2 className="text-4xl font-bold mb-6">Who We Are</h2>
               <p className="text-gray-600 mb-4">
-                PT Khaed System Indonesia is a leading provider of innovative security 
+                PT. Kreatif System Indonesia is a leading provider of innovative security 
                 technology solutions. We specialize in delivering smart, secure, and 
                 scalable digital solutions for modern businesses.
               </p>
@@ -94,7 +94,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center mb-4">Our Team</h2>
           <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
-            Meet the experts behind PT Khaed System Indonesia
+            Meet the experts behind PT. Kreatif System Indonesia
           </p>
           <div className="grid md:grid-cols-4 gap-8">
             {[1, 2, 3, 4].map((i) => (

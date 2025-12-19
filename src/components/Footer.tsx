@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <h3 className="font-bold text-xl mb-4">PT Khaed System</h3>
+            <h3 className="font-bold text-xl mb-4">PT. Kreatif System Indonesia</h3>
             <p className="text-gray-400">
               Innovative security technology solutions for modern businesses.
             </p>
@@ -43,7 +43,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 PT Khaed System Indonesia. All rights reserved.</p>
+          <p>&copy; 2025 PT. Kreatif System Indonesia. All rights reserved.</p>
         </div>
       </div>
     </footer>

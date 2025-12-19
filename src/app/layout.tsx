@@ -10,7 +10,7 @@ import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'PT Khaed System Indonesia - Security Technology Solutions',
+  title: 'PT. Kreatif System Indonesia - Security Technology Solutions',
   description: 'Innovative security technology solutions for modern businesses',
 }
 
