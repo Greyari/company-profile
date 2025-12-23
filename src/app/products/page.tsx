@@ -42,7 +42,7 @@ export default function ProductsPage() {
   ]
 
   return (
-    <main className="pt-16">
+    <main className="pt-18 bg-black">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 to-teal-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
