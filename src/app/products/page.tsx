@@ -44,7 +44,7 @@ export default function ProductsPage() {
   return (
     <main className="pt-18 bg-black">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-900 to-teal-700 text-white py-20">
+      <section className="bg-linear-to-br from-blue-900 to-teal-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold mb-4">Our Products</h1>
           <p className="text-xl text-gray-200">Comprehensive security and IT solutions for your business</p>

@@ -1,21 +1,30 @@
-
 // ====================
 // src/components/Clients.tsx
 // ====================
+import ScrollVelocityRow from "./scrollVelocity";
+
 export default function Clients() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center mb-12">Our Client</h2>
-        
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((i) => (
-            <div key={i} className="bg-white p-6 rounded-lg flex items-center justify-center h-24 hover:shadow-lg transition">
-              <div className="w-full h-12 bg-gray-200 rounded"></div>
-            </div>
-          ))}
+        <h2 className="text-4xl text-black font-bold text-center mb-16">
+          Our Clients
+        </h2>
+
+        <div className="space-y-10 overflow-hidden">
+          <ScrollVelocityRow
+            src="/images/client.png"
+            direction={1}
+            velocity={100}
+          />
+
+          <ScrollVelocityRow
+            src="/images/client-2.png"
+            direction={-1}
+            velocity={100}
+          />
         </div>
       </div>
     </section>
-  )
+  );
 }

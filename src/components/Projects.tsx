@@ -18,7 +18,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div key={index} className="relative h-64 rounded-lg overflow-hidden group cursor-pointer">
               <div className="w-full h-full bg-gray-300"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 to-transparent flex items-end">
                 <div className="p-6 w-full">
                   <h3 className="text-white text-xl font-bold mb-2">{project.title}</h3>
                   <button className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition">

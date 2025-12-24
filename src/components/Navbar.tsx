@@ -27,19 +27,19 @@ export default function Navbar() {
     <nav
       className={`
         fixed w-full z-50 transition-all duration-500 ease-in-out
-        ${isScrolled || isOpen ? 'bg-black/95 backdrop-blur-sm shadow-2xl' : 'bg-transparent'}
+        ${isScrolled || isOpen ? 'bg-white/95 backdrop-blur-sm shadow-1xl' : 'bg-transparent'}
       `}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* ===== HEADER ===== */}
         <div className={`flex justify-between items-center transition-all duration-500 ease-in-out ${
-          isScrolled ? 'h-16' : 'h-18'
+          isScrolled ? 'h-16' : 'h-16'
         }`}>
 
           {/* Logo */}
-          <div className={`font-bold transition-all duration-500 ease-in-out text-white`}>
-            PT. Kreatif System Indonesia
+          <div className={`font-bold text-xl transition-all duration-500 ease-in-out ${isScrolled || isOpen ? 'text-black' : 'text-white'}`}>
+            KREASII
           </div>
 
           {/* ===== DESKTOP MENU ===== */}
@@ -53,14 +53,14 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative group font-medium transition-all duration-300 ${
-                  pathname === item.href ? 'text-blue-400' : 'text-white'
+                className={`relative text-sm group font-normal transition-all duration-300 ${
+                  pathname === item.href ? 'text-blue-400' : isOpen || isScrolled ? 'text-black' : 'text-white'
                 }`}
               >
                 <span className="group-hover:text-blue-300 transition-colors duration-300">
                   {item.label}
                 </span>
-                <span className={`absolute left-0 -bottom-1 h-[2px] bg-blue-400 transition-all duration-300 ${
+                <span className={`absolute left-0 -bottom-1 h-0.5 bg-blue-400 transition-all duration-300 ${
                   pathname === item.href ? 'w-full' : 'w-0 group-hover:w-full'
                 }`} />
               </Link>
