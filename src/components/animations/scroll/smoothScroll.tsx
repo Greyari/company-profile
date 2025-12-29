@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
-import { gsap, ScrollTrigger, ScrollSmoother } from '@/lib/gsap';
+import { useEffect, useRef } from "react";
+import { gsap, ScrollTrigger, ScrollSmoother } from "@/lib/gsap";
 
 interface SmoothScrollProps {
   children: React.ReactNode;
@@ -24,7 +24,7 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
 
     return () => {
       smoother.kill();
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 

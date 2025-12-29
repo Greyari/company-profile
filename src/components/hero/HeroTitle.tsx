@@ -1,13 +1,12 @@
-import BlurText from "@/components/ui/BlurText"
+"use client";
+
+import { motion } from "framer-motion";
+import { fadeIn } from "@/lib/fadeIn";
 
 export default function HeroTitle() {
   return (
-    <BlurText
-      text="Innovative Security Technology Solutions"
-      className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-13 mb-2"
-      delay={120}
-      animateBy="words"
-      direction="top"
-    />
-  )
+    <h1 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-tight mb-2">
+      Innovative Security Technology Solutions
+    </h1>
+  );
 }
