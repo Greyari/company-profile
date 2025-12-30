@@ -1,6 +1,6 @@
 // src/app/page.tsx
 import Hero from "@/components/hero/Hero";
-import Solutions from "@/components/landing/Solutions";
+import Solutions from "@/components/landing/Product";
 import About from "@/components/landing/About";
 import Projects from "@/components/landing/Projects";
 import Clients from "@/components/landing/Clients";
