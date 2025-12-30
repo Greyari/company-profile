@@ -41,7 +41,7 @@ export default function ScrollReveal({
               end: "bottom bottom",
               scrub: true,
             },
-          }
+          },
         );
       }
 
@@ -61,7 +61,7 @@ export default function ScrollReveal({
             end: "top 50%",
             scrub: 1,
           },
-        }
+        },
       );
     }, el);
 

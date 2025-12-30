@@ -36,12 +36,15 @@ export default function AboutHero() {
       <section
         className="
           relative flex items-center
-          bg-[url('/images/cctv-hero-bg.webp')]
-          bg-cover bg-center bg-no-repeat
+          bg-[url('/images/about.webp')]
+          bg-cover bg-no-repeat
           h-[50vh] min-h-100
+        bg-position-[100%_40%]
+
         "
       >
-        <div className="absolute inset-0 bg-linear-to-r from-black/70 via-black/50 to-black/30" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/50 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/30" />
 
         <motion.div
           variants={fadeIn("left", { offset: 164, duration: 1 })}

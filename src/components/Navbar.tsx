@@ -1,31 +1,25 @@
-// ==========================================
-// src/components/navbar/Navbar.tsx
-// ==========================================
-
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/lib/fadeIn";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isNavbarHovered, setIsNavbarHovered] = useState(false); // State baru buat nav wide hover
+  const [isNavbarHovered, setIsNavbarHovered] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [pathname, setPathname] = useState("/");
 
+  const pathname = usePathname();
   const navRef = useRef<HTMLElement>(null);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null); // Ref buat handle delay close dropdown
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const lastScrollY = useRef(0);
 
-  // ====================
-  // INIT
-  // ====================
   useEffect(() => {
-    setPathname(window.location.pathname);
     const nav = navRef.current;
     if (!nav) return;
 
@@ -52,9 +46,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ====================
-  // NAV HOVER
-  // ====================
   const handleNavMouseEnter = () => {
     setIsNavbarHovered(true);
     if (timelineRef.current) {
@@ -76,24 +67,19 @@ export default function Navbar() {
     }
   };
 
-  // ====================
-  // DROPDOWN
-  // ====================
   const handleDropdownEnter = (itemHref: string) => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current); // Cancel closing if moving to another item
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
     setHoveredItem(itemHref);
     setOpenDropdown(itemHref);
   };
 
   const handleDropdownLeave = () => {
     setHoveredItem(null);
-    // Kasih delay 0.5 detik sebelum nutup dropdown bjir
     timeoutRef.current = setTimeout(() => {
       setOpenDropdown(null);
     }, 100);
   };
 
-  // Navbar jadi putih kalau di-scroll, menu mobile buka, atau MOUSE NYENTUH NAV bjir
   const isWhiteBg = isScrolled || isOpen || isNavbarHovered;
 
   const dropdownItems = {
@@ -106,9 +92,6 @@ export default function Navbar() {
     ],
   };
 
-  // ====================
-  // RENDER
-  // ====================
   return (
     <nav
       ref={navRef}
@@ -123,7 +106,6 @@ export default function Navbar() {
         }
       `}
     >
-      {/* FRAMER MOTION */}
       <motion.div
         variants={fadeIn("up", { offset: 50, duration: 0.8 })}
         initial="hidden"
@@ -133,7 +115,6 @@ export default function Navbar() {
           <div
             className={`flex justify-between items-center transition-all duration-500 ease-in-out h-16`}
           >
-            {/* LOGO */}
             <div
               className={`font-bold text-xl transition-all duration-500 ease-in-out ${
                 isWhiteBg ? "text-black" : "text-white"
@@ -166,7 +147,7 @@ export default function Navbar() {
                 return (
                   <div
                     key={item.href}
-                    className="relative h-16 flex items-center" // Tambahin height biar mouse gak gampang "lepas"
+                    className="relative h-16 flex items-center"
                     onMouseEnter={() => {
                       if (item.hasDropdown) handleDropdownEnter(item.href);
                       else setHoveredItem(item.href);
@@ -176,7 +157,7 @@ export default function Navbar() {
                       else setHoveredItem(null);
                     }}
                   >
-                    <a
+                    <Link
                       href={item.href}
                       className={`relative text-sm group font-normal transition-all duration-300 ${textColor} flex items-center gap-1`}
                     >
@@ -210,7 +191,7 @@ export default function Navbar() {
                             : "w-0"
                         }`}
                       />
-                    </a>
+                    </Link>
 
                     {item.hasDropdown && isDropdownOpen && (
                       <div
@@ -223,13 +204,13 @@ export default function Navbar() {
                         {dropdownItems[
                           item.href as keyof typeof dropdownItems
                         ]?.map((dropItem, idx) => (
-                          <a
+                          <Link
                             key={idx}
                             href={dropItem.href}
                             className="block px-4 py-3 text-sm text-gray-600 hover:text-black hover:bg-gray-50 transition-all duration-200"
                           >
                             {dropItem.label}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     )}
@@ -237,7 +218,6 @@ export default function Navbar() {
                 );
               })}
 
-              {/* Language Switcher */}
               <div
                 className="relative h-16 flex items-center"
                 onMouseEnter={() => handleDropdownEnter("language")}
@@ -289,7 +269,6 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Mobile Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`md:hidden transition-all duration-300 hover:scale-110 ${
@@ -322,7 +301,6 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Mobile Menu */}
           <div
             className={`
           md:hidden overflow-hidden transition-all duration-500 ease-in-out
@@ -336,7 +314,7 @@ export default function Navbar() {
                 { href: "/products", label: "Our Product" },
                 { href: "/contact", label: "Contact Us" },
               ].map((item, index) => (
-                <a
+                <Link
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
@@ -355,7 +333,7 @@ export default function Navbar() {
                 >
                   {item.label}
                   <span className="opacity-60">→</span>
-                </a>
+                </Link>
               ))}
             </div>
           </div>

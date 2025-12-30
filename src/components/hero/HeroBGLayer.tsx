@@ -22,7 +22,7 @@ export default function BackgroundLayer({
     backgroundPosition: "100% 0.05%",
     opacity: isActive ? 1 : 0,
     transition: `opacity ${TRANSITION_DURATION}ms cubic-bezier(${ANIMATION_EASE.join(
-      ","
+      ",",
     )})`,
     zIndex,
   };

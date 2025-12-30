@@ -2,6 +2,8 @@
 // src/components/about/AboutStory.tsx
 // ==========================================
 
+import { ArrowRight } from "lucide-react";
+
 export default function AboutStory() {
   return (
     <section id="who-we-are" className="py-20 bg-white">
@@ -51,7 +53,51 @@ export default function AboutStory() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
               {/* Left Column: Black Container Area */}
-              <div className="mt-20 relative w-full bg-black rounded-2xl shadow-2xl min-h-75 lg:min-h-full">
+
+              <div
+                className="
+                  mt-20 relative w-full
+                  rounded-2xl shadow-2xl
+                  overflow-hidden
+                "
+              >
+                {/* Background Image */}
+                <div
+                  className="
+                    absolute inset-0
+                    bg-[url('/images/cctv-about.webp')]
+                    bg-cover 
+                    bg-position-[100%_0.5%]
+                  "
+                />
+                {/* Black Gradient Overlay */}
+                <div
+                  className="
+                    absolute inset-0
+                    bg-linear-to-t
+                    from-black/90
+                    via-black/30
+                    to-transparent
+                  "
+                />
+                <div
+                  className="
+                    absolute inset-0
+                    bg-linear-to-b
+                    from-black/90
+                    via-black/20
+                    to-transparent
+                  "
+                />
+                <div
+                  className="
+                    absolute inset-0
+                    bg-linear-to-r
+                    from-black/40
+                    via-black/5
+                    to-transparent
+                  "
+                />
                 {/* Box ini akan otomatis setinggi konten kanan karena items-stretch */}
               </div>
 
@@ -93,8 +139,9 @@ export default function AboutStory() {
                 </div>
 
                 <div className="pt-4">
-                  <button className="group flex items-center justify-between px-8 py-3 border border-gray-400 rounded-full transition-all duration-300 hover:bg-black hover:text-white hover:border-black min-w-50">
+                  <button className="group flex items-center justify-between px-5 py-3 border border-gray-400 rounded-full transition-all duration-300 hover:bg-black hover:text-white hover:border-black min-w-50">
                     <span className="text-sm font-medium">See Our Product</span>
+                    <ArrowRight className="ml-5" strokeWidth={1.5} />
                   </button>
                 </div>
               </div>

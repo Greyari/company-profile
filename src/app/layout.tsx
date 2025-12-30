@@ -7,7 +7,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/animations/scroll/smoothScroll";
-// import PageTransition from '@/components/scroll/pageTransition'
+// import SplashScreen from "@/components/SplashScreen";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -28,13 +28,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} font-sans bg-white`}>
-        {/* <PageTransition> */}
+        {/* <SplashScreen /> */}
         <Navbar />
         <SmoothScroll>
           {children}
           <Footer />
         </SmoothScroll>
-        {/* </PageTransition> */}
       </body>
     </html>
   );

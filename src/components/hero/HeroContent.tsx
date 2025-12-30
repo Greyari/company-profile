@@ -5,6 +5,9 @@ import HeroTitle from "./HeroTitle";
 import { fadeIn } from "@/lib/fadeIn";
 import { NavItem } from "@/types/hero.types";
 import { ANIMATION_EASE } from "@/types/hero.types";
+import Link from "next/link";
+
+const MotionLink = motion(Link);
 
 interface HeroContentProps {
   activeItem: NavItem;
@@ -66,18 +69,18 @@ export default function HeroContent({ activeItem }: HeroContentProps) {
       </AnimatePresence>
 
       {/* CTA Button */}
-      <motion.a
+      <MotionLink
         href="/contact"
         className="
-          inline-flex items-center gap-2
-          px-4 py-2
-          border border-white/70
-          text-white/70 text-xs
-          rounded-full font-light
-          transition-colors
-          hover:bg-gray-100
-          hover:text-black
-        "
+    inline-flex items-center gap-2
+    px-4 py-2
+    border border-white/70
+    text-white/70 text-xs
+    rounded-full font-light
+    transition-colors
+    hover:bg-gray-100
+    hover:text-black
+  "
         whileHover="hovered"
         initial="rest"
         animate="rest"
@@ -110,7 +113,7 @@ export default function HeroContent({ activeItem }: HeroContentProps) {
             <path d="m9 18 6-6-6-6" />
           </svg>
         </motion.span>
-      </motion.a>
+      </MotionLink>
     </motion.div>
   );
 }
