@@ -74,7 +74,7 @@ export default function AboutHero() {
                   text-sm md:text-base font-medium transition-colors duration-300
                   ${
                     activeSection === section.id
-                      ? "text-blue-600"
+                      ? "text-gray-900"
                       : "text-gray-600 hover:text-gray-900"
                   }
                   ${
@@ -87,7 +87,7 @@ export default function AboutHero() {
                 {section.label}
                 <span
                   className={`
-                    absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600
+                    absolute bottom-0 left-0 right-0 h-0.5 bg-gray-900
                     transition-transform duration-300 origin-left
                     ${
                       activeSection === section.id ? "scale-x-100" : "scale-x-0"

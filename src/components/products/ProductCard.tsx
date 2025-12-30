@@ -1,55 +1,65 @@
-// ==========================================
-// src/components/products/ProductCard.tsx
-// ==========================================
-export default function ProductCard() {
+"use client";
+
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+
+/* =====================
+   TYPES
+===================== */
+export interface ProductCardProps {
+  title: string;
+  description: string;
+  image: string;
+  href?: string;
+}
+
+/* =====================
+   COMPONENT
+===================== */
+export default function ProductCard({
+  title,
+  description,
+  image,
+  href = "#",
+}: ProductCardProps) {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className=" gap-12 items-center">
-          <div>
-            <h2 className="text-xl md:text-2xl font-medium tracking-tight text-gray-900 mb-6">
-              PT Kreatif System Indonesia
-            </h2>
-            <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              PT. Kreatif System Indonesia was founded with a vision to provide
-              cutting-edge security solutions for modern businesses. Our team of
-              experienced professionals combines technical expertise with a deep
-              understanding of our clients' needs, ensuring that every solution
-              we provide is tailored to meet specific requirements.Since our
-              establishment, we have been committed to delivering excellence in
-              every project. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every solution we provide is tailored to meet
-              specific requirements.
-            </p>
-
-            <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              Our team of experienced professionals combines technical expertise
-              with a deep understanding of our clients' needs, ensuring that
-              every solution we provide is tailored to meet specific
-              requirements. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every
-            </p>
-
-            <p className="text-gray-600 text-justify leading-relaxed">
-              Our team of experienced professionals combines technical expertise
-              with a deep understanding of our clients' needs, ensuring that
-              every solution we provide is tailored to meet specific
-              requirements. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every solution we provide is tailored to meet
-              specific requirements. Our team of experienced professionals
-              combines technical expertise with a deep understanding of our
-              clients' needs, ensuring that every solution we provide is
-              tailored to meet specific requirements. Our team of experienced
-              professionals combines technical expertise with a deep
-              understanding of our clients' needs, ensuring that every solution
-              we provide is tailored to meet specific requirements.
-            </p>
-          </div>
-        </div>
+    <motion.div
+      whileHover={{ scale: 1.02 }}
+      className="
+        w-full rounded-3xl bg-white p-6
+        border border-transparent
+        shadow-none hover:shadow-xl hover:border-gray-200
+        transition-all duration-300
+      "
+    >
+      {/* IMAGE */}
+      <div className="h-60 w-full rounded-2xl overflow-hidden mb-6 bg-gray-100">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover"
+          draggable={false}
+        />
       </div>
-    </section>
+
+      {/* CONTENT */}
+      <h3 className="text-xl font-bold text-black/80 mb-3">{title}</h3>
+
+      <p className="text-sm text-gray-500 mb-6 line-clamp-3">{description}</p>
+
+      <Link
+        href={href}
+        className="
+          inline-flex items-center gap-2
+          text-sm font-semibold
+          text-black/60 hover:text-black
+          transition-colors
+        "
+      >
+        Buy now
+        <ArrowRight size={16} strokeWidth={2} />
+      </Link>
+    </motion.div>
   );
 }

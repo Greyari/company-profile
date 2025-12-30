@@ -97,11 +97,6 @@ export default function Navbar() {
   const isWhiteBg = isScrolled || isOpen || isNavbarHovered;
 
   const dropdownItems = {
-    "/about": [
-      { label: "Who we are", href: "/about" },
-      { label: "Vision & Mission", href: "/about/vision-mission" },
-      { label: "Why Choose Us", href: "/about/why-choose-us" },
-    ],
     "/products": [
       { label: "CCTV", href: "/products/cctv" },
       { label: "PABX", href: "/products/pabx" },
@@ -121,7 +116,11 @@ export default function Navbar() {
       onMouseLeave={handleNavMouseLeave}
       className={`
         fixed w-full z-50 transition-all duration-500 ease-in-out
-        ${isWhiteBg ? "bg-white/95 backdrop-blur-sm shadow-2xl" : "bg-transparent"}
+        ${
+          isWhiteBg
+            ? "bg-white/95 backdrop-blur-sm shadow-2xl"
+            : "bg-transparent"
+        }
       `}
     >
       {/* FRAMER MOTION */}
@@ -136,7 +135,9 @@ export default function Navbar() {
           >
             {/* LOGO */}
             <div
-              className={`font-bold text-xl transition-all duration-500 ease-in-out ${isWhiteBg ? "text-black" : "text-white"}`}
+              className={`font-bold text-xl transition-all duration-500 ease-in-out ${
+                isWhiteBg ? "text-black" : "text-white"
+              }`}
             >
               KREASII
             </div>
@@ -144,7 +145,7 @@ export default function Navbar() {
             <div className="hidden md:flex items-center space-x-10">
               {[
                 { href: "/", label: "Home", hasDropdown: false },
-                { href: "/about", label: "About Us", hasDropdown: true },
+                { href: "/about", label: "About Us", hasDropdown: false },
                 { href: "/products", label: "Our Product", hasDropdown: true },
                 { href: "/contact", label: "Contact Us", hasDropdown: false },
               ].map((item) => {
@@ -193,7 +194,9 @@ export default function Navbar() {
                           strokeWidth="1.5"
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          className={`transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : ""}`}
+                          className={`transition-transform duration-300 ${
+                            isDropdownOpen ? "rotate-180" : ""
+                          }`}
                         >
                           <path d="m6 9 6 6 6-6" />
                         </svg>
@@ -203,8 +206,8 @@ export default function Navbar() {
                           isItemHovered
                             ? "w-full"
                             : isActive && !hasAnyHover
-                              ? "w-full"
-                              : "w-0"
+                            ? "w-full"
+                            : "w-0"
                         }`}
                       />
                     </a>
@@ -245,10 +248,10 @@ export default function Navbar() {
                     !isWhiteBg
                       ? "text-white"
                       : hoveredItem === "language"
-                        ? "text-black"
-                        : hoveredItem
-                          ? "text-gray-400"
-                          : "text-black"
+                      ? "text-black"
+                      : hoveredItem
+                      ? "text-gray-400"
+                      : "text-black"
                   }`}
                 >
                   <svg
@@ -343,7 +346,11 @@ export default function Navbar() {
                   px-4 py-3 rounded-xl
                   font-medium transition-all duration-300
                   hover:bg-gray-100 active:scale-[0.98]
-                  ${pathname === item.href ? "bg-gray-100 text-black" : "text-gray-800"}
+                  ${
+                    pathname === item.href
+                      ? "bg-gray-100 text-black"
+                      : "text-gray-800"
+                  }
                 `}
                 >
                   {item.label}

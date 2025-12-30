@@ -29,10 +29,10 @@ export default function About() {
             viewport={{ once: false, amount: 0.3 }}
             className="md:pr-35 py-10"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
               About Us
             </h2>
-            <p className="text-lg text-white/70 leading-relaxed mb-6 max-w-md">
+            <p className="text-sm text-white/70 leading-relaxed mb-6 max-w-md">
               We deliver integrated and customizable security solutions, with
               Trustworthy and supportive partner by providing excellent products
             </p>
@@ -92,9 +92,9 @@ export default function About() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.3 }}
-            className="md:pl-35 py-10"
+            className="md:pl-25 py-10"
           >
-            <p className="text-white/80 text-lg mb-2">
+            <p className="text-white/80 text-sm mb-2">
               PT Kreatif System Indonesia
             </p>
             <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">

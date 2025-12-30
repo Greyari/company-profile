@@ -3,7 +3,7 @@
 
 import ProductHero from "@/components/products/ProductHero";
 import ScrollReveal from "@/components/animations/scroll/scrollReveal";
-import ProductCard from "@/components/products/ProductCard";
+import ProductCard from "@/components/products/ProductContent";
 
 // ==========================================
 export default function ProductsPage() {
