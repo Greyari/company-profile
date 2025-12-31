@@ -10,6 +10,7 @@ import { fadeIn } from "@/lib/fadeIn";
  * - Text content always rendered above overlays
  * - Bottom-to-top gradient includes backdrop blur
  */
+
 export default function About() {
   return (
     <section
