@@ -33,7 +33,7 @@ const solutions: Solution[] = [
     description:
       "Integrated attendance and access control systems using fingerprint, RFID, or facial recognition to monitor workforce activity and improve operational efficiency.",
     image:
-      "https://images.unsplash.com/photo-1604881991720-f91add269bed?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop",
   },
   {
     id: 2,
@@ -41,7 +41,7 @@ const solutions: Solution[] = [
     description:
       "End-to-end CCTV and security solutions providing real-time monitoring, recording, and incident prevention for residential and commercial environments.",
     image:
-      "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=600&h=400&fit=crop",
   },
   {
     id: 3,
@@ -65,7 +65,7 @@ const solutions: Solution[] = [
     description:
       "Comprehensive electrical installation and maintenance services supporting security systems, networks, and building infrastructure.",
     image:
-      "https://images.unsplash.com/photo-1581091215367-59ab6c2d1b8f?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop",
   },
   {
     id: 6,
@@ -73,7 +73,7 @@ const solutions: Solution[] = [
     description:
       "Alarm and safety systems including fire alarms, intrusion detection, and emergency alerts to protect people, assets, and facilities.",
     image:
-      "https://images.unsplash.com/photo-1600055586359-3c0d9d1c6f47?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
   },
 ];
 

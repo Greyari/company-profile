@@ -23,56 +23,49 @@ const solutions = [
     title: "CCTV Surveillance",
     description:
       "Comprehensive CCTV surveillance solutions for real-time monitoring, incident recording, and enhanced security across residential and commercial areas.",
-    image:
-      "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=600&h=400&fit=crop",
+    image: "/images/product/IPCAM.webp",
   },
   {
     id: 2,
     title: "PABX System",
     description:
       "Reliable PABX communication systems designed to optimize internal and external voice communication efficiency for businesses of all sizes.",
-    image:
-      "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?w=600&h=400&fit=crop",
+    image: "/images/product/PABX.webp",
   },
   {
     id: 3,
     title: "HDCVI",
     description:
       "High Definition Composite Video Interface (HDCVI) technology delivering crystal-clear video quality with long-distance transmission reliability.",
-    image:
-      "https://images.unsplash.com/photo-1624969862644-791f3dc98927?w=600&h=400&fit=crop",
+    image: "/images/product/HDCVI.webp",
   },
   {
     id: 4,
     title: "Audio Paging",
     description:
       "Integrated audio paging systems for clear announcements, emergency alerts, and efficient communication within large facilities and buildings.",
-    image:
-      "https://images.unsplash.com/photo-1590608897129-79da98d159d8?w=600&h=400&fit=crop",
+    image: "/images/product/audioPaging.webp",
   },
   {
     id: 5,
     title: "IP Camera",
     description:
       "Advanced IP camera solutions with network-based monitoring, remote access, and high-resolution imaging for modern security needs.",
-    image:
-      "https://images.unsplash.com/photo-1600267165740-6b5b6f1c0f6d?w=600&h=400&fit=crop",
+    image: "/images/product/IPCAM.webp",
   },
   {
     id: 6,
     title: "DVR/NVR",
     description:
       "Digital and Network Video Recorder systems ensuring secure video storage, playback, and centralized surveillance management.",
-    image:
-      "https://images.unsplash.com/photo-1581090700227-1e37b190418e?w=600&h=400&fit=crop",
+    image: "/images/product/DVR.webp",
   },
   {
     id: 7,
     title: "Access Control",
     description:
       "Smart access control systems using card, fingerprint, or RFID technology to manage entry points and enhance security control.",
-    image:
-      "https://images.unsplash.com/photo-1614064548237-096f735f344f?w=600&h=400&fit=crop",
+    image: "/images/product/AC.webp",
   },
 ];
 

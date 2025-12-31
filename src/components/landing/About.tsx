@@ -15,7 +15,7 @@ export default function About() {
     <section
       className="
         relative min-h-screen flex items-center
-        bg-[url('/images/about.webp')]
+        bg-[url('/images/hero/about.webp')]
         bg-cover bg-no-repeat
         bg-position-[100%_80%]
         overflow-hidden
