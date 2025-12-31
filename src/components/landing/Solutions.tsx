@@ -20,51 +20,59 @@ const IDLE_DELAY = 5000;
 const solutions = [
   {
     id: 1,
-    title: "IP Camera",
+    title: "CCTV Surveillance",
     description:
-      "Driven by a passion for excellence, PT Kreatif System Indonesia continues to set the standard in security and technology.",
+      "Comprehensive CCTV surveillance solutions for real-time monitoring, incident recording, and enhanced security across residential and commercial areas.",
     image:
-      "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=600&h=400&fit=crop",
   },
   {
     id: 2,
-    title: "Attendance System",
+    title: "PABX System",
     description:
-      "All in one system fingerprint / rfid integration system for security solutions management and efficiency.",
+      "Reliable PABX communication systems designed to optimize internal and external voice communication efficiency for businesses of all sizes.",
     image:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1580894894513-541e068a3e2b?w=600&h=400&fit=crop",
   },
   {
     id: 3,
-    title: "Network Solutions",
+    title: "HDCVI",
     description:
-      "Complete IT infrastructure and support services tailored to meet the diverse and evolving needs of clients.",
+      "High Definition Composite Video Interface (HDCVI) technology delivering crystal-clear video quality with long-distance transmission reliability.",
     image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1624969862644-791f3dc98927?w=600&h=400&fit=crop",
   },
   {
     id: 4,
-    title: "Access Control",
+    title: "Audio Paging",
     description:
-      "Smart door lock and barrier gate systems providing peace of mind and empowering businesses to thrive.",
+      "Integrated audio paging systems for clear announcements, emergency alerts, and efficient communication within large facilities and buildings.",
     image:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1590608897129-79da98d159d8?w=600&h=400&fit=crop",
   },
   {
     id: 5,
-    title: "Smart Home",
+    title: "IP Camera",
     description:
-      "Future-proof automation for residential and commercial buildings with cutting-edge ecosystem integration.",
+      "Advanced IP camera solutions with network-based monitoring, remote access, and high-resolution imaging for modern security needs.",
     image:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1600267165740-6b5b6f1c0f6d?w=600&h=400&fit=crop",
   },
   {
     id: 6,
-    title: "IT Consultancy",
+    title: "DVR/NVR",
     description:
-      "Expert guidance for your digital transformation journey with specialized professional team support.",
+      "Digital and Network Video Recorder systems ensuring secure video storage, playback, and centralized surveillance management.",
     image:
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1581090700227-1e37b190418e?w=600&h=400&fit=crop",
+  },
+  {
+    id: 7,
+    title: "Access Control",
+    description:
+      "Smart access control systems using card, fingerprint, or RFID technology to manage entry points and enhance security control.",
+    image:
+      "https://images.unsplash.com/photo-1614064548237-096f735f344f?w=600&h=400&fit=crop",
   },
 ];
 
@@ -136,7 +144,7 @@ export default function Solutions() {
         {/* HEADER */}
         <div className="text-center mb-8 px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
-            Our Solution
+            Our Product
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
             Our products are developed as part of an integrated ecosystem

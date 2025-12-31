@@ -11,7 +11,7 @@ export default function ContactHero() {
     <section
       className="
           relative flex items-center
-          bg-[url('/images/contact-hero.webp')]
+          bg-[url('/images/hero/contact-hero.webp')]
           bg-cover bg-no-repeat
           h-[50vh] min-h-100
           bg-position-[100%_75%]
@@ -29,7 +29,7 @@ export default function ContactHero() {
         className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full"
       >
         <div className="max-w-2xl">
-          <h1 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-13 mb-2">
+          <h1 className="text-3xl md:text-4xl xl:text-5xl text-white font-semibold tracking-tight leading-13 mb-2">
             Contact Us
           </h1>
           <p className="text-sm md:text-lg mb-4 text-white/70">

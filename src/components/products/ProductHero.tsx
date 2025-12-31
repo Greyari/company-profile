@@ -7,36 +7,13 @@ import { fadeIn } from "@/lib/fadeIn";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const sections = [
-  { id: "who-we-are", label: "Who We Are" },
-  { id: "vision-mission", label: "Our Vision & Mission" },
-  { id: "why-choose-us", label: "Why Choose Us?" },
-];
-
 export default function ProductHero() {
-  const [activeSection, setActiveSection] = useState("who-we-are");
-
-  const scrollToSection = (id: string) => {
-    setActiveSection(id);
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 100;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
     <>
       <section
         className="
           relative flex items-center
-          bg-[url('/images/cctv-product.webp')]
+          bg-[url('/images/hero/cctv-product.webp')]
           bg-cover bg-no-repeat
           h-[50vh] min-h-100
         bg-position-[100%_45%]
@@ -55,7 +32,7 @@ export default function ProductHero() {
             viewport={{ once: false, amount: 0.3 }}
             className="max-w-2xl"
           >
-            <h1 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-13 mb-2">
+            <h1 className="text-3xl md:text-4xl xl:text-5xl text-white font-semibold tracking-tight leading-13 mb-2">
               Our Products
             </h1>
             <p className="text-sm md:text-lg mb-4 text-white/70">

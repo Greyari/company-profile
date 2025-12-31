@@ -3,7 +3,6 @@
 import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Search } from "lucide-react";
-import ProductCard from "@/components/products/ProductCard";
 
 /**
  * Product data structure interface
@@ -16,13 +15,24 @@ interface Product {
   image: string;
 }
 
+/**
+ * Product card component props
+ */
+interface ProductCardProps {
+  title: string;
+  description: string;
+  image: string;
+  href?: string;
+}
+
 const CATEGORIES = [
-  "All Product",
+  "All Products",
   "IP Camera",
-  "CCTV Video",
+  "CCTV",
   "HDCVI",
   "Audio Paging",
   "PABX",
+  "DVR/NVR",
   "Access Control",
 ];
 
@@ -96,14 +106,58 @@ const cardVariants: Variants = {
   exit: { opacity: 0, scale: 0.95, transition: { duration: 0.2 } },
 };
 
+/**
+ * Product card component
+ */
+function ProductCard({
+  title,
+  description,
+  image,
+  href = "#",
+}: ProductCardProps) {
+  return (
+    <motion.div
+      whileHover={{ scale: 1.02 }}
+      className="w-full rounded-3xl bg-white p-6 border border-transparent shadow-none hover:shadow-xl hover:border-gray-200 transition-all duration-300"
+    >
+      <div className="h-60 w-full rounded-2xl overflow-hidden mb-6 bg-gray-100">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover"
+          draggable={false}
+        />
+      </div>
+      <h3 className="text-xl font-bold text-black/80 mb-3">{title}</h3>
+      <p className="text-sm text-gray-500 mb-6 line-clamp-3">{description}</p>
+      <a
+        href={href}
+        className="inline-flex items-center gap-2 text-sm font-semibold text-black/60 hover:text-black transition-colors"
+      >
+        Buy now
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        >
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </a>
+    </motion.div>
+  );
+}
+
 export default function ProductContent() {
-  const [activeTab, setActiveTab] = useState("All Product");
+  const [activeTab, setActiveTab] = useState("All Products");
   const [searchQuery, setSearchQuery] = useState("");
 
   const filteredProducts = useMemo(() => {
     return PRODUCTS_DATA.filter((product) => {
       const matchesTab =
-        activeTab === "All Product" || product.category === activeTab;
+        activeTab === "All Products" || product.category === activeTab;
       const matchesSearch = product.title
         .toLowerCase()
         .includes(searchQuery.toLowerCase());
@@ -114,24 +168,24 @@ export default function ProductContent() {
   return (
     <section className="py-16 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header Section */}
-        <div className="flex flex-col lg:flex-row gap-6 items-start lg:items-center justify-between mb-12">
-          {/* Categories Navigation */}
-          <nav className="flex flex-wrap border border-gray-200 rounded-4xl p-2.5 items-center gap-2">
+        {/* Header Section - Responsive Layout */}
+        <div className="flex flex-col xl:flex-row gap-4 items-stretch xl:items-center justify-between mb-12">
+          {/* Categories Navigation - Takes available space */}
+          <nav className="flex flex-wrap  border border-gray-200 rounded-2xl sm:rounded-full p-2 items-center gap-1.5 sm:gap-2 xl:flex-1">
             {CATEGORIES.map((category) => (
               <button
                 key={category}
                 onClick={() => setActiveTab(category)}
-                className={`relative px-5 py-2 text-sm font-medium rounded-full transition-all duration-300 whitespace-nowrap ${
+                className={`relative px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium rounded-xl sm:rounded-full transition-all duration-300 whitespace-nowrap ${
                   activeTab === category
                     ? "text-white"
-                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                    : "text-gray-600 hover:text-gray-900 hover:bg-white"
                 }`}
               >
                 {activeTab === category && (
                   <motion.div
                     layoutId="active-pill"
-                    className="absolute inset-0 bg-black rounded-full"
+                    className="absolute inset-0 bg-black rounded-xl sm:rounded-full"
                     transition={{
                       type: "spring",
                       bounce: 0.2,
@@ -144,16 +198,16 @@ export default function ProductContent() {
             ))}
           </nav>
 
-          {/* Search Field */}
-          <div className="relative w-full  lg:w-80 group">
+          {/* Search Field - Fixed width on large screens */}
+          <div className="relative w-full xl:w-80 xl:shrink-0 group">
             <input
               type="text"
               placeholder="Search equipment..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white border border-gray-200 rounded-full py-4.5 pl-5 pr-12 text-sm text-gray-900 placeholder:text-gray-400 outline-none transition-all duration-300 focus:border-gray-400 focus:ring-2 focus:ring-gray-100"
+              className="w-full bg-white border border-gray-200 rounded-2xl sm:rounded-full py-2.5 sm:py-3 pl-4 sm:pl-5 pr-11 sm:pr-12 text-sm text-gray-900 placeholder:text-gray-400 outline-none transition-all duration-300 focus:border-gray-400 focus:ring-2 focus:ring-gray-100"
             />
-            <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-gray-900 transition-colors pointer-events-none">
+            <div className="absolute right-3.5 sm:right-4 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-gray-900 transition-colors pointer-events-none">
               <Search size={18} strokeWidth={2} />
             </div>
           </div>

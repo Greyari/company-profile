@@ -31,47 +31,49 @@ const solutions: Solution[] = [
     id: 1,
     title: "Attendance & System Control",
     description:
-      "An integrated attendance and system control solution designed to monitor activity, improve operational efficiency, and ensure secure workforce management.",
+      "Integrated attendance and access control systems using fingerprint, RFID, or facial recognition to monitor workforce activity and improve operational efficiency.",
     image:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1604881991720-f91add269bed?w=600&h=400&fit=crop",
   },
   {
     id: 2,
     title: "CCTV & Security System",
     description:
-      "Advanced surveillance systems with real-time alerts and comprehensive coverage.",
+      "End-to-end CCTV and security solutions providing real-time monitoring, recording, and incident prevention for residential and commercial environments.",
     image:
-      "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=600&h=400&fit=crop",
   },
   {
     id: 3,
-    title: "IT Support Services",
+    title: "IT Support & Maintenance",
     description:
-      "Professional IT infrastructure management and technical support.",
+      "Professional IT support and maintenance services covering hardware, software, and network systems to ensure reliable and secure business operations.",
     image:
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=600&h=400&fit=crop",
   },
   {
     id: 4,
-    title: "Network Solutions",
-    description: "Enterprise-grade network design and optimization services.",
+    title: "Public Address & Parking Barrier",
+    description:
+      "Integrated public address systems and automated parking barriers designed to improve communication, traffic control, and facility management.",
     image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=600&h=400&fit=crop",
   },
   {
     id: 5,
-    title: "Cloud Infrastructure",
+    title: "Electrical Services",
     description:
-      "Scalable cloud solutions with robust security and monitoring.",
+      "Comprehensive electrical installation and maintenance services supporting security systems, networks, and building infrastructure.",
     image:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1581091215367-59ab6c2d1b8f?w=600&h=400&fit=crop",
   },
   {
     id: 6,
-    title: "Cybersecurity Solutions",
-    description: "Comprehensive protection against modern cyber threats.",
+    title: "Alarm & Safety Solutions",
+    description:
+      "Alarm and safety systems including fire alarms, intrusion detection, and emergency alerts to protect people, assets, and facilities.",
     image:
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop",
+      "https://images.unsplash.com/photo-1600055586359-3c0d9d1c6f47?w=600&h=400&fit=crop",
   },
 ];
 

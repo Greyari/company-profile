@@ -89,6 +89,7 @@ export default function Navbar() {
       { label: "HDCVI", href: "/products/hdcvi" },
       { label: "Audio Paging", href: "/products/audio-paging" },
       { label: "IP Camera", href: "/products/ip-camera" },
+      { label: "Video Recorder", href: "/products/video-recorder" },
     ],
   };
 

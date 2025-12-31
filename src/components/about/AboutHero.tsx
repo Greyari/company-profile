@@ -36,7 +36,7 @@ export default function AboutHero() {
       <section
         className="
           relative flex items-center
-          bg-[url('/images/about.webp')]
+          bg-[url('/images/hero/about.webp')]
           bg-cover bg-no-repeat
           h-[50vh] min-h-100
         bg-position-[100%_40%]
@@ -54,7 +54,7 @@ export default function AboutHero() {
           className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full"
         >
           <div className="max-w-2xl">
-            <h1 className="text-3xl md:text-4xl xl:text-5xl font-semibold tracking-tight leading-13 mb-2">
+            <h1 className="text-3xl md:text-4xl xl:text-5xl text-white font-semibold tracking-tight leading-13 mb-2">
               About Us
             </h1>
             <p className="text-sm md:text-lg mb-4 text-white/70">

@@ -4,7 +4,7 @@ import { useState } from "react";
 import HeroBackground from "./HeroBackground";
 import HeroContent from "./HeroContent";
 import HeroNavigation from "./HeroNavigation";
-import { navItems } from "@/types/heroData";
+import { navItems } from "@/components/data/heroData";
 
 /**
  * Main Hero component with Petronas-style dissolve transition
