@@ -23,6 +23,7 @@ type TextTypeProps = {
   cursorCharacter?: string;
 };
 
+
 export default function TextType({
   text,
   as: Component = "h1",
