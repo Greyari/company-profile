@@ -12,7 +12,7 @@ import { gsap } from "gsap";
 
 type TextTypeProps = {
   text: string[] | string;
-  as?: keyof JSX.IntrinsicElements;
+  as?: React.ElementType;
   typingSpeed?: number;
   deletingSpeed?: number;
   pauseDuration?: number;
@@ -43,7 +43,7 @@ export default function TextType({
 
   const textArray = useMemo(
     () => (Array.isArray(text) ? text : [text]),
-    [text],
+    [text]
   );
 
   useEffect(() => {
@@ -105,6 +105,6 @@ export default function TextType({
           {cursorCharacter}
         </span>
       )}
-    </>,
+    </>
   );
 }
