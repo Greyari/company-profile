@@ -7,7 +7,7 @@ import Clients from "@/components/landing/Clients";
 import ScrollReveal from "@/components/animations/scroll/scrollReveal";
 import Service from "@/components/landing/Service";
 import Brand from "@/components/landing/Brand";
-import Workflow from "@/components/landing/Workflow";
+import FAQ from "@/components/landing/FAQ";
 
 export default function Home() {
   return (
@@ -32,7 +32,7 @@ export default function Home() {
         <Projects />
       </ScrollReveal>
       <ScrollReveal>
-        <Workflow />
+        <FAQ />
       </ScrollReveal>
     </main>
   );

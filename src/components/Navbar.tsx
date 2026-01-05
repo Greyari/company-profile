@@ -117,11 +117,22 @@ export default function Navbar() {
             className={`flex justify-between items-center transition-all duration-500 ease-in-out h-16`}
           >
             <div
-              className={`font-bold text-xl transition-all duration-500 ease-in-out ${
+              className={`flex items-center gap-2 font-bold text-lg transition-all duration-500 ease-in-out ${
                 isWhiteBg ? "text-black" : "text-white"
               }`}
             >
-              KREASII
+              <img
+                src={
+                  isWhiteBg
+                    ? "/images/logo-warna.png"
+                    : "/images/logo-putih.png"
+                }
+                alt="KREASII Logo"
+                className="w-10 h-10 object-contain"
+                draggable={false}
+              />
+
+              <span>KREASII</span>
             </div>
 
             <div className="hidden md:flex items-center space-x-10">

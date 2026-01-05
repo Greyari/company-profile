@@ -20,52 +20,52 @@ const IDLE_DELAY = 5000;
 const solutions = [
   {
     id: 1,
-    title: "CCTV Surveillance",
+    title: "CCTV",
     description:
       "Comprehensive CCTV surveillance solutions for real-time monitoring, incident recording, and enhanced security across residential and commercial areas.",
-    image: "/images/product/IPCAM.webp",
+    image: "/images/product/CCTV-S.png",
   },
   {
     id: 2,
     title: "PABX System",
     description:
       "Reliable PABX communication systems designed to optimize internal and external voice communication efficiency for businesses of all sizes.",
-    image: "/images/product/PABX.webp",
+    image: "/images/product/PABX.png",
   },
   {
     id: 3,
     title: "HDCVI",
     description:
       "High Definition Composite Video Interface (HDCVI) technology delivering crystal-clear video quality with long-distance transmission reliability.",
-    image: "/images/product/HDCVI.webp",
+    image: "/images/product/HDCVI.png",
   },
   {
     id: 4,
     title: "Audio Paging",
     description:
       "Integrated audio paging systems for clear announcements, emergency alerts, and efficient communication within large facilities and buildings.",
-    image: "/images/product/audioPaging.webp",
+    image: "/images/product/audioPaging.png",
   },
   {
     id: 5,
     title: "IP Camera",
     description:
       "Advanced IP camera solutions with network-based monitoring, remote access, and high-resolution imaging for modern security needs.",
-    image: "/images/product/IPCAM.webp",
+    image: "/images/product/IPCAM.png",
   },
   {
     id: 6,
     title: "DVR/NVR",
     description:
       "Digital and Network Video Recorder systems ensuring secure video storage, playback, and centralized surveillance management.",
-    image: "/images/product/DVR.webp",
+    image: "/images/product/DVR.png",
   },
   {
     id: 7,
     title: "Access Control",
     description:
       "Smart access control systems using card, fingerprint, or RFID technology to manage entry points and enhance security control.",
-    image: "/images/product/AC.webp",
+    image: "/images/product/AC.png",
   },
 ];
 
@@ -166,11 +166,11 @@ export default function Solutions() {
                   hover:border-gray-200
               "
             >
-              <div className="h-60 rounded-2xl overflow-hidden mb-6 bg-gray-100">
+              <div className="h-60 rounded-2xl overflow-hidden mb-6 bg-gray-100 flex items-center justify-center">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover"
+                  className="w-60 h-60 object-cover"
                   draggable={false}
                 />
               </div>

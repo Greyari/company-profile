@@ -7,6 +7,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/animations/scroll/smoothScroll";
+import FloatingChat from "@/components/ChatBot/FloatingChat";
 // import SplashScreen from "@/components/SplashScreen";
 
 const poppins = Poppins({
@@ -32,8 +33,11 @@ export default function RootLayout({
         <Navbar />
         <SmoothScroll>
           {children}
+
           <Footer />
         </SmoothScroll>
+        {/* Global Floating Action Button */}
+        <FloatingChat />
       </body>
     </html>
   );

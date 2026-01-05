@@ -40,17 +40,18 @@ export default function ContactContents() {
     {
       icon: MapPin,
       title: "Address",
-      content: "Batam, Kepulauan Riau, Indonesia",
+      content:
+        "Ruko, Jl. Palm Spring No.B3 No 15, Taman Baloi, Batam Kota, Batam City, Riau Islands",
     },
     {
       icon: Phone,
       title: "Phone",
-      content: "+62 XXX XXXX XXXX",
+      content: "+(62) 778 2102999",
     },
     {
       icon: Mail,
       title: "Email",
-      content: "info@kreatifsystem.com",
+      content: "enquiry@kreatifsystem.com",
     },
     {
       icon: Clock,

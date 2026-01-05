@@ -2,7 +2,7 @@
 
 import { motion, useMotionValue, animate } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { CircleArrowRight } from "lucide-react";
 
 /* =====================
    TYPES
@@ -137,15 +137,16 @@ function SolutionCard({ solution }: { solution: Solution }) {
         <motion.a
           href="#"
           className="
-            mt-4 inline-flex items-center gap-2 text-sm font-medium
-            text-white hover:text-gray-300 transition-colors
-          "
+             mt-4 flex w-full items-center justify-between
+    text-sm font-medium
+    text-white hover:text-gray-300 transition-colors
+  "
           animate={{ opacity: hovered ? 1 : 0 }}
           transition={{ delay: 0.1 }}
         >
           Learn More
           <span className="transition-transform group-hover:translate-x-1">
-            <ArrowRight size={16} strokeWidth={2} />
+            <CircleArrowRight size={46} strokeWidth={1} />
           </span>
         </motion.a>
       </motion.div>

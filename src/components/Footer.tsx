@@ -5,7 +5,7 @@ import {
   MapPin,
   Instagram,
   Linkedin,
-  Twitter,
+  Facebook,
 } from "lucide-react";
 
 /**
@@ -41,9 +41,9 @@ const FOOTER_SECTIONS: FooterSection[] = [
 ];
 
 const CONTACT_INFO = {
-  email: "info@khaed.com",
-  phone: "+62 812 3456 7890",
-  address: "Graha Tech, Lt. 4, Jakarta, Indonesia",
+  email: "enquiry@kreatifsystem.com",
+  phone: "+(62) 778 2102999",
+  address: "Ruko Palm Spring Blok B3 No.15, Batam, Kepulauan Riau, Indonesia",
 };
 
 export default function Footer() {
@@ -55,31 +55,38 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Identity Section */}
           <div className="space-y-6">
-            <h3 className="text-xl font-bold tracking-tight uppercase">
-              PT. Kreatif System Indonesia
+            <h3 className="flex items-center gap-2 text-lg font-bold tracking-tight uppercase">
+              <img
+                src="/images/logo-putih.png"
+                alt="PT. Kreatif System Indonesia"
+                className="w-20 h-20 object-contain"
+                draggable={false}
+              />
+              <span>PT. Kreatif System Indonesia</span>
             </h3>
+
             <p className="text-sm text-zinc-400 leading-relaxed max-w-xs">
-              Empowering modern businesses with high-end integrated security
-              technology and AI-driven surveillance infrastructure.
+              Engaged in IT that serves small, medium and large companies, both
+              private and government as well as various other industries.
             </p>
             <div className="flex space-x-4">
               <Link
-                href="#"
+                href="https://www.instagram.com/kreasiicctvbatam"
                 className="text-zinc-400 hover:text-white transition-colors"
               >
                 <Instagram size={20} />
               </Link>
               <Link
-                href="#"
+                href="https://www.linkedin.com/company/ksibatam/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BVbS7EbYER62oi1j8lWi0vg%3D%3D"
                 className="text-zinc-400 hover:text-white transition-colors"
               >
                 <Linkedin size={20} />
               </Link>
               <Link
-                href="#"
+                href="https://www.facebook.com/kreasiibatamofficial"
                 className="text-zinc-400 hover:text-white transition-colors"
               >
-                <Twitter size={20} />
+                <Facebook size={20} />
               </Link>
             </div>
           </div>

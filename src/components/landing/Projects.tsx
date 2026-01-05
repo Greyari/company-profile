@@ -2,6 +2,8 @@
 // src/components/Projects.tsx
 // ====================
 
+import { CircleArrowRight } from "lucide-react";
+
 // Project data configuration
 const projects = [
   {
@@ -89,34 +91,22 @@ function ProjectCard({ title, description, image }: ProjectCardProps) {
             {description}
           </p>
 
-          {/* Arrow Button */}
           <button
             className="
+              group
               w-12 h-12
-              bg-transparent border border-white
-              rounded-full
               flex items-center justify-center
-              hover:bg-gray-100
-              transition-colors
               shrink-0
-              
             "
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="hover:text-black lucide lucide-arrow-right-icon lucide-arrow-right"
-            >
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
+            <CircleArrowRight
+              size={48}
+              strokeWidth={1}
+              className="
+                transition-transform duration-300 ease-out
+                group-hover:translate-x-1.5
+              "
+            />
           </button>
         </div>
       </div>
