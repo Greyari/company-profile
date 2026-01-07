@@ -66,8 +66,8 @@ export default function Footer() {
             </h3>
 
             <p className="text-sm text-zinc-400 leading-relaxed max-w-xs">
-              Engaged in IT that serves small, medium and large companies, both
-              private and government as well as various other industries.
+              IT company serving small, medium, and large enterprises across
+              various industries.
             </p>
             <div className="flex space-x-4">
               <Link

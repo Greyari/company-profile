@@ -1,19 +1,65 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import HeroBackground from "./HeroBackground";
 import HeroContent from "./HeroContent";
 import HeroNavigation from "./HeroNavigation";
-import { navItems } from "@/components/data/heroData";
+import { navItems } from "@/data/heroData";
+
+const AUTO_ROTATE_INTERVAL = 8000; // 8 seconds
 
 /**
- * Main Hero component with Petronas-style dissolve transition
- * Implements clean, maintainable architecture with separation of concerns
+ * Main Hero component with auto-rotate and manual navigation
+ * Auto-rotates through nav items every 8 seconds
+ * Manual interaction resets the timer
  */
 export default function Hero() {
-  const [activeNav, setActiveNav] = useState(5);
+  const [activeNav, setActiveNav] = useState(1);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
   const activeItem =
-    navItems.find((item) => item.id === activeNav) || navItems[4];
+    navItems.find((item) => item.id === activeNav) || navItems[0];
+
+  /**
+   * Navigate to next item in sequence
+   */
+  const rotateToNext = () => {
+    setActiveNav((current) => {
+      const currentIndex = navItems.findIndex((item) => item.id === current);
+      const nextIndex = (currentIndex + 1) % navItems.length;
+      return navItems[nextIndex].id;
+    });
+  };
+
+  /**
+   * Handle manual navigation with timer reset
+   */
+  const handleManualNavigate = (id: number) => {
+    setActiveNav(id);
+    resetTimer();
+  };
+
+  /**
+   * Clear and restart auto-rotate timer
+   */
+  const resetTimer = () => {
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+    }
+    timerRef.current = setInterval(rotateToNext, AUTO_ROTATE_INTERVAL);
+  };
+
+  /**
+   * Initialize auto-rotate on mount
+   */
+  useEffect(() => {
+    timerRef.current = setInterval(rotateToNext, AUTO_ROTATE_INTERVAL);
+
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+      }
+    };
+  }, []);
 
   return (
     <section
@@ -32,7 +78,7 @@ export default function Hero() {
         <HeroNavigation
           items={navItems}
           activeNav={activeNav}
-          onNavigate={setActiveNav}
+          onNavigate={handleManualNavigate}
         />
       </div>
     </section>

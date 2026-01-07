@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import Image from "next/image";
 import { motion, useMotionValue, animate } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -13,6 +14,20 @@ const CARD_GAP = 24;
 const TOTAL_CARD_WIDTH = CARD_WIDTH + CARD_GAP;
 const EDGE_PADDING = 40;
 const IDLE_DELAY = 5000;
+const MOBILE_BREAKPOINT = 768;
+
+/* =====================
+   CATEGORY MAPPING
+===================== */
+const CATEGORY_SLUGS: Record<string, string> = {
+  CCTV: "cctv",
+  "PABX System": "pabx",
+  HDCVI: "hdcvi",
+  "Audio Paging": "audiopaging",
+  "IP Camera": "ipcamera",
+  "DVR/NVR": "dvrnvr",
+  "Access Control": "accesscontrol",
+};
 
 /* =====================
    DATA
@@ -77,56 +92,121 @@ export default function Solutions() {
   const lastInteraction = useRef(Date.now());
   const [containerWidth, setContainerWidth] = useState(0);
   const [activePage, setActivePage] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [activeCard, setActiveCard] = useState<number | null>(null);
 
-  /* ---------- Layout ---------- */
+  /* ---------- Layout & Responsive ---------- */
   useEffect(() => {
-    const update = () => setContainerWidth(window.innerWidth);
+    const update = () => {
+      setContainerWidth(window.innerWidth);
+      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+    };
     update();
     window.addEventListener("resize", update);
     return () => window.removeEventListener("resize", update);
   }, []);
 
+  /* ---------- Calculate Max Scroll ---------- */
   const maxScroll = useMemo(() => {
+    if (isMobile) {
+      const cardWidth = containerWidth * 0.85;
+      const gap = 16;
+      const totalWidth = solutions.length * (cardWidth + gap);
+      return -(totalWidth - containerWidth);
+    }
     const totalWidth = solutions.length * TOTAL_CARD_WIDTH;
     return -(totalWidth - containerWidth + EDGE_PADDING * 2);
-  }, [containerWidth]);
+  }, [containerWidth, isMobile]);
 
   /* ---------- Pagination ---------- */
   const pageCount = useMemo(() => {
+    if (isMobile) {
+      return solutions.length;
+    }
     const scrollable = Math.abs(maxScroll);
     return Math.max(1, Math.ceil(scrollable / TOTAL_CARD_WIDTH) + 1);
-  }, [maxScroll]);
+  }, [maxScroll, isMobile]);
 
   /* ---------- Track Active Page ---------- */
   useEffect(() => {
     return x.on("change", (latest) => {
-      const page = Math.round(Math.abs(latest) / TOTAL_CARD_WIDTH);
-      setActivePage(Math.min(page, pageCount - 1));
+      if (isMobile) {
+        const cardWidth = containerWidth * 0.85;
+        const gap = 16;
+        const page = Math.round(Math.abs(latest) / (cardWidth + gap));
+        setActivePage(Math.min(page, solutions.length - 1));
+      } else {
+        const page = Math.round(Math.abs(latest) / TOTAL_CARD_WIDTH);
+        setActivePage(Math.min(page, pageCount - 1));
+      }
     });
-  }, [pageCount]);
+  }, [pageCount, x, isMobile, containerWidth]);
 
-  /* ---------- Auto Scroll (SMOOTH) ---------- */
+  /* ---------- Snap to Center on Mobile ---------- */
+  const handleDragEnd = () => {
+    if (!isMobile) return;
+
+    const cardWidth = containerWidth * 0.85;
+    const gap = 16;
+    const currentX = x.get();
+    const nearestIndex = Math.round(Math.abs(currentX) / (cardWidth + gap));
+    const clampedIndex = Math.max(
+      0,
+      Math.min(nearestIndex, solutions.length - 1)
+    );
+    const targetX = -clampedIndex * (cardWidth + gap);
+
+    animate(x, targetX, {
+      type: "spring",
+      stiffness: 300,
+      damping: 30,
+    });
+
+    lastInteraction.current = Date.now();
+  };
+
+  /* ---------- Auto Scroll ---------- */
   useEffect(() => {
     const timer = setInterval(() => {
       if (Date.now() - lastInteraction.current < IDLE_DELAY) return;
 
       const nextPage = activePage + 1;
-      const target =
-        nextPage >= pageCount
-          ? 0
-          : Math.max(maxScroll, -nextPage * TOTAL_CARD_WIDTH);
 
-      animate(x, target, {
-        type: "spring",
-        stiffness: 120,
-        damping: 25,
-      });
+      if (isMobile) {
+        const cardWidth = containerWidth * 0.85;
+        const gap = 16;
+        const target =
+          nextPage >= solutions.length ? 0 : -nextPage * (cardWidth + gap);
+
+        animate(x, target, {
+          type: "spring",
+          stiffness: 120,
+          damping: 25,
+        });
+      } else {
+        const target =
+          nextPage >= pageCount
+            ? 0
+            : Math.max(maxScroll, -nextPage * TOTAL_CARD_WIDTH);
+
+        animate(x, target, {
+          type: "spring",
+          stiffness: 120,
+          damping: 25,
+        });
+      }
 
       lastInteraction.current = Date.now();
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [activePage, pageCount, maxScroll]);
+  }, [activePage, pageCount, maxScroll, x, isMobile, containerWidth]);
+
+  /* ---------- Get Product Link ---------- */
+  const getProductLink = (title: string) => {
+    const slug = CATEGORY_SLUGS[title];
+    return slug ? `/products/${slug}` : "/products";
+  };
 
   /* =====================
      RENDER
@@ -147,46 +227,63 @@ export default function Solutions() {
 
         {/* CAROUSEL */}
         <motion.div
-          className="flex gap-6 pb-12 px-10 cursor-grab active:cursor-grabbing"
+          className="flex gap-4 md:gap-6 pb-12 px-6 md:px-10 cursor-grab active:cursor-grabbing"
           drag="x"
           dragConstraints={{ left: maxScroll, right: 0 }}
           dragElastic={0.08}
           style={{ x }}
           onDragStart={() => (lastInteraction.current = Date.now())}
+          onDragEnd={handleDragEnd}
         >
-          {solutions.map((item) => (
+          {solutions.map((item, index) => (
             <motion.div
               key={item.id}
-              whileHover={{ scale: 1.02 }}
-              className="
-                shrink-0 w-95 rounded-3xl p-6 bg-white
-                 border border-transparent
+              whileHover={!isMobile ? { scale: 1.02 } : {}}
+              whileTap={{ scale: 0.98 }}
+              onTapStart={() => setActiveCard(item.id)}
+              onTap={() => setActiveCard(null)}
+              onTapCancel={() => setActiveCard(null)}
+              className={`
+                shrink-0 rounded-3xl p-6 bg-white
+                border border-transparent
                 transition-all duration-300
-                shadow-none hover:shadow-xl
-                  hover:border-gray-200
-              "
+                shadow-none
+                ${
+                  isMobile
+                    ? "w-[85vw]"
+                    : "w-95 hover:shadow-xl hover:border-gray-200"
+                }
+                ${activeCard === item.id ? "shadow-xl border-gray-200" : ""}
+              `}
             >
-              <div className="h-60 rounded-2xl overflow-hidden mb-6 bg-gray-100 flex items-center justify-center">
-                <img
+              {/* Image */}
+              <div className="relative h-48 md:h-60 rounded-2xl overflow-hidden mb-6 bg-gray-100 flex items-center justify-center">
+                <Image
                   src={item.image}
                   alt={item.title}
-                  className="w-60 h-60 object-cover"
+                  width={240}
+                  height={240}
+                  sizes="(max-width: 768px) 70vw, 240px"
+                  className="object-contain"
                   draggable={false}
+                  priority={index < 2}
                 />
               </div>
 
               <h3 className="text-xl text-black/70 font-bold mb-3">
                 {item.title}
               </h3>
+
               <p className="text-sm text-gray-500 mb-6 line-clamp-3">
                 {item.description}
               </p>
 
               <Link
-                href="#"
-                className="text-sm text-black/50 hover:text-black font-semibold inline-flex items-center gap-2"
+                href={getProductLink(item.title)}
+                className="text-sm text-black/50 hover:text-black font-semibold inline-flex items-center gap-2 transition-colors"
+                onPointerDown={(e) => e.stopPropagation()}
               >
-                See Details
+                See More
                 <ArrowRight size={16} strokeWidth={2} />
               </Link>
             </motion.div>

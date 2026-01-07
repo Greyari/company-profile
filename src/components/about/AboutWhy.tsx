@@ -4,7 +4,7 @@
 
 export default function AboutTeam() {
   return (
-    <section id="why-choose-us" className="py-20 mb-50 bg-white">
+    <section id="why-choose-us" className="py-15 mb-50 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className=" gap-12 items-center">
           <div>

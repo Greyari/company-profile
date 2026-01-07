@@ -5,11 +5,17 @@ import ScrollVelocityRow from "../animations/scroll/scrollVelocity";
 
 export default function Clients() {
   return (
-    <section className="py-24 bg-white">
+    <section className="mb-28">
       <div className="relative  mx-auto">
-        <h2 className="text-4xl text-black font-bold text-center mb-16">
-          Our Clients
-        </h2>
+        <div className="text-center mb-14 px-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-3">
+            Our Clients
+          </h2>
+          <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
+            {" "}
+            Trusted by companies across industries to support their operations.
+          </p>
+        </div>
 
         <div className="relative space-y-10 overflow-hidden">
           {/* LEFT FADE */}

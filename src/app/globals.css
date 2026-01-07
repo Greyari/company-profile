@@ -51,14 +51,14 @@ body {
 }
 
 /* Hide scrollbar - Chrome, Edge, Safari */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   display: none;
-}
+} */
 
 /* Hide scrollbar - Firefox */
-html {
+/* html {
   scrollbar-width: none;
-}
+} */
 
 /* Prevent horizontal scroll bug */
 html,

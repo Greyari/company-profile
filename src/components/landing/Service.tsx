@@ -22,6 +22,7 @@ const CARD_GAP = 24;
 const TOTAL_CARD_WIDTH = CARD_WIDTH + CARD_GAP;
 const SIDE_PADDING = 10;
 const IDLE_DELAY = 5000;
+const AUTO_SCROLL_INTERVAL = 5000;
 
 /* =====================
    DATA
@@ -29,72 +30,83 @@ const IDLE_DELAY = 5000;
 const solutions: Solution[] = [
   {
     id: 1,
-    title: "Attendance & System Control",
+    title: "CCTV & Security System",
     description:
-      "Integrated attendance and access control systems using fingerprint, RFID, or facial recognition to monitor workforce activity and improve operational efficiency.",
-    image:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop",
+      "End-to-end CCTV and security systems providing real-time surveillance, recording, and threat monitoring to enhance safety for residential, commercial, and industrial environments.",
+    image: "/images/test3.jpg",
   },
   {
     id: 2,
-    title: "CCTV & Security System",
+    title: "Attendance & System Control",
     description:
-      "End-to-end CCTV and security solutions providing real-time monitoring, recording, and incident prevention for residential and commercial environments.",
-    image:
-      "https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=600&h=400&fit=crop",
+      "Integrated attendance and access control solutions using fingerprint, RFID, or facial recognition to accurately track workforce activity and improve operational control.",
+    image: "/images/test-009.jpg",
   },
   {
     id: 3,
     title: "IT Support & Maintenance",
     description:
-      "Professional IT support and maintenance services covering hardware, software, and network systems to ensure reliable and secure business operations.",
-    image:
-      "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=600&h=400&fit=crop",
+      "Reliable IT support and maintenance services covering hardware, software, and network infrastructure to ensure stable, secure, and efficient business operations.",
+    image: "/images/test.jpg",
   },
   {
     id: 4,
-    title: "Public Address & Parking Barrier",
+    title: "Public Address, Parking Barrier & Electrical Services",
     description:
-      "Integrated public address systems and automated parking barriers designed to improve communication, traffic control, and facility management.",
-    image:
-      "https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=600&h=400&fit=crop",
+      "Integrated public address systems, automated parking barriers, and electrical services designed to improve communication, traffic management, and facility operations.",
+    image: "/images/test4.jpg",
   },
   {
     id: 5,
-    title: "Electrical Services",
+    title: "PABX & Communication Systems",
     description:
-      "Comprehensive electrical installation and maintenance services supporting security systems, networks, and building infrastructure.",
-    image:
-      "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop",
+      "Professional PABX and communication system solutions enabling clear, reliable internal and external communication for offices, buildings, and enterprise environments.",
+    image: "/images/test-880.jpg",
   },
   {
     id: 6,
     title: "Alarm & Safety Solutions",
     description:
-      "Alarm and safety systems including fire alarms, intrusion detection, and emergency alerts to protect people, assets, and facilities.",
-    image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
+      "Comprehensive alarm and safety systems including fire alarms, intrusion detection, and emergency alert solutions to protect people, assets, and critical facilities.",
+    image: "/images/test2.jpg",
   },
 ];
+
+/* =====================
+   HOOKS
+===================== */
+const useContainerWidth = () => {
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return width;
+};
 
 /* =====================
    CARD
 ===================== */
 function SolutionCard({ solution }: { solution: Solution }) {
   const [hovered, setHovered] = useState(false);
+  const handleTouchStart = () => setHovered(true);
+  const handleTouchEnd = () => setHovered(false);
 
   return (
     <motion.div
-      className="
-        relative shrink-0 w-87.5 h-112.5 rounded-2xl overflow-hidden
-        border border-transparent bg-white
-        shadow-none hover:shadow-xl hover:border-gray-200
-        transition-all duration-300
-      "
+      className="relative shrink-0 w-87.5 h-112.5 rounded-2xl overflow-hidden border border-transparent bg-white shadow-lg hover:shadow-2xl hover:border-gray-200 transition-shadow duration-300"
       whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 1.02 }}
       onHoverStart={() => setHovered(true)}
       onHoverEnd={() => setHovered(false)}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
+      {/* Background Image */}
       <img
         src={solution.image}
         alt={solution.title}
@@ -102,52 +114,61 @@ function SolutionCard({ solution }: { solution: Solution }) {
         draggable={false}
       />
 
+      {/* Glass Morphism Overlay */}
       <motion.div
         className="absolute inset-0 p-6 flex flex-col justify-end"
+        initial={false}
         animate={{
+          backdropFilter: hovered ? "blur(4px)" : "blur(0px)",
           background: hovered
-            ? "linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.7))"
-            : "linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.4), transparent)",
+            ? "linear-gradient(to top, rgba(0,0,0,1.0), rgba(0,0,0,0.7), rgba(0,0,0,0.9))"
+            : "linear-gradient(to top, rgba(0,0,0,1.0), rgba(0,0,0,0.5), rgba(0,0,0,0.8))",
         }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        {/* Card Title */}
+        {/* Title */}
         <motion.h3
-          className="text-white text-lg  mb-3"
+          className="text-white text-lg font-normal mb-3"
           initial={false}
           animate={{
             textAlign: hovered ? "left" : "center",
+            y: hovered ? 0 : 40,
           }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{
+            duration: 0.25,
+            ease: "easeOut",
+          }}
         >
           {solution.title}
         </motion.h3>
 
+        {/* Description */}
         <motion.p
-          className="text-gray-200 text-sm leading-relaxed overflow-hidden"
+          className="text-gray-200 text-sm leading-relaxed"
+          initial={{ opacity: 0, height: 0 }}
           animate={{
             opacity: hovered ? 1 : 0,
             height: hovered ? "auto" : 0,
           }}
-          transition={{ duration: 0.25 }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
         >
           {solution.description}
         </motion.p>
 
+        {/* Learn More Link */}
         <motion.a
           href="#"
-          className="
-             mt-4 flex w-full items-center justify-between
-    text-sm font-medium
-    text-white hover:text-gray-300 transition-colors
-  "
+          className="mt-4 flex items-center justify-between text-sm font-medium text-white hover:text-gray-300 transition-colors group"
+          initial={{ opacity: 0 }}
           animate={{ opacity: hovered ? 1 : 0 }}
-          transition={{ delay: 0.1 }}
+          transition={{ delay: hovered ? 0.1 : 0, duration: 0.2 }}
         >
           Learn More
-          <span className="transition-transform group-hover:translate-x-1">
-            <CircleArrowRight size={46} strokeWidth={1} />
-          </span>
+          <CircleArrowRight
+            size={46}
+            strokeWidth={1}
+            className="transition-transform group-hover:translate-x-1"
+          />
         </motion.a>
       </motion.div>
     </motion.div>
@@ -160,39 +181,51 @@ function SolutionCard({ solution }: { solution: Solution }) {
 export default function Solutions() {
   const x = useMotionValue(0);
   const idleRef = useRef(Date.now());
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const [containerWidth, setContainerWidth] = useState(0);
+  const containerWidth = useContainerWidth();
   const [activePage, setActivePage] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
 
-  /* ---------- Layout ---------- */
-  useEffect(() => {
-    const update = () => setContainerWidth(window.innerWidth);
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
-
+  // Calculate max scroll boundary
   const maxScroll = useMemo(() => {
     const totalWidth = solutions.length * TOTAL_CARD_WIDTH;
     return -(totalWidth - containerWidth + SIDE_PADDING * 2);
   }, [containerWidth]);
 
+  // Calculate total pages
   const pageCount = useMemo(() => {
     return Math.max(1, Math.ceil(Math.abs(maxScroll) / TOTAL_CARD_WIDTH) + 1);
   }, [maxScroll]);
 
-  /* ---------- Active Page ---------- */
+  // Update active page based on scroll position
   useEffect(() => {
     return x.on("change", (latest) => {
       const page = Math.round(Math.abs(latest) / TOTAL_CARD_WIDTH);
       setActivePage(Math.min(page, pageCount - 1));
     });
-  }, [pageCount]);
+  }, [x, pageCount]);
 
-  /* ---------- Auto Scroll ---------- */
+  // Snap to nearest card on drag end
+  const handleDragEnd = () => {
+    setIsDragging(false);
+    idleRef.current = Date.now();
+
+    const current = x.get();
+    const nearest = Math.round(current / TOTAL_CARD_WIDTH) * TOTAL_CARD_WIDTH;
+    const target = Math.max(maxScroll, Math.min(0, nearest));
+
+    animate(x, target, {
+      type: "spring",
+      stiffness: 300,
+      damping: 30,
+    });
+  };
+
+  // Auto scroll functionality
   useEffect(() => {
     const timer = setInterval(() => {
-      if (Date.now() - idleRef.current < IDLE_DELAY) return;
+      if (isDragging || Date.now() - idleRef.current < IDLE_DELAY) return;
 
       const next = activePage + 1;
       const target =
@@ -205,45 +238,65 @@ export default function Solutions() {
       });
 
       idleRef.current = Date.now();
-    }, 1000);
+    }, AUTO_SCROLL_INTERVAL);
 
     return () => clearInterval(timer);
-  }, [activePage, pageCount, maxScroll]);
+  }, [activePage, pageCount, maxScroll, x, isDragging]);
 
-  /* =====================
-     RENDER
-  ===================== */
+  // Manual pagination click
+  const handlePageClick = (pageIndex: number) => {
+    const target = Math.max(maxScroll, -pageIndex * TOTAL_CARD_WIDTH);
+    animate(x, target, {
+      type: "spring",
+      stiffness: 120,
+      damping: 26,
+    });
+    idleRef.current = Date.now();
+  };
+
   return (
     <section className="py-24 bg-white overflow-hidden">
-      <h2 className="text-4xl font-bold text-black text-center mb-4">
-        Our Services
-      </h2>
-      <p className="text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-        We provide comprehensive security and IT solutions tailored to your
-        business needs.
-      </p>
+      {/* Header */}
+      <div className="px-4 md:px-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-4">
+          Our Solutions
+        </h2>
+        <p className="text-gray-600 text-center mb-12 max-w-3xl mx-auto text-sm md:text-base">
+          We provide comprehensive security and IT solutions tailored to your
+          business needs.
+        </p>
+      </div>
 
+      {/* Carousel */}
       <motion.div
+        ref={containerRef}
         className="flex gap-6 px-2.5 pb-10 cursor-grab active:cursor-grabbing"
         drag="x"
         dragConstraints={{ left: maxScroll, right: 0 }}
         dragElastic={0.08}
+        dragMomentum={false}
         style={{ x }}
-        onDragStart={() => (idleRef.current = Date.now())}
+        onDragStart={() => {
+          setIsDragging(true);
+          idleRef.current = Date.now();
+        }}
+        onDragEnd={handleDragEnd}
       >
-        {solutions.map((s) => (
-          <SolutionCard key={s.id} solution={s} />
+        {solutions.map((solution) => (
+          <SolutionCard key={solution.id} solution={solution} />
         ))}
       </motion.div>
 
-      {/* Pagination */}
-      <div className="flex justify-center gap-2 mt-6">
-        {Array.from({ length: pageCount }).map((_, i) => (
-          <div
-            key={i}
+      {/* Pagination Dots */}
+      <div className="flex justify-center gap-2 mt-6 px-4">
+        {Array.from({ length: pageCount }).map((_, index) => (
+          <button
+            key={index}
+            onClick={() => handlePageClick(index)}
             className={`h-2 rounded-full transition-all duration-300 ${
-              i === activePage ? "w-8 bg-gray-800" : "w-2 bg-gray-300"
+              index === activePage ? "w-8 bg-gray-800" : "w-2 bg-gray-300"
             }`}
+            aria-label={`Go to page ${index + 1}`}
           />
         ))}
       </div>

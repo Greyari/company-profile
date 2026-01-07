@@ -3,6 +3,8 @@
 // ==========================================
 
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutStory() {
   return (
@@ -56,18 +58,23 @@ export default function AboutStory() {
 
               <div
                 className="
+                group
                   mt-20 relative w-full
-                  rounded-2xl shadow-2xl
+                  rounded-2xl 
                   overflow-hidden
                 "
               >
                 {/* Background Image */}
-                <div
+                <Image
+                  src="/images/cctv-about.webp"
+                  alt="CCTV Security System"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="
-                    absolute inset-0
-                    bg-[url('/images/cctv-about.webp')]
-                    bg-cover 
-                    bg-position-[100%_0.5%]
+                    object-cover object-[100%_0.5%]
+                    transition-transform duration-500 ease-out
+                    group-hover:scale-105
                   "
                 />
                 {/* Black Gradient Overlay */}
@@ -75,8 +82,8 @@ export default function AboutStory() {
                   className="
                     absolute inset-0
                     bg-linear-to-t
-                    from-black/90
-                    via-black/30
+                    from-black/40
+                    via-black/5
                     to-transparent
                   "
                 />
@@ -84,8 +91,8 @@ export default function AboutStory() {
                   className="
                     absolute inset-0
                     bg-linear-to-b
-                    from-black/90
-                    via-black/20
+                    from-black/40
+                    via-black/5
                     to-transparent
                   "
                 />
@@ -139,10 +146,14 @@ export default function AboutStory() {
                 </div>
 
                 <div className="pt-4">
-                  <button className="group flex items-center justify-between px-5 py-3 border border-gray-400 rounded-full transition-all duration-300 hover:bg-black hover:text-white hover:border-black min-w-50">
-                    <span className="text-sm font-medium">See Our Product</span>
-                    <ArrowRight className="ml-5" strokeWidth={1.5} />
-                  </button>
+                  <Link href="/products">
+                    <button className="group flex items-center justify-between px-5 py-3 border border-gray-400 rounded-full transition-all duration-300 hover:bg-black hover:text-white hover:border-black min-w-50">
+                      <span className="text-sm font-medium">
+                        See Our Product
+                      </span>
+                      <ArrowRight className="ml-5" strokeWidth={1.5} />
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

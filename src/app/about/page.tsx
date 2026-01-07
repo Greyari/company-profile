@@ -11,15 +11,9 @@ export default function AboutPage() {
   return (
     <main>
       <AboutHero />
-      <ScrollReveal>
-        <AboutStory />
-      </ScrollReveal>
-      <ScrollReveal>
-        <AboutValues />
-      </ScrollReveal>
-      <ScrollReveal>
-        <AboutTeam />
-      </ScrollReveal>
+      <AboutStory />
+      <AboutValues />
+      <AboutTeam />
     </main>
   );
 }

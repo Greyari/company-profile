@@ -3,15 +3,12 @@
 import { MessageCircle, X, Send, Bot } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect, memo } from "react";
-import { findAnswer } from "./utils";
+import { processUserInput } from "./engine";
+import type { ChatContext, ChatMessage } from "./type";
 
-interface Message {
-  role: "user" | "bot";
-  text: string;
-  hasAnimated?: boolean; // flag supaya animasi cuma sekali
-}
-
-// Sub-komponen buat efek ngetik ala ChatGPT
+/**
+ * Typewriter effect component for bot messages
+ */
 const TypewriterMessage = memo(
   ({ text, onFinish }: { text: string; onFinish?: () => void }) => {
     const [displayedText, setDisplayedText] = useState("");
@@ -22,10 +19,10 @@ const TypewriterMessage = memo(
         const timeout = setTimeout(() => {
           setDisplayedText((prev) => prev + text[currentIndex]);
           setCurrentIndex((prev) => prev + 1);
-        }, 15); // Kecepatan ngetik
+        }, 15);
         return () => clearTimeout(timeout);
       } else {
-        onFinish?.(); // panggil ketika selesai
+        onFinish?.();
       }
     }, [currentIndex, text, onFinish]);
 
@@ -39,16 +36,18 @@ export default function FloatingChat() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
+  const [context, setContext] = useState<ChatContext>({ messageCount: 0 });
+  const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: "bot",
       text: "Halo! Ada yang bisa kami bantu seputar layanan Kreatif System?",
-      hasAnimated: true, // pesan awal langsung muncul tanpa animasi
+      hasAnimated: true,
+      timestamp: Date.now(),
     },
   ]);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Scroll otomatis
+  // Auto-scroll to bottom when messages update
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTo({
@@ -61,29 +60,42 @@ export default function FloatingChat() {
   const handleSend = () => {
     if (!input.trim()) return;
 
-    const userMsg: Message = { role: "user", text: input };
+    const userMsg: ChatMessage = {
+      role: "user",
+      text: input,
+      timestamp: Date.now(),
+    };
+
     setMessages((prev) => [...prev, userMsg]);
     setInput("");
     setIsTyping(true);
 
+    // Simulate processing delay
     setTimeout(() => {
-      const botReply = findAnswer(input);
-      setMessages((prev) => [
-        ...prev,
-        { role: "bot", text: botReply, hasAnimated: false }, // baru muncul = false
-      ]);
+      const result = processUserInput(input, context);
+
+      const botMsg: ChatMessage = {
+        role: "bot",
+        text: result.response,
+        hasAnimated: false,
+        timestamp: Date.now(),
+      };
+
+      setMessages((prev) => [...prev, botMsg]);
+      setContext(result.updatedContext);
       setIsTyping(false);
-    }, 1000);
+    }, 800);
   };
 
   return (
     <>
-      {/* Tombol Chat */}
+      {/* Chat Button */}
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setOpen(true)}
         className="fixed bottom-6 right-6 p-4 bg-zinc-950 text-white rounded-full shadow-[0_10px_40px_rgba(0,0,0,0.3)] z-50 border border-zinc-800"
+        aria-label="Open chat"
       >
         <MessageCircle size={24} />
       </motion.button>
@@ -114,9 +126,9 @@ export default function FloatingChat() {
                   <motion.div
                     initial={{ rotate: -20 }}
                     animate={{ rotate: 0 }}
-                    className="w-10 h-10 bg-white text-zinc-950 rounded-xl flex items-center justify-center font-black text-sm tracking-tighter"
+                    className="w-10 h-10 bg-white text-zinc-950 rounded-xl flex items-center justify-center"
                   >
-                    <Bot strokeWidth="2" />
+                    <Bot strokeWidth={2} />
                   </motion.div>
                   <div>
                     <p className="font-semibold text-[15px] leading-none tracking-tight">
@@ -131,6 +143,7 @@ export default function FloatingChat() {
                 <button
                   onClick={() => setOpen(false)}
                   className="p-2 hover:bg-white/10 rounded-full transition-colors text-zinc-400 hover:text-white"
+                  aria-label="Close chat"
                 >
                   <X size={18} />
                 </button>
@@ -152,7 +165,7 @@ export default function FloatingChat() {
                         damping: 20,
                         stiffness: 200,
                       }}
-                      key={i}
+                      key={`${msg.timestamp}-${i}`}
                       className={`flex ${
                         msg.role === "user" ? "justify-end" : "justify-start"
                       }`}
@@ -239,6 +252,7 @@ export default function FloatingChat() {
                     onClick={handleSend}
                     disabled={!input.trim() || isTyping}
                     className="p-2 bg-zinc-950 text-white rounded-full hover:bg-zinc-800 transition-all disabled:opacity-30"
+                    aria-label="Send message"
                   >
                     <Send size={16} />
                   </button>

@@ -4,15 +4,14 @@
 import ProductHero from "@/components/products/ProductHero";
 import ScrollReveal from "@/components/animations/scroll/scrollReveal";
 import ProductCard from "@/components/products/ProductContent";
+import ProductContent from "@/components/products/ProductContent";
 
 // ==========================================
 export default function ProductsPage() {
   return (
     <main>
       <ProductHero />
-      <ScrollReveal>
-        <ProductCard />
-      </ScrollReveal>
+      <ProductContent />
     </main>
   );
 }

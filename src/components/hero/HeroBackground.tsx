@@ -20,7 +20,7 @@ export default function HeroBackground({
     <>
       {/* Background Layers Stack */}
       <div className="absolute inset-0">
-        {items.map((item, index) => (
+        {items.map((item) => (
           <BackgroundLayer
             key={item.id}
             imageUrl={item.image}

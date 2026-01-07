@@ -16,23 +16,19 @@ type Props = {
   direction?: 1 | -1;
   velocity?: number;
 };
-
-function useElementWidth(ref: React.RefObject<HTMLDivElement | null>) {
+function useContentWidth(ref: React.RefObject<HTMLDivElement | null>) {
   const [width, setWidth] = useState(0);
 
   useLayoutEffect(() => {
-    function updateWidth() {
+    const update = () => {
       if (ref.current) {
-        const firstChild = ref.current.firstElementChild as HTMLElement;
-        if (firstChild) {
-          setWidth(firstChild.offsetWidth);
-        }
+        setWidth(ref.current.scrollWidth / 2);
       }
-    }
-    updateWidth();
-    window.addEventListener("resize", updateWidth);
-    return () => window.removeEventListener("resize", updateWidth);
-  }, [ref]);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
 
   return width;
 }
@@ -56,7 +52,7 @@ export default function ScrollVelocityRow({
   });
 
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const singleItemWidth = useElementWidth(wrapperRef);
+  const singleItemWidth = useContentWidth(wrapperRef);
 
   const x = useTransform(baseX, (v) => {
     if (singleItemWidth === 0) return 0;
@@ -92,22 +88,22 @@ export default function ScrollVelocityRow({
         className="flex will-change-transform"
       >
         <div className="flex shrink-0 items-center pr-8">
-          <img src={src} alt="clients" className="h-20 md:h-24 lg:h-28" />
+          <img src={src} alt="clients" className="h-15 md:h-18 lg:h-20" />
         </div>
         <div className="flex shrink-0 items-center pr-8">
-          <img src={src} alt="clients" className="h-20 md:h-24 lg:h-28" />
+          <img src={src} alt="clients" className="h-15 md:h-18 lg:h-20" />
         </div>
         <div className="flex shrink-0 items-center pr-8">
-          <img src={src} alt="clients" className="h-20 md:h-24 lg:h-28" />
+          <img src={src} alt="clients" className="h-15 md:h-18 lg:h-20" />
         </div>
         <div className="flex shrink-0 items-center pr-8">
-          <img src={src} alt="clients" className="h-20 md:h-24 lg:h-28" />
+          <img src={src} alt="clients" className="h-15 md:h-18 lg:h-20" />
         </div>
         <div className="flex shrink-0 items-center pr-8">
-          <img src={src} alt="clients" className="h-20 md:h-24 lg:h-28" />
+          <img src={src} alt="clients" className="h-15 md:h-18 lg:h-20" />
         </div>
         <div className="flex shrink-0 items-center pr-8">
-          <img src={src} alt="clients" className="h-20 md:h-24 lg:h-28" />
+          <img src={src} alt="clients" className="h-15 md:h-18 lg:h-20" />
         </div>
       </motion.div>
     </div>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/lib/fadeIn";
+import Image from "next/image";
 
 /**
  * About Section
@@ -16,12 +17,17 @@ export default function About() {
     <section
       className="
         relative min-h-screen flex items-center
-        bg-[url('/images/hero/about.webp')]
-        bg-cover bg-no-repeat
-        bg-position-[100%_80%]
         overflow-hidden
       "
     >
+      <Image
+        src="/images/hero/about.webp"
+        alt="About Background"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-[100%_80%]"
+      />
       {/* =========================
           Gradient & Blur Overlays
           ========================= */}

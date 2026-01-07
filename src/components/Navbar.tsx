@@ -84,12 +84,13 @@ export default function Navbar() {
 
   const dropdownItems = {
     "/products": [
+      { label: "All Products", href: "/products" },
       { label: "CCTV", href: "/products/cctv" },
       { label: "PABX", href: "/products/pabx" },
       { label: "HDCVI", href: "/products/hdcvi" },
-      { label: "Audio Paging", href: "/products/audio-paging" },
-      { label: "IP Camera", href: "/products/ip-camera" },
-      { label: "Video Recorder", href: "/products/video-recorder" },
+      { label: "Audio Paging", href: "/products/audiopaging" },
+      { label: "IP Camera", href: "/products/ipcamera" },
+      { label: "Video Recorder", href: "/products/dvrnvr" },
     ],
   };
 
@@ -235,7 +236,7 @@ export default function Navbar() {
                 onMouseEnter={() => handleDropdownEnter("language")}
                 onMouseLeave={handleDropdownLeave}
               >
-                <button
+                {/* <button
                   className={`relative text-sm font-normal transition-all duration-300 flex items-center gap-1 ${
                     !isWhiteBg
                       ? "text-white"
@@ -261,9 +262,9 @@ export default function Navbar() {
                     <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
                     <path d="M2 12h20" />
                   </svg>
-                </button>
+                </button> */}
 
-                {openDropdown === "language" && (
+                {/* {openDropdown === "language" && (
                   <div
                     onMouseEnter={() => {
                       if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -277,7 +278,7 @@ export default function Navbar() {
                       EN
                     </button>
                   </div>
-                )}
+                )} */}
               </div>
             </div>
 

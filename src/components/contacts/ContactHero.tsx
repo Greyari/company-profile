@@ -5,18 +5,19 @@
 
 import { fadeIn } from "@/lib/fadeIn";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function ContactHero() {
   return (
-    <section
-      className="
-          relative flex items-center
-          bg-[url('/images/hero/contact-hero.webp')]
-          bg-cover bg-no-repeat
-          h-[50vh] min-h-100
-          bg-position-[100%_75%]
-        "
-    >
+    <section className="relative flex items-center h-[50vh] min-h-100 overflow-hidden">
+      <Image
+        src="/images/hero/contact-hero.webp"
+        alt="About Kreatif System"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+      />
       <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/40 to-black/10" />
       <div className="absolute inset-0 bg-linear-to-l from-black/50 via-black/10 to-transparent" />
       <div className="absolute inset-0 bg-linear-to-b from-black/50 via-black/10 to-transparent" />

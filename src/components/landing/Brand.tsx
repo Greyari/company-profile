@@ -6,7 +6,7 @@ import ScrollVelocityRow from "../animations/scroll/scrollVelocity";
 export default function Brand() {
   return (
     <section>
-      <div className="relative  mx-auto mt-50">
+      <div className="relative  mx-auto mt-5 mb-15">
         <h2 className="text-4xl text-black font-bold text-center mb-16">
           Our Brands
         </h2>

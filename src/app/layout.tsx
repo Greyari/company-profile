@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/animations/scroll/smoothScroll";
 import FloatingChat from "@/components/ChatBot/FloatingChat";
+import SplashScreen from "@/components/SplashScreen";
 // import SplashScreen from "@/components/SplashScreen";
 
 const poppins = Poppins({
@@ -30,6 +31,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.variable} font-sans bg-white`}>
         {/* <SplashScreen /> */}
+        <SplashScreen />
+
         <Navbar />
         <SmoothScroll>
           {children}
