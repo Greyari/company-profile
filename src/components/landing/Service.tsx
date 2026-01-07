@@ -3,6 +3,7 @@
 import { motion, useMotionValue, animate } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { CircleArrowRight } from "lucide-react";
+import Link from "next/link";
 
 /* =====================
    TYPES
@@ -12,6 +13,7 @@ interface Solution {
   title: string;
   description: string;
   image: string;
+  link: string;
 }
 
 /* =====================
@@ -34,6 +36,7 @@ const solutions: Solution[] = [
     description:
       "End-to-end CCTV and security systems providing real-time surveillance, recording, and threat monitoring to enhance safety for residential, commercial, and industrial environments.",
     image: "/images/test3.jpg",
+    link: "/access-control",
   },
   {
     id: 2,
@@ -41,6 +44,7 @@ const solutions: Solution[] = [
     description:
       "Integrated attendance and access control solutions using fingerprint, RFID, or facial recognition to accurately track workforce activity and improve operational control.",
     image: "/images/test-009.jpg",
+    link: "/access-control",
   },
   {
     id: 3,
@@ -48,6 +52,7 @@ const solutions: Solution[] = [
     description:
       "Reliable IT support and maintenance services covering hardware, software, and network infrastructure to ensure stable, secure, and efficient business operations.",
     image: "/images/test.jpg",
+    link: "/access-control",
   },
   {
     id: 4,
@@ -55,6 +60,7 @@ const solutions: Solution[] = [
     description:
       "Integrated public address systems, automated parking barriers, and electrical services designed to improve communication, traffic management, and facility operations.",
     image: "/images/test4.jpg",
+    link: "/access-control",
   },
   {
     id: 5,
@@ -62,6 +68,7 @@ const solutions: Solution[] = [
     description:
       "Professional PABX and communication system solutions enabling clear, reliable internal and external communication for offices, buildings, and enterprise environments.",
     image: "/images/test-880.jpg",
+    link: "/access-control",
   },
   {
     id: 6,
@@ -69,6 +76,7 @@ const solutions: Solution[] = [
     description:
       "Comprehensive alarm and safety systems including fire alarms, intrusion detection, and emergency alert solutions to protect people, assets, and critical facilities.",
     image: "/images/test2.jpg",
+    link: "/access-control",
   },
 ];
 
@@ -156,20 +164,21 @@ function SolutionCard({ solution }: { solution: Solution }) {
         </motion.p>
 
         {/* Learn More Link */}
-        <motion.a
-          href="#"
-          className="mt-4 flex items-center justify-between text-sm font-medium text-white hover:text-gray-300 transition-colors group"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: hovered ? 1 : 0 }}
-          transition={{ delay: hovered ? 0.1 : 0, duration: 0.2 }}
-        >
-          Learn More
-          <CircleArrowRight
-            size={46}
-            strokeWidth={1}
-            className="transition-transform group-hover:translate-x-1"
-          />
-        </motion.a>
+        <Link href={solution.link}>
+          <motion.div
+            className="mt-4 flex items-center justify-between text-sm font-medium text-white hover:text-gray-300 transition-colors group"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: hovered ? 1 : 0 }}
+            transition={{ delay: hovered ? 0.1 : 0, duration: 0.2 }}
+          >
+            Learn More
+            <CircleArrowRight
+              size={46}
+              strokeWidth={1}
+              className="transition-transform group-hover:translate-x-1"
+            />
+          </motion.div>
+        </Link>
       </motion.div>
     </motion.div>
   );
