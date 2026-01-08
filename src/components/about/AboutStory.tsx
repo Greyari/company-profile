@@ -144,7 +144,6 @@ export default function AboutStory() {
                     that align with their operational goals.
                   </p>
                 </div>
-
                 <div className="pt-4">
                   <Link href="/products">
                     <button className="group flex items-center justify-between px-5 py-3 border border-gray-400 rounded-full transition-all duration-300 hover:bg-black hover:text-white hover:border-black min-w-50">

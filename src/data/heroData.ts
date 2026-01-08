@@ -32,7 +32,7 @@ export const navItems: NavItem[] = [
   {
     id: 4,
     label: "Smart Security Infrastructure",
-    image: "/images/smart-secure.webp",
+    image: "/images/cctv-monitor.jpg",
     title: "Public Address, Alarm & Parking Systems",
     subtitle:
       "Integrated PA systems, alarm solutions, and parking barriers for efficient facility management",

@@ -36,7 +36,7 @@ const solutions: Solution[] = [
     description:
       "End-to-end CCTV and security systems providing real-time surveillance, recording, and threat monitoring to enhance safety for residential, commercial, and industrial environments.",
     image: "/images/test3.jpg",
-    link: "/access-control",
+    link: "/cctv",
   },
   {
     id: 2,
@@ -52,7 +52,7 @@ const solutions: Solution[] = [
     description:
       "Reliable IT support and maintenance services covering hardware, software, and network infrastructure to ensure stable, secure, and efficient business operations.",
     image: "/images/test.jpg",
-    link: "/access-control",
+    link: "/it-support",
   },
   {
     id: 4,
@@ -60,7 +60,7 @@ const solutions: Solution[] = [
     description:
       "Integrated public address systems, automated parking barriers, and electrical services designed to improve communication, traffic management, and facility operations.",
     image: "/images/test4.jpg",
-    link: "/access-control",
+    link: "/public-address",
   },
   {
     id: 5,
@@ -68,7 +68,7 @@ const solutions: Solution[] = [
     description:
       "Professional PABX and communication system solutions enabling clear, reliable internal and external communication for offices, buildings, and enterprise environments.",
     image: "/images/test-880.jpg",
-    link: "/access-control",
+    link: "/pabx",
   },
   {
     id: 6,
@@ -76,7 +76,7 @@ const solutions: Solution[] = [
     description:
       "Comprehensive alarm and safety systems including fire alarms, intrusion detection, and emergency alert solutions to protect people, assets, and critical facilities.",
     image: "/images/test2.jpg",
-    link: "/access-control",
+    link: "/alarm",
   },
 ];
 
@@ -245,7 +245,6 @@ export default function Solutions() {
         stiffness: 120,
         damping: 26,
       });
-
       idleRef.current = Date.now();
     }, AUTO_SCROLL_INTERVAL);
 

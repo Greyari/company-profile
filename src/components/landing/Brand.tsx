@@ -1,15 +1,21 @@
 // ====================
-// src/components/Brand.tsx
+// src/components/Clients.tsx
 // ====================
 import ScrollVelocityRow from "../animations/scroll/scrollVelocity";
 
-export default function Brand() {
+export default function Brands() {
   return (
-    <section>
-      <div className="relative  mx-auto mt-5 mb-15">
-        <h2 className="text-4xl text-black font-bold text-center mb-16">
-          Our Brands
-        </h2>
+    <section className="mb-28">
+      <div className="relative  mx-auto">
+        <div className="text-center mb-14 px-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-3">
+            Our Brands
+          </h2>
+          <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
+            {" "}
+            Trusted by companies across industries to support their operations.
+          </p>
+        </div>
 
         <div className="relative space-y-10 overflow-hidden">
           {/* LEFT FADE */}

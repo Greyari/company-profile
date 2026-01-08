@@ -3,36 +3,36 @@
 // ====================
 
 import { CircleArrowRight } from "lucide-react";
-
+import Link from "next/link";
 // Project data configuration
 const projects = [
   {
     title: "Factory",
     description:
-      "Educational institute and vocational engineering for students of SMKN 8 Malang.",
-    image:
-      "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80",
+      "Integrated IT and security solutions for factories, supporting operational monitoring, and infrastructure management.",
+    image: "/images/factory.jpg",
+    link: "/factory",
   },
   {
     title: "Construction Site",
     description:
-      "Warehouse area that provides industrial, residential and office building.",
-    image:
-      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80",
+      "Technology and security systems for construction sites to support project monitoring, and site operations.",
+    image: "/images/construction.jpg",
+    link: "/construction",
   },
   {
     title: "Apartment & Hotel",
     description:
-      "Located in the heart of our city Malang, a residential building.",
-    image:
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
+      "Comprehensive IT and security solutions for apartments and hotels, including access systems, and facility management.",
+    image: "/images/apart.jpg",
+    link: "/apart",
   },
   {
     title: "School",
     description:
-      "Educational institution and science laboratory for students of Andalusia.",
-    image:
-      "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&q=80",
+      "IT infrastructure and security solutions for schools to support safety, communication, and daily operations.",
+    image: "/images/school.jpg",
+    link: "/school",
   },
 ];
 
@@ -51,6 +51,7 @@ export default function Projects() {
             title={project.title}
             description={project.description}
             image={project.image}
+            link={project.link}
           />
         ))}
       </div>
@@ -65,51 +66,53 @@ interface ProjectCardProps {
   title: string;
   description: string;
   image: string;
+  link: string;
 }
 
-function ProjectCard({ title, description, image }: ProjectCardProps) {
+function ProjectCard({ title, description, image, link }: ProjectCardProps) {
   return (
-    <div className="relative h-140 overflow-hidden group cursor-pointer">
-      {/* Background Image */}
-      <img
-        src={image}
-        alt={title}
-        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-      />
+    <Link href={link}>
+      <div className="relative h-140 overflow-hidden group cursor-pointer">
+        {/* Background Image */}
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent" />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-linear-to-t from-black via-black/60 to-transparent" />
 
-      {/* Content Container */}
-      <div className="absolute bottom-10 left-0 right-0 p-6 text-white">
-        {/* Title */}
-        <h3 className="text-2xl font-medium mb-1">{title}</h3>
+        {/* Content Container */}
+        <div className="absolute bottom-10 left-0 right-0 p-6 text-white">
+          {/* Title */}
+          <h3 className="text-2xl font-medium mb-1">{title}</h3>
 
-        <div className="flex items-center justify-between gap-4">
-          {/* Description */}
-          <p className="text-sm font-light text-gray-200 leading-relaxed flex-1">
-            {description}
-          </p>
-
-          <button
-            className="
+          <div className="flex items-center justify-between gap-4">
+            {/* Description */}
+            <p className="text-sm font-light text-gray-200 leading-relaxed flex-1">
+              {description}
+            </p>
+            <button
+              className="
               group
               w-12 h-12
               flex items-center justify-center
               shrink-0
             "
-          >
-            <CircleArrowRight
-              size={48}
-              strokeWidth={1}
-              className="
+            >
+              <CircleArrowRight
+                size={48}
+                strokeWidth={1}
+                className="
                 transition-transform duration-300 ease-out
                 group-hover:translate-x-1.5
               "
-            />
-          </button>
+              />
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
