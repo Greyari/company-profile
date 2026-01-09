@@ -27,7 +27,7 @@ export default function SplashScreen({ show }: SplashScreenProps) {
             {/* Logo */}
             <div className="relative w-32 h-32 sm:w-40 sm:h-40">
               <Image
-                src="/images/logo-ksi-hitam-2.png"
+                src="/images/logo/logo-ksi-hitam-2.png"
                 alt="PT. Kreatif System Indonesia"
                 fill
                 priority

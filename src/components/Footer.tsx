@@ -32,10 +32,10 @@ const FOOTER_SECTIONS: FooterSection[] = [
   {
     title: "Solutions",
     links: [
-      { label: "Attendance System", href: "/attendance" },
+      { label: "Access Control", href: "/access-control" },
       { label: "CCTV & Security", href: "/cctv" },
       { label: "IT Support", href: "/it-support" },
-      { label: "Access Control", href: "/access-control" },
+      { label: "PABX", href: "/pabx" },
     ],
   },
 ];

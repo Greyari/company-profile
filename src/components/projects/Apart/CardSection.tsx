@@ -43,7 +43,8 @@ const InnovativeSection = memo(function InnovativeSection() {
         <div className="hidden lg:flex lg:w-[45%] lg:items-center">
           <div className="relative w-full h-150">
             <Image
-              src="/images/cctv-about.webp"
+
+              src="/images/contents/cctv-about.webp"
               alt="Security Solution"
               fill
               priority={false}

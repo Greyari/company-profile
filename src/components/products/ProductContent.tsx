@@ -55,7 +55,7 @@ const PRODUCTS_DATA: Product[] = [
     category: "PABX",
     description:
       "Centralized communication management for modern office infrastructure.",
-    image: "/images/product/pabx.png",
+    image: "/images/product/PABX.png",
   },
   {
     id: "3",
