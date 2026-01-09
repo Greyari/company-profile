@@ -32,10 +32,10 @@ const FOOTER_SECTIONS: FooterSection[] = [
   {
     title: "Solutions",
     links: [
-      { label: "Attendance System", href: "/solutions/attendance" },
-      { label: "CCTV & Security", href: "/solutions/cctv" },
-      { label: "IT Support", href: "/solutions/it-support" },
-      { label: "Access Control", href: "/solutions/access-control" },
+      { label: "Attendance System", href: "/attendance" },
+      { label: "CCTV & Security", href: "/cctv" },
+      { label: "IT Support", href: "/it-support" },
+      { label: "Access Control", href: "/access-control" },
     ],
   },
 ];
@@ -57,7 +57,7 @@ export default function Footer() {
           <div className="space-y-6">
             <h3 className="flex items-center gap-2 text-lg font-bold tracking-tight uppercase">
               <img
-                src="/images/logo-putih.png"
+                src="/images/logo/logo-putih.png"
                 alt="PT. Kreatif System Indonesia"
                 className="w-20 h-20 object-contain"
                 draggable={false}

@@ -10,28 +10,28 @@ const projects = [
     title: "Factory",
     description:
       "Integrated IT and security solutions for factories, supporting operational monitoring, and infrastructure management.",
-    image: "/images/factory.jpg",
+    image: "/images/projects/factory.jpg",
     link: "/factory",
   },
   {
     title: "Construction Site",
     description:
       "Technology and security systems for construction sites to support project monitoring, and site operations.",
-    image: "/images/construction.jpg",
+    image: "/images/projects/construction.jpg",
     link: "/construction",
   },
   {
     title: "Apartment & Hotel",
     description:
       "Comprehensive IT and security solutions for apartments and hotels, including access systems, and facility management.",
-    image: "/images/apart.jpg",
+    image: "/images/projects/apart.jpg",
     link: "/apart",
   },
   {
     title: "School",
     description:
       "IT infrastructure and security solutions for schools to support safety, communication, and daily operations.",
-    image: "/images/school.jpg",
+    image: "/images/projects/school.jpg",
     link: "/school",
   },
 ];
@@ -43,6 +43,15 @@ const projects = [
 export default function Projects() {
   return (
     <section className="bg-white mt-30">
+      <div className="text-center mb-10 px-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-black mb-3">
+          Solutions
+        </h2>
+        <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
+          {" "}
+          Trusted by companies across industries to support their operations.
+        </p>
+      </div>
       {/* Grid Container - Full width, no gaps */}
       <div className="grid md:grid-cols-4">
         {projects.map((project, index) => (

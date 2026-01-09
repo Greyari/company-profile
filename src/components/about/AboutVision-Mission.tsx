@@ -1,6 +1,9 @@
 // ==========================================
 // src/components/about/AboutVision-Mission.tsx
 // ==========================================
+"use client";
+
+import InnovativeSolutions from "./CardSection";
 
 export default function AboutValues() {
   return (
@@ -12,36 +15,36 @@ export default function AboutValues() {
               Our Vision & Mission
             </h2>
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              PT. Kreatif System Indonesia was founded with a vision to provide
-              cutting-edge security solutions for modern businesses. Our team of
-              experienced professionals combines technical expertise with a deep
-              understanding of our clients' needs, ensuring that every solution
-              we provide is tailored to meet specific requirements.
-            </p>
-
-            <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              Our team of experienced professionals combines technical expertise
-              with a deep understanding of our clients' needs, ensuring that
-              every solution we provide is tailored to meet specific
-              requirements. Since our establishment, we have been committed to
-              delivering excellence in every project. Our team of experienced
-              professionals combines technical expertise with a deep
-              understanding of our clients' needs, ensuring that every solution
-              we provide is tailored to meet specific requirements.
+              Our vision is to become a leading and trusted service company in
+              the information technology sector, both locally and nationally, by
+              consistently delivering exceptional value and innovative
+              solutions. We aim to anticipate and embrace the ever-growing
+              opportunities in the IT industry, ensuring that our services
+              remain relevant, forward-thinking, and capable of supporting the
+              evolving needs of businesses. Through continuous learning,
+              adopting the latest technological advancements, and leveraging our
+              extensive experience and networks, we strive to set new standards
+              of excellence in customer satisfaction and operational
+              performance.
             </p>
 
             <p className="text-gray-600 text-justify leading-relaxed">
-              Our team of experienced professionals combines technical expertise
-              with a deep understanding of our clients' needs, ensuring that
-              every solution we provide is tailored to meet specific
-              requirements. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every solution we provide is tailored to meet
-              specific requirements.
+              Our mission is to provide our customers with tailored,
+              high-quality IT services that meet their individual and
+              industry-specific needs while fostering long-term partnerships
+              built on trust and reliability. We are committed to constantly
+              enhancing our knowledge, skills, and capabilities, enabling us to
+              respond swiftly to the dynamic changes in the business and
+              technology landscape. By combining a friendly, flexible approach
+              with a deep understanding of emerging technologies, we ensure that
+              every client receives solutions that not only solve immediate
+              challenges but also support sustainable growth and continuous
+              improvement.
             </p>
           </div>
         </div>
       </div>
+      <InnovativeSolutions />
     </section>
   );
 }

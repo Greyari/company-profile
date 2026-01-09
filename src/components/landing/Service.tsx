@@ -35,7 +35,7 @@ const solutions: Solution[] = [
     title: "CCTV & Security System",
     description:
       "End-to-end CCTV and security systems providing real-time surveillance, recording, and threat monitoring to enhance safety for residential, commercial, and industrial environments.",
-    image: "/images/test3.jpg",
+    image: "/images/solution/test3.jpg",
     link: "/cctv",
   },
   {
@@ -43,7 +43,7 @@ const solutions: Solution[] = [
     title: "Attendance & System Control",
     description:
       "Integrated attendance and access control solutions using fingerprint, RFID, or facial recognition to accurately track workforce activity and improve operational control.",
-    image: "/images/test-009.jpg",
+    image: "/images/solution/test-009.jpg",
     link: "/access-control",
   },
   {
@@ -51,7 +51,7 @@ const solutions: Solution[] = [
     title: "IT Support & Maintenance",
     description:
       "Reliable IT support and maintenance services covering hardware, software, and network infrastructure to ensure stable, secure, and efficient business operations.",
-    image: "/images/test.jpg",
+    image: "/images/solution/test.jpg",
     link: "/it-support",
   },
   {
@@ -59,7 +59,7 @@ const solutions: Solution[] = [
     title: "Public Address, Parking Barrier & Electrical Services",
     description:
       "Integrated public address systems, automated parking barriers, and electrical services designed to improve communication, traffic management, and facility operations.",
-    image: "/images/test4.jpg",
+    image: "/images/solution/test4.jpg",
     link: "/public-address",
   },
   {
@@ -67,7 +67,7 @@ const solutions: Solution[] = [
     title: "PABX & Communication Systems",
     description:
       "Professional PABX and communication system solutions enabling clear, reliable internal and external communication for offices, buildings, and enterprise environments.",
-    image: "/images/test-880.jpg",
+    image: "/images/solution/test-880.jpg",
     link: "/pabx",
   },
   {
@@ -75,7 +75,7 @@ const solutions: Solution[] = [
     title: "Alarm & Safety Solutions",
     description:
       "Comprehensive alarm and safety systems including fire alarms, intrusion detection, and emergency alert solutions to protect people, assets, and critical facilities.",
-    image: "/images/test2.jpg",
+    image: "/images/solution/test2.jpg",
     link: "/alarm",
   },
 ];
@@ -267,7 +267,7 @@ export default function Solutions() {
       {/* Header */}
       <div className="px-4 md:px-8">
         <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-4">
-          Our Solutions
+          Services
         </h2>
         <p className="text-gray-600 text-center mb-12 max-w-3xl mx-auto text-sm md:text-base">
           We provide comprehensive security and IT solutions tailored to your

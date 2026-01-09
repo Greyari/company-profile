@@ -91,6 +91,7 @@ export default function Navbar() {
       { label: "Audio Paging", href: "/products/audiopaging" },
       { label: "IP Camera", href: "/products/ipcamera" },
       { label: "Video Recorder", href: "/products/dvrnvr" },
+      { label: "Access Control", href: "/products/accesscontrol" },
     ],
   };
 
@@ -125,8 +126,8 @@ export default function Navbar() {
               <img
                 src={
                   isWhiteBg
-                    ? "/images/logo-warna.png"
-                    : "/images/logo-putih.png"
+                    ? "/images/logo/logo-warna.png"
+                    : "/images/logo/logo-putih.png"
                 }
                 alt="KREASII Logo"
                 className="w-10 h-10 object-contain"

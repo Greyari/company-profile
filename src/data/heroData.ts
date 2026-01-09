@@ -8,7 +8,7 @@ export const navItems: NavItem[] = [
   {
     id: 1,
     label: "Security Solutions",
-    image: "/images/hero/cctv-hero-bg.webp",
+    image: "/images/hero-landing/cctv-hero-bg.webp",
     title: "Integrated CCTV & Security Systems",
     subtitle:
       "Professional surveillance solutions for real-time monitoring, recording, and asset protection",
@@ -16,7 +16,7 @@ export const navItems: NavItem[] = [
   {
     id: 2,
     label: "Installation & On-Site Support",
-    image: "/images/Security.webp",
+    image: "/images/hero-landing/Security.webp",
     title: "Professional Installation & Technical Support",
     subtitle:
       "End-to-end installation, configuration, and on-site maintenance for security and IT systems",
@@ -24,7 +24,7 @@ export const navItems: NavItem[] = [
   {
     id: 3,
     label: "Access Control",
-    image: "/images/ac-hero.webp",
+    image: "/images/hero-landing/ac-hero.webp",
     title: "Access Control & Attendance Systems",
     subtitle:
       "Secure entry management using fingerprint, RFID, and facial recognition technology",
@@ -32,7 +32,7 @@ export const navItems: NavItem[] = [
   {
     id: 4,
     label: "Smart Security Infrastructure",
-    image: "/images/cctv-monitor.jpg",
+    image: "/images/hero-landing/cctv-monitor.jpg",
     title: "Public Address, Alarm & Parking Systems",
     subtitle:
       "Integrated PA systems, alarm solutions, and parking barriers for efficient facility management",
@@ -40,7 +40,7 @@ export const navItems: NavItem[] = [
   {
     id: 5,
     label: "Future-Ready Technology",
-    image: "/images/future.webp",
+    image: "/images/hero-landing/future.webp",
     title: "Innovative Security Technology Solutions",
     subtitle:
       "Delivering smart, secure, and scalable digital solutions for modern and growing businesses",

@@ -5,11 +5,11 @@ import ScrollVelocityRow from "../animations/scroll/scrollVelocity";
 
 export default function Clients() {
   return (
-    <section className="mb-28">
+    <section className="mb-18 mt-18">
       <div className="relative  mx-auto">
         <div className="text-center mb-14 px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-3">
-            Our Clients
+            Clients
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
             {" "}
@@ -25,13 +25,13 @@ export default function Clients() {
           <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-linear-to-l from-white to-transparent" />
 
           <ScrollVelocityRow
-            src="/images/client.png"
+            src="/images/logo/client.png"
             direction={1}
             velocity={100}
           />
 
           <ScrollVelocityRow
-            src="/images/client-2.png"
+            src="/images/logo/client-2.png"
             direction={-1}
             velocity={100}
           />

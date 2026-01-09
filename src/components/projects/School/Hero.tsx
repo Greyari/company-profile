@@ -11,12 +11,12 @@ export default function Hero() {
   return (
     <section className="relative flex items-center h-[50vh] min-h-100 overflow-hidden">
       <Image
-        src="/images/hero/cctv-hero.webp"
+        src="/images/contents/school.jpg"
         alt="About Kreatif System"
         fill
         priority
         sizes="100vw"
-        className="object-cover"
+        className="object-cover object-[100%_48%]"
       />
       <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/40 to-black/10" />
       <div className="absolute inset-0 bg-linear-to-l from-black/50 via-black/10 to-transparent" />

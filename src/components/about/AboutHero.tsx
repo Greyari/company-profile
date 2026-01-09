@@ -36,12 +36,12 @@ export default function AboutHero() {
     <>
       <section className="relative flex items-center h-[50vh] min-h-100 overflow-hidden">
         <Image
-          src="/images/hero/about.webp"
+          src="/images/contents/112.jpg"
           alt="About Kreatif System"
           fill
           priority
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-[100%_45%]"
         />
         <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/50 to-transparent" />
         <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-black/30" />

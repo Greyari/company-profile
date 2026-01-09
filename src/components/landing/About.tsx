@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import MotionLink from "next/link";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/lib/fadeIn";
 import Image from "next/image";
@@ -92,7 +92,7 @@ export default function About() {
               <span className="text-red-600">Dahua</span> Technology
             </h3>
 
-            <AnimatedButton href="/about" />
+            <AnimatedButton href="/authorized" />
           </motion.div>
         </div>
       </div>
@@ -106,7 +106,7 @@ export default function About() {
  */
 function AnimatedButton({ href }: { href: string }) {
   return (
-    <motion.a
+    <MotionLink
       href={href}
       className="
         inline-flex items-center gap-2
@@ -118,9 +118,6 @@ function AnimatedButton({ href }: { href: string }) {
         hover:bg-white
         hover:text-black
       "
-      whileHover="hovered"
-      initial="rest"
-      animate="rest"
     >
       Read More
       <motion.span
@@ -149,6 +146,6 @@ function AnimatedButton({ href }: { href: string }) {
           <path d="m9 18 6-6-6-6" />
         </svg>
       </motion.span>
-    </motion.a>
+    </MotionLink>
   );
 }

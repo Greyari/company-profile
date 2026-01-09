@@ -14,31 +14,29 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     question:
-      "Apa saja produk CCTV Dahua yang tersedia di PT Kreatif System Indonesia?",
+      "What CCTV products are available at PT Kreatif System Indonesia?",
     answer:
-      "Kami menyediakan berbagai produk CCTV Dahua meliputi IP Camera, Analog Camera, NVR (Network Video Recorder), DVR (Digital Video Recorder), dan aksesoris pendukung lainnya. Semua produk adalah original dan bergaransi resmi.",
+      "We offer a wide range of Dahua CCTV products including IP Cameras, Analog Cameras, NVRs (Network Video Recorders), DVRs (Digital Video Recorders), and other supporting accessories. All products are original and come with official warranties.",
   },
   {
-    question: "Berapa lama waktu pengerjaan instalasi CCTV?",
+    question: "How long does CCTV installation take?",
     answer:
-      "Waktu instalasi bervariasi tergantung skala proyek. Untuk instalasi rumah tinggal (4-8 kamera) biasanya memakan waktu 1-2 hari kerja. Untuk proyek komersial atau industri, kami akan melakukan survey terlebih dahulu untuk menentukan timeline yang tepat.",
+      "Installation time varies depending on the project scale. For residential installations (4-8 cameras), it usually takes 1-2 working days. For commercial or industrial projects, we conduct a site survey first to determine the exact timeline.",
   },
   {
-    question: "Apakah tersedia layanan maintenance dan after-sales service?",
+    question: "Do you provide maintenance and after-sales service?",
     answer:
-      "Ya, kami menyediakan layanan maintenance rutin dan after-sales service. Tim teknisi kami siap membantu troubleshooting, perbaikan, dan pengecekan sistem CCTV Anda. Kami juga menyediakan paket maintenance berkala untuk memastikan sistem selalu optimal.",
+      "Yes, we provide routine maintenance and after-sales service. Our team of technicians is ready to assist with troubleshooting, repairs, and system checks. We also offer scheduled maintenance packages to ensure your CCTV system always performs optimally.",
   },
   {
-    question:
-      "Apakah bisa akses CCTV dari smartphone atau komputer jarak jauh?",
+    question: "Can CCTV be accessed remotely via smartphone or computer?",
     answer:
-      "Tentu saja. Semua sistem CCTV yang kami instalasi dapat diakses secara remote melalui smartphone (Android/iOS) atau komputer menggunakan aplikasi resmi Dahua. Kami akan membantu setup dan training penggunaan aplikasi tersebut.",
+      "Absolutely. All CCTV systems we install can be accessed remotely through smartphones (Android/iOS) or computers using Dahua's official applications. We provide setup assistance and training to ensure you can use the applications effectively.",
   },
   {
-    question:
-      "Bagaimana cara mendapatkan penawaran harga untuk proyek instalasi CCTV?",
+    question: "How can I get a price quote for a CCTV installation project?",
     answer:
-      "Anda dapat menghubungi kami melalui telepon, WhatsApp, atau email untuk konsultasi gratis. Tim kami akan melakukan survey lokasi (jika diperlukan) dan memberikan penawaran harga yang kompetitif beserta rekomendasi sistem yang sesuai dengan kebutuhan Anda.",
+      "You can contact us via phone, WhatsApp, or email for a free consultation. Our team will conduct a site survey if needed and provide a competitive price quote along with recommended systems that fit your specific requirements.",
   },
 ];
 
@@ -72,15 +70,15 @@ export default function FAQ() {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className=" gap-12 lg:gap-20 items-start">
-          {/* Left side - FAQ items */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* Left Column - FAQ Items */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl lg:text-4xl text-black font-bold mb-3 leading-tight">
+            <h2 className="text-3xl lg:text-4xl text-black font-bold mb-8 leading-tight">
               Frequently Asked Questions
             </h2>
 
@@ -119,7 +117,7 @@ export default function FAQ() {
                       </svg>
                     </motion.div>
 
-                    <span className="flex-1 text-lg lg:text-xl font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors leading-snug">
+                    <span className="flex-1 text-sm lg:text-lg font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors leading-snug">
                       {item.question}
                     </span>
                   </button>
@@ -136,7 +134,7 @@ export default function FAQ() {
                         }}
                         className="overflow-hidden"
                       >
-                        <div className="pt-4 pl-11 text-gray-600 leading-relaxed text-base lg:text-lg">
+                        <div className="pt-2 text-justify pl-11 text-gray-600 leading-relaxed text-base lg:text-sm">
                           {item.answer}
                         </div>
                       </motion.div>
@@ -147,19 +145,23 @@ export default function FAQ() {
             </div>
           </motion.div>
 
-          {/* Right side - Contact Form */}
-          {/* <motion.div
+          {/* Right Column - Contact Form */}
+          <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="lg:sticky lg:top-24"
           >
-            <div className="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm lg:sticky lg:top-24">
-              <h3 className="text-3xl font-bold text-gray-900 mb-8">
+            <div className=" border border-gray-200 rounded-lg p-8">
+              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
                 Have Another Question?
               </h3>
+              <p className="text-gray-600 text-sm mb-8">
+                Send us a message and we'll get back to you shortly.
+              </p>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
                   <label
                     htmlFor="fullName"
@@ -173,8 +175,8 @@ export default function FAQ() {
                     name="fullName"
                     value={formData.fullName}
                     onChange={handleChange}
-                    placeholder="John Doe"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                    placeholder="Your name"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
                     required
                   />
                 </div>
@@ -192,8 +194,8 @@ export default function FAQ() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="john@example.com"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                    placeholder="your@email.com"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
                     required
                   />
                 </div>
@@ -211,8 +213,8 @@ export default function FAQ() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+62 XXX XXXX XXXX"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
+                    placeholder="+62 812 3456 7890"
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
                     required
                   />
                 </div>
@@ -229,35 +231,22 @@ export default function FAQ() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows={5}
-                    placeholder="Tell us about your project or inquiry..."
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all resize-none"
+                    rows={4}
+                    placeholder="Tell us about your inquiry..."
+                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all resize-none"
                     required
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-black hover:bg-gray-800 text-white font-semibold py-4 px-6 rounded-lg transition-colors flex items-center justify-center gap-2"
+                  className="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3.5 px-6 rounded-lg transition-colors text-sm"
                 >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <line x1="22" y1="2" x2="11" y2="13"></line>
-                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                  </svg>
                   Send Message
                 </button>
               </form>
             </div>
-          </motion.div> */}
+          </motion.div>
         </div>
       </div>
     </section>
