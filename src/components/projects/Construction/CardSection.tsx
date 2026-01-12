@@ -1,6 +1,4 @@
-// ==========================================
-// src/components/access-control/CardSection.tsx
-// ==========================================
+
 
 "use client";
 
@@ -17,20 +15,20 @@ type Card = {
 const CARDS: Card[] = [
   {
     id: 1,
-    title: "IT",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    title: "Construction IT Systems",
+    desc: "Integrated IT solutions designed for construction sites to optimize project management, monitor workflows, and ensure accurate data collection. Our systems enable real-time reporting, smooth communication, and seamless integration with on-site equipment and operations.",
     isDark: true,
   },
   {
     id: 2,
-    title: "Support",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    title: "Site Support",
+    desc: "Expert technical support and proactive maintenance services tailored for construction environments. We ensure machinery, security systems, and communication networks operate reliably, reducing downtime and enhancing overall site safety and efficiency.",
     isDark: false,
   },
   {
     id: 3,
-    title: "CCTV",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    title: "CCTV & Site Surveillance",
+    desc: "Advanced surveillance solutions for construction sites, providing real-time monitoring of equipment, workers, and restricted areas. High-quality cameras, intelligent analytics, and centralized management help safeguard assets and maintain a safe working environment.",
     isDark: false,
   },
 ];
@@ -43,13 +41,16 @@ const InnovativeSection = memo(function InnovativeSection() {
         <div className="hidden lg:flex lg:w-[45%] lg:items-center">
           <div className="relative w-full h-150">
             <Image
-              src="/images/contents/cctv-about.webp"
-              alt="Security Solution"
+              src="/images/contents/construction.jpg"
+              alt="Construction Solution"
               fill
               priority={false}
               sizes="(min-width: 1024px) 45vw, 0px"
-              className="object-cover"
+              className="object-cover object-[50%_80%]"
             />
+            <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/0 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/50 via-black/0 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-r from-black/40 via-black/10 to-transparent" />
           </div>
         </div>
 
@@ -74,7 +75,7 @@ const InnovativeSection = memo(function InnovativeSection() {
                     : "bg-white text-gray-800 border border-gray-100"
                 }`}
               >
-                <h3 className="text-2xl font-bold mb-8 text-center">
+                <h3 className="text-xl font-bold mb-8 text-center">
                   {card.title}
                 </h3>
 

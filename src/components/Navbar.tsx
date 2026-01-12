@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { fadeIn } from "@/lib/fadeIn";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ChevronDown, ChevronRight } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -179,22 +180,13 @@ export default function Navbar() {
                         {item.label}
                       </span>
                       {item.hasDropdown && (
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
+                        <ChevronDown
+                          size={16}
+                          strokeWidth={1.5}
                           className={`transition-transform duration-300 ${
                             isDropdownOpen ? "rotate-180" : ""
                           }`}
-                        >
-                          <path d="m6 9 6 6 6-6" />
-                        </svg>
+                        />
                       )}
                       <span
                         className={`absolute left-0 -bottom-1 h-0.5 bg-current transition-all duration-300 ${
@@ -221,9 +213,14 @@ export default function Navbar() {
                           <Link
                             key={idx}
                             href={dropItem.href}
-                            className="block px-4 py-3 text-sm text-gray-600 hover:text-black hover:bg-gray-50 transition-all duration-200"
+                            className="group flex items-center justify-between px-4 py-3 text-sm text-gray-600 hover:text-black hover:bg-gray-50 transition-all duration-200"
                           >
-                            {dropItem.label}
+                            <span>{dropItem.label}</span>
+                            <ChevronRight
+                              size={16}
+                              strokeWidth={1.5}
+                              className="opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                            />
                           </Link>
                         ))}
                       </div>
@@ -237,49 +234,7 @@ export default function Navbar() {
                 onMouseEnter={() => handleDropdownEnter("language")}
                 onMouseLeave={handleDropdownLeave}
               >
-                {/* <button
-                  className={`relative text-sm font-normal transition-all duration-300 flex items-center gap-1 ${
-                    !isWhiteBg
-                      ? "text-white"
-                      : hoveredItem === "language"
-                      ? "text-black"
-                      : hoveredItem
-                      ? "text-gray-400"
-                      : "text-black"
-                  }`}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-                    <path d="M2 12h20" />
-                  </svg>
-                </button> */}
-
-                {/* {openDropdown === "language" && (
-                  <div
-                    onMouseEnter={() => {
-                      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-                    }}
-                    className="absolute top-full right-0 mt-0 min-w-25 bg-white rounded-lg shadow-xl overflow-hidden animate-fadeIn"
-                  >
-                    <button className="block w-full text-left px-4 py-3 text-sm text-gray-600 hover:text-black hover:bg-gray-50 transition-all duration-200">
-                      ID
-                    </button>
-                    <button className="block w-full text-left px-4 py-3 text-sm text-gray-600 hover:text-black hover:bg-gray-50 transition-all duration-200">
-                      EN
-                    </button>
-                  </div>
-                )} */}
+                {/* Language selector placeholder */}
               </div>
             </div>
 
@@ -337,7 +292,7 @@ export default function Navbar() {
                   flex items-center justify-between
                   px-4 py-3 rounded-xl
                   font-medium transition-all duration-300
-                  hover:bg-gray-100 active:scale-[0.98]
+                  hover:bg-gray-50 active:scale-[0.98]
                   ${
                     pathname === item.href
                       ? "bg-gray-100 text-black"
@@ -346,7 +301,11 @@ export default function Navbar() {
                 `}
                 >
                   {item.label}
-                  <span className="opacity-60">→</span>
+                  <ChevronRight
+                    size={18}
+                    strokeWidth={1.5}
+                    className="opacity-60"
+                  />
                 </Link>
               ))}
             </div>

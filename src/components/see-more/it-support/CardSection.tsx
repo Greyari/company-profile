@@ -1,6 +1,3 @@
-// ==========================================
-// src/components/access-control/CardSection.tsx
-// ==========================================
 
 "use client";
 
@@ -17,20 +14,20 @@ type Card = {
 const CARDS: Card[] = [
   {
     id: 1,
-    title: "IT",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    title: "IT Infrastructure",
+    desc: "Comprehensive IT setup and maintenance services to ensure your network, servers, and devices operate efficiently and securely, reducing downtime and boosting productivity.",
     isDark: true,
   },
   {
     id: 2,
-    title: "Support",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    title: "Technical Support",
+    desc: "Responsive helpdesk and on-site assistance for hardware, software, and network issues, ensuring quick resolution and minimal disruption to your business operations.",
     isDark: false,
   },
   {
     id: 3,
-    title: "CCTV",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    title: "Preventive Maintenance",
+    desc: "Proactive system checks, updates, and performance optimization to extend the lifespan of your IT assets, prevent unexpected failures, and maintain business continuity.",
     isDark: false,
   },
 ];
@@ -43,13 +40,16 @@ const InnovativeSection = memo(function InnovativeSection() {
         <div className="hidden lg:flex lg:w-[45%] lg:items-center">
           <div className="relative w-full h-150">
             <Image
-              src="/images/contents/cctv-about.webp"
-              alt="Security Solution"
+              src="/images/contents/Budi.jpg"
+              alt="IT Support Solutions"
               fill
               priority={false}
               sizes="(min-width: 1024px) 45vw, 0px"
-              className="object-cover"
+              className="object-cover object-[100%_70%]"
             />
+            <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/30 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/0 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/0 to-transparent" />
           </div>
         </div>
 
@@ -74,7 +74,7 @@ const InnovativeSection = memo(function InnovativeSection() {
                     : "bg-white text-gray-800 border border-gray-100"
                 }`}
               >
-                <h3 className="text-2xl font-bold mb-8 text-center">
+                <h3 className="text-xl font-bold mb-8 text-center">
                   {card.title}
                 </h3>
 

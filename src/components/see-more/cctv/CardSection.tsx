@@ -1,7 +1,3 @@
-// ==========================================
-// src/components/access-control/CardSection.tsx
-// ==========================================
-
 "use client";
 
 import React, { memo } from "react";
@@ -17,20 +13,20 @@ type Card = {
 const CARDS: Card[] = [
   {
     id: 1,
-    title: "CCTV",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    title: "CCTV Surveillance",
+    desc: "Comprehensive CCTV surveillance solutions designed to support continuous monitoring and effective security management across various environments. Our systems help organizations protect assets, monitor critical areas, and improve situational awareness through reliable video surveillance infrastructure.",
     isDark: true,
   },
   {
     id: 2,
-    title: "Camera",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    title: "High-Quality ",
+    desc: "We utilize high-quality CCTV camera technology that delivers clear image capture, consistent video quality, and dependable performance in daily operations. These cameras are suitable for indoor and outdoor deployment, supporting accurate monitoring under different lighting and environmental conditions.",
     isDark: false,
   },
   {
     id: 3,
-    title: "CCTV",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    title: "System Integration",
+    desc: "Our CCTV solutions are supported by integrated DVR and NVR systems combined with structured network architecture for reliable operation. The system design emphasizes stability, scalability, and seamless integration with existing security infrastructure.",
     isDark: false,
   },
 ];
@@ -50,6 +46,9 @@ const InnovativeSection = memo(function InnovativeSection() {
               sizes="(min-width: 1024px) 45vw, 0px"
               className="object-cover"
             />
+            <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/10 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/40 via-black/0 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-r from-black/50 via-black/0 to-transparent" />
           </div>
         </div>
 
@@ -57,11 +56,11 @@ const InnovativeSection = memo(function InnovativeSection() {
         <div className="w-full lg:w-[55%] flex items-center">
           <div
             className="
-  w-full flex flex-col md:flex-row gap-6
-  px-4 md:px-8 lg:px-0
-  lg:-ml-32 z-10
-  py-8 lg:py-0
-"
+            w-full flex flex-col md:flex-row gap-6
+            px-4 md:px-8 lg:px-0
+            lg:-ml-32 z-10
+            py-8 lg:py-0
+          "
           >
             {CARDS.map((card) => (
               <div
@@ -74,7 +73,7 @@ const InnovativeSection = memo(function InnovativeSection() {
                     : "bg-white text-gray-800 border border-gray-100"
                 }`}
               >
-                <h3 className="text-2xl font-bold mb-8 text-center">
+                <h3 className="text-xl font-bold mb-8 text-center">
                   {card.title}
                 </h3>
 

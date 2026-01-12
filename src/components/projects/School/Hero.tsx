@@ -1,6 +1,3 @@
-// ==========================================
-// src/components/sections/access-control/ACHero.tsx
-// ==========================================
 "use client";
 
 import { fadeIn } from "@/lib/fadeIn";
@@ -34,7 +31,7 @@ export default function Hero() {
             School
           </h1>
           <p className="text-sm md:text-lg mb-4 text-white/70">
-            Your trusted partner in innovative security technology solutions
+            Solution for managing and monitoring school facilities.
           </p>
         </div>
       </motion.div>

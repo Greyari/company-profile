@@ -1,7 +1,3 @@
-// ==========================================
-// src/components/access-control/ACContents.tsx
-// ==========================================
-
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,44 +10,32 @@ export default function Contents() {
         <div className="gap-12 items-center">
           <div>
             <h2 className="text-xl md:text-2xl font-medium tracking-tight text-gray-900 mb-6">
-              PT Kreatif System Indonesia
+              Construction Site Solutions
             </h2>
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              PT. Kreatif System Indonesia was founded with a vision to provide
-              cutting-edge security solutions for modern businesses. Our team of
-              experienced professionals combines technical expertise with a deep
-              understanding of our clients' needs, ensuring that every solution
-              we provide is tailored to meet specific requirements. Since our
-              establishment, we have been committed to delivering excellence in
-              every project. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every solution we provide is tailored to meet
-              specific requirements.
+              PT. Kreatif System Indonesia delivers specialized solutions for
+              construction sites, combining security, safety, and operational
+              efficiency. Our experienced team implements systems tailored to
+              the unique challenges of construction environments, ensuring
+              project continuity, worker safety, and asset protection. Since our
+              establishment, we have prioritized innovative approaches to keep
+              sites secure and operations smooth.
             </p>
 
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              Our team of experienced professionals combines technical expertise
-              with a deep understanding of our clients' needs, ensuring that
-              every solution we provide is tailored to meet specific
-              requirements. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every
+              Our offerings include access control, CCTV surveillance, alarm
+              systems, and workforce management solutions designed specifically
+              for construction projects. Each system is integrated to provide
+              real-time monitoring, automated alerts, and actionable insights to
+              support decision-making and maintain a safe work environment.
             </p>
 
             <p className="text-gray-600 text-justify leading-relaxed">
-              Our team of experienced professionals combines technical expertise
-              with a deep understanding of our clients' needs, ensuring that
-              every solution we provide is tailored to meet specific
-              requirements. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every solution we provide is tailored to meet
-              specific requirements. Our team of experienced professionals
-              combines technical expertise with a deep understanding of our
-              clients' needs, ensuring that every solution we provide is
-              tailored to meet specific requirements. Our team of experienced
-              professionals combines technical expertise with a deep
-              understanding of our clients' needs, ensuring that every solution
-              we provide is tailored to meet specific requirements.
+              We emphasize durability, scalability, and ease of management to
+              suit temporary or permanent sites. With reliable systems and
+              expert support, construction sites can operate efficiently while
+              minimizing risks, protecting personnel, and safeguarding critical
+              assets throughout the project lifecycle.
             </p>
           </div>
         </div>
@@ -61,44 +45,29 @@ export default function Contents() {
         <div className="gap-12 items-center">
           <div>
             <h2 className="text-xl md:text-2xl font-medium tracking-tight text-gray-900 mb-6">
-              PT Kreatif System Indonesia
+              Reliable Solutions for Construction Sites
             </h2>
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              PT. Kreatif System Indonesia was founded with a vision to provide
-              cutting-edge security solutions for modern businesses. Our team of
-              experienced professionals combines technical expertise with a deep
-              understanding of our clients' needs, ensuring that every solution
-              we provide is tailored to meet specific requirements. Since our
-              establishment, we have been committed to delivering excellence in
-              every project. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every solution we provide is tailored to meet
-              specific requirements.
+              Our construction solutions are engineered to meet the demanding
+              needs of project sites. From security monitoring to worker
+              management, we provide systems that enhance efficiency and safety
+              while maintaining compliance with regulations and industry
+              standards.
             </p>
 
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              Our team of experienced professionals combines technical expertise
-              with a deep understanding of our clients' needs, ensuring that
-              every solution we provide is tailored to meet specific
-              requirements. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every
+              With proactive maintenance, remote monitoring, and technical
+              support, our systems ensure uninterrupted operations and quick
+              response to incidents. This helps reduce downtime, prevent
+              accidents, and safeguard both personnel and equipment.
             </p>
 
             <p className="text-gray-600 text-justify leading-relaxed">
-              Our team of experienced professionals combines technical expertise
-              with a deep understanding of our clients' needs, ensuring that
-              every solution we provide is tailored to meet specific
-              requirements. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every solution we provide is tailored to meet
-              specific requirements. Our team of experienced professionals
-              combines technical expertise with a deep understanding of our
-              clients' needs, ensuring that every solution we provide is
-              tailored to meet specific requirements. Our team of experienced
-              professionals combines technical expertise with a deep
-              understanding of our clients' needs, ensuring that every solution
-              we provide is tailored to meet specific requirements.
+              Trust PT. Kreatif System Indonesia to provide comprehensive
+              construction site solutions, combining technology, expertise, and
+              reliability. We help projects run securely, efficiently, and
+              smoothly, giving stakeholders confidence and peace of mind
+              throughout the construction lifecycle.
             </p>
           </div>
         </div>

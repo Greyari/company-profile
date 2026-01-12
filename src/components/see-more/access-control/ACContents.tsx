@@ -14,44 +14,34 @@ export default function ACContents() {
         <div className="gap-12 items-center">
           <div>
             <h2 className="text-xl md:text-2xl font-medium tracking-tight text-gray-900 mb-6">
-              PT Kreatif System Indonesia
+              Attendance & Access Control Solutions
             </h2>
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              PT. Kreatif System Indonesia was founded with a vision to provide
-              cutting-edge security solutions for modern businesses. Our team of
-              experienced professionals combines technical expertise with a deep
-              understanding of our clients' needs, ensuring that every solution
-              we provide is tailored to meet specific requirements. Since our
-              establishment, we have been committed to delivering excellence in
-              every project. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every solution we provide is tailored to meet
-              specific requirements.
+              PT Kreatif System Indonesia provides integrated attendance and
+              access control solutions designed to improve security, workforce
+              management, and operational accountability. Our systems enable
+              organizations to manage entry permissions while accurately
+              recording attendance data through controlled access mechanisms.
+              This approach ensures consistent monitoring, structured access
+              policies, and reliable operational records.
             </p>
 
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              Our team of experienced professionals combines technical expertise
-              with a deep understanding of our clients' needs, ensuring that
-              every solution we provide is tailored to meet specific
-              requirements. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every
+              Our attendance solutions are built on secure authentication
+              methods such as fingerprint biometrics, RFID cards, and access
+              terminals integrated with centralized management systems. Each
+              access event is recorded in real time, allowing organizations to
+              monitor presence, track movement, and generate accurate reports
+              for operational and administrative needs.
             </p>
 
             <p className="text-gray-600 text-justify leading-relaxed">
-              Our team of experienced professionals combines technical expertise
-              with a deep understanding of our clients' needs, ensuring that
-              every solution we provide is tailored to meet specific
-              requirements. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every solution we provide is tailored to meet
-              specific requirements. Our team of experienced professionals
-              combines technical expertise with a deep understanding of our
-              clients' needs, ensuring that every solution we provide is
-              tailored to meet specific requirements. Our team of experienced
-              professionals combines technical expertise with a deep
-              understanding of our clients' needs, ensuring that every solution
-              we provide is tailored to meet specific requirements.
+              By combining attendance tracking with access control
+              infrastructure, organizations gain better visibility over
+              workforce activities while maintaining controlled access to
+              offices, facilities, and restricted areas. This integrated
+              approach supports improved security enforcement, data accuracy,
+              and compliance with internal operational policies.
             </p>
           </div>
         </div>
@@ -61,44 +51,34 @@ export default function ACContents() {
         <div className="gap-12 items-center">
           <div>
             <h2 className="text-xl md:text-2xl font-medium tracking-tight text-gray-900 mb-6">
-              PT Kreatif System Indonesia
+              Reliable System Implementation & Long-Term Support
             </h2>
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              PT. Kreatif System Indonesia was founded with a vision to provide
-              cutting-edge security solutions for modern businesses. Our team of
-              experienced professionals combines technical expertise with a deep
-              understanding of our clients' needs, ensuring that every solution
-              we provide is tailored to meet specific requirements. Since our
-              establishment, we have been committed to delivering excellence in
-              every project. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every solution we provide is tailored to meet
-              specific requirements.
+              Backed by experienced engineers and technical specialists, PT
+              Kreatif System Indonesia ensures that every attendance and access
+              control system is implemented with precision and reliability. Our
+              solutions are designed to operate continuously in daily
+              operational environments, supported by proper system
+              configuration, stable network integration, and secure device
+              management.
             </p>
 
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              Our team of experienced professionals combines technical expertise
-              with a deep understanding of our clients' needs, ensuring that
-              every solution we provide is tailored to meet specific
-              requirements. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every
+              Access control infrastructure is built using door controllers,
+              biometric readers, and centralized software that allows
+              administrators to define access rules, monitor activities, and
+              maintain detailed audit logs. This structured system design helps
+              organizations strengthen security oversight while maintaining
+              transparency and traceability across access points.
             </p>
 
             <p className="text-gray-600 text-justify leading-relaxed">
-              Our team of experienced professionals combines technical expertise
-              with a deep understanding of our clients' needs, ensuring that
-              every solution we provide is tailored to meet specific
-              requirements. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every solution we provide is tailored to meet
-              specific requirements. Our team of experienced professionals
-              combines technical expertise with a deep understanding of our
-              clients' needs, ensuring that every solution we provide is
-              tailored to meet specific requirements. Our team of experienced
-              professionals combines technical expertise with a deep
-              understanding of our clients' needs, ensuring that every solution
-              we provide is tailored to meet specific requirements.
+              Beyond installation, we provide ongoing technical support and
+              system maintenance to ensure long-term performance and
+              scalability. Our solutions allow organizations to expand access
+              points, integrate additional authentication methods, and adapt
+              system policies as operational requirements evolve, without
+              compromising system stability or security.
             </p>
           </div>
         </div>

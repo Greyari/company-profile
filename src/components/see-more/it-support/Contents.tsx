@@ -1,6 +1,3 @@
-// ==========================================
-// src/components/access-control/ACContents.tsx
-// ==========================================
 
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
@@ -14,44 +11,33 @@ export default function Contents() {
         <div className="gap-12 items-center">
           <div>
             <h2 className="text-xl md:text-2xl font-medium tracking-tight text-gray-900 mb-6">
-              PT Kreatif System Indonesia
+              IT Support & Maintenance
             </h2>
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              PT. Kreatif System Indonesia was founded with a vision to provide
-              cutting-edge security solutions for modern businesses. Our team of
-              experienced professionals combines technical expertise with a deep
-              understanding of our clients' needs, ensuring that every solution
-              we provide is tailored to meet specific requirements. Since our
-              establishment, we have been committed to delivering excellence in
-              every project. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every solution we provide is tailored to meet
-              specific requirements.
+              At PT. Kreatif System Indonesia, our IT Support & Maintenance
+              services are designed to keep your business systems running
+              smoothly. We provide proactive monitoring, timely troubleshooting,
+              and routine maintenance, ensuring that downtime is minimized and
+              productivity stays high. Our experts tailor each support plan to
+              align with your operational needs.
             </p>
 
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              Our team of experienced professionals combines technical expertise
-              with a deep understanding of our clients' needs, ensuring that
-              every solution we provide is tailored to meet specific
-              requirements. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every
+              Our team understands that technology challenges can disrupt daily
+              operations. That’s why we offer flexible, responsive support
+              solutions—from hardware and software troubleshooting to network
+              optimization—so your business can operate without interruption. We
+              aim to resolve issues efficiently while providing guidance to
+              prevent future problems.
             </p>
 
             <p className="text-gray-600 text-justify leading-relaxed">
-              Our team of experienced professionals combines technical expertise
-              with a deep understanding of our clients' needs, ensuring that
-              every solution we provide is tailored to meet specific
-              requirements. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every solution we provide is tailored to meet
-              specific requirements. Our team of experienced professionals
-              combines technical expertise with a deep understanding of our
-              clients' needs, ensuring that every solution we provide is
-              tailored to meet specific requirements. Our team of experienced
-              professionals combines technical expertise with a deep
-              understanding of our clients' needs, ensuring that every solution
-              we provide is tailored to meet specific requirements.
+              Beyond reactive support, we focus on preventive maintenance to
+              extend the lifespan of your IT infrastructure. Regular updates,
+              system checks, and performance tuning are part of our approach,
+              keeping your environment secure, stable, and scalable. Partnering
+              with us means gaining a reliable IT backbone that empowers your
+              business to thrive without worrying about technical setbacks.
             </p>
           </div>
         </div>
@@ -61,44 +47,33 @@ export default function Contents() {
         <div className="gap-12 items-center">
           <div>
             <h2 className="text-xl md:text-2xl font-medium tracking-tight text-gray-900 mb-6">
-              PT Kreatif System Indonesia
+              Reliable IT Support for Modern Businesses
             </h2>
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              PT. Kreatif System Indonesia was founded with a vision to provide
-              cutting-edge security solutions for modern businesses. Our team of
-              experienced professionals combines technical expertise with a deep
-              understanding of our clients' needs, ensuring that every solution
-              we provide is tailored to meet specific requirements. Since our
-              establishment, we have been committed to delivering excellence in
-              every project. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every solution we provide is tailored to meet
-              specific requirements.
+              We recognize that every business has unique IT needs. Our
+              specialists work closely with your team to understand your
+              infrastructure, anticipate challenges, and deliver support that
+              fits seamlessly with your workflow. Our goal is not just fixing
+              problems but enabling long-term IT efficiency.
             </p>
 
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              Our team of experienced professionals combines technical expertise
-              with a deep understanding of our clients' needs, ensuring that
-              every solution we provide is tailored to meet specific
-              requirements. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every
+              With our comprehensive maintenance plans, you gain more than just
+              a service provider—you gain a technology partner. We keep systems
+              updated, optimize performance, and offer insights to enhance your
+              digital operations. Every interaction is guided by
+              professionalism, precision, and commitment to your business
+              success.
             </p>
 
             <p className="text-gray-600 text-justify leading-relaxed">
-              Our team of experienced professionals combines technical expertise
-              with a deep understanding of our clients' needs, ensuring that
-              every solution we provide is tailored to meet specific
-              requirements. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every solution we provide is tailored to meet
-              specific requirements. Our team of experienced professionals
-              combines technical expertise with a deep understanding of our
-              clients' needs, ensuring that every solution we provide is
-              tailored to meet specific requirements. Our team of experienced
-              professionals combines technical expertise with a deep
-              understanding of our clients' needs, ensuring that every solution
-              we provide is tailored to meet specific requirements.
+              Trust PT. Kreatif System Indonesia for IT Support & Maintenance
+              that prioritizes your uptime and efficiency. From small businesses
+              to large enterprises, our solutions adapt to your scale and
+              requirements, ensuring your IT environment is always ready to meet
+              today’s demands and tomorrow’s growth. We combine technical
+              expertise with a customer-first approach, delivering peace of mind
+              with every service.
             </p>
           </div>
         </div>

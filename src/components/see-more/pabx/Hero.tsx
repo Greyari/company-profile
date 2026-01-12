@@ -1,6 +1,3 @@
-// ==========================================
-// src/components/sections/access-control/ACHero.tsx
-// ==========================================
 "use client";
 
 import { fadeIn } from "@/lib/fadeIn";
@@ -30,11 +27,11 @@ export default function Hero() {
         className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full"
       >
         <div className="max-w-2xl">
-          <h1 className="text-3xl md:text-4xl xl:text-5xl text-white font-semibold tracking-tight leading-13 mb-2">
-            PABX
+          <h1 className="text-2xl md:text-3xl xl:text-4xl font-semibold tracking-tight leading-tight mb-2 text-white">
+            Private Automatic Branch Exchange (PABX) Systems
           </h1>
-          <p className="text-sm md:text-lg mb-4 text-white/70">
-            Your trusted partner in innovative security technology solutions
+          <p className="text-xs md:text-sm mb-5 text-white/70">
+            Solutions to enhance your business operational communication
           </p>
         </div>
       </motion.div>

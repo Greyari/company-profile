@@ -1,7 +1,3 @@
-// ==========================================
-// src/components/access-control/CardSection.tsx
-// ==========================================
-
 "use client";
 
 import React, { memo } from "react";
@@ -17,20 +13,20 @@ type Card = {
 const CARDS: Card[] = [
   {
     id: 1,
-    title: "IT",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    title: "Industrial IT Systems",
+    desc: "Comprehensive IT infrastructure solutions designed to streamline factory operations, improve data accuracy, and enable real-time monitoring of production processes. Our systems integrate seamlessly with existing machinery and software to optimize efficiency and productivity.",
     isDark: true,
   },
   {
     id: 2,
-    title: "Support",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    title: "Maintenance & Support",
+    desc: "Proactive maintenance and expert technical support to ensure all industrial equipment, safety systems, and communication networks function reliably. Our team provides regular inspections, troubleshooting, and upgrades to minimize downtime and operational risks.",
     isDark: false,
   },
   {
     id: 3,
-    title: "CCTV",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    title: "CCTV & Surveillance",
+    desc: "Advanced surveillance solutions tailored for factory environments, providing real-time video monitoring, asset protection, and operational safety. The system includes high-quality cameras, smart analytics, and centralized control to maintain secure and efficient industrial operations.",
     isDark: false,
   },
 ];
@@ -43,13 +39,16 @@ const InnovativeSection = memo(function InnovativeSection() {
         <div className="hidden lg:flex lg:w-[45%] lg:items-center">
           <div className="relative w-full h-150">
             <Image
-              src="/images/contents/cctv-about.webp"
-              alt="Security Solution"
+              src="/images/contents/factory-content.jpg"
+              alt="Factory Solution"
               fill
               priority={false}
               sizes="(min-width: 1024px) 45vw, 0px"
               className="object-cover"
             />
+            <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/30 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/0 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black via-black/0 to-transparent" />
           </div>
         </div>
 
@@ -74,7 +73,7 @@ const InnovativeSection = memo(function InnovativeSection() {
                     : "bg-white text-gray-800 border border-gray-100"
                 }`}
               >
-                <h3 className="text-2xl font-bold mb-8 text-center">
+                <h3 className="text-xl font-bold mb-8 text-center">
                   {card.title}
                 </h3>
 

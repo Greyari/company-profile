@@ -17,20 +17,20 @@ type Card = {
 const CARDS: Card[] = [
   {
     id: 1,
-    title: "IT",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    title: "CCTV Surveillance",
+    desc: "Comprehensive CCTV solutions for continuous monitoring and security management across any environment. Our systems provide reliable video capture, situational awareness, and integration with access control for complete safety oversight.",
     isDark: true,
   },
   {
     id: 2,
-    title: "Support",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
-    isDark: false,
+    title: "PABX Systems",
+    desc: "Integrated PABX solutions for seamless internal communication across your organization. Efficient call routing, extensions management, and unified communication keep your teams connected and responsive.",
+    isDark: true,
   },
   {
     id: 3,
-    title: "CCTV",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    title: "Support Services",
+    desc: "Timely technical assistance, troubleshooting, and preventive maintenance to keep IT systems running smoothly. Our team ensures minimal disruption and maximum productivity for your organization.",
     isDark: false,
   },
 ];
@@ -43,14 +43,16 @@ const InnovativeSection = memo(function InnovativeSection() {
         <div className="hidden lg:flex lg:w-[45%] lg:items-center">
           <div className="relative w-full h-150">
             <Image
-
-              src="/images/contents/cctv-about.webp"
-              alt="Security Solution"
+              src="/images/contents/server.jpg"
+              alt="Apart Solution"
               fill
               priority={false}
               sizes="(min-width: 1024px) 45vw, 0px"
-              className="object-cover"
+              className="object-cover object-[50%_40%]"
             />
+            <div className="absolute inset-0 bg-linear-to-b from-black/40 via-black/0 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/0 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-r from-black/50 via-black/10 to-transparent" />
           </div>
         </div>
 
@@ -75,7 +77,7 @@ const InnovativeSection = memo(function InnovativeSection() {
                     : "bg-white text-gray-800 border border-gray-100"
                 }`}
               >
-                <h3 className="text-2xl font-bold mb-8 text-center">
+                <h3 className="text-xl font-bold mb-8 text-center">
                   {card.title}
                 </h3>
 

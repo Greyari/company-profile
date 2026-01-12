@@ -2,12 +2,9 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
-/**
- * Contact page component with clean, modern design
- * Matches the product page aesthetic with minimal styling
- */
 export default function ContactContents() {
   const [formData, setFormData] = useState({
     name: "",
@@ -16,24 +13,15 @@ export default function ContactContents() {
     message: "",
   });
 
-  /**
-   * Handle form submission
-   */
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
   };
 
-  /**
-   * Handle input field changes
-   */
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const contactInfo = [
@@ -42,91 +30,146 @@ export default function ContactContents() {
       title: "Address",
       content:
         "Ruko, Jl. Palm Spring No.B3 No 15, Taman Baloi, Batam Kota, Batam City, Riau Islands",
+      type: "maps",
+      link: "https://www.google.com/maps/dir//PT.+Kreatif+System+Indonesia",
     },
     {
       icon: Phone,
       title: "Phone",
-      content: "+(62) 778 2102999",
+      content: "+62 778 2102999",
+      type: "phone",
+      link: "tel:+627782102999",
     },
     {
       icon: Mail,
       title: "Email",
       content: "enquiry@kreatifsystem.com",
+      type: "email",
+      link: "mailto:enquiry@kreatifsystem.com",
     },
     {
       icon: Clock,
       title: "Business Hours",
       content: "Mon - Sat: 8:00 AM - 5:00 PM",
+      type: "none",
+      link: "",
     },
   ];
 
   return (
     <section className="bg-white min-h-screen">
-      {/* Hero Section - Minimal and Clean */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto"
+          className="text-center max-w-3xl mx-auto mb-12"
         >
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             Get in Touch
           </h1>
-          <p className="text-lg text-gray-600">
+          <p className="text-sm text-gray-600">
             Contact us today to discuss your needs and discover how our
             solutions can support your business growth and success.
           </p>
         </motion.div>
-      </div>
 
-      {/* Contact Info Cards - Clean Grid Layout */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {contactInfo.map((info, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="border border-transparent hover:border-gray-200 hover:shadow-xl rounded-2xl p-6 transition-colors"
-            >
-              <div className="flex flex-col items-center text-center gap-3">
-                <div className="p-3 bg-black rounded-xl">
-                  <info.icon className="text-white" size={20} />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">
-                    {info.title}
-                  </h3>
-                  <p className="text-sm text-gray-600">{info.content}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Contact Info List */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
+              Contact Information
+            </h2>
+            <p className="text-sm text-gray-600 mb-3">
+              We'd love to hear from you! Reach out to us through any of the
+              following methods:
+            </p>
+
+            <div className="flex flex-col gap-4">
+              {contactInfo.map((info, index) => {
+                // CTA logic
+                const isClickable = info.type !== "none";
+                const handleClick = () => {
+                  if (!isClickable) return;
+                  window.open(info.link, "_blank");
+                };
+
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    className={`flex items-center justify-between border border-transparent hover:border-gray-200 hover:shadow-lg rounded-2xl p-4 transition-all bg-white cursor-pointer ${
+                      isClickable ? "hover:bg-gray-50" : ""
+                    }`}
+                    onClick={handleClick}
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="shrink-0 p-3 bg-black rounded-xl flex items-center justify-center">
+                        <info.icon className="text-white" size={20} />
+                      </div>
+                      <div className="flex flex-col">
+                        <h3 className="font-semibold text-gray-900 mb-1">
+                          {info.title}
+                        </h3>
+                        <p className="text-sm text-gray-600">{info.content}</p>
+                      </div>
+                    </div>
+
+                    {isClickable && (
+                      <ArrowRight className="text-gray-400 ml-4" size={18} />
+                    )}
+                  </motion.div>
+                );
+              })}
+            </div>
+          </motion.div>
+
+          {/* Map Section */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="relative rounded-2xl overflow-hidden bg-gray-50"
+          >
+            <div className="w-full h-full min-h-125">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!3d3989.0494123616686!2d104.02643287472422!3d1.1248774988643566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d98b54d7a133a5%3A0x54ceae7fa8100f68!2sPT.+Kreatif+System+Indonesia!5e0!3m2!1sen!2sid!4v1766999394587!5m2!1sen!2sid"
+                className="w-full h-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
+          </motion.div>
         </div>
       </div>
 
-      {/* Main Content Grid - Form and Map Side by Side */}
+      {/* Contact Form Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="lg:sticky lg:top-24"
-          >
-            <div className=" border border-gray-200 rounded-lg p-8">
-              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="border border-gray-200 rounded-2xl p-6 sm:p-8 lg:p-12 bg-white shadow-sm">
+            <div className="mb-8">
+              <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
                 Send Us a Message
               </h3>
-              <p className="text-gray-600 text-sm mb-8">
+              <p className="text-gray-600 text-sm sm:text-base">
                 Send us a message and we'll get back to you shortly.
               </p>
+            </div>
 
-              <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
                 <div>
                   <label
                     htmlFor="fullName"
@@ -137,10 +180,10 @@ export default function ContactContents() {
                   <input
                     type="text"
                     id="fullName"
-                    name="fullName"
+                    name="name"
                     onChange={handleChange}
                     placeholder="Your name"
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3.5 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
                     required
                   />
                 </div>
@@ -159,93 +202,59 @@ export default function ContactContents() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="your@email.com"
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3.5 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
                     required
                   />
                 </div>
+              </div>
 
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="+62 812 3456 7890"
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={4}
-                    placeholder="Tell us about your inquiry..."
-                    className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all resize-none"
-                    required
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3.5 px-6 rounded-lg transition-colors text-sm"
+              <div>
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  Send Message
-                </button>
-              </form>
-            </div>
-          </motion.div>
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="+62 812 3456 7890"
+                  className="w-full px-4 py-3.5 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+                  required
+                />
+              </div>
 
-          {/* Map Section */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="relative rounded-2xl overflow-hidden bg-gray-50"
-          >
-            <div className="w-full h-full min-h-125">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!3d3989.0494123616686!2d104.02643287472422!3d1.1248774988643566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d98b54d7a133a5%3A0x54ceae7fa8100f68!2sPT.%20Kreatif%20System%20Indonesia!5e0!3m2!1sen!2sid!4v1766999394587!5m2!1sen!2sid"
-                className="w-full h-full border-0"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                allowFullScreen
-              />
-            </div>
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={6}
+                  placeholder="Tell us about your inquiry..."
+                  className="w-full px-4 py-3.5 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all resize-none"
+                  required
+                />
+              </div>
 
-            {/* Get Direction Button */}
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="absolute bottom-6 left-6 bg-white text-black px-6 py-3 rounded-xl font-medium hover:bg-gray-100 transition-colors flex items-center gap-2 shadow-lg"
-              onClick={() =>
-                window.open(
-                  "https://www.google.com/maps/dir//PT.+Kreatif+System+Indonesia",
-                  "_blank"
-                )
-              }
-            >
-              <MapPin size={18} />
-              Get Direction
-            </motion.button>
-          </motion.div>
-        </div>
+              <button
+                type="submit"
+                className="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-4 px-6 rounded-lg transition-colors text-sm sm:text-base"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -2,259 +2,435 @@
 
 import { MessageCircle, X, Send, Bot } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useRef, useEffect, memo } from "react";
-import { processUserInput } from "./engine";
-import type { ChatContext, ChatMessage } from "./type";
+import { useChatLogic } from "./chatLogic";
+import React, { memo, useEffect, useState } from "react";
 
 /**
- * Typewriter effect component for bot messages
+ * Advanced text parser for multiple formats
+ */
+const parseAdvancedText = (text: string) => {
+  const lines = text.split("\n");
+  const blocks: Array<{
+    type: "paragraph" | "numbered-list" | "bullet-list" | "heading" | "empty";
+    content: string[];
+  }> = [];
+
+  let currentBlock: (typeof blocks)[0] | null = null;
+
+  lines.forEach((line) => {
+    const trimmed = line.trim();
+
+    if (!trimmed) {
+      if (currentBlock && currentBlock.type !== "empty") {
+        blocks.push(currentBlock);
+        currentBlock = null;
+      }
+      return;
+    }
+
+    const numberedMatch = trimmed.match(/^(\d+)[.)]\s+(.+)$/);
+    if (numberedMatch) {
+      if (currentBlock?.type !== "numbered-list") {
+        if (currentBlock) blocks.push(currentBlock);
+        currentBlock = { type: "numbered-list", content: [] };
+      }
+      currentBlock.content.push(numberedMatch[2]);
+      return;
+    }
+
+    const bulletMatch = trimmed.match(/^[-*•]\s+(.+)$/);
+    if (bulletMatch) {
+      if (currentBlock?.type !== "bullet-list") {
+        if (currentBlock) blocks.push(currentBlock);
+        currentBlock = { type: "bullet-list", content: [] };
+      }
+      currentBlock.content.push(bulletMatch[1]);
+      return;
+    }
+
+    const headingMatch = trimmed.match(/^#{1,3}\s+(.+)$/);
+    const isAllCaps =
+      trimmed === trimmed.toUpperCase() &&
+      trimmed.length < 50 &&
+      /[A-Z]/.test(trimmed);
+
+    if (headingMatch || isAllCaps) {
+      if (currentBlock) blocks.push(currentBlock);
+      blocks.push({
+        type: "heading",
+        content: [headingMatch ? headingMatch[1] : trimmed],
+      });
+      currentBlock = null;
+      return;
+    }
+
+    if (currentBlock?.type !== "paragraph") {
+      if (currentBlock) blocks.push(currentBlock);
+      currentBlock = { type: "paragraph", content: [] };
+    }
+    currentBlock.content.push(trimmed);
+  });
+
+  if (currentBlock) blocks.push(currentBlock);
+  return blocks;
+};
+
+/**
+ * Render formatted blocks
+ */
+const FormattedText = memo(({ text }: { text: string }) => {
+  const blocks = parseAdvancedText(text);
+
+  return (
+    <div className="space-y-4">
+      {blocks.map((block, idx) => {
+        switch (block.type) {
+          case "heading":
+            return (
+              <h3 key={idx} className="font-semibold text-sm sm:text-base mb-2">
+                {block.content[0]}
+              </h3>
+            );
+
+          case "numbered-list":
+            return (
+              <ol key={idx} className="space-y-2 sm:space-y-2.5">
+                {block.content.map((item, i) => (
+                  <li key={i} className="flex gap-2 sm:gap-3 items-start">
+                    <span className="font-medium text-zinc-700 mt-0.5 min-w-5 sm:min-w-6 text-sm">
+                      {i + 1}.
+                    </span>
+                    <span className="flex-1 leading-relaxed text-sm sm:text-[15px]">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ol>
+            );
+
+          case "bullet-list":
+            return (
+              <ul key={idx} className="space-y-2 sm:space-y-2.5">
+                {block.content.map((item, i) => (
+                  <li key={i} className="flex gap-2 sm:gap-3 items-start">
+                    <span className="text-zinc-700 mt-1 text-sm">•</span>
+                    <span className="flex-1 leading-relaxed text-sm sm:text-[15px]">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            );
+
+          case "paragraph":
+            return (
+              <p
+                key={idx}
+                className="leading-relaxed text-zinc-800 text-sm sm:text-[15px]"
+              >
+                {block.content.join(" ")}
+              </p>
+            );
+
+          default:
+            return null;
+        }
+      })}
+    </div>
+  );
+});
+
+FormattedText.displayName = "FormattedText";
+
+/**
+ * Typewriter with consistent formatting
  */
 const TypewriterMessage = memo(
-  ({ text, onFinish }: { text: string; onFinish?: () => void }) => {
-    const [displayedText, setDisplayedText] = useState("");
-    const [currentIndex, setCurrentIndex] = useState(0);
+  ({ text, onFinish }: { text: string; onFinish: () => void }) => {
+    const [displayText, setDisplayText] = useState("");
+    const [charIndex, setCharIndex] = useState(0);
 
     useEffect(() => {
-      if (currentIndex < text.length) {
-        const timeout = setTimeout(() => {
-          setDisplayedText((prev) => prev + text[currentIndex]);
-          setCurrentIndex((prev) => prev + 1);
-        }, 15);
-        return () => clearTimeout(timeout);
+      if (charIndex < text.length) {
+        const timer = setTimeout(() => {
+          setDisplayText((prev) => prev + text[charIndex]);
+          setCharIndex((prev) => prev + 1);
+        }, 12);
+        return () => clearTimeout(timer);
       } else {
-        onFinish?.();
+        onFinish();
       }
-    }, [currentIndex, text, onFinish]);
+    }, [charIndex, text, onFinish]);
 
-    return <span className="whitespace-pre-line">{displayedText}</span>;
+    const blocks = parseAdvancedText(displayText);
+
+    return (
+      <div className="space-y-4">
+        {blocks.map((block, idx) => {
+          switch (block.type) {
+            case "heading":
+              return (
+                <h3
+                  key={idx}
+                  className="font-semibold text-sm sm:text-base mb-2"
+                >
+                  {block.content[0]}
+                </h3>
+              );
+
+            case "numbered-list":
+              return (
+                <ol key={idx} className="space-y-2 sm:space-y-2.5">
+                  {block.content.map((item, i) => (
+                    <li key={i} className="flex gap-2 sm:gap-3 items-start">
+                      <span className="font-medium text-zinc-700 mt-0.5 min-w-5 sm:min-w-6 text-sm">
+                        {i + 1}.
+                      </span>
+                      <span className="flex-1 leading-relaxed text-sm sm:text-[15px]">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ol>
+              );
+
+            case "bullet-list":
+              return (
+                <ul key={idx} className="space-y-2 sm:space-y-2.5">
+                  {block.content.map((item, i) => (
+                    <li key={i} className="flex gap-2 sm:gap-3 items-start">
+                      <span className="text-zinc-700 mt-1 text-sm">•</span>
+                      <span className="flex-1 leading-relaxed text-sm sm:text-[15px]">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              );
+
+            case "paragraph":
+              return (
+                <p
+                  key={idx}
+                  className="leading-relaxed text-zinc-800 text-sm sm:text-[15px]"
+                >
+                  {block.content.join(" ")}
+                </p>
+              );
+
+            default:
+              return null;
+          }
+        })}
+      </div>
+    );
   }
 );
 
 TypewriterMessage.displayName = "TypewriterMessage";
 
+/**
+ * Main component
+ */
 export default function FloatingChat() {
-  const [open, setOpen] = useState(false);
-  const [input, setInput] = useState("");
-  const [isTyping, setIsTyping] = useState(false);
-  const [context, setContext] = useState<ChatContext>({ messageCount: 0 });
-  const [messages, setMessages] = useState<ChatMessage[]>([
-    {
-      role: "bot",
-      text: "Halo! Ada yang bisa kami bantu seputar layanan Kreatif System?",
-      hasAnimated: true,
-      timestamp: Date.now(),
-    },
-  ]);
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const {
+    open,
+    setOpen,
+    input,
+    setInput,
+    isTyping,
+    messages,
+    scrollRef,
+    sendMessage,
+    markAnimated,
+  } = useChatLogic();
 
-  // Auto-scroll to bottom when messages update
+  // Lock body scroll when chat is open
+  useEffect(() => {
+    if (open) {
+      const scrollbarWidth =
+        window.innerWidth - document.documentElement.clientWidth;
+      const originalOverflow = document.body.style.overflow;
+      const originalPaddingRight = document.body.style.paddingRight;
+
+      document.body.style.overflow = "hidden";
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      document.documentElement.style.overflow = "hidden";
+
+      return () => {
+        document.body.style.overflow = originalOverflow;
+        document.body.style.paddingRight = originalPaddingRight;
+        document.documentElement.style.overflow = "";
+      };
+    }
+  }, [open]);
+
+  // Auto scroll to bottom when new message or typing
   useEffect(() => {
     if (scrollRef.current) {
-      scrollRef.current.scrollTo({
-        top: scrollRef.current.scrollHeight,
-        behavior: "smooth",
-      });
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [messages, isTyping]);
 
-  const handleSend = () => {
-    if (!input.trim()) return;
-
-    const userMsg: ChatMessage = {
-      role: "user",
-      text: input,
-      timestamp: Date.now(),
-    };
-
-    setMessages((prev) => [...prev, userMsg]);
-    setInput("");
-    setIsTyping(true);
-
-    // Simulate processing delay
-    setTimeout(() => {
-      const result = processUserInput(input, context);
-
-      const botMsg: ChatMessage = {
-        role: "bot",
-        text: result.response,
-        hasAnimated: false,
-        timestamp: Date.now(),
-      };
-
-      setMessages((prev) => [...prev, botMsg]);
-      setContext(result.updatedContext);
-      setIsTyping(false);
-    }, 800);
-  };
-
   return (
     <>
-      {/* Chat Button */}
+      {/* Floating Button - Responsive positioning */}
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setOpen(true)}
-        className="fixed bottom-6 right-6 p-4 bg-zinc-950 text-white rounded-full shadow-[0_10px_40px_rgba(0,0,0,0.3)] z-50 border border-zinc-800"
-        aria-label="Open chat"
+        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 p-3 sm:p-4 bg-zinc-950 text-white rounded-full shadow-lg z-50 hover:bg-zinc-800 transition-colors"
       >
-        <MessageCircle size={24} />
+        <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" />
       </motion.button>
 
       <AnimatePresence>
         {open && (
           <>
-            {/* Backdrop */}
+            {/* Overlay - prevents interaction with page */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setOpen(false)}
-              className="fixed inset-0 bg-black/40 backdrop-blur-[2px] z-50"
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-60"
             />
 
-            {/* Chat Box */}
+            {/* Chat Window - Responsive with original size */}
             <motion.div
-              initial={{ opacity: 0, y: 40, scale: 0.9 }}
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 40, scale: 0.9 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="fixed bottom-24 right-6 w-95 h-145 bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)] z-60 flex flex-col overflow-hidden"
+              exit={{ opacity: 0, y: 40, scale: 0.95 }}
+              transition={{ type: "spring", duration: 0.4 }}
+              className="fixed inset-4 sm:inset-auto sm:bottom-24 sm:right-6 
+                         w-auto sm:w-96
+                         h-auto sm:h-144
+                         max-h-[calc(100vh-2rem)] sm:max-h-144
+                         bg-white rounded-2xl sm:rounded-3xl shadow-2xl z-70 
+                         flex flex-col overflow-hidden"
             >
               {/* Header */}
-              <div className="p-6 bg-zinc-950 text-white flex justify-between items-center">
-                <div className="flex items-center gap-3">
-                  <motion.div
-                    initial={{ rotate: -20 }}
-                    animate={{ rotate: 0 }}
-                    className="w-10 h-10 bg-white text-zinc-950 rounded-xl flex items-center justify-center"
-                  >
-                    <Bot strokeWidth={2} />
-                  </motion.div>
+              <div className="p-4 sm:p-6 bg-zinc-950 text-white flex justify-between items-center shrink-0">
+                <div className="flex gap-2 sm:gap-3 items-center">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 bg-white text-zinc-950 rounded-xl flex items-center justify-center">
+                    <Bot className="w-5 h-5 sm:w-6 sm:h-6" />
+                  </div>
+
                   <div>
-                    <p className="font-semibold text-[15px] leading-none tracking-tight">
-                      KREASII
-                    </p>
-                    <span className="text-[11px] text-zinc-400 flex items-center gap-1.5 mt-1">
-                      <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
+                    <div className="flex items-center gap-1.5">
+                      <p className="font-semibold text-xs sm:text-sm">
+                        KREASII
+                      </p>
+                      <span className="px-1.5 py-0.5 text-[9px] sm:text-[10px] font-medium rounded-md bg-yellow-100 text-yellow-700 border border-yellow-200">
+                        BETA
+                      </span>
+                    </div>
+
+                    <span className="text-[10px] sm:text-xs text-zinc-400">
                       Ready to help
                     </span>
                   </div>
                 </div>
+
                 <button
                   onClick={() => setOpen(false)}
-                  className="p-2 hover:bg-white/10 rounded-full transition-colors text-zinc-400 hover:text-white"
-                  aria-label="Close chat"
+                  className="hover:bg-zinc-800 p-1.5 sm:p-2 rounded-lg transition-colors"
                 >
-                  <X size={18} />
+                  <X className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
               </div>
 
-              {/* Messages */}
+              {/* Messages Container */}
               <div
                 ref={scrollRef}
-                className="flex-1 overflow-y-auto p-5 space-y-4 bg-[#F8F8F8] scrollbar-hide flex flex-col"
+                className="flex-1 overflow-y-auto p-4 sm:p-5 space-y-4 
+                           bg-linear-to-b from-zinc-50 to-white
+                           overscroll-contain"
               >
-                <AnimatePresence initial={false}>
-                  {messages.map((msg, i) => (
-                    <motion.div
-                      layout
-                      initial={{ opacity: 0, y: 15, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      transition={{
-                        type: "spring",
-                        damping: 20,
-                        stiffness: 200,
-                      }}
-                      key={`${msg.timestamp}-${i}`}
-                      className={`flex ${
-                        msg.role === "user" ? "justify-end" : "justify-start"
-                      }`}
+                {messages.map((msg, i) => (
+                  <div
+                    key={msg.timestamp}
+                    className={`flex ${
+                      msg.role === "user" ? "justify-end" : "justify-start"
+                    }`}
+                  >
+                    <div
+                      className={`max-w-[85%] sm:max-w-[82%] px-3 py-3 sm:px-4 sm:py-4 md:px-5 
+                                  rounded-2xl ${
+                                    msg.role === "user"
+                                      ? "bg-zinc-950 text-white rounded-tr-md shadow-md"
+                                      : "bg-white border border-zinc-200 rounded-tl-md shadow-sm"
+                                  }`}
                     >
-                      <div
-                        className={`max-w-[85%] px-4 py-3 text-[13.5px] leading-relaxed shadow-sm ${
-                          msg.role === "user"
-                            ? "bg-zinc-950 text-white rounded-[1.3rem] rounded-tr-none"
-                            : "bg-white text-zinc-800 rounded-[1.3rem] rounded-tl-none border border-zinc-200/50"
-                        }`}
-                      >
-                        {msg.role === "bot" ? (
-                          !msg.hasAnimated ? (
-                            <TypewriterMessage
-                              text={msg.text}
-                              onFinish={() => {
-                                setMessages((prev) =>
-                                  prev.map((m, idx) =>
-                                    idx === i ? { ...m, hasAnimated: true } : m
-                                  )
-                                );
-                              }}
-                            />
-                          ) : (
-                            msg.text
-                          )
+                      {msg.role === "bot" ? (
+                        msg.hasAnimated ? (
+                          <FormattedText text={msg.text} />
                         ) : (
-                          msg.text
-                        )}
-                      </div>
-                    </motion.div>
-                  ))}
+                          <TypewriterMessage
+                            text={msg.text}
+                            onFinish={() => markAnimated(i)}
+                          />
+                        )
+                      ) : (
+                        <p className="leading-relaxed text-sm sm:text-[15px]">
+                          {msg.text}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                ))}
 
-                  {/* Typing Indicator */}
-                  {isTyping && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0 }}
-                      className="flex justify-start"
-                    >
-                      <div className="bg-white px-4 py-3 rounded-[1.3rem] rounded-tl-none border border-zinc-200/50 shadow-sm flex gap-1 items-center">
-                        <motion.span
-                          animate={{ opacity: [0.4, 1, 0.4] }}
-                          transition={{ repeat: Infinity, duration: 0.6 }}
-                          className="w-1.5 h-1.5 bg-zinc-400 rounded-full"
+                {isTyping && (
+                  <div className="flex justify-start">
+                    <div className="bg-white border border-zinc-200 rounded-2xl rounded-tl-md px-3 py-3 sm:px-5 sm:py-4 shadow-sm">
+                      <div className="flex gap-1 sm:gap-1.5">
+                        <span
+                          className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-zinc-400 rounded-full animate-bounce"
+                          style={{ animationDelay: "0ms" }}
                         />
-                        <motion.span
-                          animate={{ opacity: [0.4, 1, 0.4] }}
-                          transition={{
-                            repeat: Infinity,
-                            duration: 0.6,
-                            delay: 0.2,
-                          }}
-                          className="w-1.5 h-1.5 bg-zinc-400 rounded-full"
+                        <span
+                          className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-zinc-400 rounded-full animate-bounce"
+                          style={{ animationDelay: "150ms" }}
                         />
-                        <motion.span
-                          animate={{ opacity: [0.4, 1, 0.4] }}
-                          transition={{
-                            repeat: Infinity,
-                            duration: 0.6,
-                            delay: 0.4,
-                          }}
-                          className="w-1.5 h-1.5 bg-zinc-400 rounded-full"
+                        <span
+                          className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-zinc-400 rounded-full animate-bounce"
+                          style={{ animationDelay: "300ms" }}
                         />
                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                    </div>
+                  </div>
+                )}
               </div>
 
-              {/* Input */}
-              <div className="p-5 bg-white border-t border-zinc-100">
-                <div className="flex items-center gap-2 bg-zinc-100 px-4 py-2 rounded-[2rem] border border-transparent focus-within:border-zinc-300 transition-all shadow-inner">
+              {/* Input Area */}
+              <div className="p-3 sm:p-4 border-t border-zinc-200 bg-white shrink-0">
+                <div className="flex gap-2">
                   <input
-                    type="text"
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                    onKeyDown={(e) => e.key === "Enter" && handleSend()}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" && !e.shiftKey) {
+                        e.preventDefault();
+                        sendMessage();
+                      }
+                    }}
+                    className="flex-1 border border-zinc-300 rounded-full
+                               px-3 py-2 sm:px-4 sm:py-2
+                               text-sm
+                               focus:outline-none focus:ring-2 focus:ring-zinc-900 
+                               focus:border-transparent transition-all"
                     placeholder="Type your message..."
-                    className="flex-1 bg-transparent border-none outline-none text-sm py-2 text-zinc-800 placeholder:text-zinc-400"
                   />
                   <button
-                    onClick={handleSend}
+                    onClick={sendMessage}
                     disabled={!input.trim() || isTyping}
-                    className="p-2 bg-zinc-950 text-white rounded-full hover:bg-zinc-800 transition-all disabled:opacity-30"
-                    aria-label="Send message"
+                    className="bg-zinc-950 text-white p-2 sm:p-2.5
+                               rounded-full
+                               hover:bg-zinc-800 disabled:opacity-40 
+                               disabled:cursor-not-allowed transition-all 
+                               active:scale-95 shrink-0"
                   >
-                    <Send size={16} />
+                    <Send className="w-4 h-4 sm:w-5 sm:h-5" />
                   </button>
                 </div>
               </div>

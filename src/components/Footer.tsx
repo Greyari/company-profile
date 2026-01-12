@@ -36,6 +36,8 @@ const FOOTER_SECTIONS: FooterSection[] = [
       { label: "CCTV & Security", href: "/cctv" },
       { label: "IT Support", href: "/it-support" },
       { label: "PABX", href: "/pabx" },
+      { label: "Public Address", href: "/public-address" },
+      { label: "Alarm & Safety", href: "/alarm" },
     ],
   },
 ];
@@ -140,19 +142,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/5 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-xs text-zinc-500 uppercase tracking-widest">
+        <div className="border-t border-white/30 mt-16 pt-8 flex justify-center items-center text-xs text-zinc-500 uppercase tracking-widest">
           <p>
             &copy; {currentYear} PT. Kreatif System Indonesia. All rights
             reserved.
           </p>
-          <div className="flex space-x-8">
-            <Link href="/privacy" className="hover:text-white">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="hover:text-white">
-              Terms of Service
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

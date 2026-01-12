@@ -1,7 +1,3 @@
-// ==========================================
-// src/components/access-control/ACContents.tsx
-// ==========================================
-
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,44 +10,29 @@ export default function Contents() {
         <div className="gap-12 items-center">
           <div>
             <h2 className="text-xl md:text-2xl font-medium tracking-tight text-gray-900 mb-6">
-              PT Kreatif System Indonesia
+              Alarm & Safety Solutions
             </h2>
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              PT. Kreatif System Indonesia was founded with a vision to provide
-              cutting-edge security solutions for modern businesses. Our team of
-              experienced professionals combines technical expertise with a deep
-              understanding of our clients' needs, ensuring that every solution
-              we provide is tailored to meet specific requirements. Since our
-              establishment, we have been committed to delivering excellence in
-              every project. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every solution we provide is tailored to meet
-              specific requirements.
+              PT. Kreatif System Indonesia delivers reliable Alarm and Safety
+              solutions to protect your people, assets, and facilities. Our
+              systems are designed to detect potential threats, provide early
+              warnings, and ensure rapid response in any emergency situation.
             </p>
 
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              Our team of experienced professionals combines technical expertise
-              with a deep understanding of our clients' needs, ensuring that
-              every solution we provide is tailored to meet specific
-              requirements. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every
+              Our advanced alarm systems cover intrusion, fire, and emergency
+              alerts, giving you real-time notifications to safeguard
+              operations. Safety solutions include hazard monitoring, emergency
+              planning, and compliance support, helping your organization
+              maintain a secure and protected environment.
             </p>
 
             <p className="text-gray-600 text-justify leading-relaxed">
-              Our team of experienced professionals combines technical expertise
-              with a deep understanding of our clients' needs, ensuring that
-              every solution we provide is tailored to meet specific
-              requirements. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every solution we provide is tailored to meet
-              specific requirements. Our team of experienced professionals
-              combines technical expertise with a deep understanding of our
-              clients' needs, ensuring that every solution we provide is
-              tailored to meet specific requirements. Our team of experienced
-              professionals combines technical expertise with a deep
-              understanding of our clients' needs, ensuring that every solution
-              we provide is tailored to meet specific requirements.
+              Beyond installation, we provide continuous monitoring,
+              integration, and maintenance to ensure your systems operate
+              reliably. By combining modern technology with professional
+              expertise, we deliver scalable, efficient, and dependable
+              solutions for long-term safety and peace of mind.
             </p>
           </div>
         </div>
@@ -61,44 +42,27 @@ export default function Contents() {
         <div className="gap-12 items-center">
           <div>
             <h2 className="text-xl md:text-2xl font-medium tracking-tight text-gray-900 mb-6">
-              PT Kreatif System Indonesia
+              Protection for Every Business
             </h2>
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              PT. Kreatif System Indonesia was founded with a vision to provide
-              cutting-edge security solutions for modern businesses. Our team of
-              experienced professionals combines technical expertise with a deep
-              understanding of our clients' needs, ensuring that every solution
-              we provide is tailored to meet specific requirements. Since our
-              establishment, we have been committed to delivering excellence in
-              every project. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every solution we provide is tailored to meet
-              specific requirements.
+              Our solutions are tailored to meet the unique safety requirements
+              of your organization. From small offices to large facilities, we
+              provide alarms and safety systems that integrate seamlessly with
+              your operations, enhancing security and operational efficiency.
             </p>
 
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              Our team of experienced professionals combines technical expertise
-              with a deep understanding of our clients' needs, ensuring that
-              every solution we provide is tailored to meet specific
-              requirements. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every
+              With proactive maintenance, real-time monitoring, and expert
+              support, we ensure your Alarm and Safety systems perform optimally
+              at all times. Our team works closely with your organization to
+              deliver reliable, scalable, and easy-to-manage solutions.
             </p>
 
             <p className="text-gray-600 text-justify leading-relaxed">
-              Our team of experienced professionals combines technical expertise
-              with a deep understanding of our clients' needs, ensuring that
-              every solution we provide is tailored to meet specific
-              requirements. Our team of experienced professionals combines
-              technical expertise with a deep understanding of our clients'
-              needs, ensuring that every solution we provide is tailored to meet
-              specific requirements. Our team of experienced professionals
-              combines technical expertise with a deep understanding of our
-              clients' needs, ensuring that every solution we provide is
-              tailored to meet specific requirements. Our team of experienced
-              professionals combines technical expertise with a deep
-              understanding of our clients' needs, ensuring that every solution
-              we provide is tailored to meet specific requirements.
+              Trust PT. Kreatif System Indonesia for Alarm & Safety solutions
+              that combine technical excellence with a customer-focused
+              approach, providing peace of mind and a secure environment for
+              your business to grow and thrive.
             </p>
           </div>
         </div>

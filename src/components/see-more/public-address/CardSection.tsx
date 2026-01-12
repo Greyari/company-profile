@@ -1,6 +1,3 @@
-// ==========================================
-// src/components/access-control/CardSection.tsx
-// ==========================================
 
 "use client";
 
@@ -18,19 +15,19 @@ const CARDS: Card[] = [
   {
     id: 1,
     title: "Public Address",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    desc: "Our Public Address systems deliver clear, reliable audio for announcements, emergency alerts, and background music across your facility. Designed for scalability and ease of use, they ensure effective communication for both staff and visitors.",
     isDark: true,
   },
   {
     id: 2,
     title: "Parking Barriers",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    desc: "Efficient parking barrier solutions for secure and controlled vehicle access. Integrated with access control and ticketing systems, our barriers streamline traffic flow while enhancing safety and operational efficiency.",
     isDark: false,
   },
   {
     id: 3,
     title: "Electrical Services",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    desc: "Comprehensive electrical solutions to support your building and infrastructure needs. From installation to maintenance, we ensure safe, reliable, and energy-efficient electrical systems that keep your operations running smoothly.",
     isDark: false,
   },
 ];
@@ -43,13 +40,16 @@ const InnovativeSection = memo(function InnovativeSection() {
         <div className="hidden lg:flex lg:w-[45%] lg:items-center">
           <div className="relative w-full h-150">
             <Image
-              src="/images/contents/cctv-about.webp"
-              alt="Security Solution"
+              src="/images/contents/electrical-content.jpg"
+              alt="Electrical Services"
               fill
               priority={false}
               sizes="(min-width: 1024px) 45vw, 0px"
-              className="object-cover"
+              className="object-cover object-[100%_30%]"
             />
+            <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/30 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-r from-black/50 via-black/0 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/50 via-black/0 to-transparent" />
           </div>
         </div>
 
@@ -74,7 +74,7 @@ const InnovativeSection = memo(function InnovativeSection() {
                     : "bg-white text-gray-800 border border-gray-100"
                 }`}
               >
-                <h3 className="text-2xl font-bold mb-8 text-center">
+                <h3 className="text-xl font-bold mb-8 text-center">
                   {card.title}
                 </h3>
 

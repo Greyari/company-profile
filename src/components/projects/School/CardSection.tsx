@@ -17,20 +17,20 @@ type Card = {
 const CARDS: Card[] = [
   {
     id: 1,
-    title: "IT",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    title: "IT Support ",
+    desc: "Comprehensive IT solutions to support school administration and digital learning. Our systems ensure reliable network infrastructure, smooth software integration, and robust data management, empowering staff and students to focus on education without technical interruptions.",
     isDark: true,
   },
   {
     id: 2,
-    title: "Support",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    title: "Audio Paging",
+    desc: "Advanced audio paging systems to streamline communication across campus. From class announcements to emergency notifications, our solution ensures messages are delivered clearly and instantly to all classrooms, corridors, and common areas, improving operational efficiency and safety.",
     isDark: false,
   },
   {
     id: 3,
     title: "CCTV",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    desc: "High-quality CCTV surveillance to enhance school safety and monitoring. Our integrated camera systems provide real-time video, scalable coverage, and secure storage, helping administrators maintain a secure environment and protect students, staff, and school assets effectively.",
     isDark: false,
   },
 ];
@@ -43,13 +43,16 @@ const InnovativeSection = memo(function InnovativeSection() {
         <div className="hidden lg:flex lg:w-[45%] lg:items-center">
           <div className="relative w-full h-150">
             <Image
-              src="/images/contents/cctv-about.webp"
-              alt="Security Solution"
+              src="/images/contents/speaker.jpeg"
+              alt="School Solution"
               fill
               priority={false}
               sizes="(min-width: 1024px) 45vw, 0px"
-              className="object-cover"
+              className="object-cover object-[0%_0%]"
             />
+            <div className="absolute inset-0 bg-linear-to-b from-black/40 via-black/0 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/0 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-r from-black/8ser0 via-black/10 to-transparent" />
           </div>
         </div>
 
@@ -74,7 +77,7 @@ const InnovativeSection = memo(function InnovativeSection() {
                     : "bg-white text-gray-800 border border-gray-100"
                 }`}
               >
-                <h3 className="text-2xl font-bold mb-8 text-center">
+                <h3 className="text-xl font-bold mb-8 text-center">
                   {card.title}
                 </h3>
 

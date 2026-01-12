@@ -11,15 +11,13 @@ export default function ACHero() {
   return (
     <section className="relative flex items-center h-[50vh] min-h-100 overflow-hidden">
       <Image
-        src="/images/contents/access-control.jpg"
+        src="/images/contents/AC-contents.jpg"
         alt="About Kreatif System"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[100%_25%] scale-x-[-1]"
+        className="object-cover object-[100%_15%]"
       />
-      <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/40 to-black/10" />
-      <div className="absolute inset-0 bg-linear-to-l from-black/50 via-black/10 to-transparent" />
       <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/30 to-transparent" />
 
       <motion.div
@@ -30,11 +28,11 @@ export default function ACHero() {
         className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full"
       >
         <div className="max-w-2xl">
-          <h1 className="text-3xl md:text-4xl xl:text-5xl text-white font-semibold tracking-tight leading-13 mb-2">
-            Attendance & Access Control Solutions
+          <h1 className="text-2xl md:text-3xl xl:text-4xl font-semibold tracking-tight leading-tight mb-2 text-white">
+            Attendance & Access Control Systems
           </h1>
-          <p className="text-sm md:text-lg mb-4 text-white/70">
-            Your trusted partner in innovative security technology solutions
+          <p className="text-xs md:text-sm mb-5 text-white/70">
+            Advanced attendance and access control systems for secure operations
           </p>
         </div>
       </motion.div>

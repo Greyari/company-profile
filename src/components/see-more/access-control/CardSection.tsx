@@ -18,19 +18,19 @@ const CARDS: Card[] = [
   {
     id: 1,
     title: "Attendance",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    desc: "Our integrated attendance system accurately records employee entry and exit in real time. Every access event is logged automatically, providing precise time tracking, payroll support, and actionable insights for workforce management.",
     isDark: true,
   },
   {
     id: 2,
-    title: "Fingerprint",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    title: "Biometric Authentication",
+    desc: "Fingerprint and other biometric methods ensure secure and reliable identification. Seamlessly integrated with access terminals, the system guarantees that only authorized personnel can register attendance or enter restricted areas.",
     isDark: false,
   },
   {
     id: 3,
     title: "Access Control",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    desc: "Advanced access control solutions allow you to define rules, monitor activity, and maintain detailed audit logs. Using door controllers, RFID readers, and centralized management software, your secured areas stay protected while operations remain smooth.",
     isDark: false,
   },
 ];
@@ -43,13 +43,15 @@ const InnovativeSection = memo(function InnovativeSection() {
         <div className="hidden lg:flex lg:w-[45%] lg:items-center">
           <div className="relative w-full h-150">
             <Image
-              src="/images/contents/cctv-about.webp"
-              alt="Security Solution"
+              src="/images/contents/access-control.jpg"
+              alt="Access Control Solutions"
               fill
               priority={false}
               sizes="(min-width: 1024px) 45vw, 0px"
-              className="object-cover"
+              className="object-cover object-[0%_50%]"
             />
+            <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/30 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/0 to-transparent" />
           </div>
         </div>
 
@@ -74,7 +76,7 @@ const InnovativeSection = memo(function InnovativeSection() {
                     : "bg-white text-gray-800 border border-gray-100"
                 }`}
               >
-                <h3 className="text-2xl font-bold mb-8 text-center">
+                <h3 className="text-xl font-bold mb-8 text-center">
                   {card.title}
                 </h3>
 

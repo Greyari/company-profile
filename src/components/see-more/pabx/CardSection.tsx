@@ -1,7 +1,3 @@
-// ==========================================
-// src/components/access-control/CardSection.tsx
-// ==========================================
-
 "use client";
 
 import React, { memo } from "react";
@@ -17,20 +13,20 @@ type Card = {
 const CARDS: Card[] = [
   {
     id: 1,
-    title: "PABX",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    title: "PABX Setup",
+    desc: "Complete PABX installation and configuration for your office, enabling seamless internal and external communication. Our systems ensure efficient call routing, multi-extension support, and easy scalability for growing businesses.",
     isDark: true,
   },
   {
     id: 2,
-    title: "PABX",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    title: "Call Management",
+    desc: "Enhance your business communication with advanced features such as voicemail, call forwarding, auto-attendants, and conference calling. Our PABX solutions help streamline daily operations and improve team productivity.",
     isDark: false,
   },
   {
     id: 3,
-    title: "PABX PABX",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
+    title: "Maintenance & Support",
+    desc: "Reliable ongoing PABX maintenance and technical support to keep your communication systems running smoothly. From troubleshooting to system upgrades, we ensure minimal downtime and consistent performance for your organization.",
     isDark: false,
   },
 ];
@@ -43,13 +39,16 @@ const InnovativeSection = memo(function InnovativeSection() {
         <div className="hidden lg:flex lg:w-[45%] lg:items-center">
           <div className="relative w-full h-150">
             <Image
-              src="/images/contents/cctv-about.webp"
-              alt="Security Solution"
+              src="/images/contents/pabx-content.jpg"
+              alt="PABX Solutions"
               fill
               priority={false}
               sizes="(min-width: 1024px) 45vw, 0px"
-              className="object-cover"
+              className="object-cover scale-x-[-1] object-[100%_100%]"
             />
+            <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/30 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-r from-black/40 via-black/0 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/0 to-transparent" />
           </div>
         </div>
 
@@ -74,7 +73,7 @@ const InnovativeSection = memo(function InnovativeSection() {
                     : "bg-white text-gray-800 border border-gray-100"
                 }`}
               >
-                <h3 className="text-2xl font-bold mb-8 text-center">
+                <h3 className="text-xl font-bold mb-8 text-center">
                   {card.title}
                 </h3>
 

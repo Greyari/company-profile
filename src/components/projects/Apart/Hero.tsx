@@ -34,7 +34,7 @@ export default function Hero() {
             Apartment & Hotel
           </h1>
           <p className="text-sm md:text-lg mb-4 text-white/70">
-            Your trusted partner in innovative security technology solutions
+            Solution for managing and monitoring apartment and hotel facilities.
           </p>
         </div>
       </motion.div>
