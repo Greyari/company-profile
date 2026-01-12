@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import Groq from "groq-sdk";
-import companyData from "@/components/Chatbot/data/companyData.json";
+import companyData from "../../../components/Chatbot/data/companyData.json";
 
 const groq = new Groq({
   apiKey: process.env.GROQ_API_KEY!,
