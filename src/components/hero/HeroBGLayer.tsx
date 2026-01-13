@@ -36,7 +36,11 @@ export default function BackgroundLayer({
         sizes="100vw"
         priority={isActive}
         quality={90}
-        className="object-cover object-[100%_0.05%]"
+        className="object-cover   object-[70%_20%]     
+    sm:object-[70%_15%]   
+    md:object-[100%_5%]  
+    lg:object-[100%_0.5%]   
+    "
       />
     </div>
   );

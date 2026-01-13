@@ -46,11 +46,11 @@ export const PRODUCTS_DATA: Product[] = [
   // IP CAMERA (6 products)
   {
     id: "ipcam-001",
-    title: "IP Camera 4K Ultra HD",
+    title: "Solar Power Network PT Camera",
     category: "IP Camera",
     description:
       "Professional 4K IP camera with advanced AI detection and night vision capabilities.",
-    image: "/images/product/IPCAM.png",
+    image: "/images/product/IPCamera/solar-cctv.png",
     specifications: [
       "4K Ultra HD Resolution (3840×2160)",
       "AI Human & Vehicle Detection",

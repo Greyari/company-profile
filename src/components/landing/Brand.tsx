@@ -25,13 +25,13 @@ export default function Brands() {
           <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-24 bg-linear-to-l from-white to-transparent" />
 
           <ScrollVelocityRow
-            src="/images/logo/client.png"
+            src="/images/logo/Brands-1.png"
             direction={1}
             velocity={100}
           />
 
           <ScrollVelocityRow
-            src="/images/logo/client-2.png"
+            src="/images/logo/Brands-2.png"
             direction={-1}
             velocity={100}
           />
