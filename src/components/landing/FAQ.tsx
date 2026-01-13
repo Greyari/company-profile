@@ -43,19 +43,51 @@ const faqData: FAQItem[] = [
 export default function FAQ() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [formData, setFormData] = useState({
-    fullName: "",
+    name: "",
     email: "",
     phone: "",
     message: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   const toggleFAQ = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+        //  trigger success modal
+        (window as any).openResultModal("success");
+      } else {
+        //  trigger error modal
+        (window as any).openResultModal("error");
+      }
+    } catch (err) {
+      (window as any).openResultModal("error");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (
@@ -162,6 +194,19 @@ export default function FAQ() {
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-5">
+                {/* pesan */}
+                {/* {success && (
+                  <div className="bg-green-100 text-green-800 p-4 rounded-lg mb-4 text-sm">
+                    ✅ Your message has been sent. We will contact you shortly.
+                  </div>
+                )} */}
+
+                {/* {error && (
+                  <div className="bg-red-100 text-red-800 p-4 rounded-lg mb-4 text-sm">
+                    ❌ {error}
+                  </div>
+                )} */}
+
                 <div>
                   <label
                     htmlFor="fullName"
@@ -172,8 +217,8 @@ export default function FAQ() {
                   <input
                     type="text"
                     id="fullName"
-                    name="fullName"
-                    value={formData.fullName}
+                    name="name"
+                    value={formData.name}
                     onChange={handleChange}
                     placeholder="Your name"
                     className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
@@ -240,9 +285,10 @@ export default function FAQ() {
 
                 <button
                   type="submit"
+                  disabled={loading}
                   className="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3.5 px-6 rounded-lg transition-colors text-sm"
                 >
-                  Send Message
+                  {loading ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>

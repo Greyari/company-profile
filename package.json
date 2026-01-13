@@ -14,6 +14,8 @@
     "framer-motion": "^12.23.26",
     "groq-sdk": "^0.37.0",
     "gsap": "^3.14.2",
+    "lottie-react": "^2.4.1",
+    "lottie-web": "^5.13.0",
     "lucide-react": "^0.562.0",
     "motion": "^12.23.26",
     "next": "16.0.10",

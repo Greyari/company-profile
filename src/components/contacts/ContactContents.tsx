@@ -6,16 +6,48 @@ import { Mail, Phone, MapPin, Clock, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function ContactContents() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+        //  trigger success modal
+        (window as any).openResultModal("success");
+      } else {
+        //  trigger error modal
+        (window as any).openResultModal("error");
+      }
+    } catch (error) {
+      (window as any).openResultModal("error");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (
@@ -181,6 +213,7 @@ export default function ContactContents() {
                     type="text"
                     id="fullName"
                     name="name"
+                    value={formData.name}
                     onChange={handleChange}
                     placeholder="Your name"
                     className="w-full px-4 py-3.5 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
@@ -248,9 +281,10 @@ export default function ContactContents() {
 
               <button
                 type="submit"
+                disabled={loading}
                 className="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-4 px-6 rounded-lg transition-colors text-sm sm:text-base"
               >
-                Send Message
+                {loading ? "Sending..." : "Send Message"}
               </button>
             </form>
           </div>

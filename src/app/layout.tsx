@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/animations/scroll/smoothScroll";
 import FloatingChat from "@/components/ChatBot/FloatingChat";
 import SplashProvider from "@/components/providers/SplashProvider";
+import ModalRoot from "@/components/ModalRoot";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({
             {children}
             <Footer />
           </SmoothScroll>
+          <ModalRoot />
           <FloatingChat />
         </SplashProvider>
       </body>
