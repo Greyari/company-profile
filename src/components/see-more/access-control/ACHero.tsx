@@ -11,7 +11,7 @@ export default function ACHero() {
   return (
     <section className="relative flex items-center h-[50vh] min-h-100 overflow-hidden">
       <Image
-        src="/images/contents/AC-contents.jpg"
+        src="/images/contents/AC-Contents.jpg"
         alt="About Kreatif System"
         fill
         priority
