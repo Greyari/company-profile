@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useLayoutEffect, useState } from "react";
+import Image from "next/image";
 import {
   motion,
   useScroll,
@@ -11,33 +12,42 @@ import {
   useAnimationFrame,
 } from "framer-motion";
 
-type Props = {
-  src: string;
+type ScrollVelocityRowProps = {
+  images: string[];
   direction?: 1 | -1;
   velocity?: number;
 };
+
+/**
+ * Calculate total width of content for seamless wrapping
+ */
 function useContentWidth(ref: React.RefObject<HTMLDivElement | null>) {
   const [width, setWidth] = useState(0);
 
   useLayoutEffect(() => {
-    const update = () => {
+    const updateWidth = () => {
       if (ref.current) {
         setWidth(ref.current.scrollWidth / 2);
       }
     };
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
+
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+
+    return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
   return width;
 }
 
+/**
+ * Animated row component with scroll-based velocity
+ */
 export default function ScrollVelocityRow({
-  src,
+  images,
   direction = 1,
   velocity = 50,
-}: Props) {
+}: ScrollVelocityRowProps) {
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -56,7 +66,6 @@ export default function ScrollVelocityRow({
 
   const x = useTransform(baseX, (v) => {
     if (singleItemWidth === 0) return 0;
-    // Wrap seamlessly within single item width
     const wrapped = ((v % singleItemWidth) + singleItemWidth) % singleItemWidth;
     return -wrapped;
   });
@@ -85,26 +94,40 @@ export default function ScrollVelocityRow({
       <motion.div
         ref={wrapperRef}
         style={{ x }}
-        className="flex will-change-transform"
+        className="flex will-change-transform items-center gap-8 md:gap-12 lg:gap-16"
       >
-        <div className="flex shrink-0 items-center pr-8">
-          <img src={src} alt="clients" className="h-15 md:h-18 lg:h-20" />
-        </div>
-        <div className="flex shrink-0 items-center pr-8">
-          <img src={src} alt="clients" className="h-15 md:h-18 lg:h-20" />
-        </div>
-        <div className="flex shrink-0 items-center pr-8">
-          <img src={src} alt="clients" className="h-15 md:h-18 lg:h-20" />
-        </div>
-        <div className="flex shrink-0 items-center pr-8">
-          <img src={src} alt="clients" className="h-15 md:h-18 lg:h-20" />
-        </div>
-        <div className="flex shrink-0 items-center pr-8">
-          <img src={src} alt="clients" className="h-15 md:h-18 lg:h-20" />
-        </div>
-        <div className="flex shrink-0 items-center pr-8">
-          <img src={src} alt="clients" className="h-15 md:h-18 lg:h-20" />
-        </div>
+        {images.map((imagePath, index) => (
+          <div
+            key={`first-${index}`}
+            className="flex shrink-0 items-center justify-center"
+          >
+            <div className="relative h-16 w-32 md:h-20 md:w-40 lg:h-24 lg:w-48 grayscale hover:grayscale-0 transition-all duration-300">
+              <Image
+                src={imagePath}
+                alt={`Brand ${index + 1}`}
+                fill
+                className="object-contain drop-shadow-sm"
+                sizes="(max-width: 768px) 128px, (max-width: 1024px) 160px, 192px"
+              />
+            </div>
+          </div>
+        ))}
+        {images.map((imagePath, index) => (
+          <div
+            key={`second-${index}`}
+            className="flex shrink-0 items-center justify-center"
+          >
+            <div className="relative h-16 w-32 md:h-20 md:w-40 lg:h-24 lg:w-48 grayscale hover:grayscale-0 transition-all duration-300">
+              <Image
+                src={imagePath}
+                alt={`Brand ${index + 1}`}
+                fill
+                className="object-contain drop-shadow-sm"
+                sizes="(max-width: 768px) 128px, (max-width: 1024px) 160px, 192px"
+              />
+            </div>
+          </div>
+        ))}
       </motion.div>
     </div>
   );

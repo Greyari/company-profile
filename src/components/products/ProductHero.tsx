@@ -36,7 +36,8 @@ export default function ProductHero() {
               Our Products
             </h1>
             <p className="text-sm md:text-lg mb-4 text-white/70">
-              Your trusted partner in innovative security technology solutions
+              A complete range of reliable security technology designed to
+              protect and empower your business
             </p>
           </motion.div>
         </div>

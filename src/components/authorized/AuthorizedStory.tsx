@@ -67,13 +67,13 @@ export default function AuthorizedStory() {
               >
                 {/* Background Image */}
                 <Image
-                  src="/images/contents/111.jpg"
+                  src="/images/contents/Dahua.jpg"
                   alt="CCTV Security System"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="
-                    object-cover object-[100%_60%]
+                    object-cover object-[0%_60%]
                     transition-transform duration-500 ease-out
                     group-hover:scale-105
                   "
@@ -83,8 +83,8 @@ export default function AuthorizedStory() {
                   className="
                     absolute inset-0
                     bg-linear-to-t
-                    from-black/40
-                    via-black/5
+                    from-black/80
+                    via-black/0
                     to-transparent
                   "
                 />
@@ -92,8 +92,8 @@ export default function AuthorizedStory() {
                   className="
                     absolute inset-0
                     bg-linear-to-b
-                    from-black/40
-                    via-black/5
+                    from-black/90
+                    via-black/0
                     to-transparent
                   "
                 />
@@ -101,8 +101,17 @@ export default function AuthorizedStory() {
                   className="
                     absolute inset-0
                     bg-linear-to-r
-                    from-black/40
-                    via-black/5
+                    from-black/50
+                    via-black/0
+                    to-transparent
+                  "
+                />
+                <div
+                  className="
+                    absolute inset-0
+                    bg-linear-to-l
+                    from-black/50
+                    via-black/0
                     to-transparent
                   "
                 />

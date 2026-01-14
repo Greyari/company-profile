@@ -26,7 +26,9 @@ export default function About() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[100%_80%]"
+        className="object-cover  object-[30%_20%]        
+        md:object-[70%_40%]    
+        lg:object-[100%_80%]"
       />
       {/* =========================
           Gradient & Blur Overlays

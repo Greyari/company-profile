@@ -13,7 +13,11 @@ export default function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[100%_85%]"
+        className="object-cover object-[50%_85%]
+        
+        md:object-[70%_40%]    
+        lg:object-[100%_85%]
+        "
       />
       <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/40 to-black/10" />
       <div className="absolute inset-0 bg-linear-to-l from-black/50 via-black/10 to-transparent" />

@@ -16,7 +16,9 @@ export default function ACHero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[100%_15%]"
+        className="object-cover object-[40%_15%]
+        md:object-[70%_40%]    
+        lg:object-[100%_15%]"
       />
       <div className="absolute inset-0 bg-linear-to-b from-black/80 via-black/30 to-transparent" />
 

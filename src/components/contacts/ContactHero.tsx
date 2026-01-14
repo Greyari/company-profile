@@ -34,7 +34,7 @@ export default function ContactHero() {
             Contact Us
           </h1>
           <p className="text-sm md:text-lg mb-4 text-white/70">
-            Your trusted partner in innovative security technology solutions
+            Reach out to us for consultations, inquiries, or project discussions
           </p>
         </div>
       </motion.div>
