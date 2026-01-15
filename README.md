@@ -93,33 +93,10 @@ company-profile-ksi/
 
 </div>
 
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to open issues or submit pull requests.
-
-```bash
-# Fork the project
-# Create feature branch
-git checkout -b feature/AmazingFeature
-
-# Commit changes
-git commit -m 'Add AmazingFeature'
-
-# Push to branch
-git push origin feature/AmazingFeature
-
-# Open Pull Request
-```
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
 
 <div align="center">
 
-**Built with ❤️ using Next.js**
+**Built with 😤 using Next.js**
 
 [![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=flat-square&logo=vercel)](https://company-profile-ksi.vercel.app/)
 [![GitHub](https://img.shields.io/badge/Source-GitHub-181717?style=flat-square&logo=github)](https://github.com/yourusername/company-profile-ksi)
