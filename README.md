@@ -1,15 +1,14 @@
-# KSI Company Profile
+# KREASII Company Profile
 
 <div align="center">
 
 ![Next.js](https://img.shields.io/badge/Next.js-14+-black?style=for-the-badge&logo=next.js&logoColor=white)
-![React](https://img.shields.io/badge/React-18+-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Vercel](https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel&logoColor=white)
 
 **A modern, high-performance company profile website**
 
-[View Live Demo](https://company-profile-ksi.vercel.app/) • [Report Bug](https://github.com/yourusername/company-profile-ksi/issues) • [Request Feature](https://github.com/yourusername/company-profile-ksi/issues)
+[View Live Demo](https://company-profile-ksi.vercel.app) • [Report Bug](https://github.com/yourusername/company-profile-ksi/issues) • [Request Feature](https://github.com/yourusername/company-profile-ksi/issues)
 
 </div>
 
@@ -68,7 +67,6 @@ company-profile-ksi/
 ├── 📂 src/
 │   ├── 📂 app/         # Next.js app directory
 │   ├── 📂 components/  # Reusable components
-│   ├── 📂 styles/      # Global styles
 │   └── 📂 lib/         # Utilities
 └── 📄 package.json
 ```
