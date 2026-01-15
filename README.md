@@ -79,21 +79,6 @@ company-profile-ksi/
 - ✅ Team introduction & company culture
 - ✅ Lead generation & inquiries
 
-## 📸 Screenshots
-
-<div align="center">
-
-### Desktop View
-
-![Desktop Preview](https://via.placeholder.com/800x400/000000/FFFFFF?text=Desktop+Preview)
-
-### Mobile View
-
-![Mobile Preview](https://via.placeholder.com/300x600/000000/FFFFFF?text=Mobile+Preview)
-
-</div>
-
-
 <div align="center">
 
 **Built with 😤 using Next.js**
