@@ -64,7 +64,7 @@ export default function About() {
           >
             <h2 className="text-2xl md:text-3xl font-bold mb-4">About Us</h2>
 
-            <p className="text-sm text-white/90 leading-relaxed mb-6 max-w-md">
+            <p className="text-sm text-white/90 leading-relaxed  mb-6 max-w-md">
               We deliver integrated and customizable security solutions, with
               trustworthy and supportive partnership through excellent products.
             </p>

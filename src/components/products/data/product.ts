@@ -63,7 +63,7 @@ export const PRODUCTS_DATA: Product[] = [
     category: "IP Camera",
     description:
       "Pan-tilt-zoom camera with 360° coverage and intelligent tracking system.",
-    image: "/images/product/IPCAM.png",
+    image: "/images/product/IPCamera/IP-Cam-02.png",
     specifications: [
       "360° Pan & 90° Tilt",
       "20x Optical Zoom",
@@ -76,7 +76,7 @@ export const PRODUCTS_DATA: Product[] = [
     category: "IP Camera",
     description:
       "Weatherproof dome camera designed for outdoor surveillance applications.",
-    image: "/images/product/IPCAM.png",
+    image: "/images/product/IPCamera/IP-Cam-03.png",
     specifications: [
       "IP67 Weatherproof Rating",
       "2MP Full HD 1080p",
@@ -89,7 +89,7 @@ export const PRODUCTS_DATA: Product[] = [
     category: "IP Camera",
     description:
       "High-performance bullet camera with enhanced IR illumination.",
-    image: "/images/product/IPCAM.png",
+    image: "/images/product/IPCamera/IP-Cam-04.png",
     specifications: [
       "5MP Super HD Resolution",
       "50m IR Night Vision",
@@ -98,11 +98,11 @@ export const PRODUCTS_DATA: Product[] = [
   },
   {
     id: "ipcam-005",
-    title: "IP Camera Fisheye 360",
+    title: "Fixed-focal Eyeball WizSense Network Camera",
     category: "IP Camera",
     description:
       "Panoramic fisheye camera providing complete 360° room coverage.",
-    image: "/images/product/IPCAM.png",
+    image: "/images/product/IPCamera/IP-Cam-05.png",
     specifications: [
       "360° Panoramic View",
       "12MP Ultra Resolution",
@@ -111,11 +111,11 @@ export const PRODUCTS_DATA: Product[] = [
   },
   {
     id: "ipcam-006",
-    title: "IP Camera Thermal Imaging",
+    title: "Wireless IP Camera",
     category: "IP Camera",
     description:
       "Advanced thermal imaging camera for temperature screening and detection.",
-    image: "/images/product/IPCAM.png",
+    image: "/images/product/IPCamera/IP-Cam-06.png",
     specifications: [
       "Thermal + Optical Dual Lens",
       "Temperature Accuracy ±0.3°C",
@@ -129,7 +129,7 @@ export const PRODUCTS_DATA: Product[] = [
     title: "CCTV Analog HD 1080p",
     category: "CCTV",
     description: "Cost-effective analog HD camera with superior image quality.",
-    image: "/images/product/IPCAM.png",
+    image: "/images/product/CCTV-S.png",
     specifications: [
       "Full HD 1080p Resolution",
       "40m IR Distance",
@@ -155,7 +155,7 @@ export const PRODUCTS_DATA: Product[] = [
     category: "CCTV",
     description:
       "Compact dome camera ideal for indoor monitoring environments.",
-    image: "/images/product/IPCAM.png",
+    image: "/images/product/CCTV/CCTV-001.png",
     specifications: [
       "720p HD Resolution",
       "3.6mm Fixed Lens",
@@ -168,7 +168,7 @@ export const PRODUCTS_DATA: Product[] = [
     category: "CCTV",
     description:
       "Durable outdoor bullet camera with robust housing protection.",
-    image: "/images/product/IPCAM.png",
+    image: "/images/product/CCTV/CCTV-002.png",
     specifications: [
       "IP66 Outdoor Rating",
       "3MP High Resolution",
@@ -181,7 +181,7 @@ export const PRODUCTS_DATA: Product[] = [
     category: "CCTV",
     description:
       "High-definition turbo camera with enhanced video transmission.",
-    image: "/images/product/IPCAM.png",
+    image: "/images/product/CCTV/CCTV-003.png",
     specifications: ["4MP Ultra Resolution", "HD-TVI Technology", "120dB WDR"],
   },
   {
@@ -189,7 +189,7 @@ export const PRODUCTS_DATA: Product[] = [
     title: "CCTV Mini PTZ",
     category: "CCTV",
     description: "Compact PTZ camera with powerful zoom capabilities.",
-    image: "/images/product/IPCAM.png",
+    image: "/images/product/CCTV/CCTV-004.png",
     specifications: [
       "10x Optical Zoom",
       "Pan 355° / Tilt 90°",
@@ -215,7 +215,7 @@ export const PRODUCTS_DATA: Product[] = [
     title: "HDCVI Dome Pro",
     category: "HDCVI",
     description: "Professional dome camera with advanced CVI technology.",
-    image: "/images/product/HDCVI.png",
+    image: "/images/product/DVR/XVR-01.png",
     specifications: [
       "5MP Super HD",
       "Built-in Mic Audio",
@@ -228,7 +228,7 @@ export const PRODUCTS_DATA: Product[] = [
     category: "HDCVI",
     description:
       "Starlight technology for color imaging in low-light conditions.",
-    image: "/images/product/HDCVI.png",
+    image: "/images/product/DVR/XVR-02.png",
     specifications: [
       "Color Night Vision",
       "2MP Full HD",
@@ -252,7 +252,7 @@ export const PRODUCTS_DATA: Product[] = [
     title: "HDCVI Eyeball Camera",
     category: "HDCVI",
     description: "Adjustable eyeball design for versatile installation angles.",
-    image: "/images/product/HDCVI.png",
+    image: "/images/product/DVR/XVR-03.png",
     specifications: [
       "2MP 1080p Resolution",
       "3-Axis Adjustment",
@@ -265,7 +265,7 @@ export const PRODUCTS_DATA: Product[] = [
     category: "HDCVI",
     description:
       "Discreet pinhole camera for covert surveillance applications.",
-    image: "/images/product/HDCVI.png",
+    image: "/images/product/DVR/XVR-04.png",
     specifications: [
       "2MP Compact Design",
       "3.7mm Pinhole Lens",

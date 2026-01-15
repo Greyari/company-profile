@@ -13,45 +13,37 @@ export default function AuthorizedTeam() {
               Our Commitment
             </h2>
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              Dahua aims to be your trustworthy and supportive partner by
-              providing excellent products through the application of
-              cutting-edge technologies and a commitment to delivering fast,
-              reliable, end-to-end service. We focus on understanding the unique
-              needs of our clients and ensuring that every solution we offer not
-              only meets but exceeds expectations. By combining innovation with
-              practical implementation, Dahua strives to create a seamless
-              experience from product selection to installation, maintenance,
-              and ongoing support, ensuring our clients feel confident and
-              secure in every interaction.
+              Our partnership is committed to being a trustworthy and supportive
+              partner by delivering high-quality products powered by
+              cutting-edge technologies and supported by fast, reliable,
+              end-to-end services. With a strong focus on innovation and
+              customer-centric solutions, Dahua ensures that every product and
+              system is designed to meet real-world security challenges while
+              maintaining the highest standards of performance, reliability, and
+              scalability.
             </p>
 
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              At PT Kreatif System Indonesia, we deliver integrated and fully
-              customizable security solutions designed for homes, businesses,
-              and industrial facilities. Our extensive range of services
-              includes advanced CCTV systems, intelligent alarms, access
-              control, and other comprehensive security solutions, all supported
-              by genuine Dahua products with official warranties. Backed by a
-              certified and highly experienced team, we guarantee professional
-              installation, timely system updates, and responsive after-sales
-              support. With a strong emphasis on innovation, competitive
-              pricing, and the latest technology, we provide smart, reliable,
-              and up-to-date security systems specifically tailored to the
-              unique requirements of each client, ensuring both peace of mind
-              and long-term operational efficiency.
+              PT Kreatif System Indonesia shares this commitment by providing
+              fully integrated and customizable security solutions for
+              residential, commercial, and industrial environments. Our services
+              include CCTV surveillance, intelligent alarm systems, access
+              control, and advanced security platforms using original Dahua
+              products with official warranties. Supported by a certified and
+              experienced team, we ensure professional system design, precise
+              installation, and responsive after-sales support throughout the
+              entire project lifecycle.
             </p>
 
             <p className="text-gray-600 text-justify leading-relaxed">
-              By prioritizing quality, reliability, and the development of
-              long-term partnerships, PT Kreatif System Indonesia is fully
-              committed to delivering security solutions that our customers can
-              truly depend on. We continually monitor emerging technological
-              trends and evolving industry standards to ensure every system we
-              deploy offers maximum protection, optimized operational
-              efficiency, and sustained value over time. Our goal is to empower
-              clients to confidently manage their security needs while
-              benefiting from modern, robust, and adaptable technology that
-              grows alongside their organization.
+              By prioritizing quality, reliability, and long-term partnerships,
+              PT Kreatif System Indonesia is dedicated to delivering security
+              solutions that offer lasting value and peace of mind. Through
+              continuous technology updates, adherence to industry best
+              practices, and close collaboration with Dahua Technology, we
+              empower our clients with secure, efficient, and future-ready
+              systems that evolve alongside their operational and security
+              needs.
             </p>
           </div>
         </div>

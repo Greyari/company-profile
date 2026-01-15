@@ -88,6 +88,15 @@ export default function ProductContent({
   return (
     <section className="py-16 bg-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className=" max-w-3xl mx-2 mb-8">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">
+            Product Highlight
+          </h1>
+          <p className="text-sm text-gray-600">
+            We offer a wider range of products. The items below are highlights,
+            please contact us for more available options
+          </p>
+        </div>
         {/* Header section with categories and search */}
         <div className="flex flex-col xl:flex-row gap-4 items-stretch xl:items-center justify-between mb-12">
           {/* Category navigation */}

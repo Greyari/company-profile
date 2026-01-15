@@ -286,7 +286,7 @@ export default function FAQ() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3.5 px-6 rounded-lg transition-colors text-sm"
+                  className="w-full bg-black/90 hover:bg-black/80 text-white font-medium py-3.5 px-6 rounded-lg transition-colors text-sm"
                 >
                   {loading ? "Sending..." : "Send Message"}
                 </button>

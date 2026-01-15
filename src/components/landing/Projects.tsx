@@ -44,7 +44,7 @@ export default function Projects() {
   return (
     <section className="bg-white mt-30">
       <div className="text-center mb-10 px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-black mb-3">
+        <h2 className="text-3xl md:text-4xl font-bold text-black mb-2">
           Solutions
         </h2>
         <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">

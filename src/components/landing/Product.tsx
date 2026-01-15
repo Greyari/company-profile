@@ -295,7 +295,7 @@ export default function Solutions() {
   return (
     <section className="relative py-24 bg-white overflow-hidden">
       <div className="text-center mb-8 px-6">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Product</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-2">Our Product</h2>
         <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
           Our products are developed as part of an integrated ecosystem.
         </p>

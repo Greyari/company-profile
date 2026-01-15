@@ -17,41 +17,34 @@ export default function AuthorizedStory() {
               PT Kreatif System Indonesia
             </h2>
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              PT Kreatif System Indonesia has established itself as a leading
-              provider of innovative technology and security solutions since its
-              founding in 2018. Over the years, we have consistently committed
-              to delivering exceptional services across CCTV surveillance,
-              comprehensive IT solutions, and seamless system integration. By
-              prioritizing reliability, operational efficiency, and bespoke
-              customization, we enable businesses and organizations of all sizes
-              to strengthen their security measures and optimize their
-              technology infrastructure, ensuring long-term sustainability and
-              growth.
+              PT Kreatif System Indonesia is an Authorized Partner of Dahua
+              Technology, committed to delivering reliable and high-quality
+              security solutions by utilizing original Dahua products and
+              cutting-edge technologies. As a trusted local partner, we align
+              with Dahua’s global standards in providing innovative, efficient,
+              and scalable security systems tailored to various environments,
+              from residential properties to commercial and industrial
+              facilities.
             </p>
 
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              As a trusted partner of globally recognized brands, we provide
-              advanced, fully tailored solutions designed to accommodate the
-              diverse and ever-evolving requirements of our clients. Our team of
-              skilled professionals collaborates closely with customers at every
-              stage, from consultation and planning to implementation and
-              support. This hands-on approach guarantees that each solution is
-              not only cutting-edge but also fully aligned with the specific
-              operational goals, risk management standards, and strategic
-              priorities of our clients, resulting in measurable improvements in
-              performance and security.
+              We specialize in integrated security solutions including CCTV
+              surveillance, alarm systems, access control, and other advanced
+              security technologies fully supported by official Dahua
+              warranties. Our certified and experienced team ensures
+              professional consultation, precise system design, and seamless
+              installation, delivering solutions that are not only
+              technologically advanced but also aligned with each client’s
+              operational needs and security objectives.
             </p>
 
             <p className="text-gray-600 text-justify leading-relaxed">
-              Driven by a relentless passion for excellence and innovation, PT
-              Kreatif System Indonesia continues to set industry benchmarks in
-              the field of security and technology. We are dedicated to
-              delivering solutions that provide peace of mind, enhance
-              operational efficiency, and empower businesses to thrive in the
-              rapidly evolving digital era. Through continuous research,
-              adoption of emerging technologies, and a client-focused mindset,
-              we help organizations stay ahead of potential threats while
-              maximizing their digital potential and competitive advantage.
+              Backed by responsive after-sales support and competitive pricing,
+              PT Kreatif System Indonesia focuses on long-term partnership and
+              customer satisfaction. Through continuous innovation and close
+              collaboration with Dahua Technology, we provide smart, up-to-date,
+              and dependable security systems that offer peace of mind and help
+              our clients stay protected in an ever-evolving security landscape.
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
@@ -73,7 +66,7 @@ export default function AuthorizedStory() {
                   priority
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="
-                    object-cover object-[0%_60%]
+                    object-cover md:object-[0%_60%] lg:object-[0%_40%]
                     transition-transform duration-500 ease-out
                     group-hover:scale-105
                   "
@@ -121,35 +114,38 @@ export default function AuthorizedStory() {
               {/* Right Column: Content Area */}
               <div className="mt-20 flex flex-col justify-center space-y-6 text-[#1a1a1a]">
                 <h2 className="text-xl md:text-2xl font-medium tracking-tight text-gray-900">
-                  Innovative Technology Solutions
+                  Innovative Security Solutions
                 </h2>
 
                 <div className="space-y-4 text-gray-600 leading-relaxed text-justify">
                   <p>
-                    PT Kreatif System Indonesia delivers innovative technology
-                    solutions that integrate security systems, IT
-                    infrastructure, and smart technologies into a unified and
-                    reliable ecosystem. By combining technical expertise with
-                    industry insight, we help organizations build systems that
-                    are not only secure, but also scalable and future-ready.
+                    As an Authorized Partner of Dahua Technology, PT Kreatif
+                    System Indonesia delivers innovative security solutions
+                    built on Dahua’s advanced and proven technologies. We
+                    integrate intelligent CCTV systems, access control, alarms,
+                    and smart security platforms into a unified ecosystem
+                    designed for reliability, scalability, and real-world
+                    performance.
                   </p>
 
                   <p>
-                    Our solutions are designed with flexibility and precision,
-                    addressing real operational challenges across various
-                    industries. From CCTV surveillance and network systems to
-                    integrated IT solutions, we ensure every implementation is
-                    tailored to client needs, optimized for performance, and
-                    aligned with long-term business objectives.
+                    Our Dahua-based solutions are engineered to address
+                    practical operational challenges across residential,
+                    commercial, and industrial sectors. From high-definition
+                    video surveillance and AI-powered analytics to secure
+                    network infrastructure, every system is carefully designed,
+                    customized, and optimized to meet specific security
+                    requirements and long-term operational goals.
                   </p>
 
                   <p>
-                    Through continuous innovation and collaboration with trusted
-                    global technology partners, we remain committed to
-                    delivering dependable, efficient, and intelligent solutions.
-                    This approach enables our clients to enhance operational
-                    control, minimize risk, and confidently navigate the
-                    evolving digital and security landscape.
+                    By working closely with Dahua Technology and continuously
+                    adopting the latest innovations, we ensure our clients
+                    receive dependable, future-ready security systems with
+                    official product warranties and professional implementation.
+                    This commitment enables organizations to improve situational
+                    awareness, minimize risk, and maintain full control in an
+                    increasingly complex security environment.
                   </p>
                 </div>
                 <div className="pt-4">

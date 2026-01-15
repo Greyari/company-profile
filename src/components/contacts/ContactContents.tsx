@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Clock, ArrowRight } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, ChevronRight } from "lucide-react";
 import Link from "next/link";
 
 export default function ContactContents() {
@@ -90,7 +90,7 @@ export default function ContactContents() {
 
   return (
     <section className="bg-white min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-15 pb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -154,7 +154,7 @@ export default function ContactContents() {
                     </div>
 
                     {isClickable && (
-                      <ArrowRight className="text-gray-400 ml-4" size={18} />
+                      <ChevronRight className="text-gray-400 ml-4" size={18} />
                     )}
                   </motion.div>
                 );
@@ -282,7 +282,7 @@ export default function ContactContents() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-4 px-6 rounded-lg transition-colors text-sm sm:text-base"
+                className="w-full bg-black/90 hover:bg-black/80 text-white font-medium py-4 px-6 rounded-lg transition-colors text-sm sm:text-base"
               >
                 {loading ? "Sending..." : "Send Message"}
               </button>

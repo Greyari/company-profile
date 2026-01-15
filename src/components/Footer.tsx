@@ -68,8 +68,8 @@ export default function Footer() {
             </h3>
 
             <p className="text-sm text-zinc-400 leading-relaxed max-w-xs">
-              IT company serving small, medium, and large enterprises across
-              various industries.
+              A trusted IT & security solutions provider serving small, medium,
+              large enterprises across diverse industries.
             </p>
             <div className="flex space-x-4">
               <Link

@@ -36,10 +36,10 @@ const brandRows = {
  */
 export default function Brands() {
   return (
-    <section className="mb-28">
+    <section className="mb-18">
       <div className="relative mx-auto">
         <div className="text-center mb-5 px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-3">
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-2">
             Brands
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
