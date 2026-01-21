@@ -36,7 +36,7 @@ export default function Clients() {
       <div className="relative mx-auto">
         <div className="text-center mb-10 px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-2">
-            Clients
+            Our Clients
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
             Trusted by companies across industries to support their operations.
