@@ -114,7 +114,7 @@ export default function AuthorizedStory() {
               {/* Right Column: Content Area */}
               <div className="mt-20 flex flex-col justify-center space-y-6 text-[#1a1a1a]">
                 <h2 className="text-xl md:text-2xl font-medium tracking-tight text-gray-900">
-                  Innovative Security Solutions
+                  Smart & Modern Security Solutions
                 </h2>
 
                 <div className="space-y-4 text-gray-600 leading-relaxed text-justify">

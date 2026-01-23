@@ -60,7 +60,7 @@ export default function ProductContent({
   const router = useRouter();
 
   const [activeTab, setActiveTab] = useState(
-    getCategoryFromSlug(initialCategory)
+    getCategoryFromSlug(initialCategory),
   );
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -73,7 +73,7 @@ export default function ProductContent({
   const handleCategoryClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     categoryLabel: string,
-    href: string
+    href: string,
   ) => {
     e.preventDefault();
     setActiveTab(categoryLabel);
@@ -202,6 +202,29 @@ export default function ProductContent({
             )}
           </AnimatePresence>
         </motion.div>
+
+        {/* Divider CTA with fade */}
+        <div className="mt-20 flex items-center gap-4">
+          {/* Left fade line */}
+          <div className="flex-1 h-px bg-linear-to-r from-transparent via-gray-300 to-gray-300" />
+
+          <Link
+            href="/contact"
+            className="
+              px-6 py-2.5 rounded-full
+              border-2 border-gray-300
+              bg-transparent text-gray-700 text-sm font-medium
+              hover:bg-black hover:text-white hover:border-black
+              transition-all duration-300
+              whitespace-nowrap
+            "
+          >
+            Get More Product
+          </Link>
+
+          {/* Right fade line */}
+          <div className="flex-1 h-px bg-linear-to-l from-transparent via-gray-300 to-gray-300" />
+        </div>
       </div>
     </section>
   );

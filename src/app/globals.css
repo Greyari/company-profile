@@ -141,6 +141,16 @@ body {
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+::selection {
+  background: #000000;
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: #000000;
+  color: #ffffff;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

@@ -84,7 +84,7 @@ const InnovativeSection = memo(function InnovativeSection() {
         {/* Right Cards */}
         <div className="w-full lg:w-[55%] flex flex-col items-start">
           {/* New Header */}
-          <div className="ml-10 mb-5 ">
+          <div id="why-choose-us" className="ml-10 mb-5 ">
             <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-gray-900  px-4 md:px-8 lg:px-0">
               Why Choose Us?
             </h2>

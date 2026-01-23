@@ -5,7 +5,7 @@
 
 export default function AboutTeam() {
   return (
-    <section id="why-choose-us" className="mt-10 bg-white mb-35">
+    <section className="mt-10 bg-white mb-35">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className=" gap-12 items-center ">
           <div>

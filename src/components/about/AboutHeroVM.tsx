@@ -47,7 +47,7 @@ export default function AboutHeroVM() {
           viewport={{ once: false, amount: 0.3 }}
           className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full"
         >
-          <div className="max-w-2xl">
+          <div id="vision-mission" className="max-w-2xl">
             <h1 className="text-3xl md:text-4xl xl:text-5xl text-white font-semibold tracking-tight leading-13 mb-2">
               Vision & Mission
             </h1>
