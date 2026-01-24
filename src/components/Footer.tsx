@@ -44,7 +44,7 @@ const FOOTER_SECTIONS: FooterSection[] = [
 
 const CONTACT_INFO = {
   email: "enquiry@kreatifsystem.com",
-  phone: "+(62) 778 2102999",
+  phone: "+(62) 214 0088",
   address: "Ruko Palm Spring Blok B3 No.15, Batam, Kepulauan Riau, Indonesia",
 };
 
