@@ -51,7 +51,7 @@ export default function ContactContents() {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -68,9 +68,9 @@ export default function ContactContents() {
     {
       icon: Phone,
       title: "Phone",
-      content: "+62 778 2102999",
+      content: "+62 214 0088",
       type: "phone",
-      link: "tel:+627782102999",
+      link: "tel:+622140088",
     },
     {
       icon: Mail,
