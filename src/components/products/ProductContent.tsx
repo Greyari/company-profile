@@ -100,7 +100,7 @@ export default function ProductContent({
         {/* Header section with categories and search */}
         <div className="flex flex-col xl:flex-row gap-4 items-stretch xl:items-center justify-between mb-12">
           {/* Category navigation */}
-          <nav className="flex flex-wrap border border-gray-200 rounded-2xl sm:rounded-full p-2 items-center gap-1.5 sm:gap-2 xl:flex-1">
+          <nav className="flex flex-wrap border border-gray-200 rounded-2xl sm:rounded-full p-1 items-center gap-1 ">
             {CATEGORIES.map((category) => {
               const isActive = activeTab === category.label;
 
@@ -141,7 +141,7 @@ export default function ProductContent({
           </nav>
 
           {/* Search input */}
-          <div className="relative w-full xl:w-80 xl:shrink-0 group">
+          <div className="relative w-full xl:w-63 xl:shrink-0 group">
             <input
               type="text"
               placeholder="Search equipment..."

@@ -43,36 +43,38 @@ const CATEGORY_SLUGS: Record<string, string> = {
 const solutions = [
   {
     id: 1,
-    title: "CCTV",
-    description:
-      "Comprehensive CCTV surveillance solutions for real-time monitoring.",
-    image: "/images/product/CCTV-S.png",
+    title: "IP Camera",
+    description: "Advanced IP camera solutions with remote access.",
+    image: "/images/product/IPCamera/IP-Bullet-Cam.png",
   },
   {
     id: 2,
+    title: "Wifi Camera",
+    description:
+      "Comprehensive CCTV surveillance solutions for real-time monitoring.",
+    image: "/images/product/CCTV/Wifi-Outdoor.png",
+  },
+  {
+    id: 3,
+    title: "HDCVI Camera",
+    description: "High Definition Composite Video Interface technology.",
+    image: "/images/product/HDCVI/Analog-Bullet.png",
+  },
+  {
+    id: 4,
     title: "PABX System",
     description:
       "Reliable PABX communication systems for businesses of all sizes.",
     image: "/images/product/PABX.png",
   },
+
   {
-    id: 3,
-    title: "HDCVI",
-    description: "High Definition Composite Video Interface technology.",
-    image: "/images/product/HDCVI.png",
-  },
-  {
-    id: 4,
+    id: 5,
     title: "Audio Paging",
     description: "Integrated audio paging systems for announcements.",
     image: "/images/product/audioPaging.png",
   },
-  {
-    id: 5,
-    title: "IP Camera",
-    description: "Advanced IP camera solutions with remote access.",
-    image: "/images/product/IPCAM.png",
-  },
+
   {
     id: 6,
     title: "DVR/NVR",
@@ -92,7 +94,7 @@ const solutions = [
 ===================== */
 const throttle = <T extends (...args: any[]) => void>(
   func: T,
-  delay: number
+  delay: number,
 ): ((...args: Parameters<T>) => void) => {
   let lastCall = 0;
   let timeoutId: NodeJS.Timeout | null = null;
@@ -255,7 +257,7 @@ export default function Solutions() {
           damping: 30,
         });
       },
-      { timeout: 100 }
+      { timeout: 100 },
     );
 
     lastInteraction.current = Date.now();
@@ -281,7 +283,7 @@ export default function Solutions() {
 
   const getProductLink = useCallback(
     (title: string) => `/products/${CATEGORY_SLUGS[title] ?? ""}`,
-    []
+    [],
   );
 
   /* ---------- Interaction Handler ---------- */

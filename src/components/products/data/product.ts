@@ -27,213 +27,130 @@ export interface Category {
 export const CATEGORIES: Category[] = [
   { label: "All Products", slug: null, href: "/products" },
   { label: "IP Camera", slug: "ipcamera", href: "/products/ipcamera" },
-  { label: "CCTV", slug: "cctv", href: "/products/cctv" },
-  { label: "HDCVI", slug: "hdcvi", href: "/products/hdcvi" },
-  { label: "Audio Paging", slug: "audiopaging", href: "/products/audiopaging" },
-  { label: "PABX", slug: "pabx", href: "/products/pabx" },
+  { label: "HDCVI Camera", slug: "hdcvi", href: "/products/hdcvi" },
+  { label: "Wifi Camera", slug: "wifi", href: "/products/wifi" },
   { label: "DVR/NVR", slug: "dvrnvr", href: "/products/dvrnvr" },
   {
     label: "Access Control",
     slug: "accesscontrol",
     href: "/products/accesscontrol",
   },
+  { label: "PABX", slug: "pabx", href: "/products/pabx" },
+
+  { label: "Audio Paging", slug: "audiopaging", href: "/products/audiopaging" },
 ];
 
 /**
  * Master product catalog
  */
 export const PRODUCTS_DATA: Product[] = [
-  // IP CAMERA (6 products)
+  // 1. IP Camera (Network Camera)
   {
     id: "ipcam-001",
-    title: "EZVIZ Smart IP Camera",
+    title: "IPC-HFW2441S-S",
     category: "IP Camera",
-    description:
-      "Offers 1080p Full HD video quality for clear and detailed footage.",
-    image: "/images/product/IPCamera/IP-Cam-01.png",
+    description: "4MP IR Fixed-focal Bullet WizSense Network Camera.",
+    image: "/images/product/IPCamera/IP-Bullet-Cam.png",
     specifications: [
-      "Provides a wide 100-degree diagonal view",
-      "IP66-rated, suitable for outdoor use",
-      "Clear night vision with infrared LEDs",
+      '4MP 1/2.9" CMOS image sensor, low luminance, and high definition image',
+      "H.265 codec, high compression rate, ultra-low bit rate",
+      "Abnormality detection: Motion detection, video tampering, audio detection",
+      "IP67 protection, Built-in Mic, IR distance 30m",
     ],
   },
   {
     id: "ipcam-002",
-    title: "EZVIZ CS-TY1 Smart IP Camera",
+    title: "IPC-HDBW2441E-S",
     category: "IP Camera",
-    description:
-      " Offers a broad 114-degree diagonal view, ensuring comprehensive coverage.",
-    image: "/images/product/IPCAM.png",
+    description: "4MP IR Fixed-focal Dome WizSense Network Camera.",
+    image: "/images/product/IPCamera/IP-Dome-Cam.png",
     specifications: [
-      "1080p Full HD for precise monitoring.",
-      "Enables remote control through the app.",
-      "Customizable motion detection with alerts.",
+      '4MP 1/2.9" CMOS image sensor, high image definition',
+      "Outputs max. 4MP (2688 × 1520) @20 fps",
+      "Intelligent monitoring: Intrusion, tripwire (human & vehicle classification)",
+      "IP67, IK10 protection, Micro SD card up to 256GB",
     ],
   },
   {
     id: "ipcam-003",
-    title: "WDR IR Dome Network Camera",
+    title: "SD49425XB-HNR",
     category: "IP Camera",
-    description:
-      "Multiple network monitoring: Web viewer, CMS(DSS/PSS) & DMSS.",
-    image: "/images/product/IPCamera/IP-Cam-02.png",
+    description: "4MP 25x Starlight IR WizSense Network PTZ Camera.",
+    image: "/images/product/IPCamera/IP-PTZ-Cam.png",
     specifications: [
-      "1/2.5” 8Megapixel progressive scan CMOS",
-      "H.265&H.264 dual-stream encoding",
-      "Micro SD card memory, IP67,IK10, PoE+",
-    ],
-  },
-  {
-    id: "ipcam-004",
-    title: "EZVIZ CS-CB3 Smart IP Camera",
-    category: "IP Camera",
-    description:
-      " Provides Quad HD video quality at 2560×1440 for high-definition footage.",
-    image: "/images/product/IPCamera/IP-Cam-04.png",
-    specifications: [
-      "Offers an 89-degree diagonal view",
-      "HD video quality at 2560×1440 ",
-      "Delivers clear night vision ",
-    ],
-  },
-  {
-    id: "ipcam-005",
-    title: "Tapo C200 Smart IP Camera",
-    category: "IP Camera",
-    description:
-      "Offers comprehensive coverage, reducing blind spots within its range.",
-    image: "/images/product/IPCamera/IP-Cam-05.png",
-    specifications: [
-      "High-quality video at 1080p Full HD",
-      "Offers comprehensive coverage ",
-      "Two-way audio communication",
-    ],
-  },
-  {
-    id: "ipcam-006",
-    title: "EZVIZ  Smart IP Camera",
-    category: "IP Camera",
-    description:
-      "Offers a 103-degree diagonal view, ensuring broad coverage for monitoring.",
-    image: "/images/product/IPCamera/IP-Cam-06.png",
-    specifications: [
-      "1080p Full HD video quality",
-      "Allows remote control via the app",
-      "Customizable motion detection with alerts,",
+      '1/2.8" 4MP STARVIS™ CMOS with 25x optical zoom',
+      "Starlight technology for ultra-low light performance",
+      "Perimeter protection, Face detection, SMD Plus",
+      "IR distance up to 100m, IP66 rating",
     ],
   },
 
-  // CCTV (6 products)
-  {
-    id: "cctv-001",
-    title: "IR Bullet Camera",
-    category: "CCTV",
-    description: "HAC-HFW1500CP-A 5MP Starlight HDCVI IR Bullet Camera.",
-    image: "/images/product/CCTV-S.png",
-    specifications: [
-      "Max 25 fps@5MP",
-      "Max. IR length 30 m, Smart IR",
-      "CVI/CVBS/AHD/TVI switchable",
-    ],
-  },
-  {
-    id: "cctv-002",
-    title: "IR Bullet Network Camera",
-    category: "CCTV",
-    description: "IPC-HFW5631E-Z5E 6MP WDR IR Bullet Network Camera.",
-    image: "/images/product/CCTV/CCTV-005.png",
-    specifications: [
-      "H.265&H.264 dual-stream encoding",
-      "Multiple network monitoring",
-      "Day/Night(ICR), 3DNR, AWB, AGC, BLC",
-    ],
-  },
-  {
-    id: "cctv-003",
-    title: "Fixed IR Eyeball Camera",
-    category: "CCTV",
-    description:
-      "HAC-HDW1801TLM(-A) 4K Starlight HDCVI Fixed IR Eyeball Camera.",
-    image: "/images/product/CCTV/CCTV-001.png",
-    specifications: [
-      "120 dB true WDR, 3D NR",
-      "30 m illumination distance",
-      "Built-in MIC (-A).",
-    ],
-  },
-  {
-    id: "cctv-004",
-    title: "Fixed IR Bullet Camera",
-    category: "CCTV",
-    description: "HAC-HFW1801TH-I8, 4K Starlight HDCVI Fixed IR Bullet Camera.",
-    image: "/images/product/CCTV/CCTV-002.png",
-    specifications: [
-      "Max. 15 fps@4K.",
-      "Smart IR Illumination.",
-      "Super Adapt.",
-    ],
-  },
-  {
-    id: "cctv-005",
-    title: "POC IR Eyeball Camera",
-    category: "CCTV",
-    description: "HAC-HDW1500T-Z-A-POC 5MP HDCVI POC IR Eyeball Camera.",
-    image: "/images/product/CCTV/CCTV-003.png",
-    specifications: [
-      "HD and SD output switchable",
-      "Max. IR length 60m, Smart IR",
-      "2.7-12mm motorized lens",
-    ],
-  },
-  {
-    id: "cctv-006",
-    title: "POC IR Bullet Camera",
-    category: "CCTV",
-    description: "HAC-HFW1500R-Z-IRE6-POC 5MP HDCVI POC IR Bullet Camera",
-    image: "/images/product/CCTV/CCTV-004.png",
-    specifications: [
-      "IP67, POC/DC12V",
-      "Max 20fps@5MP",
-      "HD and SD output switchable",
-    ],
-  },
-
-  // HDCVI (6 products)
+  // 2. Analog / HDCVI Camera
   {
     id: "hdcvi-001",
-    title: "HDCVI XVR16-I DVR",
-    category: "HDCVI",
-    description: "Supports a variety of camera types including Analog.",
-    image: "/images/product/HDCVI.png",
+    title: "HAC-HFW1200T",
+    category: "HDCVI Camera",
+    description: "2MP HDCVI IR Bullet Camera Lite Series.",
+    image: "/images/product/HDCVI/Analog-Bullet.png",
     specifications: [
-      "Allows connectivity for up to 16 video channels",
-      "Compatible with various video resolutions including HD ",
-      "Utilizes advanced video compression",
+      "Max 30fps@1080P (1920 × 1080)",
+      "CVI/CVBS/AHD/TVI switchable via one BNC port",
+      "3.6mm fixed lens (2.8mm, 6mm optional)",
+      "Max. IR length 30m, Smart IR, IP67, DC12V",
     ],
   },
   {
     id: "hdcvi-002",
-    title: "HDCVI XVR08-I DVR",
-    category: "HDCVI",
-    description: "Supports a variety of camera types including Analog.",
-    image: "/images/product/HDCVI.png",
+    title: "HAC-HDW1200M",
+    category: "HDCVI Camera",
+    description: "2MP HDCVI IR Eyeball Camera Lite Series.",
+    image: "/images/product/HDCVI/Analog-Dome.png",
     specifications: [
-      "Allows connectivity for up to 8 video channels",
-      "Offers internal storage options",
-      "Equipped with Ethernet ports",
+      "Max 30fps@1080P resolution",
+      "Multi-language OSD, HD and SD output switchable",
+      "Quick-to-install eyeball saves installation time",
+      "Max. IR length 30m, Smart IR, IP67, DC12V",
     ],
   },
   {
     id: "hdcvi-003",
-    title: "HDCVI XVR04-I DVR",
-    category: "HDCVI",
-    description:
-      "Supports various camera types such as Analog, AHD, TVI, CVI, and IP cameras.",
-    image: "/images/product/HDCVI.png",
+    title: "SD49225I-HC",
+    category: "HDCVI Camera",
+    description: "2MP 25x Starlight IR HDCVI PTZ Camera.",
+    image: "/images/product/IPCamera/IP-PTZ-Cam.png",
     specifications: [
-      "Allows connectivity for up to 4 video channels",
-      "Compatible with different video resolutions",
-      "Allows remote viewing & management via mobile apps ",
+      '1/2.8" STARVIS™ CMOS, 25x optical zoom',
+      "Starlight technology, 120dB true WDR, 3D DNR",
+      "Max. 25/30fps@1080P, 25/30/50/60fps@720P",
+      "IR distance up to 100m, IP66 protection",
+    ],
+  },
+
+  // 3. Wifi Camera
+  {
+    id: "wifi-001",
+    title: "Hero A1 (IPC-A22EP-L)",
+    category: "Wifi Camera",
+    description: "2MP H.265 Wi-Fi Pan & Tilt Camera.",
+    image: "/images/product/CCTV/Wifi-Indoor.png",
+    specifications: [
+      "1080P Full HD Video with H.265 compression",
+      "0 to 355° Pan & -5° to 80° Tilt rotation",
+      "Human Detection and Smart Tracking",
+      "Two-way Talk, Built-in Siren, Micro SD Slot (up to 256GB)",
+    ],
+  },
+  {
+    id: "wifi-002",
+    title: "F22P-D (Bullet Wifi)",
+    category: "Wifi Camera",
+    description: "2MP Bullet WI-FI Camera Outdoor Series.",
+    image: "/images/product/CCTV/Wifi-Outdoor.png",
+    specifications: [
+      "1080P Full HD Video & H.265 Compression",
+      "Human Detection & Motion Activated built-in Mic",
+      "IP67 Weatherproof for outdoor conditions",
+      "Diversified Storage: NVR, Cloud Storage, or Micro SD card",
     ],
   },
 

@@ -7,12 +7,12 @@ import { notFound } from "next/navigation";
 
 const VALID_CATEGORIES = [
   "ipcamera",
-  "cctv",
   "hdcvi",
-  "audiopaging",
-  "pabx",
+  "wifi",
   "dvrnvr",
   "accesscontrol",
+  "pabx",
+  "audiopaging",
 ];
 
 interface PageProps {

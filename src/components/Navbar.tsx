@@ -13,6 +13,7 @@ export default function Navbar() {
   const [isNavbarHovered, setIsNavbarHovered] = useState(false);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
 
   const pathname = usePathname();
   const navRef = useRef<HTMLElement>(null);
@@ -86,14 +87,24 @@ export default function Navbar() {
   const dropdownItems = {
     "/products": [
       { label: "All Products", href: "/products" },
-      { label: "CCTV", href: "/products/cctv" },
-      { label: "PABX", href: "/products/pabx" },
-      { label: "HDCVI", href: "/products/hdcvi" },
-      { label: "Audio Paging", href: "/products/audiopaging" },
       { label: "IP Camera", href: "/products/ipcamera" },
+      { label: "HDCVI Camera", href: "/products/hdcvi" },
+      { label: "Wifi Camera", href: "/products/wifi" },
       { label: "Video Recorder", href: "/products/dvrnvr" },
       { label: "Access Control", href: "/products/accesscontrol" },
+      { label: "PABX", href: "/products/pabx" },
+      { label: "Audio Paging", href: "/products/audiopaging" },
     ],
+    "/factory": [
+      { label: "Factory", href: "/factory" },
+      { label: "Construction Site", href: "/construction" },
+      { label: "Apartment & Hotel", href: "/apart" },
+      { label: "School", href: "/school" },
+    ],
+  };
+
+  const toggleMobileDropdown = (key: string) => {
+    setMobileDropdown((prev) => (prev === key ? null : key));
   };
 
   return (
@@ -142,7 +153,8 @@ export default function Navbar() {
               {[
                 { href: "/", label: "Home", hasDropdown: false },
                 { href: "/about", label: "About Us", hasDropdown: false },
-                { href: "/products", label: "Our Product", hasDropdown: true },
+                { href: "/products", label: "Product", hasDropdown: true },
+                { href: "/factory", label: "Solution", hasDropdown: true },
                 { href: "/contact", label: "Contact Us", hasDropdown: false },
               ].map((item) => {
                 const isActive = pathname === item.href;
@@ -193,8 +205,8 @@ export default function Navbar() {
                           isItemHovered
                             ? "w-full"
                             : isActive && !hasAnyHover
-                            ? "w-full"
-                            : "w-0"
+                              ? "w-full"
+                              : "w-0"
                         }`}
                       />
                     </Link>
@@ -272,42 +284,96 @@ export default function Navbar() {
 
           <div
             className={`
-          md:hidden overflow-hidden transition-all duration-500 ease-in-out
-          ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}
-        `}
+    md:hidden overflow-hidden transition-all duration-500 ease-in-out
+    ${isOpen ? "max-h-150 opacity-100" : "max-h-0 opacity-0"}
+  `}
           >
             <div className="pb-6 pt-4 space-y-2">
               {[
-                { href: "/", label: "Home" },
-                { href: "/about", label: "About Us" },
-                { href: "/products", label: "Our Product" },
-                { href: "/contact", label: "Contact Us" },
-              ].map((item, index) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  style={{ transitionDelay: `${index * 50}ms` }}
-                  className={`
-                  flex items-center justify-between
-                  px-4 py-3 rounded-xl
-                  font-medium transition-all duration-300
-                  hover:bg-gray-50 active:scale-[0.98]
-                  ${
-                    pathname === item.href
-                      ? "bg-gray-100 text-black"
-                      : "text-gray-800"
-                  }
-                `}
-                >
-                  {item.label}
-                  <ChevronRight
-                    size={18}
-                    strokeWidth={1.5}
-                    className="opacity-60"
-                  />
-                </Link>
-              ))}
+                { href: "/", label: "Home", hasDropdown: false },
+                { href: "/about", label: "About Us", hasDropdown: false },
+                { href: "/products", label: "Product", hasDropdown: true },
+                { href: "/factory", label: "Solution", hasDropdown: true },
+                { href: "/contact", label: "Contact Us", hasDropdown: false },
+              ].map((item) => {
+                const isOpenDropdown = mobileDropdown === item.href;
+
+                return (
+                  <div key={item.href} className="px-2">
+                    {/* ITEM TANPA DROPDOWN */}
+                    {!item.hasDropdown && (
+                      <Link
+                        href={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className={`
+        w-full flex items-center justify-between
+        px-4 py-3 rounded-xl font-medium
+        transition-all duration-300
+        ${pathname === item.href ? "bg-gray-200 text-black " : "text-gray-800"}
+      `}
+                      >
+                        <span>{item.label}</span>
+                        <ChevronRight
+                          size={18}
+                          strokeWidth={1.5}
+                          className="opacity-60"
+                        />
+                      </Link>
+                    )}
+
+                    {/* ITEM DENGAN DROPDOWN */}
+                    {item.hasDropdown && (
+                      <>
+                        <button
+                          type="button"
+                          onClick={() => toggleMobileDropdown(item.href)}
+                          className={`
+          w-full flex items-center justify-between
+          px-4 py-3 rounded-xl font-medium
+          transition-all duration-300
+          ${
+            mobileDropdown === item.href
+              ? "bg-gray-100 text-black"
+              : "text-gray-800"
+          }
+        `}
+                        >
+                          <span>{item.label}</span>
+                          <ChevronDown
+                            size={18}
+                            strokeWidth={1.5}
+                            className={`transition-transform duration-300 ${
+                              mobileDropdown === item.href ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+
+                        {mobileDropdown === item.href && (
+                          <div className="mt-1 ml-4 space-y-1">
+                            {dropdownItems[
+                              item.href as keyof typeof dropdownItems
+                            ]?.map((dropItem) => (
+                              <Link
+                                key={dropItem.href}
+                                href={dropItem.href}
+                                onClick={() => setIsOpen(false)}
+                                className="
+                  block px-4 py-2 rounded-lg
+                  text-sm text-gray-600
+                  hover:bg-gray-100 hover:text-black
+                  transition-all
+                "
+                              >
+                                {dropItem.label}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
