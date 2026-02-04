@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { fadeIn } from "@/lib/fadeIn";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, ChevronRight } from "lucide-react";
+import { ChevronDown, ChevronRight, Globe } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -246,7 +246,54 @@ export default function Navbar() {
                 onMouseEnter={() => handleDropdownEnter("language")}
                 onMouseLeave={handleDropdownLeave}
               >
-                {/* Language selector placeholder */}
+                <button
+                  type="button"
+                  className={`flex items-center gap-2 text-sm transition-colors ${
+                    isWhiteBg ? "text-black" : "text-white"
+                  }`}
+                >
+                  <Globe
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    className="lucide lucide-globe-icon lucide-globe"
+                  />
+
+                  <span className="font-medium">ID</span>
+                  <ChevronDown
+                    size={16}
+                    strokeWidth={1.5}
+                    className={`transition-transform duration-300 ${
+                      openDropdown === "language" ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+
+                {openDropdown === "language" && (
+                  <div
+                    onMouseEnter={() => {
+                      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+                    }}
+                    className="absolute top-full right-0 w-32 bg-white rounded-lg shadow-xl overflow-hidden animate-fadeIn"
+                  >
+                    {["ID", "EN"].map((lang) => (
+                      <button
+                        key={lang}
+                        className={`w-full text-left px-4 py-2 text-sm transition-all
+          
+          `}
+                      >
+                        {lang === "ID" ? "Indonesia" : "English"}
+                      </button>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
 

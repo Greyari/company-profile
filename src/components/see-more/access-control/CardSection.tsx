@@ -6,6 +6,7 @@
 
 import React, { memo } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 type Card = {
   id: number | string;
@@ -89,8 +90,8 @@ const InnovativeSection = memo(function InnovativeSection() {
                 </p>
 
                 <div className="mt-auto">
-                  <a
-                    href="#"
+                  <Link
+                    href="/products/accesscontrol"
                     className={`inline-flex items-center gap-2 font-semibold text-sm transition-colors ${
                       card.isDark
                         ? "text-white hover:text-gray-300"
@@ -98,7 +99,7 @@ const InnovativeSection = memo(function InnovativeSection() {
                     }`}
                   >
                     See Products <span aria-hidden>→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}
