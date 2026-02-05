@@ -3,8 +3,9 @@ import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/lib/fadeIn";
+import { useTranslations, useLocale } from "next-intl";
+import { useRouter, usePathname } from "@/i18n/routing";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { ChevronDown, ChevronRight, Globe } from "lucide-react";
 
 export default function Navbar() {
@@ -15,7 +16,13 @@ export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
 
+  const t = useTranslations("navbar");
+  const tProducts = useTranslations("products");
+  const tSolutions = useTranslations("solutions");
+  const locale = useLocale();
+  const router = useRouter();
   const pathname = usePathname();
+
   const navRef = useRef<HTMLElement>(null);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -82,24 +89,29 @@ export default function Navbar() {
     }, 100);
   };
 
+  const handleLanguageChange = (newLocale: string) => {
+    router.replace(pathname, { locale: newLocale });
+    setOpenDropdown(null);
+  };
+
   const isWhiteBg = isScrolled || isOpen || isNavbarHovered;
 
   const dropdownItems = {
     "/products": [
-      { label: "All Products", href: "/products" },
-      { label: "IP Camera", href: "/products/ipcamera" },
-      { label: "HDCVI Camera", href: "/products/hdcvi" },
-      { label: "Wifi Camera", href: "/products/wifi" },
-      { label: "Video Recorder", href: "/products/dvrnvr" },
-      { label: "Access Control", href: "/products/accesscontrol" },
-      { label: "PABX", href: "/products/pabx" },
-      { label: "Audio Paging", href: "/products/audiopaging" },
+      { label: tProducts("all"), href: "/products" },
+      { label: tProducts("ipCamera"), href: "/products/ipcamera" },
+      { label: tProducts("hdcvi"), href: "/products/hdcvi" },
+      { label: tProducts("wifi"), href: "/products/wifi" },
+      { label: tProducts("recorder"), href: "/products/dvrnvr" },
+      { label: tProducts("accessControl"), href: "/products/accesscontrol" },
+      { label: tProducts("pabx"), href: "/products/pabx" },
+      { label: tProducts("audioPaging"), href: "/products/audiopaging" },
     ],
     "/factory": [
-      { label: "Factory", href: "/factory" },
-      { label: "Construction Site", href: "/construction" },
-      { label: "Apartment & Hotel", href: "/apart" },
-      { label: "School", href: "/school" },
+      { label: tSolutions("factory"), href: "/factory" },
+      { label: tSolutions("construction"), href: "/construction" },
+      { label: tSolutions("apartment"), href: "/apart" },
+      { label: tSolutions("school"), href: "/school" },
     ],
   };
 
@@ -127,9 +139,7 @@ export default function Navbar() {
         animate="show"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div
-            className={`flex justify-between items-center transition-all duration-500 ease-in-out h-16`}
-          >
+          <div className="flex justify-between items-center transition-all duration-500 ease-in-out h-16">
             <div
               className={`flex items-center gap-2 font-bold text-lg transition-all duration-500 ease-in-out ${
                 isWhiteBg ? "text-black" : "text-white"
@@ -145,17 +155,16 @@ export default function Navbar() {
                 className="w-10 h-10 object-contain"
                 draggable={false}
               />
-
               <span>KREASII</span>
             </div>
 
             <div className="hidden md:flex items-center space-x-10">
               {[
-                { href: "/", label: "Home", hasDropdown: false },
-                { href: "/about", label: "About Us", hasDropdown: false },
-                { href: "/products", label: "Product", hasDropdown: true },
-                { href: "/factory", label: "Solution", hasDropdown: true },
-                { href: "/contact", label: "Contact Us", hasDropdown: false },
+                { href: "/", label: t("home"), hasDropdown: false },
+                { href: "/about", label: t("about"), hasDropdown: false },
+                { href: "/products", label: t("products"), hasDropdown: true },
+                { href: "/factory", label: t("solutions"), hasDropdown: true },
+                { href: "/contact", label: t("contact"), hasDropdown: false },
               ].map((item) => {
                 const isActive = pathname === item.href;
                 const isItemHovered = hoveredItem === item.href;
@@ -252,20 +261,8 @@ export default function Navbar() {
                     isWhiteBg ? "text-black" : "text-white"
                   }`}
                 >
-                  <Globe
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    className="lucide lucide-globe-icon lucide-globe"
-                  />
-
-                  <span className="font-medium">ID</span>
+                  <Globe size={24} strokeWidth={2} />
+                  <span className="font-medium">{locale.toUpperCase()}</span>
                   <ChevronDown
                     size={16}
                     strokeWidth={1.5}
@@ -282,14 +279,18 @@ export default function Navbar() {
                     }}
                     className="absolute top-full right-0 w-32 bg-white rounded-lg shadow-xl overflow-hidden animate-fadeIn"
                   >
-                    {["ID", "EN"].map((lang) => (
+                    {[
+                      { code: "id", label: "Indonesia" },
+                      { code: "en", label: "English" },
+                    ].map((lang) => (
                       <button
-                        key={lang}
-                        className={`w-full text-left px-4 py-2 text-sm transition-all
-          
-          `}
+                        key={lang.code}
+                        onClick={() => handleLanguageChange(lang.code)}
+                        className={`w-full text-left px-4 py-2 text-sm transition-all hover:bg-gray-50 ${
+                          locale === lang.code ? "bg-gray-100 font-medium" : ""
+                        }`}
                       >
-                        {lang === "ID" ? "Indonesia" : "English"}
+                        {lang.label}
                       </button>
                     ))}
                   </div>
@@ -330,34 +331,31 @@ export default function Navbar() {
           </div>
 
           <div
-            className={`
-    md:hidden overflow-hidden transition-all duration-500 ease-in-out
-    ${isOpen ? "max-h-150 opacity-100" : "max-h-0 opacity-0"}
-  `}
+            className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+              isOpen ? "max-h-150 opacity-100" : "max-h-0 opacity-0"
+            }`}
           >
             <div className="pb-6 pt-4 space-y-2">
               {[
-                { href: "/", label: "Home", hasDropdown: false },
-                { href: "/about", label: "About Us", hasDropdown: false },
-                { href: "/products", label: "Product", hasDropdown: true },
-                { href: "/factory", label: "Solution", hasDropdown: true },
-                { href: "/contact", label: "Contact Us", hasDropdown: false },
+                { href: "/", label: t("home"), hasDropdown: false },
+                { href: "/about", label: t("about"), hasDropdown: false },
+                { href: "/products", label: t("products"), hasDropdown: true },
+                { href: "/factory", label: t("solutions"), hasDropdown: true },
+                { href: "/contact", label: t("contact"), hasDropdown: false },
               ].map((item) => {
                 const isOpenDropdown = mobileDropdown === item.href;
 
                 return (
                   <div key={item.href} className="px-2">
-                    {/* ITEM TANPA DROPDOWN */}
                     {!item.hasDropdown && (
                       <Link
                         href={item.href}
                         onClick={() => setIsOpen(false)}
-                        className={`
-        w-full flex items-center justify-between
-        px-4 py-3 rounded-xl font-medium
-        transition-all duration-300
-        ${pathname === item.href ? "bg-gray-200 text-black " : "text-gray-800"}
-      `}
+                        className={`w-full flex items-center justify-between px-4 py-3 rounded-xl font-medium transition-all duration-300 ${
+                          pathname === item.href
+                            ? "bg-gray-200 text-black"
+                            : "text-gray-800"
+                        }`}
                       >
                         <span>{item.label}</span>
                         <ChevronRight
@@ -368,22 +366,16 @@ export default function Navbar() {
                       </Link>
                     )}
 
-                    {/* ITEM DENGAN DROPDOWN */}
                     {item.hasDropdown && (
                       <>
                         <button
                           type="button"
                           onClick={() => toggleMobileDropdown(item.href)}
-                          className={`
-          w-full flex items-center justify-between
-          px-4 py-3 rounded-xl font-medium
-          transition-all duration-300
-          ${
-            mobileDropdown === item.href
-              ? "bg-gray-100 text-black"
-              : "text-gray-800"
-          }
-        `}
+                          className={`w-full flex items-center justify-between px-4 py-3 rounded-xl font-medium transition-all duration-300 ${
+                            mobileDropdown === item.href
+                              ? "bg-gray-100 text-black"
+                              : "text-gray-800"
+                          }`}
                         >
                           <span>{item.label}</span>
                           <ChevronDown
@@ -404,12 +396,7 @@ export default function Navbar() {
                                 key={dropItem.href}
                                 href={dropItem.href}
                                 onClick={() => setIsOpen(false)}
-                                className="
-                  block px-4 py-2 rounded-lg
-                  text-sm text-gray-600
-                  hover:bg-gray-100 hover:text-black
-                  transition-all
-                "
+                                className="block px-4 py-2 rounded-lg text-sm text-gray-600 hover:bg-gray-100 hover:text-black transition-all"
                               >
                                 {dropItem.label}
                               </Link>
@@ -421,6 +408,32 @@ export default function Navbar() {
                   </div>
                 );
               })}
+
+              <div className="px-2 pt-2 border-t border-gray-200">
+                <div className="flex items-center justify-between px-4 py-3">
+                  <span className="text-sm font-medium text-gray-600">
+                    {t("language")}
+                  </span>
+                  <div className="flex gap-2">
+                    {[
+                      { code: "id", label: "ID" },
+                      { code: "en", label: "EN" },
+                    ].map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => handleLanguageChange(lang.code)}
+                        className={`px-3 py-1 rounded-lg text-sm font-medium transition-all ${
+                          locale === lang.code
+                            ? "bg-gray-900 text-white"
+                            : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                        }`}
+                      >
+                        {lang.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

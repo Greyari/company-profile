@@ -1,49 +1,40 @@
-// ============================================
-// FILE 1: types/heroData.ts
-// ============================================
-
 import { NavItem } from "@/types/hero.types";
 
 export const navItems: NavItem[] = [
   {
     id: 1,
-    label: "Security Solutions",
+    label: "nav1.label",
     image: "/images/hero-landing/cctv-hero-bg.webp",
-    title: "Integrated CCTV & Security Systems",
-    subtitle:
-      "Professional surveillance solutions for real-time monitoring, recording, and asset protection",
+    title: "nav1.title",
+    subtitle: "nav1.subtitle",
   },
   {
     id: 2,
-    label: "Installation & On-Site Support",
+    label: "nav2.label",
     image: "/images/hero-landing/Security.webp",
-    title: "Professional Installation & Technical Support",
-    subtitle:
-      "End-to-end installation, configuration, and on-site maintenance for security and IT systems",
+    title: "nav2.title",
+    subtitle: "nav2.subtitle",
   },
   {
     id: 3,
-    label: "Access Control",
+    label: "nav3.label",
     image: "/images/hero-landing/ac-hero.webp",
-    title: "Access Control & Attendance Systems",
-    subtitle:
-      "Secure entry management using fingerprint, RFID, and facial recognition technology",
+    title: "nav3.title",
+    subtitle: "nav3.subtitle",
   },
   {
     id: 4,
-    label: "Smart Security Infrastructure",
+    label: "nav4.label",
     image: "/images/hero-landing/cctv-monitor.jpg",
-    title: "Public Address, Alarm & Parking Systems",
-    subtitle:
-      "Integrated PA systems, alarm solutions, and parking barriers for efficient facility management",
+    title: "nav4.title",
+    subtitle: "nav4.subtitle",
   },
   {
     id: 5,
-    label: "Future-Ready Technology",
+    label: "nav5.label",
     image: "/images/hero-landing/future.webp",
-    title: "Innovative Security Technology Solutions",
-    subtitle:
-      "Delivering smart, secure, and scalable digital solutions for modern and growing businesses",
+    title: "nav5.title",
+    subtitle: "nav5.subtitle",
   },
 ];
 

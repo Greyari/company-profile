@@ -7,14 +7,17 @@ import { fadeIn } from "@/lib/fadeIn";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
-
-const sections = [
-  { id: "who-we-are", label: "Who We Are" },
-  { id: "vision-mission", label: "Our Vision & Mission" },
-  { id: "why-choose-us", label: "Why Choose Us?" },
-];
+import { useTranslations } from "next-intl";
 
 export default function AboutHero() {
+  const t = useTranslations("aboutPage");
+
+  const sections = [
+    { id: "who-we-are", label: t("nav.who") },
+    { id: "vision-mission", label: t("nav.vision") },
+    { id: "why-choose-us", label: t("nav.why") },
+  ];
+
   const [activeSection, setActiveSection] = useState("who-we-are");
 
   const scrollToSection = (id: string) => {
@@ -55,10 +58,10 @@ export default function AboutHero() {
         >
           <div className="max-w-2xl">
             <h1 className="text-3xl md:text-4xl xl:text-5xl text-white font-semibold tracking-tight leading-13 mb-2">
-              About Us
+              {t("title")}
             </h1>
             <p className="text-sm md:text-lg mb-4 text-white/70">
-              Your trusted partner in innovative security technology solutions
+              {t("description")}
             </p>
           </div>
         </motion.div>

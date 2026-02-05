@@ -6,6 +6,7 @@ import { fadeIn } from "@/lib/fadeIn";
 import { NavItem } from "@/types/hero.types";
 import { ANIMATION_EASE } from "@/types/hero.types";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const MotionLink = motion(Link);
 
@@ -21,6 +22,8 @@ const contentTransition = {
  * Hero content section with animated title, subtitle and CTA
  */
 export default function HeroContent({ activeItem }: HeroContentProps) {
+  const t = useTranslations("hero");
+
   return (
     <motion.div
       variants={fadeIn("left", { offset: 164, duration: 1 })}
@@ -50,7 +53,7 @@ export default function HeroContent({ activeItem }: HeroContentProps) {
           exit={{ opacity: 0, y: -20 }}
           transition={{ ...contentTransition, delay: 0.1, ease: "easeInOut" }}
         >
-          <HeroTitle title={activeItem.title} />
+          <HeroTitle title={t(activeItem.title)} />
         </motion.div>
       </AnimatePresence>
 
@@ -64,7 +67,7 @@ export default function HeroContent({ activeItem }: HeroContentProps) {
           transition={{ ...contentTransition, delay: 0.2, ease: "easeInOut" }}
           className="text-xs md:text-sm mb-5 text-white/70"
         >
-          {activeItem.subtitle}
+          {t(activeItem.subtitle)}
         </motion.p>
       </AnimatePresence>
 
@@ -85,7 +88,7 @@ export default function HeroContent({ activeItem }: HeroContentProps) {
         initial="rest"
         animate="rest"
       >
-        Get Started
+        {t("cta")}
         <motion.span
           className="inline-block"
           variants={{

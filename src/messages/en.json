@@ -1,0 +1,234 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "solutions": "Solutions",
+    "contact": "Contact Us",
+    "language": "Language"
+  },
+  "products": {
+    "all": "All Products",
+    "ipCamera": "IP Camera",
+    "hdcvi": "HDCVI Camera",
+    "wifi": "Wifi Camera",
+    "recorder": "Video Recorder",
+    "accessControl": "Access Control",
+    "pabx": "PABX",
+    "audioPaging": "Audio Paging"
+  },
+  "solutions": {
+    "factory": "Factory",
+    "construction": "Construction Site",
+    "apartment": "Apartment & Hotel",
+    "school": "School"
+  },
+  "hero": {
+    "nav1": {
+      "label": "Security Solutions",
+      "title": "Integrated CCTV & Security Systems",
+      "subtitle": "Professional surveillance solutions for real-time monitoring, recording, and asset protection"
+    },
+    "nav2": {
+      "label": "Installation & On-Site Support",
+      "title": "Professional Installation & Technical Support",
+      "subtitle": "End-to-end installation, configuration, and on-site maintenance for security and IT systems"
+    },
+    "nav3": {
+      "label": "Access Control",
+      "title": "Access Control & Attendance Systems",
+      "subtitle": "Secure entry management using fingerprint, RFID, and facial recognition technology"
+    },
+    "nav4": {
+      "label": "Smart Security Infrastructure",
+      "title": "Public Address, Alarm & Parking Systems",
+      "subtitle": "Integrated PA systems, alarm solutions, and parking barriers for efficient facility management"
+    },
+    "nav5": {
+      "label": "Future-Ready Technology",
+      "title": "Innovative Security Technology Solutions",
+      "subtitle": "Delivering smart, secure, and scalable digital solutions for modern and growing businesses"
+    },
+    "companyName": "PT. Kreatif System Indonesia",
+    "cta": "Get Started"
+  },
+
+  "about": {
+    "backgroundAlt": "About Background",
+    "title": "About Us",
+    "description": "We deliver integrated and customizable security solutions, with trustworthy and supportive partnership through excellent products.",
+    "button": "Read More",
+    "partner": {
+      "name": "PT Kreatif System Indonesia",
+      "authorized": "Authorized Partner of",
+      "brand": "Dahua",
+      "tech": "Technology",
+      "button": "Learn More"
+    }
+  },
+
+  "footer": {
+    "links": "Quick Links",
+    "solutions": "Solutions",
+    "support": "Support",
+    "contact": "Contact",
+    "rights": "All Rights Reserved",
+    "subtitle": "A trusted IT & security solutions provider serving small, medium, and large enterprises across diverse industries."
+  },
+  "solutionLinks": {
+    "accessControl": "Access Control",
+    "cctv": "CCTV & Security",
+    "itSupport": "IT Support",
+    "pabx": "PABX",
+    "publicAddress": "Public Address",
+    "alarmSafety": "Alarm & Safety"
+  },
+
+  "solution": {
+    "titleSection": "Our Services",
+    "subtitleSection": "We provide comprehensive security and IT solutions tailored to your business needs.",
+    "cctv": {
+      "title": "CCTV & Security System",
+      "description": "End-to-end CCTV and security systems providing real-time surveillance, recording, and threat monitoring to enhance safety for residential, commercial, and industrial environments."
+    },
+    "accessControl": {
+      "title": "Attendance & System Control",
+      "description": "Integrated attendance and access control solutions using fingerprint, RFID, or facial recognition to accurately track workforce activity and improve operational control."
+    },
+    "itSupport": {
+      "title": "IT Support & Maintenance",
+      "description": "Reliable IT support and maintenance services covering hardware, software, and network infrastructure to ensure stable, secure, and efficient business operations."
+    },
+    "publicAddress": {
+      "title": "Public Address, Parking Barrier & Electrical Services",
+      "description": "Integrated public address systems, automated parking barriers, and electrical services designed to improve communication, traffic management, and facility operations."
+    },
+    "pabx": {
+      "title": "PABX & Communication Systems",
+      "description": "Professional PABX and communication system solutions enabling clear, reliable internal and external communication for offices, buildings, and enterprise environments."
+    },
+    "alarm": {
+      "title": "Alarm & Safety Solutions",
+      "description": "Comprehensive alarm and safety systems including fire alarms, intrusion detection, and emergency alert solutions to protect people, assets, and critical facilities."
+    },
+    "learnMore": "Learn More"
+  },
+
+  "solutions3": {
+    "title": "Our Product",
+    "description": "Our products are developed as part of an integrated ecosystem.",
+    "seeMore": "See More",
+    "ipCamera": {
+      "title": "IP Camera",
+      "description": "Advanced IP camera solutions with remote access."
+    },
+    "wifiCamera": {
+      "title": "Wifi Camera",
+      "description": "Comprehensive CCTV surveillance solutions for real-time monitoring."
+    },
+    "hdcviCamera": {
+      "title": "HDCVI Camera",
+      "description": "High Definition Composite Video Interface technology."
+    },
+    "pabx": {
+      "title": "PABX System",
+      "description": "Reliable PABX communication systems for businesses of all sizes."
+    },
+    "audioPaging": {
+      "title": "Audio Paging",
+      "description": "Integrated audio paging systems for announcements."
+    },
+    "dvrnvr": {
+      "title": "DVR/NVR",
+      "description": "Secure video storage and playback systems."
+    },
+    "accessControl": {
+      "title": "Access Control",
+      "description": "Smart access control systems with RFID and biometric."
+    }
+  },
+  "brands": {
+    "title": "Our Brands",
+    "description": "Several of our collaboration partners."
+  },
+  "client": {
+    "title": "Our Clients",
+    "description": "Trusted by companies across industries to support their operations."
+  },
+  "projects": {
+    "title": "Our Solutions",
+    "description": "Trusted by companies across industries to support their operations.",
+    "factory": {
+      "title": "Factory",
+      "description": "Integrated IT and security solutions for factories, supporting operational monitoring, and infrastructure management."
+    },
+    "construction": {
+      "title": "Construction Site",
+      "description": "Technology and security systems for construction sites to support project monitoring, and site operations."
+    },
+    "apartment": {
+      "title": "Apartment & Hotel",
+      "description": "Comprehensive IT and security solutions for apartments and hotels, including access systems, and facility management."
+    },
+    "school": {
+      "title": "School",
+      "description": "IT infrastructure and security solutions for schools to support safety, communication, and daily operations."
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": {
+      "q1": {
+        "question": "What CCTV products are available?",
+        "answer": "We offer Dahua IP Cameras, Analog Cameras, NVRs, DVRs, and official accessories."
+      },
+      "q2": {
+        "question": "How long does installation take?",
+        "answer": "Residential projects take 1–2 days. Larger projects require a site survey."
+      },
+      "q3": {
+        "question": "Do you provide maintenance?",
+        "answer": "Yes, we provide maintenance, troubleshooting, and scheduled service packages."
+      },
+      "q4": {
+        "question": "Can CCTV be accessed remotely?",
+        "answer": "Yes, via Android, iOS, or desktop using official Dahua apps."
+      },
+      "q5": {
+        "question": "How do I get a price quote?",
+        "answer": "Contact us for a free consultation and site survey."
+      }
+    },
+    "form": {
+      "title": "Have Another Question?",
+      "subtitle": "Send us a message and we'll get back to you shortly.",
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "message": "Message",
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "your@email.com",
+      "phonePlaceholder": "+62 812 3456 7890",
+      "messagePlaceholder": "Tell us about your inquiry...",
+      "submit": "Send Message",
+      "sending": "Sending..."
+    }
+  },
+  "aboutPage": {
+    "title": "About Us",
+    "description": "Your trusted partner in innovative security technology solutions",
+    "nav": {
+      "who": "Who We Are",
+      "vision": "Our Vision & Mission",
+      "why": "Why Choose Us?"
+    },
+    "p1": "PT Kreatif System Indonesia has established itself as a leading provider of innovative technology and security solutions since its founding in 2018. Over the years, we have consistently committed to delivering exceptional services across CCTV surveillance, comprehensive IT solutions, and seamless system integration. By prioritizing reliability, operational efficiency, and bespoke customization, we enable businesses and organizations of all sizes to strengthen their security measures and optimize their technology infrastructure, ensuring long-term sustainability and growth.",
+    "p2": "As a trusted partner of globally recognized brands, we provide advanced, fully tailored solutions designed to accommodate the diverse and ever-evolving requirements of our clients. Our team of skilled professionals collaborates closely with customers at every stage, from consultation and planning to implementation and support. This hands-on approach guarantees that each solution is not only cutting-edge but also fully aligned with the specific operational goals, risk management standards, and strategic priorities of our clients, resulting in measurable improvements in performance and security.",
+    "p3": "Driven by a relentless passion for excellence and innovation, PT Kreatif System Indonesia continues to set industry benchmarks in the field of security and technology. We are dedicated to delivering solutions that provide peace of mind, enhance operational efficiency, and empower businesses to thrive in the rapidly evolving digital era. Through continuous research, adoption of emerging technologies, and a client-focused mindset, we help organizations stay ahead of potential threats while maximizing their digital potential and competitive advantage.",
+    "title-2": "Innovative Technology Solutions",
+    "p4": "PT Kreatif System Indonesia delivers innovative technology solutions that integrate security systems, IT infrastructure, and smart technologies into a unified and reliable ecosystem. By combining technical expertise with industry insight, we help organizations build systems that are not only secure, but also scalable and future-ready.",
+    "p5": "Our solutions are designed with flexibility and precision, addressing real operational challenges across various industries. From CCTV surveillance and network systems to integrated IT solutions, we ensure every implementation is tailored to client needs, optimized for performance, and aligned with long-term business objectives.",
+    "p6": "Through continuous innovation and collaboration with trusted global technology partners, we remain committed to delivering dependable, efficient, and intelligent solutions. This approach enables our clients to enhance operational control, minimize risk, and confidently navigate the evolving digital and security landscape.",
+    "button": "See our products"
+  }
+}

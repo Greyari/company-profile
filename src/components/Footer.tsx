@@ -7,7 +7,7 @@ import {
   Linkedin,
   Facebook,
 } from "lucide-react";
-
+import { useTranslations } from "next-intl";
 /**
  * Footer Component
  * Refactored for scalability, clean code, and industry-standard UI.
@@ -19,37 +19,42 @@ interface FooterSection {
   links: { label: string; href: string }[];
 }
 
-const FOOTER_SECTIONS: FooterSection[] = [
-  {
-    title: "Quick Links",
-    links: [
-      { label: "Home", href: "/" },
-      { label: "About Us", href: "/about" },
-      { label: "Products", href: "/products" },
-      { label: "Contact", href: "/contact" },
-    ],
-  },
-  {
-    title: "Solutions",
-    links: [
-      { label: "Access Control", href: "/access-control" },
-      { label: "CCTV & Security", href: "/cctv" },
-      { label: "IT Support", href: "/it-support" },
-      { label: "PABX", href: "/pabx" },
-      { label: "Public Address", href: "/public-address" },
-      { label: "Alarm & Safety", href: "/alarm" },
-    ],
-  },
-];
-
-const CONTACT_INFO = {
-  email: "enquiry@kreatifsystem.com",
-  phone: "+(62) 214 0088",
-  address: "Ruko Palm Spring Blok B3 No.15, Batam, Kepulauan Riau, Indonesia",
-};
-
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+
+  const t = useTranslations("navbar");
+  const x = useTranslations("footer");
+  const y = useTranslations("solutionLinks");
+
+  const FOOTER_SECTIONS: FooterSection[] = [
+    {
+      title: x("links"),
+      links: [
+        { label: t("home"), href: "/" },
+        { label: t("about"), href: "/about" },
+        { label: t("products"), href: "/products" },
+        { label: t("solutions"), href: "/factory" },
+        { label: t("contact"), href: "/contact" },
+      ],
+    },
+    {
+      title: x("solutions"),
+      links: [
+        { label: y("accessControl"), href: "/access-control" },
+        { label: y("cctv"), href: "/cctv" },
+        { label: y("itSupport"), href: "/it-support" },
+        { label: "PABX", href: "/pabx" },
+        { label: "Public Address", href: "/public-address" },
+        { label: y("alarmSafety"), href: "/alarm" },
+      ],
+    },
+  ];
+
+  const CONTACT_INFO = {
+    email: "enquiry@kreatifsystem.com",
+    phone: "+(62) 214 0088",
+    address: "Ruko Palm Spring Blok B3 No.15, Batam, Kepulauan Riau, Indonesia",
+  };
 
   return (
     <footer className="bg-black text-white border-t border-white/10">
@@ -68,8 +73,7 @@ export default function Footer() {
             </h3>
 
             <p className="text-sm text-zinc-400 leading-relaxed max-w-xs">
-              A trusted IT & security solutions provider serving small, medium,
-              large enterprises across diverse industries.
+              {x("subtitle")}
             </p>
             <div className="flex space-x-4">
               <Link
@@ -117,7 +121,7 @@ export default function Footer() {
           {/* Contact Information Section */}
           <div>
             <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-6">
-              Contact Us
+              {x("contact")}
             </h4>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3 text-sm text-zinc-400">
@@ -144,8 +148,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/30 mt-16 pt-8 flex justify-center items-center text-xs text-zinc-500 uppercase tracking-widest">
           <p>
-            &copy; {currentYear} PT. Kreatif System Indonesia. All rights
-            reserved.
+            &copy; {currentYear} PT. Kreatif System Indonesia. {x("rights")}
           </p>
         </div>
       </div>

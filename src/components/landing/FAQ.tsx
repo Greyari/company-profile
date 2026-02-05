@@ -5,42 +5,22 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 interface FAQItem {
-  question: string;
-  answer: string;
+  questionKey: string;
+  answerKey: string;
 }
-
 const faqData: FAQItem[] = [
-  {
-    question:
-      "What CCTV products are available at PT Kreatif System Indonesia?",
-    answer:
-      "We offer a wide range of Dahua CCTV products including IP Cameras, Analog Cameras, NVRs (Network Video Recorders), DVRs (Digital Video Recorders), and other supporting accessories. All products are original and come with official warranties.",
-  },
-  {
-    question: "How long does CCTV installation take?",
-    answer:
-      "Installation time varies depending on the project scale. For residential installations (4-8 cameras), it usually takes 1-2 working days. For commercial or industrial projects, we conduct a site survey first to determine the exact timeline.",
-  },
-  {
-    question: "Do you provide maintenance and after-sales service?",
-    answer:
-      "Yes, we provide routine maintenance and after-sales service. Our team of technicians is ready to assist with troubleshooting, repairs, and system checks. We also offer scheduled maintenance packages to ensure your CCTV system always performs optimally.",
-  },
-  {
-    question: "Can CCTV be accessed remotely via smartphone or computer?",
-    answer:
-      "Absolutely. All CCTV systems we install can be accessed remotely through smartphones (Android/iOS) or computers using Dahua's official applications. We provide setup assistance and training to ensure you can use the applications effectively.",
-  },
-  {
-    question: "How can I get a price quote for a CCTV installation project?",
-    answer:
-      "You can contact us via phone, WhatsApp, or email for a free consultation. Our team will conduct a site survey if needed and provide a competitive price quote along with recommended systems that fit your specific requirements.",
-  },
+  { questionKey: "items.q1.question", answerKey: "items.q1.answer" },
+  { questionKey: "items.q2.question", answerKey: "items.q2.answer" },
+  { questionKey: "items.q3.question", answerKey: "items.q3.answer" },
+  { questionKey: "items.q4.question", answerKey: "items.q4.answer" },
+  { questionKey: "items.q5.question", answerKey: "items.q5.answer" },
 ];
 
 export default function FAQ() {
+  const t = useTranslations("faq");
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [formData, setFormData] = useState({
     name: "",
@@ -91,7 +71,7 @@ export default function FAQ() {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormData({
       ...formData,
@@ -111,7 +91,7 @@ export default function FAQ() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-3xl lg:text-4xl text-black font-bold mb-8 leading-tight">
-              Frequently Asked Questions
+              {t("title")}
             </h2>
 
             <div className="divide-y divide-gray-300">
@@ -150,7 +130,7 @@ export default function FAQ() {
                     </motion.div>
 
                     <span className="flex-1 text-sm lg:text-lg font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors leading-snug">
-                      {item.question}
+                      {t(item.questionKey)}
                     </span>
                   </button>
 
@@ -167,7 +147,7 @@ export default function FAQ() {
                         className="overflow-hidden"
                       >
                         <div className="pt-2 text-justify pl-11 text-gray-600 leading-relaxed text-xs lg:text-sm">
-                          {item.answer}
+                          {t(item.answerKey)}
                         </div>
                       </motion.div>
                     )}
@@ -187,11 +167,9 @@ export default function FAQ() {
           >
             <div className=" border border-gray-200 rounded-lg p-8">
               <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
-                Have Another Question?
+                {t("form.title")}
               </h3>
-              <p className="text-gray-600 text-sm mb-8">
-                Send us a message and we'll get back to you shortly.
-              </p>
+              <p className="text-gray-600 text-sm mb-8">{t("form.subtitle")}</p>
 
               <form onSubmit={handleSubmit} className="space-y-5">
                 {/* pesan */}
@@ -212,7 +190,7 @@ export default function FAQ() {
                     htmlFor="fullName"
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
-                    Full Name
+                    {t("form.name")}
                   </label>
                   <input
                     type="text"
@@ -220,7 +198,7 @@ export default function FAQ() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Your name"
+                    placeholder={t("form.namePlaceholder")}
                     className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
                     required
                   />
@@ -231,7 +209,7 @@ export default function FAQ() {
                     htmlFor="email"
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
-                    Email Address
+                    {t("form.email")}
                   </label>
                   <input
                     type="email"
@@ -239,7 +217,7 @@ export default function FAQ() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="your@email.com"
+                    placeholder={t("form.emailPlaceholder")}
                     className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
                     required
                   />
@@ -250,7 +228,7 @@ export default function FAQ() {
                     htmlFor="phone"
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
-                    Phone Number
+                    {t("form.phone")}
                   </label>
                   <input
                     type="tel"
@@ -258,7 +236,7 @@ export default function FAQ() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="+62 812 3456 7890"
+                    placeholder={t("form.phonePlaceholder")}
                     className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
                     required
                   />
@@ -269,7 +247,7 @@ export default function FAQ() {
                     htmlFor="message"
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
-                    Message
+                    {t("form.message")}
                   </label>
                   <textarea
                     id="message"
@@ -277,7 +255,7 @@ export default function FAQ() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    placeholder="Tell us about your inquiry..."
+                    placeholder={t("form.messagePlaceholder")}
                     className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all resize-none"
                     required
                   />
@@ -288,7 +266,7 @@ export default function FAQ() {
                   disabled={loading}
                   className="w-full bg-black/90 hover:bg-black/80 text-white font-medium py-3.5 px-6 rounded-lg transition-colors text-sm"
                 >
-                  {loading ? "Sending..." : "Send Message"}
+                  {loading ? t("form.sending") : t("form.submit")}
                 </button>
               </form>
             </div>

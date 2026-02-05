@@ -12,6 +12,7 @@ import Image from "next/image";
 import { motion, useMotionValue, animate } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 /* =====================
    CONSTANTS
@@ -28,7 +29,7 @@ const THROTTLE_MS = 16; // ~60fps
    CATEGORY MAPPING
 ===================== */
 const CATEGORY_SLUGS: Record<string, string> = {
-  CCTV: "cctv",
+  CCTV: "wifi",
   "PABX System": "pabx",
   HDCVI: "hdcvi",
   "Audio Paging": "audiopaging",
@@ -36,56 +37,56 @@ const CATEGORY_SLUGS: Record<string, string> = {
   "DVR/NVR": "dvrnvr",
   "Access Control": "accesscontrol",
 };
-
-/* =====================
-   DATA
-===================== */
+/* ===================== DATA ===================== */
 const solutions = [
   {
     id: 1,
-    title: "IP Camera",
-    description: "Advanced IP camera solutions with remote access.",
+    titleKey: "ipCamera.title",
+    descriptionKey: "ipCamera.description",
     image: "/images/product/IPCamera/IP-Bullet-Cam.png",
+    category: "IP Camera",
   },
   {
     id: 2,
-    title: "Wifi Camera",
-    description:
-      "Comprehensive CCTV surveillance solutions for real-time monitoring.",
+    titleKey: "wifiCamera.title",
+    descriptionKey: "wifiCamera.description",
     image: "/images/product/CCTV/Wifi-Outdoor.png",
+    category: "CCTV",
   },
   {
     id: 3,
-    title: "HDCVI Camera",
-    description: "High Definition Composite Video Interface technology.",
+    titleKey: "hdcviCamera.title",
+    descriptionKey: "hdcviCamera.description",
     image: "/images/product/HDCVI/Analog-Bullet.png",
+    category: "HDCVI",
   },
   {
     id: 4,
-    title: "PABX System",
-    description:
-      "Reliable PABX communication systems for businesses of all sizes.",
+    titleKey: "pabx.title",
+    descriptionKey: "pabx.description",
     image: "/images/product/PABX.png",
+    category: "PABX System",
   },
-
   {
     id: 5,
-    title: "Audio Paging",
-    description: "Integrated audio paging systems for announcements.",
+    titleKey: "audioPaging.title",
+    descriptionKey: "audioPaging.description",
     image: "/images/product/audioPaging.png",
+    category: "Audio Paging",
   },
-
   {
     id: 6,
-    title: "DVR/NVR",
-    description: "Secure video storage and playback systems.",
+    titleKey: "dvrnvr.title",
+    descriptionKey: "dvrnvr.description",
     image: "/images/product/DVR.png",
+    category: "DVR/NVR",
   },
   {
     id: 7,
-    title: "Access Control",
-    description: "Smart access control systems with RFID and biometric.",
+    titleKey: "accessControl.title",
+    descriptionKey: "accessControl.description",
     image: "/images/product/AC.png",
+    category: "Access Control",
   },
 ];
 
@@ -124,11 +125,13 @@ const SolutionCard = memo(function SolutionCard({
   isMobile,
   index,
   link,
+  t,
 }: {
   item: (typeof solutions)[number];
   isMobile: boolean;
   index: number;
   link: string;
+  t: (key: string) => string;
 }) {
   return (
     <motion.div
@@ -144,7 +147,7 @@ const SolutionCard = memo(function SolutionCard({
       <div className="relative h-48 md:h-60 rounded-2xl overflow-hidden mb-6 bg-gray-100 flex items-center justify-center">
         <Image
           src={item.image}
-          alt={item.title}
+          alt={t(item.titleKey)}
           width={240}
           height={240}
           sizes="(max-width: 768px) 70vw, 240px"
@@ -154,10 +157,12 @@ const SolutionCard = memo(function SolutionCard({
         />
       </div>
 
-      <h3 className="text-xl text-black/70 font-bold mb-3">{item.title}</h3>
+      <h3 className="text-xl text-black/70 font-bold mb-3">
+        {t(item.titleKey)}
+      </h3>
 
       <p className="text-sm text-gray-500 mb-6 line-clamp-3">
-        {item.description}
+        {t(item.descriptionKey)}
       </p>
 
       <Link
@@ -165,7 +170,7 @@ const SolutionCard = memo(function SolutionCard({
         className="text-sm text-black/50 hover:text-black font-semibold inline-flex items-center gap-2"
         onPointerDown={(e) => e.stopPropagation()}
       >
-        See More
+        {t("seeMore")}
         <ArrowRight size={16} />
       </Link>
     </motion.div>
@@ -176,6 +181,7 @@ const SolutionCard = memo(function SolutionCard({
    COMPONENT
 ===================== */
 export default function Solutions() {
+  const t = useTranslations("solutions3");
   const x = useMotionValue(0);
   const lastInteraction = useRef(Date.now());
 
@@ -297,9 +303,9 @@ export default function Solutions() {
   return (
     <section className="relative py-24 bg-white overflow-hidden">
       <div className="text-center mb-8 px-6">
-        <h2 className="text-3xl md:text-4xl font-bold mb-2">Our Product</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-2">{t("title")}</h2>
         <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
-          Our products are developed as part of an integrated ecosystem.
+          {t("description")}
         </p>
       </div>
 
@@ -319,7 +325,8 @@ export default function Solutions() {
             item={item}
             index={index}
             isMobile={isMobile}
-            link={getProductLink(item.title)}
+            link={getProductLink(item.category)}
+            t={t}
           />
         ))}
       </motion.div>

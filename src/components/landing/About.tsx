@@ -4,6 +4,7 @@ import MotionLink from "next/link";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/lib/fadeIn";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 /**
  * About Section
@@ -13,6 +14,8 @@ import Image from "next/image";
  */
 
 export default function About() {
+  const t = useTranslations("about");
+
   return (
     <section
       className="
@@ -62,14 +65,16 @@ export default function About() {
             viewport={{ once: false, amount: 0.3 }}
             className="md:pr-36 py-10"
           >
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">About Us</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-4">
+              {" "}
+              {t("title")}
+            </h2>
 
             <p className="text-sm text-white/90 leading-relaxed  mb-6 max-w-md">
-              We deliver integrated and customizable security solutions, with
-              trustworthy and supportive partnership through excellent products.
+              {t("description")}
             </p>
 
-            <AnimatedButton href="/about" />
+            <AnimatedButton href="/about" label={t("button")} />
           </motion.div>
 
           {/* Vertical Divider (Desktop Only) */}
@@ -85,16 +90,15 @@ export default function About() {
             viewport={{ once: false, amount: 0.3 }}
             className="md:pl-36 py-10"
           >
-            <p className="text-sm text-white/80 mb-2">
-              PT Kreatif System Indonesia
-            </p>
+            <p className="text-sm text-white/80 mb-2">{t("partner.name")}</p>
 
             <h3 className="text-3xl md:text-4xl font-bold leading-tight mb-4">
-              Authorized Partner of <br />
-              <span className="text-red-600">Dahua</span> Technology
+              {t("partner.authorized")} <br />
+              <span className="text-red-600">{t("partner.brand")} </span>
+              {t("partner.tech")}
             </h3>
 
-            <AnimatedButton href="/authorized" />
+            <AnimatedButton href="/authorized" label={t("partner.button")} />
           </motion.div>
         </div>
       </div>
@@ -106,7 +110,7 @@ export default function About() {
  * Reusable animated button component
  * Keeps motion logic in one place
  */
-function AnimatedButton({ href }: { href: string }) {
+function AnimatedButton({ href, label }: { href: string; label: string }) {
   return (
     <MotionLink
       href={href}
@@ -121,7 +125,7 @@ function AnimatedButton({ href }: { href: string }) {
         hover:text-black
       "
     >
-      Read More
+      {label}
       <motion.span
         className="inline-block"
         variants={{

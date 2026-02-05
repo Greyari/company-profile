@@ -3,34 +3,32 @@
 // ====================
 
 import { CircleArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
-// Project data configuration
+
+/* ===================== DATA ===================== */
 const projects = [
   {
-    title: "Factory",
-    description:
-      "Integrated IT and security solutions for factories, supporting operational monitoring, and infrastructure management.",
+    titleKey: "factory.title",
+    descriptionKey: "factory.description",
     image: "/images/projects/factory.jpg",
     link: "/factory",
   },
   {
-    title: "Construction Site",
-    description:
-      "Technology and security systems for construction sites to support project monitoring, and site operations.",
+    titleKey: "construction.title",
+    descriptionKey: "construction.description",
     image: "/images/projects/construction.jpg",
     link: "/construction",
   },
   {
-    title: "Apartment & Hotel",
-    description:
-      "Comprehensive IT and security solutions for apartments and hotels, including access systems, and facility management.",
+    titleKey: "apartment.title",
+    descriptionKey: "apartment.description",
     image: "/images/projects/apart.jpg",
     link: "/apart",
   },
   {
-    title: "School",
-    description:
-      "IT infrastructure and security solutions for schools to support safety, communication, and daily operations.",
+    titleKey: "school.title",
+    descriptionKey: "school.description",
     image: "/images/projects/school.jpg",
     link: "/school",
   },
@@ -41,15 +39,15 @@ const projects = [
  * Displays project cards in a full-width grid layout
  */
 export default function Projects() {
+  const t = useTranslations("projects");
   return (
     <section className="bg-white mt-30">
       <div className="text-center mb-10 px-6">
         <h2 className="text-3xl md:text-4xl font-bold text-black mb-2">
-          Our Solutions
+          {t("title")}
         </h2>
         <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
-          {" "}
-          Trusted by companies across industries to support their operations.
+          {t("description")}{" "}
         </p>
       </div>
       {/* Grid Container - Full width, no gaps */}
@@ -57,10 +55,11 @@ export default function Projects() {
         {projects.map((project, index) => (
           <ProjectCard
             key={index}
-            title={project.title}
-            description={project.description}
+            titleKey={project.titleKey}
+            descriptionKey={project.descriptionKey}
             image={project.image}
             link={project.link}
+            t={t}
           />
         ))}
       </div>
@@ -72,20 +71,27 @@ export default function Projects() {
  * Individual Project Card Component
  */
 interface ProjectCardProps {
-  title: string;
-  description: string;
+  titleKey: string;
+  descriptionKey: string;
   image: string;
   link: string;
+  t: (key: string) => string;
 }
 
-function ProjectCard({ title, description, image, link }: ProjectCardProps) {
+function ProjectCard({
+  titleKey,
+  descriptionKey,
+  image,
+  link,
+  t,
+}: ProjectCardProps) {
   return (
     <Link href={link}>
       <div className="relative h-140 overflow-hidden group cursor-pointer">
         {/* Background Image */}
         <img
           src={image}
-          alt={title}
+          alt={t(titleKey)}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
 
@@ -95,12 +101,11 @@ function ProjectCard({ title, description, image, link }: ProjectCardProps) {
         {/* Content Container */}
         <div className="absolute bottom-10 left-0 right-0 p-6 text-white">
           {/* Title */}
-          <h3 className="text-2xl font-medium mb-1">{title}</h3>
-
+          <h3 className="text-2xl font-medium mb-1">{t(titleKey)}</h3>
           <div className="flex items-center justify-between gap-4">
             {/* Description */}
             <p className="text-sm font-light text-gray-200 leading-relaxed flex-1">
-              {description}
+              {t(descriptionKey)}
             </p>
             <button
               className="

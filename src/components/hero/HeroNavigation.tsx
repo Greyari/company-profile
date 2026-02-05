@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import NavItem from "./NavItem";
 import { fadeIn } from "@/lib/fadeIn";
 import { NavItem as NavItemType } from "@/types/hero.types";
+import { useTranslations } from "next-intl";
 
 interface HeroNavigationProps {
   items: NavItemType[];
@@ -19,6 +20,8 @@ export default function HeroNavigation({
   activeNav,
   onNavigate,
 }: HeroNavigationProps) {
+  const t = useTranslations("hero");
+
   return (
     <motion.nav
       variants={fadeIn("down", { duration: 1 })}
@@ -32,7 +35,7 @@ export default function HeroNavigation({
       {items.map((item) => (
         <NavItem
           key={item.id}
-          label={item.label}
+          label={t(item.label)}
           isActive={activeNav === item.id}
           onClick={() => onNavigate(item.id)}
         />

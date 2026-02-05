@@ -1,0 +1,235 @@
+{
+  "navbar": {
+    "home": "Beranda",
+    "about": "Tentang Kami",
+    "products": "Produk",
+    "solutions": "Solusi",
+    "contact": "Hubungi Kami",
+    "language": "Bahasa"
+  },
+  "hero": {
+    "nav1": {
+      "label": "Solusi Keamanan",
+      "title": "Sistem CCTV & Keamanan Terintegrasi",
+      "subtitle": "Solusi pengawasan profesional untuk pemantauan real-time, perekaman, dan perlindungan aset"
+    },
+    "nav2": {
+      "label": "Instalasi & Dukungan On-Site",
+      "title": "Instalasi Profesional & Dukungan Teknis",
+      "subtitle": "Instalasi end-to-end, konfigurasi, dan pemeliharaan on-site untuk sistem keamanan dan IT"
+    },
+    "nav3": {
+      "label": "Kontrol Akses",
+      "title": "Sistem Kontrol Akses & Kehadiran",
+      "subtitle": "Manajemen masuk yang aman menggunakan fingerprint, RFID, dan teknologi pengenalan wajah"
+    },
+    "nav4": {
+      "label": "Infrastruktur Keamanan Pintar",
+      "title": "Sistem Public Address, Alarm & Parkir",
+      "subtitle": "Sistem PA terintegrasi, solusi alarm, dan palang parkir untuk pengelolaan fasilitas yang efisien"
+    },
+    "nav5": {
+      "label": "Teknologi Masa Depan",
+      "title": "Solusi Teknologi Keamanan Inovatif",
+      "subtitle": "Menyediakan solusi digital yang cerdas, aman, dan skalabel untuk bisnis modern dan berkembang"
+    },
+    "companyName": "PT. Kreatif System Indonesia",
+    "cta": "Mulai Sekarang"
+  },
+
+  "about": {
+    "backgroundAlt": "Latar Belakang About",
+    "title": "Tentang Kami",
+    "description": "Kami menghadirkan solusi keamanan yang terintegrasi dan dapat disesuaikan, dengan kemitraan yang terpercaya dan mendukung melalui produk unggulan.",
+    "button": "Baca Selengkapnya",
+    "partner": {
+      "name": "PT Kreatif System Indonesia",
+      "authorized": "Authorized Partner of",
+      "brand": "Dahua",
+      "tech": "Technology",
+      "button": "Pelajari Lebih Lanjut"
+    }
+  },
+
+  "products": {
+    "all": "Semua Produk",
+    "ipCamera": "Kamera IP",
+    "hdcvi": "Kamera HDCVI",
+    "wifi": "Kamera Wifi",
+    "recorder": "Perekam Video",
+    "accessControl": "Kontrol Akses",
+    "pabx": "PABX",
+    "audioPaging": "Audio Paging"
+  },
+  "solutions": {
+    "factory": "Pabrik",
+    "construction": "Lokasi Konstruksi",
+    "apartment": "Apartemen & Hotel",
+    "school": "Sekolah"
+  },
+  "footer": {
+    "links": "Link Cepat",
+    "solutions": "Solusi",
+    "support": "Dukungan",
+    "contact": "Kontak",
+    "rights": "Hak Cipta Dilindungi",
+    "subtitle": " Penyedia solusi TI & keamanan tepercaya yang melayani perusahaan kecil, menengah, dan besar di berbagai industri."
+  },
+  "solutionLinks": {
+    "accessControl": "Kontrol Akses",
+    "cctv": "CCTV & Keamanan",
+    "itSupport": "Dukungan TI",
+    "pabx": "PABX",
+    "publicAddress": "Public Address",
+    "alarmSafety": "Alarm & Keamanan"
+  },
+
+  "solution": {
+    "titleSection": "Layanan Kami",
+    "subtitleSection": "Kami menyediakan solusi keamanan dan TI komprehensif yang disesuaikan dengan kebutuhan bisnis Anda.",
+    "cctv": {
+      "title": "CCTV & Sistem Keamanan",
+      "description": "Sistem CCTV dan keamanan end-to-end untuk pemantauan real-time, perekaman, dan monitoring ancaman demi meningkatkan keamanan di rumah, kantor, dan industri."
+    },
+    "accessControl": {
+      "title": "Kontrol Kehadiran & Sistem Akses",
+      "description": "Solusi absensi dan kontrol akses terintegrasi menggunakan fingerprint, RFID, atau pengenalan wajah untuk memantau aktivitas tenaga kerja secara akurat."
+    },
+    "itSupport": {
+      "title": "Dukungan & Pemeliharaan IT",
+      "description": "Layanan dukungan dan pemeliharaan IT yang andal untuk hardware, software, dan jaringan agar bisnis tetap stabil, aman, dan efisien."
+    },
+    "publicAddress": {
+      "title": "Public Address, Palang Parkir & Layanan Listrik",
+      "description": "Sistem PA terintegrasi, palang parkir otomatis, dan layanan listrik untuk meningkatkan komunikasi, manajemen lalu lintas, dan operasional fasilitas."
+    },
+    "pabx": {
+      "title": "PABX & Sistem Komunikasi",
+      "description": "Solusi PABX profesional untuk komunikasi internal dan eksternal yang jelas dan andal di kantor, gedung, dan lingkungan enterprise."
+    },
+    "alarm": {
+      "title": "Alarm & Solusi Keamanan",
+      "description": "Sistem alarm dan keamanan lengkap termasuk deteksi kebakaran, intrusi, dan alert darurat untuk melindungi orang, aset, dan fasilitas penting."
+    },
+    "learnMore": "Pelajari Lebih Lanjut"
+  },
+
+  "solutions3": {
+    "title": "Produk Kami",
+    "description": "Produk kami dikembangkan sebagai bagian dari ekosistem terintegrasi.",
+    "seeMore": "Lihat Selengkapnya",
+    "ipCamera": {
+      "title": "IP Camera",
+      "description": "Solusi IP camera canggih dengan akses jarak jauh."
+    },
+    "wifiCamera": {
+      "title": "Wifi Camera",
+      "description": "Solusi CCTV lengkap untuk pemantauan real-time."
+    },
+    "hdcviCamera": {
+      "title": "HDCVI Camera",
+      "description": "Teknologi High Definition Composite Video Interface."
+    },
+    "pabx": {
+      "title": "PABX System",
+      "description": "Sistem komunikasi PABX yang andal untuk bisnis."
+    },
+    "audioPaging": {
+      "title": "Audio Paging",
+      "description": "Sistem audio paging terintegrasi untuk pengumuman."
+    },
+    "dvrnvr": {
+      "title": "DVR/NVR",
+      "description": "Sistem penyimpanan dan pemutaran video yang aman."
+    },
+    "accessControl": {
+      "title": "Access Control",
+      "description": "Sistem kontrol akses cerdas dengan RFID dan biometrik."
+    }
+  },
+  "brands": {
+    "title": "Brand Kami",
+    "description": "Beberapa mitra kolaborasi kami."
+  },
+  "client": {
+    "title": "Klien Kami",
+    "description": "Dipercaya oleh perusahaan di berbagai industri untuk mendukung operasional mereka."
+  },
+  "projects": {
+    "title": "Solusi Kami",
+    "description": "Dipercaya oleh perusahaan di berbagai industri untuk mendukung operasional mereka.",
+    "factory": {
+      "title": "Pabrik",
+      "description": "Solusi IT dan keamanan terintegrasi untuk pabrik, mendukung pemantauan operasional dan manajemen infrastruktur."
+    },
+    "construction": {
+      "title": "Lokasi Konstruksi",
+      "description": "Sistem teknologi dan keamanan untuk lokasi konstruksi guna mendukung pemantauan proyek dan operasi lokasi."
+    },
+    "apartment": {
+      "title": "Apartemen & Hotel",
+      "description": "Solusi IT dan keamanan lengkap untuk apartemen dan hotel, termasuk sistem akses dan manajemen fasilitas."
+    },
+    "school": {
+      "title": "Sekolah",
+      "description": "Infrastruktur IT dan solusi keamanan untuk sekolah guna mendukung keselamatan, komunikasi, dan operasi harian."
+    }
+  },
+  "faq": {
+    "title": "Pertanyaan yang Sering Diajukan",
+    "items": {
+      "q1": {
+        "question": "Produk CCTV apa saja yang tersedia?",
+        "answer": "Kami menyediakan berbagai produk CCTV Dahua seperti IP Camera, Analog Camera, NVR, DVR, serta aksesoris pendukung resmi dengan garansi."
+      },
+      "q2": {
+        "question": "Berapa lama waktu pemasangan CCTV?",
+        "answer": "Untuk pemasangan rumah tinggal biasanya memakan waktu 1–2 hari kerja. Untuk proyek skala besar, kami akan melakukan survei lokasi terlebih dahulu."
+      },
+      "q3": {
+        "question": "Apakah tersedia layanan maintenance?",
+        "answer": "Ya, kami menyediakan layanan perawatan, perbaikan, troubleshooting, serta paket maintenance berkala agar sistem tetap optimal."
+      },
+      "q4": {
+        "question": "Apakah CCTV bisa diakses dari jarak jauh?",
+        "answer": "Bisa. Sistem CCTV dapat diakses melalui smartphone (Android/iOS) maupun komputer menggunakan aplikasi resmi dari Dahua."
+      },
+      "q5": {
+        "question": "Bagaimana cara mendapatkan penawaran harga?",
+        "answer": "Silakan hubungi kami untuk konsultasi gratis. Tim kami akan melakukan survei lokasi dan memberikan rekomendasi serta penawaran harga terbaik."
+      }
+    },
+    "form": {
+      "title": "Punya Pertanyaan Lain?",
+      "subtitle": "Kirimkan pesan kepada kami dan tim kami akan segera menghubungi Anda.",
+      "name": "Nama Lengkap",
+      "email": "Alamat Email",
+      "phone": "Nomor Telepon",
+      "message": "Pesan",
+      "namePlaceholder": "Nama Anda",
+      "emailPlaceholder": "email@anda.com",
+      "phonePlaceholder": "+62 812 3456 7890",
+      "messagePlaceholder": "Tuliskan pertanyaan atau kebutuhan Anda...",
+      "submit": "Kirim Pesan",
+      "sending": "Mengirim..."
+    }
+  },
+
+  "aboutPage": {
+    "title": "Tentang Kami",
+    "description": "Mitra tepercaya Anda dalam solusi teknologi keamanan inovatif",
+    "nav": {
+      "who": "Siapa Kami",
+      "vision": "Visi & Misi",
+      "why": "Kenapa Memilih Kami?"
+    },
+    "p1": "PT Kreatif System Indonesia telah memantapkan diri sebagai penyedia solusi teknologi dan keamanan inovatif terkemuka sejak didirikan pada tahun 2018. Selama bertahun-tahun, kami secara konsisten berkomitmen untuk memberikan layanan luar biasa di bidang pengawasan CCTV, solusi TI komprehensif, dan integrasi sistem yang mulus. Dengan memprioritaskan keandalan, efisiensi operasional, dan kustomisasi yang sesuai kebutuhan, kami memungkinkan bisnis dan organisasi dari semua ukuran untuk memperkuat langkah-langkah keamanan mereka dan mengoptimalkan infrastruktur teknologi mereka, memastikan keberlanjutan dan pertumbuhan jangka panjang.",
+    "p2": "Sebagai mitra tepercaya dari merek-merek yang diakui secara global, kami menyediakan solusi canggih dan sepenuhnya disesuaikan yang dirancang untuk mengakomodasi beragam kebutuhan klien kami yang terus berkembang. Tim profesional kami yang terampil berkolaborasi erat dengan pelanggan di setiap tahap, mulai dari konsultasi dan perencanaan hingga implementasi dan dukungan. Pendekatan langsung ini menjamin bahwa setiap solusi tidak hanya mutakhir tetapi juga sepenuhnya selaras dengan tujuan operasional spesifik, standar manajemen risiko, dan prioritas strategis klien kami, sehingga menghasilkan peningkatan kinerja dan keamanan yang terukur.",
+    "p3": "Didorong oleh semangat yang tak henti-hentinya untuk keunggulan dan inovasi, PT Kreatif System Indonesia terus berupaya untuk Kami menetapkan tolok ukur industri di bidang keamanan dan teknologi. Kami berdedikasi untuk memberikan solusi yang memberikan ketenangan pikiran, meningkatkan efisiensi operasional, dan memberdayakan bisnis untuk berkembang di era digital yang berkembang pesat. Melalui riset berkelanjutan, adopsi teknologi baru, dan pola pikir yang berfokus pada klien, kami membantu organisasi untuk tetap selangkah lebih maju dari potensi ancaman sekaligus memaksimalkan potensi digital dan keunggulan kompetitif mereka.",
+    "title-2": "Solusi Teknologi Inovatif",
+    "p4": "PT Kreatif System Indonesia menghadirkan solusi teknologi inovatif yang mengintegrasikan sistem keamanan, infrastruktur TI, dan teknologi cerdas ke dalam ekosistem yang terpadu dan andal. Dengan menggabungkan keahlian teknis dengan wawasan industri, kami membantu organisasi membangun sistem yang tidak hanya aman, tetapi juga skalabel dan siap menghadapi masa depan.",
+    "p5": "Solusi kami dirancang dengan fleksibilitas dan presisi, mengatasi tantangan operasional nyata di berbagai industri. Mulai dari pengawasan CCTV dan sistem jaringan hingga solusi TI terintegrasi, kami memastikan setiap implementasi disesuaikan dengan kebutuhan klien, dioptimalkan untuk kinerja, dan selaras dengan tujuan bisnis jangka panjang.",
+    "p6": "Melalui inovasi berkelanjutan dan kolaborasi dengan mitra teknologi global tepercaya, kami tetap berkomitmen untuk menghadirkan solusi yang andal, efisien, dan cerdas. Pendekatan ini memungkinkan klien kami untuk meningkatkan kontrol operasional, meminimalkan risiko, dan dengan percaya diri menavigasi lanskap digital dan keamanan yang terus berkembang.",
+    "button": "Lihat produk kami"
+  }
+}

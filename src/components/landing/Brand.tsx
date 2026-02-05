@@ -1,5 +1,6 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import ScrollVelocityRow from "../animations/scroll/scrollVelocityRow";
 
 // Brand image paths grouped by rows
@@ -35,15 +36,16 @@ const brandRows = {
  * Brands section component with scroll-based velocity animation
  */
 export default function Brands() {
+  const t = useTranslations("brands");
   return (
     <section className="mb-18">
       <div className="relative mx-auto">
         <div className="text-center mb-5 px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-2">
-            Our Brands
+            {t("title")}
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
-            Several of our collaboration partners.
+            {t("description")}
           </p>
         </div>
 

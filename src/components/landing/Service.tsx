@@ -4,6 +4,7 @@ import { motion, useMotionValue, animate } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { CircleArrowRight } from "lucide-react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 /* =====================
    TYPES
@@ -29,52 +30,46 @@ const AUTO_SCROLL_INTERVAL = 5000;
 /* =====================
    DATA
 ===================== */
-const solutions: Solution[] = [
+export const solutions: Solution[] = [
   {
     id: 1,
-    title: "CCTV & Security System",
-    description:
-      "End-to-end CCTV and security systems providing real-time surveillance, recording, and threat monitoring to enhance safety for residential, commercial, and industrial environments.",
+    title: "cctv.title",
+    description: "cctv.description",
     image: "/images/solution/test3.jpg",
     link: "/cctv",
   },
   {
     id: 2,
-    title: "Attendance & System Control",
-    description:
-      "Integrated attendance and access control solutions using fingerprint, RFID, or facial recognition to accurately track workforce activity and improve operational control.",
+    title: "accessControl.title",
+    description: "accessControl.description",
     image: "/images/solution/test-009.jpg",
     link: "/access-control",
   },
   {
     id: 3,
-    title: "IT Support & Maintenance",
-    description:
-      "Reliable IT support and maintenance services covering hardware, software, and network infrastructure to ensure stable, secure, and efficient business operations.",
+    title: "itSupport.title",
+    description: "itSupport.description",
     image: "/images/solution/test.jpg",
     link: "/it-support",
   },
   {
     id: 4,
-    title: "Public Address, Parking Barrier & Electrical Services",
-    description:
-      "Integrated public address systems, automated parking barriers, and electrical services designed to improve communication, traffic management, and facility operations.",
+    title: "publicAddress.title",
+    description: "publicAddress.description",
     image: "/images/solution/test4.jpg",
     link: "/public-address",
   },
   {
     id: 5,
-    title: "PABX & Communication Systems",
-    description:
-      "Professional PABX and communication system solutions enabling clear, reliable internal and external communication for offices, buildings, and enterprise environments.",
+    title: "pabx.title",
+    description: "pabx.description",
     image: "/images/solution/test-880.jpg",
     link: "/pabx",
   },
   {
     id: 6,
-    title: "Alarm & Safety Solutions",
-    description:
-      "Comprehensive alarm and safety systems including fire alarms, intrusion detection, and emergency alert solutions to protect people, assets, and critical facilities.",
+    title: "alarm.title",
+    description: "alarm.description",
     image: "/images/solution/test2.jpg",
     link: "/alarm",
   },
@@ -103,7 +98,7 @@ function SolutionCard({ solution }: { solution: Solution }) {
   const [hovered, setHovered] = useState(false);
   const handleTouchStart = () => setHovered(true);
   const handleTouchEnd = () => setHovered(false);
-
+  const t = useTranslations("solution");
   return (
     <motion.div
       className="relative shrink-0 w-87.5 h-112.5 rounded-2xl overflow-hidden border border-transparent bg-white shadow-lg hover:shadow-2xl hover:border-gray-200 transition-shadow duration-300"
@@ -147,7 +142,7 @@ function SolutionCard({ solution }: { solution: Solution }) {
             ease: "easeOut",
           }}
         >
-          {solution.title}
+          {t(solution.title)}
         </motion.h3>
 
         {/* Description */}
@@ -160,7 +155,7 @@ function SolutionCard({ solution }: { solution: Solution }) {
           }}
           transition={{ duration: 0.25, ease: "easeOut" }}
         >
-          {solution.description}
+          {t(solution.description)}
         </motion.p>
 
         {/* Learn More Link */}
@@ -171,7 +166,7 @@ function SolutionCard({ solution }: { solution: Solution }) {
             animate={{ opacity: hovered ? 1 : 0 }}
             transition={{ delay: hovered ? 0.1 : 0, duration: 0.2 }}
           >
-            Learn More
+            {t("learnMore")}
             <CircleArrowRight
               size={46}
               strokeWidth={1}
@@ -261,17 +256,17 @@ export default function Solutions() {
     });
     idleRef.current = Date.now();
   };
+  const t = useTranslations("solution");
 
   return (
     <section className="py-24 bg-white overflow-hidden">
       {/* Header */}
       <div className="px-4 md:px-8">
         <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-2">
-          Our Services
+          {t("titleSection")}
         </h2>
         <p className="text-gray-600 text-center mb-12 max-w-3xl mx-auto text-xs md:text-base">
-          We provide comprehensive security and IT solutions tailored to your
-          business needs.
+          {t("subtitleSection")}
         </p>
       </div>
 
