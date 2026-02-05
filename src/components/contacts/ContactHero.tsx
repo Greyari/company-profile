@@ -6,8 +6,10 @@
 import { fadeIn } from "@/lib/fadeIn";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function ContactHero() {
+  const t = useTranslations("contact");
   return (
     <section className="relative flex items-center h-[50vh] min-h-100 overflow-hidden">
       <Image
@@ -31,10 +33,10 @@ export default function ContactHero() {
       >
         <div className="max-w-2xl">
           <h1 className="text-3xl md:text-4xl xl:text-5xl text-white font-semibold tracking-tight leading-13 mb-2">
-            Contact Us
+            {t("title")}
           </h1>
           <p className="text-sm md:text-lg mb-4 text-white/70">
-            Reach out to us for consultations, inquiries, or project discussions
+            {t("subtitle")}
           </p>
         </div>
       </motion.div>

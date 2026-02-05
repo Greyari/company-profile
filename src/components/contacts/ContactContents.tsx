@@ -4,8 +4,10 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Clock, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function ContactContents() {
+  const t = useTranslations("contact");
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [formData, setFormData] = useState({
     name: "",
@@ -59,30 +61,29 @@ export default function ContactContents() {
   const contactInfo = [
     {
       icon: MapPin,
-      title: "Address",
-      content:
-        "Ruko, Jl. Palm Spring No.B3 No 15, Taman Baloi, Batam Kota, Batam City, Riau Islands",
+      title: t("address"),
+      content: t("addressValue"),
       type: "maps",
       link: "https://www.google.com/maps/dir//PT.+Kreatif+System+Indonesia",
     },
     {
       icon: Phone,
-      title: "Phone",
-      content: "+62 214 0088",
+      title: t("phone"),
+      content: t("phoneValue"),
       type: "phone",
       link: "tel:+622140088",
     },
     {
       icon: Mail,
-      title: "Email",
-      content: "enquiry@kreatifsystem.com",
+      title: t("email"),
+      content: t("emailValue"),
       type: "email",
       link: "mailto:enquiry@kreatifsystem.com",
     },
     {
       icon: Clock,
-      title: "Business Hours",
-      content: "Mon - Sat: 8:00 AM - 5:00 PM",
+      title: t("businessHours"),
+      content: t("hoursValue"),
       type: "none",
       link: "",
     },
@@ -98,12 +99,9 @@ export default function ContactContents() {
           className="text-center max-w-3xl mx-auto mb-12"
         >
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-            Get in Touch
+            {t("title2")}
           </h1>
-          <p className="text-sm text-gray-600">
-            Contact us today to discuss your needs and discover how our
-            solutions can support your business growth and success.
-          </p>
+          <p className="text-sm text-gray-600">{t("subtitle2")}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -114,12 +112,9 @@ export default function ContactContents() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">
-              Contact Information
+              {t("title3")}
             </h2>
-            <p className="text-sm text-gray-600 mb-3">
-              We'd love to hear from you! Reach out to us through any of the
-              following methods:
-            </p>
+            <p className="text-sm text-gray-600 mb-3">{t("subtitle3")}</p>
 
             <div className="flex flex-col gap-4">
               {contactInfo.map((info, index) => {
@@ -193,10 +188,10 @@ export default function ContactContents() {
           <div className="border border-gray-200 rounded-2xl p-6 sm:p-8 lg:p-12 bg-white shadow-sm">
             <div className="mb-8">
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
-                Send Us a Message
+                {t("formTitle")}
               </h3>
               <p className="text-gray-600 text-sm sm:text-base">
-                Send us a message and we'll get back to you shortly.
+                {t("formSubtitle")}
               </p>
             </div>
 
@@ -207,7 +202,7 @@ export default function ContactContents() {
                     htmlFor="fullName"
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
-                    Full Name
+                    {t("formLabels.name")}
                   </label>
                   <input
                     type="text"
@@ -215,7 +210,7 @@ export default function ContactContents() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Your name"
+                    placeholder={t("formPlaceholders.name")}
                     className="w-full px-4 py-3.5 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
                     required
                   />
@@ -226,7 +221,7 @@ export default function ContactContents() {
                     htmlFor="email"
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
-                    Email Address
+                    {t("formLabels.email")}
                   </label>
                   <input
                     type="email"
@@ -234,7 +229,7 @@ export default function ContactContents() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="your@email.com"
+                    placeholder={t("formPlaceholders.email")}
                     className="w-full px-4 py-3.5 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
                     required
                   />
@@ -246,7 +241,7 @@ export default function ContactContents() {
                   htmlFor="phone"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  Phone Number
+                  {t("formLabels.phone")}
                 </label>
                 <input
                   type="tel"
@@ -254,7 +249,7 @@ export default function ContactContents() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="+62 812 3456 7890"
+                  placeholder={t("formPlaceholders.phone")}
                   className="w-full px-4 py-3.5 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
                   required
                 />
@@ -265,7 +260,7 @@ export default function ContactContents() {
                   htmlFor="message"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  Message
+                  {t("formLabels.message")}
                 </label>
                 <textarea
                   id="message"
@@ -273,7 +268,7 @@ export default function ContactContents() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={6}
-                  placeholder="Tell us about your inquiry..."
+                  placeholder={t("formPlaceholders.message")}
                   className="w-full px-4 py-3.5 bg-white border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all resize-none"
                   required
                 />
@@ -284,7 +279,7 @@ export default function ContactContents() {
                 disabled={loading}
                 className="w-full bg-black/90 hover:bg-black/80 text-white font-medium py-4 px-6 rounded-lg transition-colors text-sm sm:text-base"
               >
-                {loading ? "Sending..." : "Send Message"}
+                {loading ? t("formButton.sending") : t("formButton.send")}
               </button>
             </form>
           </div>

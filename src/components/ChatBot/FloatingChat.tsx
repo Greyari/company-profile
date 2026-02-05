@@ -4,10 +4,12 @@ import { MessageCircle, X, Send, Bot } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useChatLogic } from "./chatLogic";
 import React, { memo, useEffect, useState } from "react";
+import { useTranslations, useLocale } from "next-intl";
 
 /**
  * Advanced text parser for multiple formats
  */
+
 const parseAdvancedText = (text: string) => {
   const lines = text.split("\n");
   const blocks: Array<{
@@ -224,7 +226,7 @@ const TypewriterMessage = memo(
         })}
       </div>
     );
-  }
+  },
 );
 
 TypewriterMessage.displayName = "TypewriterMessage";
@@ -233,6 +235,9 @@ TypewriterMessage.displayName = "TypewriterMessage";
  * Main component
  */
 export default function FloatingChat() {
+  const t = useTranslations("chat");
+  const x = useTranslations("bot");
+  const locale = useLocale(); // "id" | "en"
   const {
     open,
     setOpen,
@@ -243,7 +248,7 @@ export default function FloatingChat() {
     scrollRef,
     sendMessage,
     markAnimated,
-  } = useChatLogic();
+  } = useChatLogic(locale as "id" | "en", t("greeting"), t("error"));
 
   // Lock body scroll when chat is open
   useEffect(() => {
@@ -327,7 +332,7 @@ export default function FloatingChat() {
                     </div>
 
                     <span className="text-[10px] sm:text-xs text-zinc-400">
-                      Ready to help
+                      {x("subtitle")}
                     </span>
                   </div>
                 </div>
@@ -419,7 +424,7 @@ export default function FloatingChat() {
                                text-sm
                                focus:outline-none focus:ring-2 focus:ring-zinc-900 
                                focus:border-transparent transition-all"
-                    placeholder="Type your message..."
+                    placeholder={t("placeholder")}
                   />
                   <button
                     onClick={sendMessage}

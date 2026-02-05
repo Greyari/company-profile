@@ -7,6 +7,7 @@ import Link from "next/link";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 import {
   CATEGORIES,
@@ -58,6 +59,8 @@ export default function ProductContent({
   initialCategory,
 }: ProductContentProps) {
   const router = useRouter();
+  const t = useTranslations("productPage.content");
+  const tCat = useTranslations("productPage.categories");
 
   const [activeTab, setActiveTab] = useState(
     getCategoryFromSlug(initialCategory),
@@ -90,12 +93,9 @@ export default function ProductContent({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className=" max-w-3xl mx-2 mb-8">
           <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-5">
-            Product Highlight
+            {t("title")}
           </h1>
-          <p className="text-sm text-gray-600">
-            We offer a wider range of products. The items below are highlights,
-            please contact us for more available options
-          </p>
+          <p className="text-sm text-gray-600">{t("description")}</p>
         </div>
         {/* Header section with categories and search */}
         <div className="flex flex-col xl:flex-row gap-4 items-stretch xl:items-center justify-between mb-12">
@@ -134,17 +134,19 @@ export default function ProductContent({
                       }}
                     />
                   )}
-                  <span className="relative z-10">{category.label}</span>
+                  <span className="relative z-10">
+                    {tCat(category.slug ?? "all")}
+                  </span>
                 </Link>
               );
             })}
           </nav>
 
           {/* Search input */}
-          <div className="relative w-full xl:w-63 xl:shrink-0 group">
+          <div className="relative w-full xl:w-62 xl:shrink-0 group">
             <input
               type="text"
-              placeholder="Search equipment..."
+              placeholder={t("searchPlaceholder")}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="
@@ -196,7 +198,7 @@ export default function ProductContent({
                 className="col-span-full py-24 text-center"
               >
                 <p className="text-gray-400 font-medium text-base">
-                  No products found in this category.
+                  {t("noProducts")}
                 </p>
               </motion.div>
             )}
@@ -219,7 +221,7 @@ export default function ProductContent({
               whitespace-nowrap
             "
           >
-            Get More Product
+            {t("getMore")}
           </Link>
 
           {/* Right fade line */}

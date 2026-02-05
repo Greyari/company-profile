@@ -3,6 +3,7 @@
 import React, { memo } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 type Card = {
   id: number | string;
@@ -11,28 +12,29 @@ type Card = {
   isDark: boolean;
 };
 
-const CARDS: Card[] = [
-  {
-    id: 1,
-    title: "CCTV Surveillance",
-    desc: "Comprehensive CCTV surveillance solutions designed to support continuous monitoring and effective security management across various environments. Our systems help organizations protect assets, monitor critical areas, and improve situational awareness through reliable video surveillance infrastructure.",
-    isDark: true,
-  },
-  {
-    id: 2,
-    title: "High-Quality ",
-    desc: "We utilize high-quality CCTV camera technology that delivers clear image capture, consistent video quality, and dependable performance in daily operations. These cameras are suitable for indoor and outdoor deployment, supporting accurate monitoring under different lighting and environmental conditions.",
-    isDark: false,
-  },
-  {
-    id: 3,
-    title: "System Integration",
-    desc: "Our CCTV solutions are supported by integrated DVR and NVR systems combined with structured network architecture for reliable operation. The system design emphasizes stability, scalability, and seamless integration with existing security infrastructure.",
-    isDark: false,
-  },
-];
-
 const InnovativeSection = memo(function InnovativeSection() {
+  const t = useTranslations("seeMore.cctv.content");
+
+  const cards: Card[] = [
+    {
+      id: 1,
+      title: t("cards.0.title"),
+      desc: t("cards.0.desc"),
+      isDark: true,
+    },
+    {
+      id: 2,
+      title: t("cards.1.title"),
+      desc: t("cards.1.desc"),
+      isDark: false,
+    },
+    {
+      id: 3,
+      title: t("cards.2.title"),
+      desc: t("cards.2.desc"),
+      isDark: false,
+    },
+  ];
   return (
     <section className="py-20 bg-white">
       <div className="flex flex-col lg:flex-row w-full">
@@ -63,7 +65,7 @@ const InnovativeSection = memo(function InnovativeSection() {
             py-8 lg:py-0
           "
           >
-            {CARDS.map((card) => (
+            {cards.map((card) => (
               <div
                 key={card.id}
                 className={`flex-1 p-8 rounded-2xl shadow-xl flex flex-col min-h-112.5
@@ -95,7 +97,7 @@ const InnovativeSection = memo(function InnovativeSection() {
                         : "text-gray-900 hover:text-gray-600"
                     }`}
                   >
-                    See Products <span aria-hidden>→</span>
+                    {t("seeProducts")} <span aria-hidden>→</span>
                   </Link>
                 </div>
               </div>

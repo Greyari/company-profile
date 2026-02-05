@@ -3,6 +3,7 @@
 "use client";
 
 import React from "react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -29,6 +30,7 @@ export default function ProductCard({
   specifications,
   href = "#",
 }: ProductCardProps) {
+  const t = useTranslations("productPage.card");
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}
@@ -84,7 +86,7 @@ export default function ProductCard({
           transition-colors
         "
       >
-        Buy now
+        {t("buyNow")}
         <ArrowRight size={16} strokeWidth={2} />
       </Link>
     </motion.div>

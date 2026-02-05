@@ -6,45 +6,28 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function AuthorizedStory() {
+  const t = useTranslations("authorized");
   return (
     <section id="who-we-are" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className=" gap-12 items-center">
           <div>
             <h2 className="text-xl md:text-2xl font-medium tracking-tight text-gray-900 mb-6">
-              PT Kreatif System Indonesia
+              {t("partner.name")}
             </h2>
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              PT Kreatif System Indonesia is an Authorized Partner of Dahua
-              Technology, committed to delivering reliable and high-quality
-              security solutions by utilizing original Dahua products and
-              cutting-edge technologies. As a trusted local partner, we align
-              with Dahua’s global standards in providing innovative, efficient,
-              and scalable security systems tailored to various environments,
-              from residential properties to commercial and industrial
-              facilities.
+              {t("p1")}
             </p>
 
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
-              We specialize in integrated security solutions including CCTV
-              surveillance, alarm systems, access control, and other advanced
-              security technologies fully supported by official Dahua
-              warranties. Our certified and experienced team ensures
-              professional consultation, precise system design, and seamless
-              installation, delivering solutions that are not only
-              technologically advanced but also aligned with each client’s
-              operational needs and security objectives.
+              {t("p2")}
             </p>
 
             <p className="text-gray-600 text-justify leading-relaxed">
-              Backed by responsive after-sales support and competitive pricing,
-              PT Kreatif System Indonesia focuses on long-term partnership and
-              customer satisfaction. Through continuous innovation and close
-              collaboration with Dahua Technology, we provide smart, up-to-date,
-              and dependable security systems that offer peace of mind and help
-              our clients stay protected in an ever-evolving security landscape.
+              {t("p3")}
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
@@ -114,7 +97,7 @@ export default function AuthorizedStory() {
               {/* Right Column: Content Area */}
               <div className="mt-20 flex flex-col justify-center space-y-6 text-[#1a1a1a]">
                 <h2 className="text-xl md:text-2xl font-medium tracking-tight text-gray-900">
-                  Smart & Modern Security Solutions
+                  {t("sectionTitle")}
                 </h2>
 
                 <div className="space-y-4 text-gray-600 leading-relaxed text-justify">
@@ -151,9 +134,7 @@ export default function AuthorizedStory() {
                 <div className="pt-4">
                   <Link href="/products">
                     <button className="group flex items-center justify-between px-5 py-3 border border-gray-400 rounded-full transition-all duration-300 hover:bg-black hover:text-white hover:border-black min-w-50">
-                      <span className="text-sm font-medium">
-                        See Our Product
-                      </span>
+                      <span className="text-sm font-medium">{t("button")}</span>
                       <ArrowRight className="ml-5" strokeWidth={1.5} />
                     </button>
                   </Link>

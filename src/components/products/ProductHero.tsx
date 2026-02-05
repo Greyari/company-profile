@@ -5,10 +5,11 @@
 
 import { fadeIn } from "@/lib/fadeIn";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 export default function ProductHero() {
+  const t = useTranslations("productPage.hero");
   return (
     <>
       <section className="relative flex items-center h-[50vh] min-h-100 overflow-hidden">
@@ -33,11 +34,10 @@ export default function ProductHero() {
             className="max-w-2xl"
           >
             <h1 className="text-3xl md:text-4xl xl:text-5xl text-white font-semibold tracking-tight leading-13 mb-2">
-              Our Products
+              {t("title")}
             </h1>
             <p className="text-sm md:text-lg mb-4 text-white/70">
-              A complete range of reliable security technology designed to
-              protect and empower your business
+              {t("subtitle")}
             </p>
           </motion.div>
         </div>

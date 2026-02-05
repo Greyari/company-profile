@@ -7,9 +7,12 @@ import { fadeIn } from "@/lib/fadeIn";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function AboutHeroVM() {
   const [activeSection, setActiveSection] = useState("who-we-are");
+  const t = useTranslations("aboutPage");
+  const x = useTranslations("aboutContents");
 
   const scrollToSection = (id: string) => {
     setActiveSection(id);
@@ -49,10 +52,10 @@ export default function AboutHeroVM() {
         >
           <div id="vision-mission" className="max-w-2xl">
             <h1 className="text-3xl md:text-4xl xl:text-5xl text-white font-semibold tracking-tight leading-13 mb-2">
-              Vision & Mission
+              {t("nav.vision")}
             </h1>
             <p className="text-sm md:text-lg mb-4 text-white/70">
-              Your trusted partner in innovative security technology solutions
+              {x("subtitle")}
             </p>
           </div>
         </motion.div>

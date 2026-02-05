@@ -5,6 +5,7 @@
 "use client";
 
 import React, { memo } from "react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 type Card = {
@@ -14,28 +15,31 @@ type Card = {
   isDark: boolean;
 };
 
-const CARDS: Card[] = [
-  {
-    id: 1,
-    title: "Wide Range of Products",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
-    isDark: true,
-  },
-  {
-    id: 2,
-    title: "Expert Advices & Support",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
-    isDark: false,
-  },
-  {
-    id: 3,
-    title: "Competitive Prices & Discounts",
-    desc: "An integrated attendance and workforce management solution designed to improve operational efficiency and employee data accuracy. The system supports real-time attendance tracking through multiple authentication methods...",
-    isDark: false,
-  },
-];
-
 const InnovativeSection = memo(function InnovativeSection() {
+  const t = useTranslations("aboutPage.why");
+  const x = useTranslations("button");
+  const y = useTranslations("cardAbout");
+
+  const cards: Card[] = [
+    {
+      id: 1,
+      title: y("0.title"),
+      desc: y("0.desc"),
+      isDark: true,
+    },
+    {
+      id: 2,
+      title: y("1.title"),
+      desc: y("1.desc"),
+      isDark: false,
+    },
+    {
+      id: 3,
+      title: y("2.title"),
+      desc: y("2.desc"),
+      isDark: false,
+    },
+  ];
   return (
     <section className="py-10 mt-15 bg-white">
       <div className="flex flex-col lg:flex-row w-full">
@@ -86,12 +90,8 @@ const InnovativeSection = memo(function InnovativeSection() {
           {/* New Header */}
           <div id="why-choose-us" className="ml-10 mb-5 ">
             <h2 className="text-xl md:text-2xl font-semibold tracking-tight text-gray-900  px-4 md:px-8 lg:px-0">
-              Why Choose Us?
+              {t("title")}
             </h2>
-            <p className="text-gray-600 text-sm mb-4 text-justify leading-relaxed">
-              Reliable solutions, Expert support, Competitive prices and
-              discounts.
-            </p>
           </div>
 
           <div
@@ -102,7 +102,7 @@ const InnovativeSection = memo(function InnovativeSection() {
               py-8 lg:py-0
             "
           >
-            {CARDS.map((card) => (
+            {cards.map((card) => (
               <div
                 key={card.id}
                 className={`flex-1 p-8 rounded-2xl shadow-xl flex flex-col min-h-112.5
@@ -134,7 +134,7 @@ const InnovativeSection = memo(function InnovativeSection() {
                         : "text-gray-900 hover:text-gray-600"
                     }`}
                   >
-                    See Products <span aria-hidden>→</span>
+                    {x("buttonSeeProducts")} <span aria-hidden>→</span>
                   </a>
                 </div>
               </div>

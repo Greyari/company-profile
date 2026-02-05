@@ -3,6 +3,7 @@
 import React, { memo } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 type Card = {
   id: number | string;
@@ -11,28 +12,29 @@ type Card = {
   isDark: boolean;
 };
 
-const CARDS: Card[] = [
-  {
-    id: 1,
-    title: "PABX Setup",
-    desc: "Complete PABX installation and configuration for your office, enabling seamless internal and external communication. Our systems ensure efficient call routing, multi-extension support, and easy scalability for growing businesses.",
-    isDark: true,
-  },
-  {
-    id: 2,
-    title: "Call Management",
-    desc: "Enhance your business communication with advanced features such as voicemail, call forwarding, auto-attendants, and conference calling. Our PABX solutions help streamline daily operations and improve team productivity.",
-    isDark: false,
-  },
-  {
-    id: 3,
-    title: "Maintenance & Support",
-    desc: "Reliable ongoing PABX maintenance and technical support to keep your communication systems running smoothly. From troubleshooting to system upgrades, we ensure minimal downtime and consistent performance for your organization.",
-    isDark: false,
-  },
-];
-
 const InnovativeSection = memo(function InnovativeSection() {
+  const t = useTranslations("seeMore.pabx.content");
+
+  const cards: Card[] = [
+    {
+      id: 1,
+      title: t("cards.0.title"),
+      desc: t("cards.0.desc"),
+      isDark: true,
+    },
+    {
+      id: 2,
+      title: t("cards.1.title"),
+      desc: t("cards.1.desc"),
+      isDark: false,
+    },
+    {
+      id: 3,
+      title: t("cards.2.title"),
+      desc: t("cards.2.desc"),
+      isDark: false,
+    },
+  ];
   return (
     <section className="py-20 bg-white">
       <div className="flex flex-col lg:flex-row w-full">
@@ -63,7 +65,7 @@ const InnovativeSection = memo(function InnovativeSection() {
   py-8 lg:py-0
 "
           >
-            {CARDS.map((card) => (
+            {cards.map((card) => (
               <div
                 key={card.id}
                 className={`flex-1 p-8 rounded-2xl shadow-xl flex flex-col min-h-112.5
@@ -95,7 +97,7 @@ const InnovativeSection = memo(function InnovativeSection() {
                         : "text-gray-900 hover:text-gray-600"
                     }`}
                   >
-                    See Products <span aria-hidden>→</span>
+                    {t("seeProducts")} <span aria-hidden>→</span>
                   </Link>
                 </div>
               </div>

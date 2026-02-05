@@ -3,8 +3,10 @@
 import { fadeIn } from "@/lib/fadeIn";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function Hero() {
+  const t = useTranslations("seeMore.pabx");
   return (
     <section className="relative flex items-center h-[50vh] min-h-100 overflow-hidden">
       <Image
@@ -32,10 +34,10 @@ export default function Hero() {
       >
         <div className="max-w-2xl">
           <h1 className="text-2xl md:text-3xl xl:text-4xl font-semibold tracking-tight leading-tight mb-2 text-white">
-            Private Automatic Branch Exchange (PABX) Systems
+            {t("title")}
           </h1>
           <p className="text-xs md:text-sm mb-5 text-white/70">
-            Solutions to enhance your business operational communication
+            {t("description")}
           </p>
         </div>
       </motion.div>

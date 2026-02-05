@@ -17,7 +17,11 @@ export interface ChatMessage {
 /* =====================
    HOOK
 ===================== */
-export function useChatLogic() {
+export function useChatLogic(
+  locale: "id" | "en",
+  initialMessage?: string,
+  errorMessage?: string,
+) {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
@@ -25,7 +29,9 @@ export function useChatLogic() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: "bot",
-      text: "Halo! Ada yang bisa kami bantu seputar layanan Kreatif System?",
+      text:
+        initialMessage ||
+        "Halo! Ada yang bisa kami bantu seputar layanan Kreatif System?",
       hasAnimated: true,
       timestamp: Date.now(),
     },
@@ -63,6 +69,7 @@ export function useChatLogic() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          locale,
           messages: [
             ...messages.map((m) => ({
               role: m.role === "bot" ? "assistant" : "user",
@@ -91,7 +98,9 @@ export function useChatLogic() {
         ...prev,
         {
           role: "bot",
-          text: "Mohon Maaf, terjadi kesalahan. Silakan hubungi tim kami via WhatsApp.",
+          text:
+            errorMessage ||
+            "Mohon Maaf, terjadi kesalahan. Silakan hubungi tim kami via WhatsApp.",
           hasAnimated: true,
           timestamp: Date.now(),
         },
@@ -103,7 +112,7 @@ export function useChatLogic() {
 
   const markAnimated = (index: number) => {
     setMessages((prev) =>
-      prev.map((m, i) => (i === index ? { ...m, hasAnimated: true } : m))
+      prev.map((m, i) => (i === index ? { ...m, hasAnimated: true } : m)),
     );
   };
 
@@ -114,6 +123,7 @@ export function useChatLogic() {
     setInput,
     isTyping,
     messages,
+    setMessages,
     scrollRef,
     sendMessage,
     markAnimated,

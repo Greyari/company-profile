@@ -16,7 +16,7 @@ export default function AboutStory() {
         <div className=" gap-12 items-center">
           <div>
             <h2 className="text-xl md:text-2xl font-medium tracking-tight text-gray-900 mb-6">
-              PT Kreatif System Indonesia
+              {t("partner.name")}
             </h2>
             <p className="text-gray-600 mb-4 text-justify leading-relaxed">
               {t("p1")}

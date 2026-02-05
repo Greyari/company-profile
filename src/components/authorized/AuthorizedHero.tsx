@@ -7,8 +7,10 @@ import { fadeIn } from "@/lib/fadeIn";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function AuthorizedHero() {
+  const t = useTranslations("aboutPage");
   const [activeSection, setActiveSection] = useState("who-we-are");
 
   const scrollToSection = (id: string) => {
@@ -54,13 +56,11 @@ export default function AuthorizedHero() {
               whileInView="show"
               viewport={{ once: false, amount: 0.3 }}
             >
-              <p className="text-sm text-white/80 mb-2">
-                PT Kreatif System Indonesia
-              </p>
+              <p className="text-sm text-white/80 mb-2">{t("partner.name")}</p>
 
               <h3 className="text-white text-3xl md:text-4xl font-bold leading-tight mb-4">
-                Authorized Partner of <br />
-                <span className="text-red-600">Dahua</span> Technology
+                {t("partner.authorized")} <br />
+                <span className="text-red-600">Dahua</span> {t("partner.tech")}
               </h3>
             </motion.div>
           </div>

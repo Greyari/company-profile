@@ -7,22 +7,6 @@
     "contact": "Contact Us",
     "language": "Language"
   },
-  "products": {
-    "all": "All Products",
-    "ipCamera": "IP Camera",
-    "hdcvi": "HDCVI Camera",
-    "wifi": "Wifi Camera",
-    "recorder": "Video Recorder",
-    "accessControl": "Access Control",
-    "pabx": "PABX",
-    "audioPaging": "Audio Paging"
-  },
-  "solutions": {
-    "factory": "Factory",
-    "construction": "Construction Site",
-    "apartment": "Apartment & Hotel",
-    "school": "School"
-  },
   "hero": {
     "nav1": {
       "label": "Security Solutions",
@@ -52,7 +36,6 @@
     "companyName": "PT. Kreatif System Indonesia",
     "cta": "Get Started"
   },
-
   "about": {
     "backgroundAlt": "About Background",
     "title": "About Us",
@@ -66,7 +49,48 @@
       "button": "Learn More"
     }
   },
-
+  "products": {
+    "all": "All Products",
+    "ipCamera": "IP Camera",
+    "hdcvi": "HDCVI Camera",
+    "wifi": "Wifi Camera",
+    "recorder": "Video Recorder",
+    "accessControl": "Access Control",
+    "pabx": "PABX",
+    "audioPaging": "Audio Paging"
+  },
+  "productPage": {
+    "hero": {
+      "title": "Our Products",
+      "subtitle": "A complete range of reliable security technology designed to protect and empower your business"
+    },
+    "content": {
+      "title": "Product Highlight",
+      "description": "We offer a wider range of products. The items below are highlights, please contact us for more available options",
+      "searchPlaceholder": "Search equipment...",
+      "noProducts": "No products found in this category.",
+      "getMore": "Get More Product"
+    },
+    "categories": {
+      "all": "All Products",
+      "ipcamera": "IP Camera",
+      "hdcvi": "HDCVI Camera",
+      "wifi": "Wifi Camera",
+      "dvrnvr": "DVR/NVR",
+      "accesscontrol": "Access Control",
+      "pabx": "PABX",
+      "audiopaging": "Audio Paging"
+    },
+    "card": {
+      "buyNow": "Buy now"
+    }
+  },
+  "solutions": {
+    "factory": "Factory",
+    "construction": "Construction Site",
+    "apartment": "Apartment & Hotel",
+    "school": "School"
+  },
   "footer": {
     "links": "Quick Links",
     "solutions": "Solutions",
@@ -83,7 +107,6 @@
     "publicAddress": "Public Address",
     "alarmSafety": "Alarm & Safety"
   },
-
   "solution": {
     "titleSection": "Our Services",
     "subtitleSection": "We provide comprehensive security and IT solutions tailored to your business needs.",
@@ -113,7 +136,6 @@
     },
     "learnMore": "Learn More"
   },
-
   "solutions3": {
     "title": "Our Product",
     "description": "Our products are developed as part of an integrated ecosystem.",
@@ -160,43 +182,115 @@
     "description": "Trusted by companies across industries to support their operations.",
     "factory": {
       "title": "Factory",
-      "description": "Integrated IT and security solutions for factories, supporting operational monitoring, and infrastructure management."
+      "description": "Integrated IT and security solutions for factories, supporting operational monitoring, and infrastructure management.",
+      "p1": "PT. Kreatif System Indonesia delivers integrated solutions designed for factory and industrial environments, combining security, operational monitoring, and safety management. Our systems enable facility managers to oversee complex operations, manage access control, monitor equipment performance, and ensure compliance with safety and regulatory standards.",
+      "p2": "From access control and CCTV surveillance to production monitoring and incident detection, our systems help optimize operational efficiency and minimize downtime. By integrating real-time data collection and analysis, we help factories improve quality control, enhance safety, and streamline production processes.",
+      "p3": "With expertise in high-security environments, our team delivers robust, reliable solutions designed to withstand industrial conditions. We provide comprehensive support and maintenance, ensuring your factory operates at peak efficiency with enhanced safety and security.",
+      "cards": [
+        {
+          "title": "Industrial IT Systems",
+          "desc": "Comprehensive IT infrastructure solutions designed to streamline factory operations, improve data accuracy, and enable real-time monitoring of production processes."
+        },
+        {
+          "title": "Maintenance & Support",
+          "desc": "Proactive maintenance and expert technical support to ensure all industrial equipment, safety systems, and communication networks function reliably."
+        },
+        {
+          "title": "CCTV & Surveillance",
+          "desc": "Advanced surveillance solutions tailored for factory environments, providing real-time video monitoring, asset protection, and operational safety."
+        }
+      ],
+      "seeProducts": "See Products"
     },
     "construction": {
       "title": "Construction Site",
-      "description": "Technology and security systems for construction sites to support project monitoring, and site operations."
+      "description": "Technology and security systems for construction sites to support project monitoring, and site operations.",
+      "p1": "PT. Kreatif System Indonesia provides comprehensive solutions tailored for construction sites, focusing on safety, efficiency, and project accountability. Our integrated systems enable site managers to monitor operations in real time, from equipment tracking and personnel management to security and environmental compliance.",
+      "p2": "From access control and site surveillance to incident reporting and resource management, our systems help reduce risks and improve operational efficiency. By leveraging advanced technologies, we help construction companies enhance safety protocols, minimize delays, and ensure full compliance with project requirements.",
+      "p3": "With expertise in temporary and permanent installations, our team ensures solutions that are robust, flexible, and scalable. We provide continuous support throughout the project lifecycle, ensuring that your construction site operates safely, efficiently, and with full visibility.",
+      "cards": [
+        {
+          "title": "Construction IT Systems",
+          "desc": "Integrated IT solutions designed for construction sites to optimize project management, monitor workflows, and ensure accurate data collection."
+        },
+        {
+          "title": "Site Support",
+          "desc": "Expert technical support and proactive maintenance services tailored for construction environments. We ensure machinery, security systems, and communication networks operate reliably."
+        },
+        {
+          "title": "CCTV & Site Surveillance",
+          "desc": "Advanced surveillance solutions for construction sites, providing real-time monitoring of equipment, workers, and restricted areas."
+        }
+      ],
+      "seeProducts": "See Products"
     },
     "apartment": {
       "title": "Apartment & Hotel",
-      "description": "Comprehensive IT and security solutions for apartments and hotels, including access systems, and facility management."
+      "description": "Comprehensive IT and security solutions for apartments and hotels, including access systems, and facility management.",
+      "p1": "PT. Kreatif System Indonesia specializes in delivering comprehensive security, access control, and IT solutions for residential apartments and hospitality properties. Our integrated systems are designed to enhance guest safety, improve operational efficiency, and protect valuable assets while maintaining a seamless guest experience.",
+      "p2": "Our solutions encompass real-time video surveillance, intelligent access control, guest communication systems, and IT infrastructure management. From automatic door access using smart card or mobile credentials to multi-floor CCTV monitoring and intercom systems, our integrated approach ensures complete visibility and control over facilities.",
+      "p3": "We provide tailored implementations that scale from small residential buildings to large hotel complexes. Every solution is customized to match your property's specific layout, security requirements, and operational workflows. Our ongoing support ensures systems remain reliable, secure, and optimized for peak performance.",
+      "cards": [
+        {
+          "title": "Surveillance & Security",
+          "desc": "Comprehensive CCTV solutions for continuous monitoring and security management across residential and hospitality environments."
+        },
+        {
+          "title": "Communication Systems",
+          "desc": "Integrated PABX solutions for seamless internal communication and guest services. Efficient call routing and unified communication keep teams connected."
+        },
+        {
+          "title": "Technical Support",
+          "desc": "Timely technical assistance, troubleshooting, and preventive maintenance to keep IT systems running smoothly and ensure guest satisfaction."
+        }
+      ],
+      "seeProducts": "See Products"
     },
     "school": {
       "title": "School",
-      "description": "IT infrastructure and security solutions for schools to support safety, communication, and daily operations."
+      "description": "IT infrastructure and security solutions for schools to support safety, communication, and daily operations.",
+      "p1": "PT. Kreatif System Indonesia is dedicated to providing advanced security and management solutions for educational institutions. Our team of professionals combines technical expertise with a deep understanding of school operations, ensuring that every solution we deliver enhances safety, communication, and administrative efficiency.",
+      "p2": "We specialize in integrating attendance monitoring, access control, CCTV surveillance, and IT infrastructure to ensure seamless campus management. By leveraging real-time data and centralized controls, school administrators can make informed decisions, optimize resources, and maintain a secure environment for students and staff.",
+      "p3": "Our solutions are designed to be scalable and adaptable to institutions of all sizes. From small schools to large universities, our systems provide reliable monitoring, communication, and management tools tailored to the educational environment.",
+      "cards": [
+        {
+          "title": "IT Support & Infrastructure",
+          "desc": "Comprehensive IT solutions to support school administration and digital learning. Our systems ensure reliable network infrastructure and robust data management."
+        },
+        {
+          "title": "Communication & Announcements",
+          "desc": "Advanced audio paging systems to streamline communication across campus. From class announcements to emergency notifications, our solution ensures messages are delivered clearly."
+        },
+        {
+          "title": "Campus Safety",
+          "desc": "High-quality CCTV surveillance to enhance school safety and monitoring. Our integrated camera systems provide real-time video, scalable coverage, and secure storage."
+        }
+      ],
+      "seeProducts": "See Products"
     }
   },
   "faq": {
     "title": "Frequently Asked Questions",
     "items": {
       "q1": {
-        "question": "What CCTV products are available?",
-        "answer": "We offer Dahua IP Cameras, Analog Cameras, NVRs, DVRs, and official accessories."
+        "question": "What types of CCTV products and systems do you currently provide for different needs?",
+        "answer": "We provide a comprehensive range of Dahua CCTV products, including IP Cameras, Analog Cameras, NVRs, DVRs, and official supporting accessories. Our solutions are suitable for residential properties, commercial buildings, and large-scale facilities, ensuring reliable surveillance tailored to different operational requirements."
       },
       "q2": {
-        "question": "How long does installation take?",
-        "answer": "Residential projects take 1–2 days. Larger projects require a site survey."
+        "question": "How long does the CCTV installation process usually take for residential and commercial projects?",
+        "answer": "For residential installations, the CCTV setup process typically takes between 1–2 working days, depending on the number of cameras and site conditions. For commercial or large-scale projects, we conduct a site survey in advance to assess requirements, after which a detailed installation timeline will be provided."
       },
       "q3": {
-        "question": "Do you provide maintenance?",
-        "answer": "Yes, we provide maintenance, troubleshooting, and scheduled service packages."
+        "question": "Do you provide ongoing maintenance and technical support after CCTV installation?",
+        "answer": "Yes, we offer ongoing maintenance and technical support services after installation, including system inspections, troubleshooting, repairs, and scheduled maintenance packages. These services are designed to ensure your CCTV system continues to operate optimally and remains reliable over time."
       },
       "q4": {
-        "question": "Can CCTV be accessed remotely?",
-        "answer": "Yes, via Android, iOS, or desktop using official Dahua apps."
+        "question": "Can CCTV systems be accessed and monitored remotely from mobile devices or computers?",
+        "answer": "Yes, our CCTV systems support remote access and monitoring through smartphones, tablets, and desktop computers. Using official Dahua applications on Android, iOS, or PC, users can view live footage, playback recordings, and manage system settings securely from anywhere."
       },
       "q5": {
-        "question": "How do I get a price quote?",
-        "answer": "Contact us for a free consultation and site survey."
+        "question": "What is the process for requesting a price quotation and CCTV system consultation?",
+        "answer": "To request a price quotation, you can contact our team for a free consultation. We will discuss your surveillance needs, conduct a site survey if required, and provide a detailed recommendation along with a transparent and competitive price quotation."
       }
     },
     "form": {
@@ -214,9 +308,193 @@
       "sending": "Sending..."
     }
   },
+  "authorized": {
+    "partner": {
+      "name": "PT Kreatif System Indonesia",
+      "authorized": "Authorized Partner of",
+      "tech": "Technology"
+    },
+    "p1": "PT Kreatif System Indonesia is an Authorized Partner of Dahua Technology, committed to delivering reliable and high-quality security solutions by utilizing original Dahua products and cutting-edge technologies. As a trusted local partner, we align with Dahua's global standards in providing innovative, efficient, and scalable security systems tailored to various environments, from residential properties to commercial and industrial facilities.",
+    "p2": "We specialize in integrated security solutions including CCTV surveillance, alarm systems, access control, and other advanced security technologies fully supported by official Dahua warranties. Our certified and experienced team ensures professional consultation, precise system design, and seamless installation, delivering solutions that are not only technologically advanced but also aligned with each client's operational needs and security objectives.",
+    "p3": "Backed by responsive after-sales support and competitive pricing, PT Kreatif System Indonesia focuses on long-term partnership and customer satisfaction. Through continuous innovation and close collaboration with Dahua Technology, we provide smart, up-to-date, and dependable security systems that offer peace of mind and help our clients stay protected in an ever-evolving security landscape.",
+    "sectionTitle": "Smart & Modern Security Solutions",
+    "p4": "As an Authorized Partner of Dahua Technology, PT Kreatif System Indonesia delivers innovative security solutions built on Dahua's advanced and proven technologies. We integrate intelligent CCTV systems, access control, alarms, and smart security platforms into a unified ecosystem designed for reliability, scalability, and real-world performance.",
+    "p5": "Our Dahua-based solutions are engineered to address practical operational challenges across residential, commercial, and industrial sectors. From high-definition video surveillance and AI-powered analytics to secure network infrastructure, every system is carefully designed, customized, and optimized to meet specific security requirements and long-term operational goals.",
+    "p6": "By working closely with Dahua Technology and continuously adopting the latest innovations, we ensure our clients receive dependable, future-ready security systems with official product warranties and professional implementation. This commitment enables organizations to improve situational awareness, minimize risk, and maintain full control in an increasingly complex security environment.",
+    "button": "See Our Products",
+    "commitment": {
+      "title": "Our Commitment",
+      "p1": "Our partnership is committed to being a trustworthy and supportive partner by delivering high-quality products powered by cutting-edge technologies and supported by fast, reliable, end-to-end services. With a strong focus on innovation and customer-centric solutions, Dahua ensures that every product and system is designed to meet real-world security challenges while maintaining the highest standards of performance, reliability, and scalability.",
+      "p2": "PT Kreatif System Indonesia shares this commitment by providing fully integrated and customizable security solutions for residential, commercial, and industrial environments. Our services include CCTV surveillance, intelligent alarm systems, access control, and advanced security platforms using original Dahua products with official warranties. Supported by a certified and experienced team, we ensure professional system design, precise installation, and responsive after-sales support throughout the entire project lifecycle.",
+      "p3": "By prioritizing quality, reliability, and long-term partnerships, PT Kreatif System Indonesia is dedicated to delivering security solutions that offer lasting value and peace of mind. Through continuous technology updates, adherence to industry best practices, and close collaboration with Dahua Technology, we empower our clients with secure, efficient, and future-ready systems that evolve alongside their operational and security needs."
+    }
+  },
+  "seeMore": {
+    "accessControl": {
+      "title": "Attendance & Access Control Systems",
+      "description": "Advanced attendance and access control systems for secure operations",
+      "content": {
+        "mainTitle": "Attendance & Access Control Solutions",
+        "p1": "PT Kreatif System Indonesia provides integrated attendance and access control solutions designed to improve security, workforce management, and operational accountability. Our systems enable organizations to manage entry permissions while accurately recording attendance data through controlled access mechanisms. This approach ensures consistent monitoring, structured access policies, and reliable operational records.",
+        "p2": "Our attendance solutions are built on secure authentication methods such as fingerprint biometrics, RFID cards, and access terminals integrated with centralized management systems. Each access event is recorded in real time, allowing organizations to monitor presence, track movement, and generate accurate reports for operational and administrative needs.",
+        "p3": "By combining attendance tracking with access control infrastructure, organizations gain better visibility over workforce activities while maintaining controlled access to offices, facilities, and restricted areas. This integrated approach supports improved security enforcement, data accuracy, and compliance with internal operational policies.",
+        "cards": [
+          {
+            "title": "Access Control Systems",
+            "desc": "Secure entry management solutions using biometric, RFID, and card-based authentication. Our systems provide reliable access control to protect sensitive areas and ensure operational security."
+          },
+          {
+            "title": "Attendance Management",
+            "desc": "Integrated attendance monitoring systems that automatically record employee presence and working hours. Get real-time insights into workforce attendance patterns and improve HR operations."
+          },
+          {
+            "title": "Compliance Reporting",
+            "desc": "Comprehensive reporting tools for attendance and access logs. Generate accurate records for payroll, compliance, and security audits with automated data processing."
+          }
+        ],
+        "seeProducts": "See Products"
+      }
+    },
+    "cctv": {
+      "title": "CCTV & Security Systems",
+      "description": "Comprehensive CCTV and security systems for real-time surveillance and monitoring",
+      "content": {
+        "mainTitle": "CCTV Surveillance Solutions",
+        "p1": "PT Kreatif System Indonesia is a trusted provider of professional CCTV surveillance solutions in Indonesia, delivering reliable security systems for commercial, industrial, and institutional environments. Since our establishment, we have been committed to helping businesses enhance safety, monitor critical areas, and protect valuable assets through advanced video surveillance technology.",
+        "p2": "Our CCTV surveillance solutions are designed to accommodate a wide range of security needs, from small offices and retail outlets to large-scale industrial facilities, warehouses, campuses, and public infrastructure. PT Kreatif System Indonesia provides a comprehensive, end-to-end approach, starting from site assessment and security planning, followed by system design, device selection, and professional installation. We ensure that every CCTV system is configured according to operational requirements, network conditions, and future scalability. By utilizing high-quality cameras, reliable recording systems, and structured cabling, our solutions deliver clear video monitoring, stable performance, and long-term reliability. This allows our clients to maintain continuous surveillance, reduce security risks, and support operational efficiency with confidence.",
+        "p3": "With a team of experienced engineers and technicians, PT Kreatif System Indonesia integrates high-quality CCTV cameras, DVR/NVR systems, and network-based surveillance with scalable architecture and clear video monitoring. Our approach focuses on accuracy, stability, and efficiency, enabling clients to gain real-time visibility, improve operational control, and strengthen overall security management with confidence.",
+        "cards": [
+          {
+            "title": "Professional Surveillance",
+            "desc": "Comprehensive CCTV surveillance solutions designed to support continuous monitoring and effective security management across various environments. Our systems help organizations protect assets and improve situational awareness."
+          },
+          {
+            "title": "Advanced Camera Technology",
+            "desc": "High-quality CCTV camera technology that delivers clear image capture, consistent video quality, and dependable performance. Suitable for indoor and outdoor deployment under different lighting and environmental conditions."
+          },
+          {
+            "title": "Integrated Recording Systems",
+            "desc": "Integrated DVR and NVR systems combined with structured network architecture for reliable operation. System design emphasizes stability, scalability, and seamless integration with existing security infrastructure."
+          }
+        ],
+        "seeProducts": "See Products"
+      }
+    },
+    "itSupport": {
+      "title": "IT Support & Solutions",
+      "description": "Professional IT support and infrastructure solutions for your business",
+      "content": {
+        "mainTitle": "IT Support & Maintenance",
+        "p1": "At PT. Kreatif System Indonesia, our IT Support & Maintenance services are designed to keep your business systems running smoothly. We provide proactive monitoring, timely troubleshooting, and routine maintenance, ensuring that downtime is minimized and productivity stays high. Our experts tailor each support plan to align with your operational needs.",
+        "p2": "Our team understands that technology challenges can disrupt daily operations. That's why we offer flexible, responsive support solutions—from hardware and software troubleshooting to network optimization—so your business can operate without interruption. We aim to resolve issues efficiently while providing guidance to prevent future problems.",
+        "p3": "Beyond reactive support, we focus on preventive maintenance to extend the lifespan of your IT infrastructure. Regular updates, system checks, and performance tuning are part of our approach, keeping your environment secure, stable, and scalable. Partnering with us means gaining a reliable IT backbone that empowers your business to thrive without worrying about technical setbacks.",
+        "cards": [
+          {
+            "title": "Proactive Monitoring",
+            "desc": "24/7 monitoring of your IT infrastructure to detect and resolve issues before they impact operations. Our proactive approach minimizes downtime and ensures your systems run smoothly."
+          },
+          {
+            "title": "Technical Support",
+            "desc": "Expert technical support for hardware, software, and network issues. Our certified technicians provide quick response times and effective solutions to keep your business productive."
+          },
+          {
+            "title": "Preventive Maintenance",
+            "desc": "Regular system maintenance and updates to prevent problems and extend equipment lifespan. We ensure your IT environment stays secure, stable, and optimized for performance."
+          }
+        ],
+        "seeProducts": "See Products"
+      }
+    },
+    "pabx": {
+      "title": "PABX & Communication Systems",
+      "description": "Advanced PABX systems for seamless internal and external communication",
+      "content": {
+        "mainTitle": "PABX Solutions",
+        "p1": "PT. Kreatif System Indonesia delivers advanced PABX solutions to streamline internal communication for businesses of all sizes. Our systems allow seamless call routing, efficient internal transfers, and centralized management to ensure your team stays connected at all times.",
+        "p2": "With flexible configurations, our PABX systems support multiple extensions, voicemail, call forwarding, and automated attendants, enabling your organization to handle communication professionally while reducing operational overhead.",
+        "p3": "Beyond installation, we provide ongoing maintenance and support to ensure your PABX operates reliably. From troubleshooting to upgrades, our team ensures minimal downtime and optimal system performance, empowering your business with a robust and scalable communication infrastructure.",
+        "cards": [
+          {
+            "title": "Call Routing",
+            "desc": "Intelligent call routing that directs incoming calls to the right department or person. Support for multiple extensions, voicemail, and call forwarding for efficient communication management."
+          },
+          {
+            "title": "Business Communication",
+            "desc": "Unified communication platform that integrates voice, messaging, and collaboration tools. Improve team productivity and customer service with seamless internal and external communication."
+          },
+          {
+            "title": "System Integration",
+            "desc": "Integration with existing business systems and applications. Automated attendants and IVR systems enhance professionalism while reducing operational overhead."
+          }
+        ],
+        "seeProducts": "See Products"
+      }
+    },
+    "publicAddress": {
+      "title": "Public Address & Parking Solutions",
+      "description": "Integrated public address and parking management systems",
+      "content": {
+        "mainTitle": "Public Address",
+        "p1": "PT. Kreatif System Indonesia delivers reliable Public Address, Parking Barrier, and Electrical services tailored for modern businesses. Our solutions are designed to improve operational efficiency, enhance security, and support seamless communication across your organization.",
+        "p2": "Our Public Address systems ensure clear announcements, emergency alerts, and background audio for staff and visitors. Parking barrier solutions control vehicle access efficiently, improving security and traffic flow. Meanwhile, our electrical services provide safe, reliable, and energy-efficient power infrastructure for your operations.",
+        "p3": "Beyond installation, we offer ongoing maintenance and technical support for all services. By combining advanced technology with professional expertise, we ensure your systems remain stable, scalable, and optimized, empowering your business to focus on growth and productivity.",
+        "cards": [
+          {
+            "title": "Public Address Systems",
+            "desc": "Professional PA systems that deliver clear announcements and emergency alerts. Provide background music and communication across your facility with high-quality audio and reliable transmission."
+          },
+          {
+            "title": "Parking Solutions",
+            "desc": "Automated parking barrier systems that control vehicle access and traffic flow. Improve security, efficiency, and customer experience with modern parking management technology."
+          },
+          {
+            "title": "Electrical Services",
+            "desc": "Safe and efficient electrical infrastructure that supports your operations. Professional installation and maintenance of power systems designed for reliability and energy efficiency."
+          }
+        ],
+        "seeProducts": "See Products"
+      }
+    },
+    "alarm": {
+      "title": "Alarm & Safety Systems",
+      "description": "Comprehensive alarm and safety solutions for complete protection",
+      "content": {
+        "mainTitle": "Alarm & Safety Solutions",
+        "p1": "PT. Kreatif System Indonesia delivers reliable Alarm and Safety solutions to protect your people, assets, and facilities. Our systems are designed to detect potential threats, provide early warnings, and ensure rapid response in any emergency situation.",
+        "p2": "Our advanced alarm systems cover intrusion, fire, and emergency alerts, giving you real-time notifications to safeguard operations. Safety solutions include hazard monitoring, emergency planning, and compliance support, helping your organization maintain a secure and protected environment.",
+        "p3": "Beyond installation, we provide continuous monitoring, integration, and maintenance to ensure your systems operate reliably. By combining modern technology with professional expertise, we deliver scalable, efficient, and dependable solutions for long-term safety and peace of mind.",
+        "cards": [
+          {
+            "title": "Alarm Systems",
+            "desc": "Advanced alarm solutions to detect and alert you to potential threats in real time. Our systems cover intrusion, fire, and emergency alarms, providing reliable notifications to safeguard people and assets."
+          },
+          {
+            "title": "Safety Solutions",
+            "desc": "Comprehensive safety services designed to protect employees, visitors, and property. From emergency response planning to hazard monitoring, our solutions help maintain a secure and compliant environment."
+          },
+          {
+            "title": "Integrated Monitoring",
+            "desc": "Seamlessly integrate alarm and safety systems with your existing infrastructure for centralized control and real-time monitoring. Our approach ensures quick response, operational efficiency, and peace of mind."
+          }
+        ],
+        "seeProducts": "See Products"
+      }
+    }
+  },
+  "chat": {
+    "greeting": "Hello! How can we assist you with our Kreatif System services?",
+    "placeholder": "Type your message...",
+    "error": "Sorry, an error occurred. Please contact our team via WhatsApp."
+  },
   "aboutPage": {
     "title": "About Us",
     "description": "Your trusted partner in innovative security technology solutions",
+    "partner": {
+      "name": "PT Kreatif System Indonesia",
+      "authorized": "Authorized Partner of",
+      "brand": "Dahua",
+      "tech": "Technology"
+    },
     "nav": {
       "who": "Who We Are",
       "vision": "Our Vision & Mission",
@@ -229,6 +507,225 @@
     "p4": "PT Kreatif System Indonesia delivers innovative technology solutions that integrate security systems, IT infrastructure, and smart technologies into a unified and reliable ecosystem. By combining technical expertise with industry insight, we help organizations build systems that are not only secure, but also scalable and future-ready.",
     "p5": "Our solutions are designed with flexibility and precision, addressing real operational challenges across various industries. From CCTV surveillance and network systems to integrated IT solutions, we ensure every implementation is tailored to client needs, optimized for performance, and aligned with long-term business objectives.",
     "p6": "Through continuous innovation and collaboration with trusted global technology partners, we remain committed to delivering dependable, efficient, and intelligent solutions. This approach enables our clients to enhance operational control, minimize risk, and confidently navigate the evolving digital and security landscape.",
-    "button": "See our products"
-  }
+    "button": "See our products",
+    "vision": {
+      "title": "Our Vision & Mission",
+      "p1": "Our vision is to become a leading and trusted service company in the information technology sector, both locally and nationally, by consistently delivering exceptional value and innovative solutions. We aim to anticipate and embrace the ever-growing opportunities in the IT industry, ensuring that our services remain relevant, forward-thinking, and capable of supporting the evolving needs of businesses. Through continuous learning, adopting the latest technological advancements, and leveraging our extensive experience and networks, we strive to set new standards of excellence in customer satisfaction and operational performance.",
+      "p2": "Our mission is to deliver comprehensive IT and security solutions that empower organizations to operate securely, efficiently, and profitably. We are committed to understanding the unique challenges faced by each client and providing tailored solutions that not only address immediate needs but also support long-term growth and digital transformation. By combining technical expertise with a genuine commitment to customer success, we aim to be the trusted partner that organizations rely on to navigate the complex and rapidly evolving IT landscape."
+    },
+    "why": {
+      "title": "Why Choose Us?",
+      "p1": "Dahua aims to be your trustworthy and supportive partner by providing excellent products through the application of cutting-edge technologies and a commitment to delivering fast, reliable, end-to-end service. We focus on understanding the unique needs of our clients and ensuring that every solution we offer not only meets but exceeds expectations. By combining innovation with practical implementation, Dahua strives to create a seamless experience from product selection to installation, maintenance, and ongoing support, ensuring our clients feel confident and secure in every interaction.",
+      "p2": "At PT Kreatif System Indonesia, we deliver integrated and fully customizable security solutions designed for homes, businesses, and industrial facilities. Our extensive range of services includes advanced CCTV systems, intelligent alarms, access control, and other comprehensive security solutions, all supported by genuine Dahua products with official warranties. Backed by a certified and highly experienced team, we guarantee professional installation, timely system updates, and responsive after-sales support. With a strong emphasis on innovation, competitive pricing, and the latest technology, we provide smart, reliable, and up-to-date security systems specifically tailored to the unique requirements of each client, ensuring both peace of mind and long-term operational efficiency.",
+      "p3": "By prioritizing quality, reliability, and the development of long-term partnerships, PT Kreatif System Indonesia is fully committed to delivering security solutions that our customers can truly depend on. We continually monitor emerging technological trends and evolving industry standards to ensure every system we deploy offers maximum protection, optimized operational efficiency, and sustained value over time. Our goal is to empower clients to confidently manage their security needs while benefiting from modern, robust, and adaptable technology that grows alongside their organization."
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "title2": "Get in Touch",
+    "title3": "Contact Information",
+    "subtitle": "We are ready to assist you. Please send us a message, and our team will follow up shortly.",
+    "subtitle2": "We would love to hear from you. Send us a message and we will respond as soon as possible.",
+    "subtitle3": "We are open to all inquiries and business needs. Share your message with us, and we will respond at the earliest opportunity.",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "businessHours": "Business Hours",
+    "emailValue": "enquiry@kreatifsystem.com",
+    "phoneValue": "+(62) 214 0088",
+    "addressValue": "Ruko Palm Spring Blok B3 No.15, Batam, Kepulauan Riau, Indonesia",
+    "hoursValue": "Mon - Sat: 8:00 AM - 5:00 PM",
+    "formTitle": "Send Us a Message",
+    "formSubtitle": "Send us a message and we'll get back to you shortly.",
+    "formLabels": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "message": "Message"
+    },
+    "formPlaceholders": {
+      "name": "Your name",
+      "email": "your@email.com",
+      "phone": "+62 812 3456 7890",
+      "message": "Tell us about your inquiry..."
+    },
+    "formButton": {
+      "send": "Send Message",
+      "sending": "Sending..."
+    }
+  },
+  "projects2": {
+    "apartment": {
+      "title": "Apartment & Hotel Management",
+      "description": "Innovative solutions for efficient apartment and hotel management",
+      "p1": "PT. Kreatif System Indonesia provides innovative solutions tailored for apartments and hotels, combining technology and operational expertise. Our systems streamline property management, enhance guest experiences, and improve overall efficiency. Each solution is carefully designed to meet the unique needs of hospitality and residential properties, ensuring reliable and scalable performance.",
+      "p2": "From front desk management to room automation, our integrated systems help property managers monitor operations in real time. By leveraging advanced technologies, we reduce operational costs, improve safety, and provide actionable insights to make informed decisions, ensuring a seamless experience for both staff and guests.",
+      "p3": "With a focus on reliability and user-friendly interfaces, our team ensures smooth implementation and continuous support. By integrating access control, surveillance, and facility management systems, we empower properties to maintain high standards of security and operational excellence. Our commitment is to deliver tailored, efficient, and modern solutions that help our clients elevate their property management capabilities.",
+      "titleSection2": "Excellence in Hospitality & Residential",
+      "p4": "Residential apartments and hotel properties require specialized solutions that balance security with guest convenience. Our systems are designed with this dual focus, providing robust security features while maintaining the seamless, unobtrusive experience guests expect. Integration with property management software ensures efficient operations and real-time reporting.",
+      "p5": "From automated check-in using facial recognition or smart cards to emergency intercom systems and integrated surveillance, our solutions enhance operational efficiency and guest safety. Property managers gain actionable insights through centralized monitoring dashboards, enabling quick responses to any situation and proactive asset management.",
+      "p6": "Choose PT Kreatif System Indonesia for hospitality and residential solutions that deliver security, efficiency, and guest satisfaction. Our scalable and reliable systems are built to grow with your property and adapt to evolving security needs, ensuring your facilities maintain the highest standards of safety and service excellence.",
+      "cards": [
+        {
+          "title": "Surveillance & Security",
+          "desc": "Comprehensive CCTV solutions for continuous monitoring and security management across residential and hospitality environments without disrupting guest experience."
+        },
+        {
+          "title": "Communication Systems",
+          "desc": "Integrated PABX solutions for seamless internal communication and guest services with efficient call routing."
+        },
+        {
+          "title": "Technical Support",
+          "desc": "Timely technical assistance, troubleshooting, and preventive maintenance to keep IT systems running smoothly with minimal disruption."
+        }
+      ],
+      "seeProducts": "See Products"
+    },
+    "construction": {
+      "title": "Construction Site Management",
+      "description": "Comprehensive solutions for efficient and safe construction site management",
+      "p1": "PT. Kreatif System Indonesia provides comprehensive solutions tailored for construction sites, focusing on safety, efficiency, and project accountability. Our integrated systems enable site managers to monitor operations in real time, from equipment tracking and personnel management to security and environmental compliance. Each solution is designed to support the dynamic and demanding environment of construction projects.",
+      "p2": "From access control and site surveillance to incident reporting and resource management, our systems help reduce risks and improve operational efficiency. By leveraging advanced technologies, we help construction companies enhance safety protocols, minimize delays, and ensure full compliance with project requirements and regulations.",
+      "p3": "With expertise in temporary and permanent installations, our team ensures solutions that are robust, flexible, and scalable. We provide continuous support throughout the project lifecycle, ensuring that your construction site operates safely, efficiently, and with full visibility into all critical activities and processes.",
+      "titleSection2": "Excellence in Construction Site Management",
+      "p4": "Effective construction site management requires robust real-time visibility and seamless communication. Our integrated solutions provide site managers with comprehensive monitoring, from equipment location and worker attendance to security perimeter controls. This real-time data enables informed decision-making and rapid response to any situation.",
+      "p5": "Safety is paramount on construction sites. Our systems support worker identification, site perimeter monitoring, and instant communication networks that enable quick coordination during emergencies. Integration with site office IT infrastructure ensures project teams have reliable communication and data management tools throughout the project cycle.",
+      "p6": "Partner with PT Kreatif System Indonesia for construction solutions that enhance safety, improve operational efficiency, and protect project assets. Our flexible and reliable systems are built for construction environments and include comprehensive on-site support to ensure seamless operations from project start to completion.",
+      "cards": [
+        {
+          "title": "Construction IT Systems",
+          "desc": "Integrated IT solutions designed for construction sites to optimize project management, monitor workflows, and ensure accurate data collection."
+        },
+        {
+          "title": "Site Support",
+          "desc": "Expert technical support and proactive maintenance services tailored for construction environments to ensure reliable operation."
+        },
+        {
+          "title": "CCTV & Site Surveillance",
+          "desc": "Advanced surveillance solutions for construction sites providing real-time monitoring of equipment, workers, and restricted areas."
+        }
+      ],
+      "seeProducts": "See Products"
+    },
+    "factory": {
+      "title": "Factory & Industrial Operations",
+      "description": "Integrated solutions for efficient and secure factory and industrial operations",
+      "p1": "PT. Kreatif System Indonesia delivers integrated solutions designed for factory and industrial environments, combining security, operational monitoring, and safety management. Our systems enable facility managers to oversee complex operations, manage access control, monitor equipment performance, and ensure compliance with safety and regulatory standards. Each solution is tailored to the unique demands of manufacturing and industrial settings.",
+      "p2": "From access control and CCTV surveillance to production monitoring and incident detection, our systems help optimize operational efficiency and minimize downtime. By integrating real-time data collection and analysis, we help factories improve quality control, enhance safety, and streamline production processes while maintaining full visibility over all critical operations.",
+      "p3": "With expertise in high-security environments, our team delivers robust, reliable solutions designed to withstand industrial conditions. We provide comprehensive support and maintenance, ensuring your factory operates at peak efficiency with enhanced safety, security, and operational excellence.",
+      "titleSection2": "Reliable Solutions for Industrial Operations",
+      "p4": "Our industrial solutions are designed to meet the rigorous demands of factory operations. From safety monitoring to operational automation, we provide systems that increase efficiency while maintaining the highest standards of security and compliance.",
+      "p5": "With proactive maintenance, real-time monitoring, and expert support, we ensure that every system functions optimally and adapts to the evolving needs of your facility. Our goal is to help factories achieve smooth operations while minimizing downtime and risk.",
+      "p6": "Trust PT. Kreatif System Indonesia for factory solutions that combine technology, expertise, and reliability. We are committed to helping your industrial operations run safely, efficiently, and sustainably, allowing your business to focus on growth and productivity with confidence.",
+      "cards": [
+        {
+          "title": "Industrial IT Systems",
+          "desc": "Comprehensive IT infrastructure solutions designed to streamline factory operations, improve data accuracy, and enable real-time monitoring of production processes."
+        },
+        {
+          "title": "Maintenance & Support",
+          "desc": "Proactive maintenance and expert technical support to ensure all industrial equipment, safety systems, and communication networks function reliably."
+        },
+        {
+          "title": "CCTV & Surveillance",
+          "desc": "Advanced surveillance solutions tailored for factory environments, providing real-time video monitoring, asset protection, and operational safety."
+        }
+      ],
+      "seeProducts": "See Products"
+    },
+    "school": {
+      "title": "School Management",
+      "description": "Innovative solutions for efficient and secure school management",
+      "p1": "PT. Kreatif System Indonesia is dedicated to providing advanced security and management solutions for educational institutions. Our team of professionals combines technical expertise with a deep understanding of school operations, ensuring that every solution we deliver enhances safety, communication, and administrative efficiency. Since our beginning, we have focused on creating reliable systems that meet the unique needs of schools and campuses.",
+      "p2": "We specialize in integrating attendance monitoring, access control, CCTV surveillance, and IT infrastructure to ensure seamless campus management. By leveraging real-time data and centralized controls, school administrators can make informed decisions, optimize resources, and maintain a secure environment for students and staff.",
+      "p3": "Our solutions are designed to be scalable and adaptable to institutions of all sizes. From small schools to large universities, our systems provide reliable monitoring, communication, and management tools tailored to the educational environment. With PT Kreatif System Indonesia, schools gain peace of mind knowing their facilities and communities are protected by modern, effective, and user-friendly technology solutions.",
+      "titleSection2": "Enhancing School Management",
+      "p4": "Our commitment to educational institutions goes beyond just products. We offer end-to-end services including system design, implementation, and ongoing support to ensure school management solutions operate efficiently and reliably. Each project is approached with a focus on security, communication, and operational efficiency.",
+      "p5": "From IT infrastructure management to integrated CCTV, access control, and intercom systems, our solutions help schools maintain safety, streamline administrative tasks, and enhance overall campus operations. We combine technical expertise with an understanding of educational challenges to provide solutions that make a real difference.",
+      "p6": "By choosing PT Kreatif System Indonesia, schools gain reliable, modern, and fully supported systems that enhance the safety and productivity of their campuses. Our scalable solutions are suitable for institutions of any size and ensure administrators, teachers, and students benefit from advanced, user-friendly technology designed specifically for educational environments.",
+      "cards": [
+        {
+          "title": "IT Support & Infrastructure",
+          "desc": "Comprehensive IT solutions to support school administration and digital learning with reliable network infrastructure and robust data management."
+        },
+        {
+          "title": "Communication & Announcements",
+          "desc": "Advanced audio paging systems to streamline communication across campus from class announcements to emergency notifications."
+        },
+        {
+          "title": "Campus Safety",
+          "desc": "High-quality CCTV surveillance to enhance school safety and monitoring with real-time video, scalable coverage, and secure storage."
+        }
+      ],
+      "seeProducts": "See Products"
+    }
+  },
+  "button": {
+    "buttonSeeProducts": "See Products"
+  },
+
+  "aboutContents": {
+    "title": "Our Commitment",
+    "subtitle": "Your trusted partner in innovative security technology solutions"
+  },
+
+  "cardAbout": [
+    {
+      "title": "Wide Range of Products",
+      "desc": "We offer a comprehensive range of security and management products tailored to meet the needs of educational institutions of all sizes and types ."
+    },
+    {
+      "title": "Expert Advices & Support",
+      "desc": "We provide expert advice and ongoing support to ensure that our security and management solutions are fully optimized for your educational institution's needs."
+    },
+    {
+      "title": "Competitive Prices & Discounts",
+      "desc": "We offer competitive pricing and regular discounts to make our security and management solutions accessible to educational institutions of all budgets."
+    }
+  ],
+
+  "cctvContent": {
+    "title": "Reliable CCTV Backed by Professional Expertise",
+    "p1": "Backed by experienced engineers and technical specialists, PT Kreatif System Indonesia ensures that every attendance and access control system is implemented with precision and reliability. Our solutions are designed to operate continuously in daily operational environments, supported by proper system configuration, stable network integration, and secure device management.",
+    "p2": "Access control infrastructure is built using door controllers, biometric readers, and centralized software that allows administrators to define access rules, monitor activities, and maintain detailed audit logs. This structured system design helps organizations strengthen security oversight while maintaining transparency and traceability across access points.",
+    "p3": "Beyond installation, we provide ongoing technical support and system maintenance to ensure long-term performance and scalability. Our solutions allow organizations to expand access points, integrate additional authentication methods, and adapt system policies as operational requirements evolve, without compromising system stability or security."
+  },
+
+  "accessControlContent": {
+    "title": "Integrated Access Control & Attendance System",
+    "p1": "Supported by experienced engineers and technical specialists, PT Kreatif System Indonesia delivers access control and attendance systems that are accurate, reliable, and ready for daily operational use. Each system is carefully configured to ensure stable performance, seamless network integration, and secure management of access and attendance data.",
+    "p2": "Our access control and attendance infrastructure utilizes door controllers, biometric readers, and centralized management software that enables administrators to define access permissions, record attendance, monitor activities in real time, and maintain comprehensive audit logs. This structured approach helps organizations improve security enforcement while ensuring transparency and accountability.",
+    "p3": "Beyond system deployment, we provide continuous technical support and routine maintenance to ensure long-term reliability and scalability. Our solutions are designed to grow with organizational needs, allowing additional access points, attendance terminals, and authentication methods to be integrated without compromising system performance or data security."
+  },
+
+  "itSupportContent": {
+    "title": "Reliable IT Support for Modern Businesses",
+    "p1": "We understand that every business has unique IT requirements. Our specialists work closely with your team to assess existing infrastructure, anticipate potential challenges, and deliver IT support that integrates seamlessly with your operational workflows. Our focus goes beyond resolving issues — we aim to build long-term IT efficiency and stability.",
+    "p2": "Through our comprehensive maintenance and support programs, we act not just as a service provider but as a trusted technology partner. We ensure systems remain up to date, performance is continuously optimized, and strategic insights are provided to strengthen your digital operations. Every engagement is driven by professionalism, precision, and a strong commitment to your business objectives.",
+    "p3": "PT. Kreatif System Indonesia delivers IT Support & Maintenance services that prioritize system uptime, reliability, and operational efficiency. From small businesses to large enterprises, our solutions scale to meet diverse requirements, ensuring your IT environment remains resilient, secure, and ready to support both current operations and future growth."
+  },
+
+  "pabxContent": {
+    "title": "Business Communication Solutions",
+    "p1": "Our PABX solutions are designed to adapt to the evolving communication needs of modern businesses. From small offices to large enterprises, our systems deliver stable connectivity, efficient call management, and improved communication workflows across all departments.",
+    "p2": "By integrating advanced telephony features with user-friendly management interfaces, we enable seamless internal and external communication. Each solution is carefully configured to ensure reliability, scalability, and a consistent user experience that supports daily business operations.",
+    "p3": "PT. Kreatif System Indonesia provides PABX solutions backed by technical expertise and customer-focused service. With proactive monitoring, ongoing support, and system optimization, we ensure your communication infrastructure operates smoothly—allowing your organization to stay connected, productive, and ready for growth."
+  },
+
+  "publicAddressContent": {
+    "title": "Reliable Public Address & Infrastructure Solutions",
+    "p1": "Our Public Address solutions are designed to support clear, reliable, and efficient communication across facilities and operational areas. From offices and commercial buildings to industrial and public environments, our systems integrate seamlessly into existing infrastructure to support daily announcements, emergency notifications, and operational coordination.",
+    "p2": "Supported by proactive maintenance, technical support, and expert system configuration, we ensure that Public Address systems operate optimally at all times. Our team delivers scalable and easy-to-manage solutions that adapt to changing facility requirements while maintaining consistent audio quality and system reliability.",
+    "p3": "PT. Kreatif System Indonesia provides Public Address solutions that enhance safety, operational efficiency, and communication effectiveness. By combining technical expertise with a customer-focused approach, we ensure your PA infrastructure remains dependable, well-managed, and ready to support long-term operational needs."
+  },
+
+  "alarmContent": {
+    "title": "Protection for Every Business",
+    "p1": "Our Alarm and Safety solutions are designed to meet the specific protection requirements of modern organizations. From small offices to large facilities, we deliver alarm systems that integrate seamlessly with daily operations, helping enhance security readiness and overall operational efficiency.",
+    "p2": "Through proactive maintenance, real-time system monitoring, and expert technical support, we ensure your Alarm and Safety systems perform reliably at all times. Our team works closely with your organization to implement solutions that are scalable, easy to manage, and aligned with your evolving security needs.",
+    "p3": "PT. Kreatif System Indonesia provides Alarm & Safety solutions that combine technical excellence with a customer-focused approach. By prioritizing system reliability, rapid response, and long-term performance, we deliver peace of mind and a secure environment that supports sustainable business growth."
+  },
+
+  "bot": { "subtitle": "Ready to help" }
+
 }

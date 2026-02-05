@@ -3,8 +3,10 @@
 import { fadeIn } from "@/lib/fadeIn";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function Hero() {
+  const t = useTranslations("projects2.construction");
   return (
     <section className="relative flex items-center h-[50vh] min-h-100 overflow-hidden">
       <Image
@@ -28,10 +30,10 @@ export default function Hero() {
       >
         <div className="max-w-2xl">
           <h1 className="text-3xl md:text-4xl xl:text-5xl text-white font-semibold tracking-tight leading-13 mb-2">
-            Construction Site
+            {t("title")}
           </h1>
           <p className="text-sm md:text-lg mb-4 text-white/70">
-            Solution for managing and monitoring construction sites.
+            {t("description")}
           </p>
         </div>
       </motion.div>
