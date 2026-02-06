@@ -46,7 +46,7 @@ export default function AuthorizedHero() {
           variants={fadeIn("left", { offset: 164, duration: 1 })}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full"
         >
           <div className="max-w-2xl">
@@ -54,7 +54,7 @@ export default function AuthorizedHero() {
               variants={fadeIn("right", { offset: 50, duration: 0.8 })}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: false, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.3 }}
             >
               <p className="text-sm text-white/80 mb-2">{t("partner.name")}</p>
 

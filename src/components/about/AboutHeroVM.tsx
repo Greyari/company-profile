@@ -47,7 +47,7 @@ export default function AboutHeroVM() {
           variants={fadeIn("left", { offset: 164, duration: 1 })}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
           className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full"
         >
           <div id="vision-mission" className="max-w-2xl">

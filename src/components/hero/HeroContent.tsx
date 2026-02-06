@@ -29,7 +29,7 @@ export default function HeroContent({ activeItem }: HeroContentProps) {
       variants={fadeIn("left", { offset: 164, duration: 1 })}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.3 }}
     >
       <AnimatePresence mode="wait">
         <motion.p

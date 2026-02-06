@@ -27,7 +27,7 @@ export default function HeroNavigation({
       variants={fadeIn("down", { duration: 1 })}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.3 }}
       className="flex justify-between mt-45 text-sm flex-wrap gap-4"
       role="navigation"
       aria-label="Hero navigation"

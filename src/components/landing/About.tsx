@@ -62,7 +62,7 @@ export default function About() {
             variants={fadeIn("left", { offset: 50, duration: 0.8 })}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             className="md:pr-36 py-10"
           >
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
@@ -87,7 +87,7 @@ export default function About() {
             variants={fadeIn("right", { offset: 50, duration: 0.8 })}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             className="md:pl-36 py-10"
           >
             <p className="text-sm text-white/80 mb-2">{t("partner.name")}</p>

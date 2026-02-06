@@ -31,7 +31,7 @@ export default function ProductHero() {
             variants={fadeIn("left", { offset: 164, duration: 1 })}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
             className="max-w-2xl"
           >
             <h1 className="text-3xl md:text-4xl xl:text-5xl text-white font-semibold tracking-tight leading-13 mb-2">
