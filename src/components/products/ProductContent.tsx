@@ -3,7 +3,8 @@
 "use client";
 
 import React, { useState, useMemo, useEffect } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
