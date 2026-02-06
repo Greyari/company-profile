@@ -58,10 +58,10 @@ export default function AuthorizedHero() {
             >
               <p className="text-sm text-white/80 mb-2">{t("partner.name")}</p>
 
-              <h3 className="text-white text-3xl md:text-4xl font-bold leading-tight mb-4">
+              <h1 className="text-white text-3xl md:text-4xl font-bold leading-tight mb-4">
                 {t("partner.authorized")} <br />
                 <span className="text-red-600">Dahua</span> {t("partner.tech")}
-              </h3>
+              </h1>
             </motion.div>
           </div>
         </motion.div>

@@ -31,6 +31,7 @@ export default function ProductCard({
   href = "#",
 }: ProductCardProps) {
   const t = useTranslations("productPage.card");
+
   return (
     <motion.div
       whileHover={{ scale: 1.02 }}

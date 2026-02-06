@@ -122,6 +122,8 @@ export default function Navbar() {
   return (
     <nav
       ref={navRef}
+      role="navigation"
+      aria-label="Main navigation"
       onMouseEnter={handleNavMouseEnter}
       onMouseLeave={handleNavMouseLeave}
       className={`
@@ -157,7 +159,7 @@ export default function Navbar() {
               />
               <span>KREASII</span>
             </div>
-
+            {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-10">
               {[
                 { href: "/", label: t("home"), hasDropdown: false },
@@ -195,6 +197,7 @@ export default function Navbar() {
                   >
                     <Link
                       href={item.href}
+                      aria-label={`Go to ${item.label}`}
                       className={`relative text-sm group font-normal transition-all duration-300 ${textColor} flex items-center gap-1`}
                     >
                       <span className="transition-colors duration-300">
@@ -222,6 +225,8 @@ export default function Navbar() {
 
                     {item.hasDropdown && isDropdownOpen && (
                       <div
+                        role="menu"
+                        aria-label={`${item.label} submenu`}
                         onMouseEnter={() => {
                           if (timeoutRef.current)
                             clearTimeout(timeoutRef.current);
@@ -234,6 +239,8 @@ export default function Navbar() {
                           <Link
                             key={idx}
                             href={dropItem.href}
+                            role="menuitem"
+                            aria-label={`Go to ${dropItem.label}`}
                             className="group flex items-center justify-between px-4 py-3 text-sm text-gray-600 hover:text-black hover:bg-gray-50 transition-all duration-200"
                           >
                             <span>{dropItem.label}</span>
@@ -257,6 +264,9 @@ export default function Navbar() {
               >
                 <button
                   type="button"
+                  aria-label="Change language"
+                  aria-haspopup="listbox"
+                  aria-expanded={openDropdown === "language"}
                   className={`flex items-center gap-2 text-sm transition-colors ${
                     isWhiteBg ? "text-black" : "text-white"
                   }`}
@@ -274,6 +284,8 @@ export default function Navbar() {
 
                 {openDropdown === "language" && (
                   <div
+                    role="listbox"
+                    aria-label="Select language"
                     onMouseEnter={() => {
                       if (timeoutRef.current) clearTimeout(timeoutRef.current);
                     }}
@@ -304,6 +316,8 @@ export default function Navbar() {
                 isWhiteBg ? "text-black" : "text-white"
               }`}
               aria-label="Toggle menu"
+              aria-controls="mobile-menu"
+              aria-expanded={isOpen}
             >
               <svg
                 className="w-6 h-6"
@@ -331,6 +345,7 @@ export default function Navbar() {
           </div>
 
           <div
+            id="mobile-menu"
             className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
               isOpen ? "max-h-150 opacity-100" : "max-h-0 opacity-0"
             }`}
@@ -350,6 +365,7 @@ export default function Navbar() {
                     {!item.hasDropdown && (
                       <Link
                         href={item.href}
+                        aria-label={`Go to ${item.label}`}
                         onClick={() => setIsOpen(false)}
                         className={`w-full flex items-center justify-between px-4 py-3 rounded-xl font-medium transition-all duration-300 ${
                           pathname === item.href
@@ -388,13 +404,19 @@ export default function Navbar() {
                         </button>
 
                         {mobileDropdown === item.href && (
-                          <div className="mt-1 ml-4 space-y-1">
+                          <div
+                            role="menu"
+                            aria-label={`${item.label} submenu`}
+                            className="mt-1 ml-4 space-y-1"
+                          >
                             {dropdownItems[
                               item.href as keyof typeof dropdownItems
                             ]?.map((dropItem) => (
                               <Link
                                 key={dropItem.href}
                                 href={dropItem.href}
+                                role="menuitem"
+                                aria-label={`Go to ${dropItem.label}`}
                                 onClick={() => setIsOpen(false)}
                                 className="block px-4 py-2 rounded-lg text-sm text-gray-600 hover:bg-gray-100 hover:text-black transition-all"
                               >
@@ -408,7 +430,7 @@ export default function Navbar() {
                   </div>
                 );
               })}
-
+              {/* Mobile language */}
               <div className="px-2 pt-2 border-t border-gray-200">
                 <div className="flex items-center justify-between px-4 py-3">
                   <span className="text-sm font-medium text-gray-600">

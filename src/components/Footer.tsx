@@ -79,6 +79,8 @@ export default function Footer() {
               <Link
                 aria-label="Instagram"
                 href="https://www.instagram.com/kreasiicctvbatam"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-zinc-400 hover:text-white transition-colors"
               >
                 <Instagram size={20} />
@@ -86,6 +88,8 @@ export default function Footer() {
               <Link
                 aria-label="LinkedIn"
                 href="https://www.linkedin.com/company/ksibatam/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BVbS7EbYER62oi1j8lWi0vg%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-zinc-400 hover:text-white transition-colors"
               >
                 <Linkedin size={20} />
@@ -93,6 +97,8 @@ export default function Footer() {
               <Link
                 aria-label="Facebook"
                 href="https://www.facebook.com/kreasiibatamofficial"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-zinc-400 hover:text-white transition-colors"
               >
                 <Facebook size={20} />
@@ -102,7 +108,7 @@ export default function Footer() {
 
           {/* Dynamic Navigation Sections */}
           {FOOTER_SECTIONS.map((section) => (
-            <div key={section.title}>
+            <div key={section.title} aria-label={section.title}>
               <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-6">
                 {section.title}
               </h4>
@@ -111,6 +117,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
+                      aria-label={`Navigate to ${link.label}`}
                       className="text-sm text-zinc-400 hover:text-white transition-colors duration-200"
                     >
                       {link.label}
@@ -133,12 +140,19 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-3 text-sm text-zinc-400">
                 <Phone size={18} className="shrink-0 text-white" />
-                <span>{CONTACT_INFO.phone}</span>
+                <a
+                  href={`tel:${CONTACT_INFO.phone}`}
+                  aria-label={`Call ${CONTACT_INFO.phone}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {CONTACT_INFO.phone}
+                </a>
               </li>
               <li className="flex items-center space-x-3 text-sm text-zinc-400">
                 <Mail size={18} className="shrink-0 text-white" />
                 <a
                   href={`mailto:${CONTACT_INFO.email}`}
+                  aria-label={`Send email to ${CONTACT_INFO.email}`}
                   className="hover:text-white transition-colors"
                 >
                   {CONTACT_INFO.email}
@@ -154,6 +168,39 @@ export default function Footer() {
             &copy; {currentYear} PT. Kreatif System Indonesia. {x("rights")}
           </p>
         </div>
+        {/* Structured Data for SEO */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "PT. Kreatif System Indonesia",
+              url: "https://www.kreatifsystem.com",
+              logo: "https://www.kreatifsystem.com/images/logo/logo-warna.png",
+              sameAs: [
+                "https://www.instagram.com/kreasiicctvbatam",
+                "https://www.linkedin.com/company/ksibatam/",
+                "https://www.facebook.com/kreasiibatamofficial",
+              ],
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  telephone: CONTACT_INFO.phone,
+                  contactType: "customer service",
+                  email: CONTACT_INFO.email,
+                  areaServed: "ID",
+                  availableLanguage: ["Indonesian", "English"],
+                },
+              ],
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: CONTACT_INFO.address,
+                addressCountry: "ID",
+              },
+            }),
+          }}
+        />
       </div>
     </footer>
   );

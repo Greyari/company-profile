@@ -25,7 +25,7 @@ export default function About() {
     >
       <Image
         src="/images/hero/about.webp"
-        alt="About Background"
+        alt="Hero background for About section"
         fill
         priority
         sizes="100vw"
@@ -148,6 +148,7 @@ function AnimatedButton({ href, label }: { href: string; label: string }) {
           strokeWidth="1"
           strokeLinecap="round"
           strokeLinejoin="round"
+          aria-hidden="true"
         >
           <path d="m9 18 6-6-6-6" />
         </svg>

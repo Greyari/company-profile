@@ -7,6 +7,7 @@
 import React, { memo } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import Link from "next/link";
 
 type Card = {
   id: number | string;
@@ -126,7 +127,7 @@ const InnovativeSection = memo(function InnovativeSection() {
                 </p>
 
                 <div className="mt-auto">
-                  <a
+                  <Link
                     href="/products"
                     className={`inline-flex items-center gap-2 font-semibold text-sm transition-colors ${
                       card.isDark
@@ -135,7 +136,7 @@ const InnovativeSection = memo(function InnovativeSection() {
                     }`}
                   >
                     {x("buttonSeeProducts")} <span aria-hidden>→</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             ))}

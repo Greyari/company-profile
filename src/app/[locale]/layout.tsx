@@ -21,6 +21,21 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "PT. Kreatif System Indonesia - Security Technology Solutions",
   description: "Innovative security technology solutions for modern businesses",
+
+  openGraph: {
+    title: "PT. Kreatif System Indonesia - Security Technology Solutions",
+    description:
+      "Innovative security technology solutions for modern businesses",
+    url: "https://www.kreatifsystem.com",
+    images: ["/images/hero/about.webp"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PT. Kreatif System Indonesia - Security Technology Solutions",
+    description:
+      "Innovative security technology solutions for modern businesses",
+    images: ["/images/hero/about.webp"],
+  },
 };
 
 export default async function RootLayout({
@@ -28,7 +43,7 @@ export default async function RootLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>;
+  params: { locale: string } | Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
 
