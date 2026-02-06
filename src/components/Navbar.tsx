@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/lib/fadeIn";
 import { useTranslations, useLocale } from "next-intl";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { ChevronDown, ChevronRight, Globe } from "lucide-react";
 import { usePathname, useRouter } from "@/i18n/routing";
 
