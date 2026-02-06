@@ -4,9 +4,9 @@ import { gsap } from "gsap";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/lib/fadeIn";
 import { useTranslations, useLocale } from "next-intl";
-import { useRouter, usePathname } from "@/i18n/routing";
 import Link from "next/link";
 import { ChevronDown, ChevronRight, Globe } from "lucide-react";
+import { usePathname, useRouter } from "@/i18n/routing";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
