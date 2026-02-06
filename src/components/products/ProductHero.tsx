@@ -17,6 +17,7 @@ export default function ProductHero() {
           src="/images/hero/cctv-product.webp"
           alt="About Kreatif System"
           fill
+          fetchPriority="high"
           priority
           sizes="100vw"
           className="object-cover"

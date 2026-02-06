@@ -77,18 +77,21 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <Link
+                aria-label="Instagram"
                 href="https://www.instagram.com/kreasiicctvbatam"
                 className="text-zinc-400 hover:text-white transition-colors"
               >
                 <Instagram size={20} />
               </Link>
               <Link
+                aria-label="LinkedIn"
                 href="https://www.linkedin.com/company/ksibatam/?lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_all%3BVbS7EbYER62oi1j8lWi0vg%3D%3D"
                 className="text-zinc-400 hover:text-white transition-colors"
               >
                 <Linkedin size={20} />
               </Link>
               <Link
+                aria-label="Facebook"
                 href="https://www.facebook.com/kreasiibatamofficial"
                 className="text-zinc-400 hover:text-white transition-colors"
               >

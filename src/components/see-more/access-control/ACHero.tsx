@@ -17,6 +17,7 @@ export default function ACHero() {
         alt="About Kreatif System"
         fill
         priority
+        fetchPriority="high"
         sizes="100vw"
         className="object-cover object-[40%_15%]
         md:object-[70%_40%]    

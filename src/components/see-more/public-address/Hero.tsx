@@ -15,6 +15,7 @@ export default function Hero() {
         fill
         priority
         sizes="100vw"
+        fetchPriority="high"
         className="object-cover object-[100%_38%]"
       />
       <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black/40 to-black/10" />

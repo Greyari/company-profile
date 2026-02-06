@@ -15,6 +15,7 @@ export default function Hero() {
         fill
         priority
         sizes="100vw"
+        fetchPriority="high"
         className="object-cover object-[30%_45%]
           md:object-[70%_40%]    
         lg:object-[100%_45%]

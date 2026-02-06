@@ -22,7 +22,7 @@ export default function BackgroundLayer({
   const containerStyle: CSSProperties = {
     opacity: isActive ? 1 : 0,
     transition: `opacity ${TRANSITION_DURATION}ms cubic-bezier(${ANIMATION_EASE.join(
-      ","
+      ",",
     )})`,
     zIndex,
   };
@@ -35,12 +35,13 @@ export default function BackgroundLayer({
         fill
         sizes="100vw"
         priority={isActive}
+        fetchPriority="high"
         quality={90}
         className="object-cover   object-[70%_20%]     
-    sm:object-[70%_15%]   
-    md:object-[100%_5%]  
-    lg:object-[100%_0.5%]   
-    "
+        sm:object-[70%_15%]   
+        md:object-[100%_5%]  
+        lg:object-[100%_0.5%]   
+        "
       />
     </div>
   );

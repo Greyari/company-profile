@@ -13,6 +13,7 @@ export default function Hero() {
         src="/images/contents/factory.jpg"
         alt="About Kreatif System"
         fill
+        fetchPriority="high"
         priority
         sizes="100vw"
         className="object-cover object-[100%_30%]"
