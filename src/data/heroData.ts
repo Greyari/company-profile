@@ -25,7 +25,7 @@ export const navItems: NavItem[] = [
   {
     id: 4,
     label: "nav4.label",
-    image: "/images/hero-landing/cctv-monitor.jpg",
+    image: "/images/hero-landing/cctv-monitor.webp",
     title: "nav4.title",
     subtitle: "nav4.subtitle",
   },
