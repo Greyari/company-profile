@@ -35,6 +35,7 @@ export default function BackgroundLayer({
         fill
         sizes="100vw"
         priority={isActive}
+        fetchPriority="high"
         quality={90}
         className="object-cover   object-[70%_20%]     
         sm:object-[70%_15%]   
