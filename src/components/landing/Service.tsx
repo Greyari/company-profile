@@ -269,9 +269,7 @@ export default function Solutions() {
             {t("subtitleSection")}
           </p>
         </div>
-      </AnimatedContent>
-      {/* Header */}
-      <AnimatedContent distance={200}>
+        {/* Header */}
         {/* Carousel */}
         <motion.div
           ref={containerRef}

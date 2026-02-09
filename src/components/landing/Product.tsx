@@ -310,8 +310,6 @@ export default function Solutions() {
             {t("description")}
           </p>
         </div>
-      </AnimatedContent>
-      <AnimatedContent distance={200}>
         <motion.div
           className="flex gap-4 md:gap-6 pb-12 px-6 md:px-10 cursor-grab"
           drag="x"

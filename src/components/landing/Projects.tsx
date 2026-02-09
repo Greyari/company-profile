@@ -52,9 +52,7 @@ export default function Projects() {
             {t("description")}{" "}
           </p>
         </div>
-      </AnimatedContent>
-      {/* Grid Container - Full width, no gaps */}
-      <AnimatedContent distance={200}>
+        {/* Grid Container - Full width, no gaps */}
         <div className="grid md:grid-cols-4">
           {projects.map((project, index) => (
             <ProjectCard
