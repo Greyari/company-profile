@@ -5,7 +5,6 @@
 import { CircleArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
-import AnimatedContent from "../AnimatedContent";
 
 /* ===================== DATA ===================== */
 const projects = [
@@ -43,29 +42,27 @@ export default function Projects() {
   const t = useTranslations("projects");
   return (
     <section className="bg-white mt-30">
-      <AnimatedContent distance={150}>
-        <div className="text-center mb-10 px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-2">
-            {t("title")}
-          </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
-            {t("description")}{" "}
-          </p>
-        </div>
-        {/* Grid Container - Full width, no gaps */}
-        <div className="grid md:grid-cols-4">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              titleKey={project.titleKey}
-              descriptionKey={project.descriptionKey}
-              image={project.image}
-              link={project.link}
-              t={t}
-            />
-          ))}
-        </div>
-      </AnimatedContent>
+      <div className="text-center mb-10 px-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-black mb-2">
+          {t("title")}
+        </h2>
+        <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
+          {t("description")}{" "}
+        </p>
+      </div>
+      {/* Grid Container - Full width, no gaps */}
+      <div className="grid md:grid-cols-4">
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={index}
+            titleKey={project.titleKey}
+            descriptionKey={project.descriptionKey}
+            image={project.image}
+            link={project.link}
+            t={t}
+          />
+        ))}
+      </div>
     </section>
   );
 }

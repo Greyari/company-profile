@@ -5,7 +5,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { CircleArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import AnimatedContent from "../AnimatedContent";
 /* =====================
    TYPES
 ===================== */
@@ -260,50 +259,48 @@ export default function Solutions() {
 
   return (
     <section className="py-24 bg-white overflow-hidden">
-      <AnimatedContent distance={150}>
-        <div className="px-4 md:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-2">
-            {t("titleSection")}
-          </h2>
-          <p className="text-gray-600 text-center mb-12 max-w-3xl mx-auto text-xs md:text-base">
-            {t("subtitleSection")}
-          </p>
-        </div>
-        {/* Header */}
-        {/* Carousel */}
-        <motion.div
-          ref={containerRef}
-          className="flex gap-6 px-2.5 pb-10 cursor-grab active:cursor-grabbing"
-          drag="x"
-          dragConstraints={{ left: maxScroll, right: 0 }}
-          dragElastic={0.08}
-          dragMomentum={false}
-          style={{ x }}
-          onDragStart={() => {
-            setIsDragging(true);
-            idleRef.current = Date.now();
-          }}
-          onDragEnd={handleDragEnd}
-        >
-          {solutions.map((solution) => (
-            <SolutionCard key={solution.id} solution={solution} />
-          ))}
-        </motion.div>
+      <div className="px-4 md:px-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-2">
+          {t("titleSection")}
+        </h2>
+        <p className="text-gray-600 text-center mb-12 max-w-3xl mx-auto text-xs md:text-base">
+          {t("subtitleSection")}
+        </p>
+      </div>
+      {/* Header */}
+      {/* Carousel */}
+      <motion.div
+        ref={containerRef}
+        className="flex gap-6 px-2.5 pb-10 cursor-grab active:cursor-grabbing"
+        drag="x"
+        dragConstraints={{ left: maxScroll, right: 0 }}
+        dragElastic={0.08}
+        dragMomentum={false}
+        style={{ x }}
+        onDragStart={() => {
+          setIsDragging(true);
+          idleRef.current = Date.now();
+        }}
+        onDragEnd={handleDragEnd}
+      >
+        {solutions.map((solution) => (
+          <SolutionCard key={solution.id} solution={solution} />
+        ))}
+      </motion.div>
 
-        {/* Pagination Dots */}
-        <div className="flex justify-center gap-2 mt-6 px-4">
-          {Array.from({ length: pageCount }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => handlePageClick(index)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                index === activePage ? "w-8 bg-gray-800" : "w-2 bg-gray-300"
-              }`}
-              aria-label={`Go to page ${index + 1}`}
-            />
-          ))}
-        </div>
-      </AnimatedContent>
+      {/* Pagination Dots */}
+      <div className="flex justify-center gap-2 mt-6 px-4">
+        {Array.from({ length: pageCount }).map((_, index) => (
+          <button
+            key={index}
+            onClick={() => handlePageClick(index)}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              index === activePage ? "w-8 bg-gray-800" : "w-2 bg-gray-300"
+            }`}
+            aria-label={`Go to page ${index + 1}`}
+          />
+        ))}
+      </div>
     </section>
   );
 }
