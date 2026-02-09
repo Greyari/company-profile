@@ -13,6 +13,7 @@ import { motion, useMotionValue, animate } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
+import AnimatedContent from "../AnimatedContent";
 
 /* =====================
    CONSTANTS
@@ -302,45 +303,48 @@ export default function Solutions() {
   ===================== */
   return (
     <section className="relative py-24 bg-white overflow-hidden">
-      <div className="text-center mb-8 px-6">
-        <h2 className="text-3xl md:text-4xl font-bold mb-2">{t("title")}</h2>
-        <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
-          {t("description")}
-        </p>
-      </div>
+      <AnimatedContent distance={150}>
+        <div className="text-center mb-8 px-6">
+          <h2 className="text-3xl md:text-4xl font-bold mb-2">{t("title")}</h2>
+          <p className="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
+            {t("description")}
+          </p>
+        </div>
+      </AnimatedContent>
+      <AnimatedContent distance={200}>
+        <motion.div
+          className="flex gap-4 md:gap-6 pb-12 px-6 md:px-10 cursor-grab"
+          drag="x"
+          dragConstraints={{ left: maxScroll, right: 0 }}
+          dragElastic={0.08}
+          dragMomentum={false}
+          style={{ x }}
+          onDragEnd={handleDragEnd}
+          onPointerDown={handleInteraction}
+        >
+          {solutions.map((item, index) => (
+            <SolutionCard
+              key={item.id}
+              item={item}
+              index={index}
+              isMobile={isMobile}
+              link={getProductLink(item.category)}
+              t={t}
+            />
+          ))}
+        </motion.div>
 
-      <motion.div
-        className="flex gap-4 md:gap-6 pb-12 px-6 md:px-10 cursor-grab"
-        drag="x"
-        dragConstraints={{ left: maxScroll, right: 0 }}
-        dragElastic={0.08}
-        dragMomentum={false}
-        style={{ x }}
-        onDragEnd={handleDragEnd}
-        onPointerDown={handleInteraction}
-      >
-        {solutions.map((item, index) => (
-          <SolutionCard
-            key={item.id}
-            item={item}
-            index={index}
-            isMobile={isMobile}
-            link={getProductLink(item.category)}
-            t={t}
-          />
-        ))}
-      </motion.div>
-
-      <div className="flex justify-center gap-2 mt-6">
-        {Array.from({ length: pageCount }).map((_, i) => (
-          <div
-            key={i}
-            className={`h-2 rounded-full transition-all ${
-              i === activePage ? "w-8 bg-gray-800" : "w-2 bg-gray-300"
-            }`}
-          />
-        ))}
-      </div>
+        <div className="flex justify-center gap-2 mt-6">
+          {Array.from({ length: pageCount }).map((_, i) => (
+            <div
+              key={i}
+              className={`h-2 rounded-full transition-all ${
+                i === activePage ? "w-8 bg-gray-800" : "w-2 bg-gray-300"
+              }`}
+            />
+          ))}
+        </div>
+      </AnimatedContent>
     </section>
   );
 }
