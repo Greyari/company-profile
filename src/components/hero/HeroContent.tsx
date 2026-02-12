@@ -26,7 +26,7 @@ export default function HeroContent({ activeItem }: HeroContentProps) {
 
   return (
     <motion.div
-      variants={fadeIn("left", { offset: 164, duration: 1 })}
+      variants={fadeIn("left", { offset: 200, duration: 1 })}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.3 }}
